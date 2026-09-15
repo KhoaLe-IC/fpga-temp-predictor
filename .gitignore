@@ -1,0 +1,148 @@
+# ==============================================================================
+# CÂU HÌNH .GITIGNORE CHO DỰ ÁN FPGA TEMPERATURE PREDICTOR
+# Hỗ trợ: C/C++, Python, Verilog/SystemVerilog, Vivado, Quartus, ModelSim, Icarus
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Hệ điều hành & IDE (OS & Editors)
+# ------------------------------------------------------------------------------
+# Linux / macOS / Windows temp files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*~
+.~lock.*
+~$*.docx
+~$*.xlsx
+
+# VS Code (giữ lại cấu hình cần thiết, bỏ qua workspace/history cá nhân)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+!.vscode/c_cpp_properties.json
+.vscode/.ropeproject
+
+# ------------------------------------------------------------------------------
+# 2. C / C++ & Trình biên dịch (Software Build Artifacts)
+# ------------------------------------------------------------------------------
+software/bin/*
+!software/bin/.gitkeep
+build/
+bin/
+obj/
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+*.exe
+*.out
+*.app
+*.d
+
+# CMake (nếu sau này sử dụng thay thế Makefile)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CMakeScripts/
+Testing/
+
+# ------------------------------------------------------------------------------
+# 3. FPGA & EDA Tools (Vivado, Quartus, ModelSim, Icarus Verilog)
+# ------------------------------------------------------------------------------
+# File nhật ký và script tạm (Logs & Journals)
+*.log
+*.jou
+*.str
+*.rpt
+*.summary
+*.smsg
+*.done
+*.jdi
+*.pin
+clockInfo.txt
+webtalk*
+usage_statistics_webtalk.*
+
+# Dạng sóng mô phỏng dung lượng lớn (Waveforms & Dumps)
+*.vcd
+*.fst
+*.wlf
+*.wdb
+*.vvp
+transcript
+covhtmlreport/
+
+# Xilinx Vivado generated project directories & caches
+.Xil/
+hd_visual/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.gen/
+*.dcp
+*.xdc.bak
+
+# Intel / Altera Quartus generated project directories
+db/
+incremental_db/
+output_files/
+simulation/
+greybox_tmp/
+hc_output/
+*.qws
+
+# Verilator & ModelSim compiled work libraries
+obj_dir/
+work/
+
+# File nạp FPGA (Bitstreams - thường rất nặng > 50-100MB, không nên đẩy lên git)
+# Khi cần nộp bitstream, nên đính kèm trong mục "Releases" trên GitHub
+*.bit
+*.sof
+*.rbf
+*.pof
+
+# ------------------------------------------------------------------------------
+# 4. Python & Xử lý dữ liệu (Python & Data Scripts)
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+.ipynb_checkpoints/
+
+# File nén dữ liệu thô tải về (tránh đẩy file nén nặng vào git)
+data/raw/*.zip
+data/raw/*.tar.gz
+data/raw/*.7z
+
+# ------------------------------------------------------------------------------
+# 5. Báo cáo & Tài liệu LaTeX (Docs & Reports)
+# ------------------------------------------------------------------------------
+docs/report/*.aux
+docs/report/*.bbl
+docs/report/*.blg
+docs/report/*.fdb_latexmk
+docs/report/*.fls
+docs/report/*.synctex.gz
+docs/report/*.toc
+docs/report/*.out
+docs/report/*.log
+
+# ------------------------------------------------------------------------------
+# 6. Đảm bảo Git luôn theo dõi cấu trúc thư mục thông qua .gitkeep
+# ------------------------------------------------------------------------------
+!.gitkeep
+!/**/.gitkeep

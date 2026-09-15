@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. Build Software (C++)",
+      "type": "shell",
+      "command": "make -C software",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "2. Generate Sample Dataset",
+      "type": "shell",
+      "command": "python3 software/scripts/generate_sample_data.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "3. Train Floating-Point Model",
+      "type": "shell",
+      "command": "./software/bin/train_float data/processed/train.csv",
+      "dependsOn": "1. Build Software (C++)",
+      "problemMatcher": []
+    },
+    {
+      "label": "4. Run Fixed-Point Model & Export Testvectors",
+      "type": "shell",
+      "command": "./software/bin/predict_fixed data/processed/test.csv data/testvectors/testvectors.txt",
+      "dependsOn": "1. Build Software (C++)",
+      "problemMatcher": []
+    },
+    {
+      "label": "5. Run RTL Simulation (iverilog)",
+      "type": "shell",
+      "command": "iverilog -o hardware/tb/sim.vvp hardware/rtl/temp_predictor_core.v hardware/tb/tb_temp_predictor_core.v && vvp hardware/tb/sim.vvp",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
