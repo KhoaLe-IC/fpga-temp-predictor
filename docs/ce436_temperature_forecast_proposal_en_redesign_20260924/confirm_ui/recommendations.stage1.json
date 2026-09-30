@@ -1,0 +1,36 @@
+{
+  "stage": "stage1",
+  "lang": "en",
+  "primary_language": "vi-VN",
+  "recommend": {
+    "canvas": "ppt169"
+  },
+  "template_options": {
+    "schema_version": 1,
+    "phase": "template",
+    "lang": "en",
+    "explicit_workspace_roots": [],
+    "default_mode": "free_design"
+  },
+  "audience": {
+    "value": "Giảng viên CE436 và sinh viên trong lớp; nhóm thực hiện gồm 3 người, mới học DSP."
+  },
+  "communication_intent": {
+    "value": "Trình bày đề xuất đồ án buổi 1: giải thích bài toán, mô hình tuyến tính từ giá trị quá khứ, cách hiện thực C++ và FPGA, kiểm chứng và kế hoạch 3 tháng."
+  },
+  "audience_outcome": {
+    "value": "Người nghe hiểu hệ thống sẽ làm gì, cách kiểm tra kết quả và tính khả thi; giảng viên có cơ sở góp ý phạm vi, board và yêu cầu demo."
+  },
+  "core_message": {
+    "value": "Dự báo nhiệt độ sau 3 giờ từ dữ liệu theo giờ bằng mô hình tuyến tính có hệ số học offline trên C++; hiện thực phép dự báo số cố định bằng Verilog/SystemVerilog trên FPGA."
+  },
+  "delivery_context": {
+    "value": "Báo cáo trực tiếp bằng tiếng Việt, dự kiến 15–18 phút vì thời lượng được giao trên 12 phút; có ghi chú cho người thuyết trình."
+  },
+  "artifact_afterlife": {
+    "value": "PPTX chỉnh sửa được để nhóm luyện nói, nhận góp ý và cập nhật cho báo cáo tiến độ."
+  },
+  "content_divergence": {
+    "value": ""
+  }
+}

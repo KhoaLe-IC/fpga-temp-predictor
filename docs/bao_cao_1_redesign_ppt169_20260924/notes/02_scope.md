@@ -1,0 +1,5 @@
+Chủ đề dự báo thời tiết khá rộng vì có nhiều đại lượng như nhiệt độ, độ ẩm, áp suất và lượng mưa. Với thời gian ba tháng, trong đó nhóm còn phải học kiến thức DSP, nhóm chọn trước một đại lượng là nhiệt độ tại một địa điểm. Đầu vào là chuỗi nhiệt độ được ghi theo giờ, tính đến thời điểm hiện tại t. Đầu ra là một giá trị ước lượng nhiệt độ tại thời điểm ba giờ sau đó, có đơn vị độ C.
+
+Nhóm chọn mô hình tuyến tính vì từng phép tính có thể giải thích, viết lại trong C++ và đối chiếu với RTL. Đây là lựa chọn về phạm vi thực hiện; nhóm chưa khẳng định mô hình tuyến tính là mô hình dự báo tốt nhất. Phần lõi chỉ dùng nhiệt độ và các hệ số cố định. Nếu hoàn thành sớm, nhóm mới cân nhắc bổ sung độ ẩm hoặc áp suất để kiểm tra có giảm sai số hay không.
+
+Dữ liệu đầu vào chỉ thay đổi theo giờ nên nhóm cũng chưa có cơ sở nói rằng bài toán này cần FPGA để tăng tốc. Giá trị của đồ án là thực hành chuỗi xử lý từ mô hình số đến hiện thực số cố định và kiểm chứng trên phần cứng.

@@ -1,0 +1,5 @@
+Để tìm hệ số, nhóm chuyển công thức dự báo về bài toán hồi quy đơn giản hơn. Đặc trưng x một là chênh lệch nhiệt độ hiện tại với cùng giờ hôm trước; x hai là chênh lệch với ba giờ trước. Nhãn y là nhiệt độ thực ba giờ sau trừ đi nhiệt độ cùng giờ ngày trước của thời điểm mục tiêu. Khi đó cần tìm a, b và c để biểu thức a nhân x một cộng b nhân x hai cộng c gần y nhất trên tập huấn luyện, theo tiêu chuẩn bình phương tối thiểu.
+
+Dữ liệu được chia thành ba giai đoạn theo thời gian. Train dùng tìm hệ số. Validation dùng xem đặc trưng và cấu hình nào phù hợp. Test là giai đoạn mới hơn được giữ lại để đánh giá cuối. Nhóm chưa chốt tỷ lệ chia vì còn phụ thuộc độ dài và chất lượng dữ liệu.
+
+Một điểm cần chú ý là chia theo thời gian của nhãn: nhãn của mẫu train không được sang giai đoạn validation hoặc test. Tuy nhiên, lịch sử đã quan sát ở giai đoạn trước vẫn có thể dùng làm đầu vào dự báo ở giai đoạn sau. Các vùng trên slide chỉ thể hiện thứ tự, không thể hiện tỷ lệ. Nhóm có thể dùng Eigen trong C++ để giải bài toán bình phương tối thiểu; tài liệu triển khai được liên kết phía dưới.

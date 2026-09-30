@@ -1,0 +1,3 @@
+Em xin chào thầy và các bạn. Nhóm em đề xuất đồ án dự báo nhiệt độ sau ba giờ trên FPGA, sử dụng mô hình tuyến tính từ các giá trị quá khứ. Đây là một hướng cụ thể trong chủ đề Weather Pattern Forecasting on FPGA using Time Series Analysis mà thầy giao. Nhóm gồm ba thành viên và dự kiến thực hiện trong mười hai tuần, với hai phần chính là chương trình C++ và mạch viết bằng Verilog hoặc SystemVerilog.
+
+Ở buổi đầu, nhóm trình bày bài toán sẽ giải quyết, nguyên lý tính dự báo, cách chuyển phép tính thành mạch và kế hoạch kiểm chứng. Những công thức, kiến trúc và mốc công việc sau đây đang ở mức đề xuất. Nhóm chưa có hệ số huấn luyện, số liệu độ chính xác hay kết quả chạy board để công bố. Sau phần trình bày, nhóm mong nhận góp ý về phạm vi, board và mức demo cần đạt.

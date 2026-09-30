@@ -1,0 +1,1045 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_20260924",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "f701f311ab84fe4eb58ccac237802dee6d698f3524f69466dcff39450617dbe9",
+    "file_count": 15,
+    "files": [
+      {
+        "file": "01_cover.svg",
+        "sha256": "9a9df388c496dd6a9e9441186eea68a4ed34758644bf18f0e22bfbcfe4c1154f"
+      },
+      {
+        "file": "02_scope.svg",
+        "sha256": "6bb74c62fae2f5a32dfbe71433f681395c0e451338b4151e39282537a4e2c8cf"
+      },
+      {
+        "file": "03_system.svg",
+        "sha256": "0f25f2bfb9a062bdfb8c6d1f12e2ed978ca7df6dd223bc2586138ac7d888c96e"
+      },
+      {
+        "file": "04_samples.svg",
+        "sha256": "692dd0df192ebad3fe2609d21474a4441e3f5b435e4ecbb65e24c63e053705d9"
+      },
+      {
+        "file": "05_model.svg",
+        "sha256": "5e2c1056ff3da0a4d426d539ac7702e3cf37fefc98405acad5fbd51989091a96"
+      },
+      {
+        "file": "06_example.svg",
+        "sha256": "13d4925df8f493cd18e30150891720dd7ef12028054fcbcc1bee3fd570aacde8"
+      },
+      {
+        "file": "07_training.svg",
+        "sha256": "fea721fb71258bed5fb10aba45230568903968da829c4421b9c4d7af098f0645"
+      },
+      {
+        "file": "08_evaluation.svg",
+        "sha256": "12368fe00d32bc6ba028dca382f60b293f9692f9983c78dc16333fc3d0aabbb6"
+      },
+      {
+        "file": "09_fixed_point.svg",
+        "sha256": "1ee67a18e4be4af44712976f26315ffdc606f4d7b305eca9bc12825f40bd1668"
+      },
+      {
+        "file": "10_architecture.svg",
+        "sha256": "b9ef167a6f9519e19d74ddfe2f2c7f00804b6beda4753f06945b837692b4df67"
+      },
+      {
+        "file": "11_verification.svg",
+        "sha256": "aeea159a3fb59e680e86fb6039a4938e96f0caddf699361400430947dc02a7e4"
+      },
+      {
+        "file": "12_demo.svg",
+        "sha256": "a2068cd76344db672d108c889c38332963f34daea00673893ff5c84ee432551e"
+      },
+      {
+        "file": "13_schedule.svg",
+        "sha256": "e995177f676c159f79f32e1ddb0bed315bb9098757c547b15304365c4eb24379"
+      },
+      {
+        "file": "14_team_risks.svg",
+        "sha256": "727e71669a6aec3f102f110c57566a9a4bd335ec5ad945a343c3b9bc838ab78c"
+      },
+      {
+        "file": "15_conclusion.svg",
+        "sha256": "cf33dd0bd0349f21e1347c1ed6c9186dc6785af11624702d6f4ee40a21d6f785"
+      }
+    ]
+  },
+  "summary": {
+    "total": 15,
+    "passed": 15,
+    "warnings": 0,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 0,
+      "issues": []
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {
+      "34": [
+        "15_conclusion.svg"
+      ]
+    }
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 15,
+    "totals": {
+      "text_elements": 247,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 94,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 2,
+      "inline_emphasis_runs": 1,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 1,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": 0,
+    "geometry_elements": {
+      "circle": 4,
+      "ellipse": 0,
+      "line": 26,
+      "path": 0,
+      "polygon": 0,
+      "polyline": 0,
+      "rect": 64
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01_cover.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/01_cover.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 4,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 2,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 4,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "9a9df388c496dd6a9e9441186eea68a4ed34758644bf18f0e22bfbcfe4c1154f"
+    },
+    {
+      "file": "02_scope.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/02_scope.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 17,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 17,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "6bb74c62fae2f5a32dfbe71433f681395c0e451338b4151e39282537a4e2c8cf"
+    },
+    {
+      "file": "03_system.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/03_system.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 9,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 9,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "0f25f2bfb9a062bdfb8c6d1f12e2ed978ca7df6dd223bc2586138ac7d888c96e"
+    },
+    {
+      "file": "04_samples.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/04_samples.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 16,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 1,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 16,
+        "tspan_elements": 2,
+        "hyperlinks": 1
+      },
+      "passed": true,
+      "source_sha256": "692dd0df192ebad3fe2609d21474a4441e3f5b435e4ecbb65e24c63e053705d9"
+    },
+    {
+      "file": "05_model.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/05_model.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 18,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 7,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 18,
+        "tspan_elements": 0,
+        "hyperlinks": 1
+      },
+      "passed": true,
+      "source_sha256": "5e2c1056ff3da0a4d426d539ac7702e3cf37fefc98405acad5fbd51989091a96"
+    },
+    {
+      "file": "06_example.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/06_example.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 15,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 15,
+        "tspan_elements": 2,
+        "hyperlinks": 1
+      },
+      "passed": true,
+      "source_sha256": "13d4925df8f493cd18e30150891720dd7ef12028054fcbcc1bee3fd570aacde8"
+    },
+    {
+      "file": "07_training.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/07_training.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 17,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 6,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 17,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "fea721fb71258bed5fb10aba45230568903968da829c4421b9c4d7af098f0645"
+    },
+    {
+      "file": "08_evaluation.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/08_evaluation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 18,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 18,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "12368fe00d32bc6ba028dca382f60b293f9692f9983c78dc16333fc3d0aabbb6"
+    },
+    {
+      "file": "09_fixed_point.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/09_fixed_point.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 16,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 16,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "1ee67a18e4be4af44712976f26315ffdc606f4d7b305eca9bc12825f40bd1668"
+    },
+    {
+      "file": "10_architecture.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/10_architecture.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 18,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 6,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 2
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 18,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "b9ef167a6f9519e19d74ddfe2f2c7f00804b6beda4753f06945b837692b4df67"
+    },
+    {
+      "file": "11_verification.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/11_verification.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 21,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 21,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "aeea159a3fb59e680e86fb6039a4938e96f0caddf699361400430947dc02a7e4"
+    },
+    {
+      "file": "12_demo.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/12_demo.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 17,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 4,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 17,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "a2068cd76344db672d108c889c38332963f34daea00673893ff5c84ee432551e"
+    },
+    {
+      "file": "13_schedule.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/13_schedule.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 23,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 2,
+              "circle": 4,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 23,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "e995177f676c159f79f32e1ddb0bed315bb9098757c547b15304365c4eb24379"
+    },
+    {
+      "file": "14_team_risks.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/14_team_risks.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 30,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 6,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 30,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "727e71669a6aec3f102f110c57566a9a4bd335ec5ad945a343c3b9bc838ab78c"
+    },
+    {
+      "file": "15_conclusion.svg",
+      "path": "docs/ce436_temperature_forecast_proposal_en_20260924/svg_output/15_conclusion.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 8,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 8,
+        "tspan_elements": 1,
+        "sparse_typography_sizes": {
+          "34": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "cf33dd0bd0349f21e1347c1ed6c9186dc6785af11624702d6f4ee40a21d6f785"
+    }
+  ]
+}

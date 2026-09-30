@@ -146,3 +146,4 @@ docs/report/*.log
 # ------------------------------------------------------------------------------
 !.gitkeep
 !/**/.gitkeep
+docs/Project_software_ver2.zip

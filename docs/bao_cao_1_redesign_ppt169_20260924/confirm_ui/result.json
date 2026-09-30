@@ -1,0 +1,70 @@
+{
+  "primary_language": "vi-VN",
+  "canvas": "ppt169",
+  "audience": "Giảng viên CE436 và sinh viên trong lớp; nhóm thực hiện gồm 3 người, mới học DSP.",
+  "communication_intent": "Trình bày đề xuất đồ án buổi 1: giải thích bài toán, mô hình tuyến tính từ giá trị quá khứ, cách hiện thực C++ và FPGA, kiểm chứng và kế hoạch 3 tháng.",
+  "audience_outcome": "Người nghe hiểu hệ thống sẽ làm gì, cách kiểm tra kết quả và tính khả thi; giảng viên có cơ sở góp ý phạm vi, board và yêu cầu demo.",
+  "core_message": "Dự báo nhiệt độ sau 3 giờ từ dữ liệu theo giờ bằng mô hình tuyến tính có hệ số học offline trên C++; hiện thực phép dự báo số cố định bằng Verilog/SystemVerilog trên FPGA.",
+  "delivery_context": "Báo cáo trực tiếp bằng tiếng Việt, dự kiến 15–18 phút vì thời lượng được giao trên 12 phút; có ghi chú cho người thuyết trình.",
+  "artifact_afterlife": "PPTX chỉnh sửa được để nhóm luyện nói, nhận góp ý và cập nhật cho báo cáo tiến độ.",
+  "content_divergence": "",
+  "template_application": "Áp dụng màu xanh IBM, nền trắng/xám và Arial; không dùng logo. Giữ phương pháp Technical Deepdive: giải thích cơ chế cùng điều kiện và phép kiểm chứng. Dùng chọn lọc Presentation Core: 01_title_slide.svg cho mở đầu, 05_comparison.svg cho đối chiếu, 06_title_only.svg cho sơ đồ, 12_three_card.svg cho phân công và kiểm chứng, 14_process_timeline.svg cho kế hoạch, 10_hero_statement.svg cho kết luận. Các bố cục ảnh và biểu đồ số liệu mẫu được bỏ qua; nội dung, thứ tự và vùng sơ đồ được điều chỉnh để phù hợp đề xuất, với Master/Layout và các đối tượng chỉnh sửa được. Bổ sung lý do chọn mô hình, trục thời gian, cách chia dữ liệu, vai trò FPGA và tiêu chí đánh giá; phân biệt rõ đề xuất với kết quả chưa thực nghiệm.",
+  "delivery_purpose": "balanced",
+  "page_count": "15",
+  "mode": "custom",
+  "mode_behavior": "Bắt đầu với phạm vi +3 giờ và giới hạn nhóm, theo một mẫu từ quá khứ qua mô hình, số cố định, phần cứng và kiểm chứng; kết thúc bằng kế hoạch và các điểm cần thầy góp ý.",
+  "visual_style": "custom",
+  "visual_style_behavior": "Trục thời gian và các nhánh phép tính chiếm vùng chính; đường dẫn đi từ trái sang phải, mốc đang xét dùng xanh, phần giải thích nằm sát nhánh tương ứng. Giữ nền trắng, khối xám nhạt, nét sơ đồ chính xác và khoảng trống quanh công thức. Vận dụng nét sơ đồ blueprint trên nền sáng theo bộ nhận diện IBM đã chọn.",
+  "color": {
+    "name": "IBM Blue và thang xám",
+    "palette": {
+      "background": "#FFFFFF",
+      "secondary_bg": "#F4F4F4",
+      "primary": "#0F62FE",
+      "accent": "#002D9C",
+      "secondary_accent": "#525252",
+      "body_text": "#161616"
+    }
+  },
+  "icons": "tabler-outline",
+  "typography": {
+    "name": "Arial — dễ đọc khi trình chiếu",
+    "heading": {
+      "css": "sans-serif",
+      "english": "Arial",
+      "primary": "Arial",
+      "sample_primary": "",
+      "sample_english": ""
+    },
+    "body": {
+      "css": "sans-serif",
+      "english": "Arial",
+      "primary": "Arial",
+      "sample_primary": "",
+      "sample_english": ""
+    },
+    "body_size": 28,
+    "sizes": {
+      "title": 50,
+      "subtitle": 38,
+      "annotation": 22
+    },
+    "note": "",
+    "body_size_unit": "px"
+  },
+  "image_usage": [
+    "none"
+  ],
+  "image_notes": "20 trang: 18 trang trình bày chính cho 15–18 phút và 2 trang phụ lục. Dùng sơ đồ chỉnh sửa được cho trục thời gian, công thức, kiến trúc và kiểm chứng; chưa có ảnh board hoặc dữ liệu thực nên không tạo ảnh minh họa thay kết quả. Không cần ảnh trang trí.",
+  "proactive_speaker_notes": true,
+  "proactive_custom_animations": false,
+  "proactive_narration_audio": false,
+  "generation_mode": "continuous",
+  "refine_spec": false,
+  "design_spec_depth": "brief",
+  "stage": "final",
+  "status": "confirmed",
+  "stage1_sha256": "d916abe3fd796a5bbf06120cd3fda61deb8255b38b3ac487eef9d001b49b8d7a",
+  "selection_sha256": "21f03a55af76818db028d369d8d93991192415a62a581fd1d1a12acd1f0cd940",
+  "confirmed_at": "2026-09-24T15:56:47"
+}

@@ -1,0 +1,2625 @@
+{
+  "schema": "pptx_intake_slide_library.v1",
+  "source_pptx": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/bao_cao_1_redesign_ppt169_20260924/sources/bao_cao_de_xuat_buoi_1_chi_tiet.pptx",
+  "slide_count": 15,
+  "canvas_px": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "slide_index": 1,
+      "page_type": "cover_candidate",
+      "text_summary": "DỰ BÁO NHIỆT ĐỘ\nSAU 3 GIỜ TRÊN FPGA\nMô hình tuyến tính từ dữ liệu nhiệt độ quá khứ\nCE436  |  Báo cáo đề xuất đề tài  |  Buổi 1",
+      "slots": [
+        {
+          "slot_id": "s01_sh5",
+          "role": "title_candidate",
+          "text": "DỰ BÁO NHIỆT ĐỘ\nSAU 3 GIỜ TRÊN FPGA",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 80,
+            "y": 185,
+            "width": 1050,
+            "height": 192
+          },
+          "text_metrics": {
+            "font_size_px": 51.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s01_sh3",
+          "role": "label_candidate",
+          "text": "Mô hình tuyến tính từ dữ liệu nhiệt độ quá khứ",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 80,
+            "y": 450,
+            "width": 1050,
+            "height": 56
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s01_sh4",
+          "role": "label_candidate",
+          "text": "CE436  |  Báo cáo đề xuất đề tài  |  Buổi 1",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 80,
+            "y": 606,
+            "width": 930,
+            "height": 38
+          },
+          "text_metrics": {
+            "font_size_px": 18.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 2,
+      "page_type": "content_candidate",
+      "text_summary": "Phạm vi đề tài\n02\nChủ đề thầy giao\nWeather Pattern Forecasting\non FPGA using Time Series Analysis\nBài toán nhóm chọn\nDự báo nhiệt độ sau 3 giờ\ntừ các mẫu nhiệt độ theo giờ\nĐầu vào\nChuỗi T(t) tại một địa điểm\nĐầu ra\nMột giá trị T̂(t+3), đơn vị °C\nCần thầy xác nhận: phạm vi dự báo một đại lượng có đáp ứng yêu cầu của chủ đề.",
+      "slots": [
+        {
+          "slot_id": "s02_sh14",
+          "role": "title_candidate",
+          "text": "Phạm vi đề tài",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh3",
+          "role": "label_candidate",
+          "text": "02",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh4",
+          "role": "label_candidate",
+          "text": "Chủ đề thầy giao",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 176,
+            "width": 365,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh5",
+          "role": "label_candidate",
+          "text": "Weather Pattern Forecasting\non FPGA using Time Series Analysis",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 78,
+            "y": 230,
+            "width": 480,
+            "height": 105
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s02_sh6",
+          "role": "label_candidate",
+          "text": "Bài toán nhóm chọn",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 674,
+            "y": 176,
+            "width": 390,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh7",
+          "role": "label_candidate",
+          "text": "Dự báo nhiệt độ sau 3 giờ\ntừ các mẫu nhiệt độ theo giờ",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 674,
+            "y": 230,
+            "width": 485,
+            "height": 105
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s02_sh9",
+          "role": "label_candidate",
+          "text": "Đầu vào",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 422,
+            "width": 250,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh10",
+          "role": "label_candidate",
+          "text": "Chuỗi T(t) tại một địa điểm",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 467,
+            "width": 463,
+            "height": 70
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh11",
+          "role": "label_candidate",
+          "text": "Đầu ra",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 674,
+            "y": 422,
+            "width": 250,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh12",
+          "role": "label_candidate",
+          "text": "Một giá trị T̂(t+3), đơn vị °C",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 674,
+            "y": 467,
+            "width": 465,
+            "height": 70
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh13",
+          "role": "label_candidate",
+          "text": "Cần thầy xác nhận: phạm vi dự báo một đại lượng có đáp ứng yêu cầu của chủ đề.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 572,
+            "width": 1080,
+            "height": 65
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 3,
+      "page_type": "content_candidate",
+      "text_summary": "Mục tiêu và sản phẩm cần bàn giao\n03\nCâu hỏi nhóm cần trả lời\n1. Mô hình có giảm sai số so với cách dự báo đơn giản?\n2. FPGA có cho kết quả đúng như mô hình số cố định?\n3. Mạch cần bao nhiêu tài nguyên và mất bao lâu để tính?\nSản phẩm cuối kỳ\nChương trình C++  •  Mạch RTL  •  Testbench  •  Demo trên board  •  Báo cáo đánh giá",
+      "slots": [
+        {
+          "slot_id": "s03_sh9",
+          "role": "title_candidate",
+          "text": "Mục tiêu và sản phẩm cần bàn giao",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh3",
+          "role": "label_candidate",
+          "text": "03",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh4",
+          "role": "label_candidate",
+          "text": "Câu hỏi nhóm cần trả lời",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 171,
+            "width": 560,
+            "height": 45
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh5",
+          "role": "body_candidate",
+          "text": "1. Mô hình có giảm sai số so với cách dự báo đơn giản?\n2. FPGA có cho kết quả đúng như mô hình số cố định?\n3. Mạch cần bao nhiêu tài nguyên và mất bao lâu để tính?",
+          "paragraph_count": 3,
+          "geometry": {
+            "x": 76,
+            "y": 230,
+            "width": 1080,
+            "height": 176
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 3
+          }
+        },
+        {
+          "slot_id": "s03_sh7",
+          "role": "label_candidate",
+          "text": "Sản phẩm cuối kỳ",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 461,
+            "width": 450,
+            "height": 44
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh8",
+          "role": "label_candidate",
+          "text": "Chương trình C++  •  Mạch RTL  •  Testbench  •  Demo trên board  •  Báo cáo đánh giá",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 517,
+            "width": 1060,
+            "height": 86
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 4,
+      "page_type": "content_candidate",
+      "text_summary": "Nguồn dữ liệu và cách tạo mẫu\n04\nNguồn dự kiến\nNASA POWER, nhiệt độ T2M theo giờ tại một tọa độ được chọn.\nTại thời điểm t\nT(t−24)     T(t−21)     T(t−3)     T(t)\n24 giờ trước          21 giờ trước          3 giờ trước          hiện tại\nKiểm tra mốc giờ và dữ liệu thiếu; chia tập theo thời gian để giữ giai đoạn cuối cho kiểm tra.",
+      "slots": [
+        {
+          "slot_id": "s04_sh12",
+          "role": "title_candidate",
+          "text": "Nguồn dữ liệu và cách tạo mẫu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh3",
+          "role": "label_candidate",
+          "text": "04",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh4",
+          "role": "label_candidate",
+          "text": "Nguồn dự kiến",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 175,
+            "width": 340,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh5",
+          "role": "label_candidate",
+          "text": "NASA POWER, nhiệt độ T2M theo giờ tại một tọa độ được chọn.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 225,
+            "width": 1090,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh7",
+          "role": "label_candidate",
+          "text": "Tại thời điểm t",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 341,
+            "width": 310,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh8",
+          "role": "label_candidate",
+          "text": "T(t−24)     T(t−21)     T(t−3)     T(t)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 392,
+            "width": 1060,
+            "height": 58
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh9",
+          "role": "label_candidate",
+          "text": "24 giờ trước          21 giờ trước          3 giờ trước          hiện tại",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 454,
+            "width": 1060,
+            "height": 50
+          },
+          "text_metrics": {
+            "font_size_px": 19.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh11",
+          "role": "label_candidate",
+          "text": "Kiểm tra mốc giờ và dữ liệu thiếu; chia tập theo thời gian để giữ giai đoạn cuối cho kiểm tra.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 551,
+            "width": 1080,
+            "height": 72
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 5,
+      "page_type": "content_candidate",
+      "text_summary": "Hai mốc dự báo để so sánh\n05\nGiữ nguyên hiện tại\nT̂(t+3) = T(t)\nNếu nhiệt độ thay đổi ít trong 3 giờ, cách này có thể rất mạnh.\nCùng giờ ngày trước\nT̂(t+3) = T(t−21)\nT(t−21) là giá trị 24 giờ trước thời điểm cần dự báo.\nDùng cùng tập kiểm tra và cùng thước đo MAE (°C) cho cả ba phương án.",
+      "slots": [
+        {
+          "slot_id": "s05_sh12",
+          "role": "title_candidate",
+          "text": "Hai mốc dự báo để so sánh",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh3",
+          "role": "label_candidate",
+          "text": "05",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh4",
+          "role": "label_candidate",
+          "text": "Giữ nguyên hiện tại",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 186,
+            "width": 465,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 26.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh5",
+          "role": "label_candidate",
+          "text": "T̂(t+3) = T(t)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 252,
+            "width": 475,
+            "height": 70
+          },
+          "text_metrics": {
+            "font_size_px": 33.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh6",
+          "role": "label_candidate",
+          "text": "Nếu nhiệt độ thay đổi ít trong 3 giờ, cách này có thể rất mạnh.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 337,
+            "width": 485,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh7",
+          "role": "label_candidate",
+          "text": "Cùng giờ ngày trước",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 678,
+            "y": 186,
+            "width": 480,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 26.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh8",
+          "role": "label_candidate",
+          "text": "T̂(t+3) = T(t−21)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 678,
+            "y": 252,
+            "width": 480,
+            "height": 70
+          },
+          "text_metrics": {
+            "font_size_px": 33.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh9",
+          "role": "label_candidate",
+          "text": "T(t−21) là giá trị 24 giờ trước thời điểm cần dự báo.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 678,
+            "y": 337,
+            "width": 480,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh11",
+          "role": "label_candidate",
+          "text": "Dùng cùng tập kiểm tra và cùng thước đo MAE (°C) cho cả ba phương án.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 529,
+            "width": 1080,
+            "height": 84
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 6,
+      "page_type": "content_candidate",
+      "text_summary": "Mô hình tuyến tính đề xuất\n06\nT̂(t+3) = T(t−21) + a[T(t)−T(t−24)] + b[T(t)−T(t−3)] + c\nT(t−21)\nMốc cùng giờ\nngày hôm trước\nT(t)−T(t−24)\nNhiệt độ hiện tại lệch\nso với hôm trước bao nhiêu\nT(t)−T(t−3)\nXu hướng trong\n3 giờ vừa qua\na, b, c được tìm trên C++; FPGA sử dụng các hệ số cố định để tính liên tục theo từng mẫu.",
+      "slots": [
+        {
+          "slot_id": "s06_sh13",
+          "role": "title_candidate",
+          "text": "Mô hình tuyến tính đề xuất",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh3",
+          "role": "label_candidate",
+          "text": "06",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh4",
+          "role": "label_candidate",
+          "text": "T̂(t+3) = T(t−21) + a[T(t)−T(t−24)] + b[T(t)−T(t−3)] + c",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 175,
+            "width": 1120,
+            "height": 103
+          },
+          "text_metrics": {
+            "font_size_px": 31.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh6",
+          "role": "label_candidate",
+          "text": "T(t−21)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 338,
+            "width": 302,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh7",
+          "role": "label_candidate",
+          "text": "Mốc cùng giờ\nngày hôm trước",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 77,
+            "y": 389,
+            "width": 300,
+            "height": 94
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s06_sh8",
+          "role": "label_candidate",
+          "text": "T(t)−T(t−24)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 451,
+            "y": 338,
+            "width": 340,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh9",
+          "role": "label_candidate",
+          "text": "Nhiệt độ hiện tại lệch\nso với hôm trước bao nhiêu",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 451,
+            "y": 389,
+            "width": 320,
+            "height": 94
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s06_sh10",
+          "role": "label_candidate",
+          "text": "T(t)−T(t−3)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 834,
+            "y": 338,
+            "width": 330,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh11",
+          "role": "label_candidate",
+          "text": "Xu hướng trong\n3 giờ vừa qua",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 834,
+            "y": 389,
+            "width": 303,
+            "height": 94
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s06_sh12",
+          "role": "label_candidate",
+          "text": "a, b, c được tìm trên C++; FPGA sử dụng các hệ số cố định để tính liên tục theo từng mẫu.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 546,
+            "width": 1070,
+            "height": 80
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 7,
+      "page_type": "content_candidate",
+      "text_summary": "Ví dụ một lượt dự báo\n07\nGiá trị minh hoạ, chưa phải dữ liệu hoặc hệ số đã đo\nT(t−24) = 19 °C\nT(t−21) = 21 °C\nT(t−3) = 18 °C\nT(t) = 20 °C\nNếu a = 0,5; b = 0,2; c = 0\nT̂(t+3) = 21 + 0,5(20−19) + 0,2(20−18) = 21,9 °C",
+      "slots": [
+        {
+          "slot_id": "s07_sh12",
+          "role": "title_candidate",
+          "text": "Ví dụ một lượt dự báo",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh3",
+          "role": "label_candidate",
+          "text": "07",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh4",
+          "role": "label_candidate",
+          "text": "Giá trị minh hoạ, chưa phải dữ liệu hoặc hệ số đã đo",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 166,
+            "width": 1040,
+            "height": 42
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh5",
+          "role": "label_candidate",
+          "text": "T(t−24) = 19 °C",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 240,
+            "width": 490,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh6",
+          "role": "label_candidate",
+          "text": "T(t−21) = 21 °C",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 678,
+            "y": 240,
+            "width": 470,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh7",
+          "role": "label_candidate",
+          "text": "T(t−3) = 18 °C",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 315,
+            "width": 490,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh8",
+          "role": "label_candidate",
+          "text": "T(t) = 20 °C",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 678,
+            "y": 315,
+            "width": 470,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh10",
+          "role": "label_candidate",
+          "text": "Nếu a = 0,5; b = 0,2; c = 0",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 440,
+            "width": 1050,
+            "height": 52
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh11",
+          "role": "label_candidate",
+          "text": "T̂(t+3) = 21 + 0,5(20−19) + 0,2(20−18) = 21,9 °C",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 512,
+            "width": 1080,
+            "height": 70
+          },
+          "text_metrics": {
+            "font_size_px": 29.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 8,
+      "page_type": "content_candidate",
+      "text_summary": "Phần việc trên C++\n08\n01\nĐọc và làm sạch\nKiểm tra thứ tự giờ, giá trị thiếu và đơn vị\n02\nTạo mẫu huấn luyện\nTạo các hiệu số đầu vào và nhãn T(t+3)\n03\nTìm hệ số\nƯớc lượng a, b, c bằng bình phương tối thiểu\n04\nĐánh giá\nTính MAE trên giai đoạn chưa dùng để tìm hệ số",
+      "slots": [
+        {
+          "slot_id": "s08_sh19",
+          "role": "title_candidate",
+          "text": "Phần việc trên C++",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh3",
+          "role": "label_candidate",
+          "text": "08",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh4",
+          "role": "label_candidate",
+          "text": "01",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 173,
+            "width": 87,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 31.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh5",
+          "role": "label_candidate",
+          "text": "Đọc và làm sạch",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 171,
+            "y": 173,
+            "width": 370,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh6",
+          "role": "label_candidate",
+          "text": "Kiểm tra thứ tự giờ, giá trị thiếu và đơn vị",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 540,
+            "y": 173,
+            "width": 615,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh8",
+          "role": "label_candidate",
+          "text": "02",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 285,
+            "width": 87,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 31.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh9",
+          "role": "label_candidate",
+          "text": "Tạo mẫu huấn luyện",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 171,
+            "y": 285,
+            "width": 370,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh10",
+          "role": "label_candidate",
+          "text": "Tạo các hiệu số đầu vào và nhãn T(t+3)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 540,
+            "y": 285,
+            "width": 615,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh12",
+          "role": "label_candidate",
+          "text": "03",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 397,
+            "width": 87,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 31.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh13",
+          "role": "label_candidate",
+          "text": "Tìm hệ số",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 171,
+            "y": 397,
+            "width": 370,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh14",
+          "role": "label_candidate",
+          "text": "Ước lượng a, b, c bằng bình phương tối thiểu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 540,
+            "y": 397,
+            "width": 615,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh16",
+          "role": "label_candidate",
+          "text": "04",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 76,
+            "y": 509,
+            "width": 87,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 31.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh17",
+          "role": "label_candidate",
+          "text": "Đánh giá",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 171,
+            "y": 509,
+            "width": 370,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh18",
+          "role": "label_candidate",
+          "text": "Tính MAE trên giai đoạn chưa dùng để tìm hệ số",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 540,
+            "y": 509,
+            "width": 615,
+            "height": 57
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 9,
+      "page_type": "content_candidate",
+      "text_summary": "Chuyển từ số thực sang số cố định\n09\nC++ số thực\nHệ số và nhiệt độ được tính với độ chính xác cao để làm mốc.\nC++ số cố định và RTL\nDùng cùng tỉ lệ, làm tròn, độ rộng bit và cách xử lý tràn số.\nCần kiểm tra trước khi chốt định dạng\nMiền nhiệt độ trong dữ liệu  •  miền giá trị hệ số  •  độ lớn tổng trung gian",
+      "slots": [
+        {
+          "slot_id": "s09_sh11",
+          "role": "title_candidate",
+          "text": "Chuyển từ số thực sang số cố định",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh3",
+          "role": "label_candidate",
+          "text": "09",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh4",
+          "role": "label_candidate",
+          "text": "C++ số thực",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 80,
+            "y": 185,
+            "width": 280,
+            "height": 45
+          },
+          "text_metrics": {
+            "font_size_px": 26.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh5",
+          "role": "label_candidate",
+          "text": "Hệ số và nhiệt độ được tính với độ chính xác cao để làm mốc.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 80,
+            "y": 246,
+            "width": 486,
+            "height": 116
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh6",
+          "role": "label_candidate",
+          "text": "C++ số cố định và RTL",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 676,
+            "y": 185,
+            "width": 480,
+            "height": 45
+          },
+          "text_metrics": {
+            "font_size_px": 26.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh7",
+          "role": "label_candidate",
+          "text": "Dùng cùng tỉ lệ, làm tròn, độ rộng bit và cách xử lý tràn số.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 676,
+            "y": 246,
+            "width": 500,
+            "height": 116
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh9",
+          "role": "label_candidate",
+          "text": "Cần kiểm tra trước khi chốt định dạng",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 80,
+            "y": 446,
+            "width": 730,
+            "height": 45
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh10",
+          "role": "label_candidate",
+          "text": "Miền nhiệt độ trong dữ liệu  •  miền giá trị hệ số  •  độ lớn tổng trung gian",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 80,
+            "y": 502,
+            "width": 1060,
+            "height": 81
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 10,
+      "page_type": "content_candidate",
+      "text_summary": "Kiến trúc mạch FPGA dự kiến\n10\nMẫu T(t)\nNhận mẫu mới\nBộ đệm 25 mẫu\nGiữ T(t−24)…T(t)\nKhối tính hiệu\nTạo 2 độ lệch\nNhân và cộng\nXuất T̂(t+3)\n→\n→\n→\nHệ số a, b, c lưu trong mạch. Mỗi mẫu giờ mới tạo một dự báo sau khi bộ đệm đủ dữ liệu.",
+      "slots": [
+        {
+          "slot_id": "s10_sh21",
+          "role": "title_candidate",
+          "text": "Kiến trúc mạch FPGA dự kiến",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh3",
+          "role": "label_candidate",
+          "text": "10",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh5",
+          "role": "label_candidate",
+          "text": "Mẫu T(t)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 94,
+            "y": 223,
+            "width": 156,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh6",
+          "role": "label_candidate",
+          "text": "Nhận mẫu mới",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 94,
+            "y": 290,
+            "width": 156,
+            "height": 60
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh8",
+          "role": "label_candidate",
+          "text": "Bộ đệm 25 mẫu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 339,
+            "y": 223,
+            "width": 188,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh9",
+          "role": "label_candidate",
+          "text": "Giữ T(t−24)…T(t)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 339,
+            "y": 290,
+            "width": 188,
+            "height": 60
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh11",
+          "role": "label_candidate",
+          "text": "Khối tính hiệu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 619,
+            "y": 223,
+            "width": 199,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh12",
+          "role": "label_candidate",
+          "text": "Tạo 2 độ lệch",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 619,
+            "y": 290,
+            "width": 199,
+            "height": 60
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh14",
+          "role": "label_candidate",
+          "text": "Nhân và cộng",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 911,
+            "y": 223,
+            "width": 211,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh15",
+          "role": "label_candidate",
+          "text": "Xuất T̂(t+3)",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 911,
+            "y": 290,
+            "width": 211,
+            "height": 60
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh16",
+          "role": "label_candidate",
+          "text": "→",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 275,
+            "y": 254,
+            "width": 45,
+            "height": 65
+          },
+          "text_metrics": {
+            "font_size_px": 39.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh17",
+          "role": "label_candidate",
+          "text": "→",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 553,
+            "y": 254,
+            "width": 45,
+            "height": 65
+          },
+          "text_metrics": {
+            "font_size_px": 39.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh18",
+          "role": "label_candidate",
+          "text": "→",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 844,
+            "y": 254,
+            "width": 45,
+            "height": 65
+          },
+          "text_metrics": {
+            "font_size_px": 39.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh20",
+          "role": "label_candidate",
+          "text": "Hệ số a, b, c lưu trong mạch. Mỗi mẫu giờ mới tạo một dự báo sau khi bộ đệm đủ dữ liệu.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 466,
+            "width": 1050,
+            "height": 108
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 11,
+      "page_type": "content_candidate",
+      "text_summary": "Kế hoạch kiểm chứng\n11\nTầng 1\nC++ số thực và số cố định\nĐo tác động của lượng tử hoá\nTầng 2\nTestbench và RTL\nSo từng mẫu với C++ số cố định\nTầng 3\nChạy trên board\nKiểm tra giao tiếp và kết quả thực\nTrường hợp biên: nhiệt độ âm, thay đổi đột ngột, reset, dữ liệu chưa đủ 25 mẫu.",
+      "slots": [
+        {
+          "slot_id": "s11_sh16",
+          "role": "title_candidate",
+          "text": "Kế hoạch kiểm chứng",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh3",
+          "role": "label_candidate",
+          "text": "11",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh4",
+          "role": "label_candidate",
+          "text": "Tầng 1",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 183,
+            "width": 174,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 27.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh5",
+          "role": "label_candidate",
+          "text": "C++ số thực và số cố định",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 270,
+            "y": 183,
+            "width": 472,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh6",
+          "role": "label_candidate",
+          "text": "Đo tác động của lượng tử hoá",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 745,
+            "y": 183,
+            "width": 412,
+            "height": 90
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh8",
+          "role": "label_candidate",
+          "text": "Tầng 2",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 322,
+            "width": 174,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 27.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh9",
+          "role": "label_candidate",
+          "text": "Testbench và RTL",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 270,
+            "y": 322,
+            "width": 472,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh10",
+          "role": "label_candidate",
+          "text": "So từng mẫu với C++ số cố định",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 745,
+            "y": 322,
+            "width": 412,
+            "height": 90
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh12",
+          "role": "label_candidate",
+          "text": "Tầng 3",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 461,
+            "width": 174,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 27.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh13",
+          "role": "label_candidate",
+          "text": "Chạy trên board",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 270,
+            "y": 461,
+            "width": 472,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh14",
+          "role": "label_candidate",
+          "text": "Kiểm tra giao tiếp và kết quả thực",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 745,
+            "y": 461,
+            "width": 412,
+            "height": 90
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh15",
+          "role": "label_candidate",
+          "text": "Trường hợp biên: nhiệt độ âm, thay đổi đột ngột, reset, dữ liệu chưa đủ 25 mẫu.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 607,
+            "width": 1080,
+            "height": 54
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 12,
+      "page_type": "content_candidate",
+      "text_summary": "Kịch bản demo cuối kỳ\n12\nMáy tính\nPhát lại chuỗi nhiệt độ\ntheo giờ từ dữ liệu cũ\nFPGA\nNhận từng mẫu và tạo\ndự báo T̂(t+3)\nĐối chiếu\nHiển thị dự báo và\nT(t+3) thực trong CSV\n→\n→\nDữ liệu được phát lại nhanh để demo. FPGA vẫn chỉ thấy các mẫu tới thời điểm t khi tính dự báo.",
+      "slots": [
+        {
+          "slot_id": "s12_sh17",
+          "role": "title_candidate",
+          "text": "Kịch bản demo cuối kỳ",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh3",
+          "role": "label_candidate",
+          "text": "12",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh5",
+          "role": "label_candidate",
+          "text": "Máy tính",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 95,
+            "y": 220,
+            "width": 243,
+            "height": 55
+          },
+          "text_metrics": {
+            "font_size_px": 27.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh6",
+          "role": "label_candidate",
+          "text": "Phát lại chuỗi nhiệt độ\ntheo giờ từ dữ liệu cũ",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 95,
+            "y": 290,
+            "width": 243,
+            "height": 68
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s12_sh8",
+          "role": "label_candidate",
+          "text": "FPGA",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 519,
+            "y": 220,
+            "width": 243,
+            "height": 55
+          },
+          "text_metrics": {
+            "font_size_px": 27.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh9",
+          "role": "label_candidate",
+          "text": "Nhận từng mẫu và tạo\ndự báo T̂(t+3)",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 519,
+            "y": 290,
+            "width": 243,
+            "height": 68
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s12_sh11",
+          "role": "label_candidate",
+          "text": "Đối chiếu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 943,
+            "y": 220,
+            "width": 243,
+            "height": 55
+          },
+          "text_metrics": {
+            "font_size_px": 27.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh12",
+          "role": "label_candidate",
+          "text": "Hiển thị dự báo và\nT(t+3) thực trong CSV",
+          "paragraph_count": 2,
+          "geometry": {
+            "x": 943,
+            "y": 290,
+            "width": 243,
+            "height": 68
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 2
+          }
+        },
+        {
+          "slot_id": "s12_sh13",
+          "role": "label_candidate",
+          "text": "→",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 386,
+            "y": 251,
+            "width": 70,
+            "height": 65
+          },
+          "text_metrics": {
+            "font_size_px": 48.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh14",
+          "role": "label_candidate",
+          "text": "→",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 810,
+            "y": 251,
+            "width": 70,
+            "height": 65
+          },
+          "text_metrics": {
+            "font_size_px": 48.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh16",
+          "role": "label_candidate",
+          "text": "Dữ liệu được phát lại nhanh để demo. FPGA vẫn chỉ thấy các mẫu tới thời điểm t khi tính dự báo.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 482,
+            "width": 1080,
+            "height": 103
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 13,
+      "page_type": "content_candidate",
+      "text_summary": "Kế hoạch 12 tuần và mốc bàn giao\n13\nTuần 1–3\nDữ liệu\nCSV sạch; baseline\nTuần 4–6\nMô hình C++\nHệ số; MAE trên dữ liệu mới\nTuần 7–9\nRTL và testbench\nĐối chiếu số cố định\nTuần 10–12\nBoard và báo cáo\nDemo; tài nguyên; giới hạn\nGiữa kỳ: chứng minh mô hình và RTL mô phỏng. Cuối kỳ: FPGA chạy demo và có số liệu đánh giá.",
+      "slots": [
+        {
+          "slot_id": "s13_sh21",
+          "role": "title_candidate",
+          "text": "Kế hoạch 12 tuần và mốc bàn giao",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh3",
+          "role": "label_candidate",
+          "text": "13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh4",
+          "role": "label_candidate",
+          "text": "Tuần 1–3",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 190,
+            "width": 260,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh5",
+          "role": "label_candidate",
+          "text": "Dữ liệu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 254,
+            "width": 255,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh6",
+          "role": "label_candidate",
+          "text": "CSV sạch; baseline",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 334,
+            "width": 250,
+            "height": 119
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh8",
+          "role": "label_candidate",
+          "text": "Tuần 4–6",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 364,
+            "y": 190,
+            "width": 260,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh9",
+          "role": "label_candidate",
+          "text": "Mô hình C++",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 364,
+            "y": 254,
+            "width": 255,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh10",
+          "role": "label_candidate",
+          "text": "Hệ số; MAE trên dữ liệu mới",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 364,
+            "y": 334,
+            "width": 250,
+            "height": 119
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh12",
+          "role": "label_candidate",
+          "text": "Tuần 7–9",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 654,
+            "y": 190,
+            "width": 260,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh13",
+          "role": "label_candidate",
+          "text": "RTL và testbench",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 654,
+            "y": 254,
+            "width": 255,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh14",
+          "role": "label_candidate",
+          "text": "Đối chiếu số cố định",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 654,
+            "y": 334,
+            "width": 250,
+            "height": 119
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh16",
+          "role": "label_candidate",
+          "text": "Tuần 10–12",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 944,
+            "y": 190,
+            "width": 260,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 28.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh17",
+          "role": "label_candidate",
+          "text": "Board và báo cáo",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 944,
+            "y": 254,
+            "width": 255,
+            "height": 62
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh18",
+          "role": "label_candidate",
+          "text": "Demo; tài nguyên; giới hạn",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 944,
+            "y": 334,
+            "width": 250,
+            "height": 119
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh20",
+          "role": "label_candidate",
+          "text": "Giữa kỳ: chứng minh mô hình và RTL mô phỏng. Cuối kỳ: FPGA chạy demo và có số liệu đánh giá.",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 536,
+            "width": 1080,
+            "height": 85
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 14,
+      "page_type": "content_candidate",
+      "text_summary": "Rủi ro chính và cách xử lý\n14\nDữ liệu\nThiếu giờ hoặc khác múi giờ\nKiểm tra chuỗi thời gian trước khi tạo mẫu\nMô hình\nSai số không hơn mốc đơn giản\nThử lại đặc trưng; báo cáo đúng kết quả\nBoard\nChưa biết giao tiếp, thời điểm nhận board\nHoàn thiện lõi RTL và testbench trước",
+      "slots": [
+        {
+          "slot_id": "s14_sh15",
+          "role": "title_candidate",
+          "text": "Rủi ro chính và cách xử lý",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh3",
+          "role": "label_candidate",
+          "text": "14",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh4",
+          "role": "label_candidate",
+          "text": "Dữ liệu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 185,
+            "width": 170,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 26.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh5",
+          "role": "label_candidate",
+          "text": "Thiếu giờ hoặc khác múi giờ",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 260,
+            "y": 185,
+            "width": 445,
+            "height": 84
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh6",
+          "role": "label_candidate",
+          "text": "Kiểm tra chuỗi thời gian trước khi tạo mẫu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 735,
+            "y": 185,
+            "width": 412,
+            "height": 88
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh8",
+          "role": "label_candidate",
+          "text": "Mô hình",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 325,
+            "width": 170,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 26.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh9",
+          "role": "label_candidate",
+          "text": "Sai số không hơn mốc đơn giản",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 260,
+            "y": 325,
+            "width": 445,
+            "height": 84
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh10",
+          "role": "label_candidate",
+          "text": "Thử lại đặc trưng; báo cáo đúng kết quả",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 735,
+            "y": 325,
+            "width": 412,
+            "height": 88
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh12",
+          "role": "label_candidate",
+          "text": "Board",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 78,
+            "y": 465,
+            "width": 170,
+            "height": 53
+          },
+          "text_metrics": {
+            "font_size_px": 26.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh13",
+          "role": "label_candidate",
+          "text": "Chưa biết giao tiếp, thời điểm nhận board",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 260,
+            "y": 465,
+            "width": 445,
+            "height": 84
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s14_sh14",
+          "role": "label_candidate",
+          "text": "Hoàn thiện lõi RTL và testbench trước",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 735,
+            "y": 465,
+            "width": 412,
+            "height": 88
+          },
+          "text_metrics": {
+            "font_size_px": 21.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 15,
+      "page_type": "ending_candidate",
+      "text_summary": "Phân công nhóm và điểm cần xác nhận\n15\nNgười 1\nDữ liệu và C++\nChuỗi thời gian, hệ số, MAE\nNgười 2\nMạch FPGA\nSố cố định, bộ đệm, phép tính\nNgười 3\nKiểm chứng và demo\nTestbench, giao tiếp, biểu đồ\nCần chốt với thầy sau buổi 1\nPhạm vi dự báo nhiệt độ sau 3 giờ  •  board FPGA và công cụ  •  yêu cầu demo tối thiểu",
+      "slots": [
+        {
+          "slot_id": "s15_sh16",
+          "role": "title_candidate",
+          "text": "Phân công nhóm và điểm cần xác nhận",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 70,
+            "y": 43,
+            "width": 1110,
+            "height": 75
+          },
+          "text_metrics": {
+            "font_size_px": 38.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh3",
+          "role": "label_candidate",
+          "text": "15",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 1150,
+            "y": 656,
+            "width": 55,
+            "height": 24
+          },
+          "text_metrics": {
+            "font_size_px": 16.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh4",
+          "role": "label_candidate",
+          "text": "Người 1",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 171,
+            "width": 320,
+            "height": 39
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh5",
+          "role": "label_candidate",
+          "text": "Dữ liệu và C++",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 214,
+            "width": 333,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh6",
+          "role": "label_candidate",
+          "text": "Chuỗi thời gian, hệ số, MAE",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 273,
+            "width": 327,
+            "height": 90
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh7",
+          "role": "label_candidate",
+          "text": "Người 2",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 459,
+            "y": 171,
+            "width": 320,
+            "height": 39
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh8",
+          "role": "label_candidate",
+          "text": "Mạch FPGA",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 459,
+            "y": 214,
+            "width": 333,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh9",
+          "role": "label_candidate",
+          "text": "Số cố định, bộ đệm, phép tính",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 459,
+            "y": 273,
+            "width": 327,
+            "height": 90
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh10",
+          "role": "label_candidate",
+          "text": "Người 3",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 841,
+            "y": 171,
+            "width": 320,
+            "height": 39
+          },
+          "text_metrics": {
+            "font_size_px": 23.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh11",
+          "role": "label_candidate",
+          "text": "Kiểm chứng và demo",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 841,
+            "y": 214,
+            "width": 333,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 24.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh12",
+          "role": "label_candidate",
+          "text": "Testbench, giao tiếp, biểu đồ",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 841,
+            "y": 273,
+            "width": 327,
+            "height": 90
+          },
+          "text_metrics": {
+            "font_size_px": 20.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh14",
+          "role": "label_candidate",
+          "text": "Cần chốt với thầy sau buổi 1",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 425,
+            "width": 650,
+            "height": 48
+          },
+          "text_metrics": {
+            "font_size_px": 25.0,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s15_sh15",
+          "role": "label_candidate",
+          "text": "Phạm vi dự báo nhiệt độ sau 3 giờ  •  board FPGA và công cụ  •  yêu cầu demo tối thiểu",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 77,
+            "y": 487,
+            "width": 1060,
+            "height": 106
+          },
+          "text_metrics": {
+            "font_size_px": 22.0,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    }
+  ]
+}

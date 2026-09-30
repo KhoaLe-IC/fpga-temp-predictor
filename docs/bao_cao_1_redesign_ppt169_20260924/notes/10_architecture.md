@@ -1,0 +1,5 @@
+Sơ đồ này là kiến trúc chức năng dự kiến của lõi tính toán. Mỗi khi một mẫu mới hợp lệ đến, bộ đệm cập nhật lịch sử và cho phép đọc các mốc hiện tại, ba giờ trước, hai mươi mốt giờ trước và hai mươi bốn giờ trước. Bộ đệm giữ hai mươi lăm mẫu liên tiếp; trước khi đủ dữ liệu, mạch chưa được báo một dự báo hợp lệ.
+
+Nhánh thứ nhất tạo hiệu liên ngày rồi nhân a. Nhánh thứ hai tạo hiệu ba giờ rồi nhân b. Khối cộng nhận hai kết quả, cộng với nhiệt độ tại t trừ hai mươi mốt và độ lệch c. Đầu ra là dự báo cho t cộng ba. Hai nhánh trên slide mô tả phép toán, chưa có nghĩa bắt buộc phải dùng hai bộ nhân chạy song song. Nhóm sẽ quyết định dùng chung hay song song sau khi biết board và các giới hạn tài nguyên.
+
+Clock điều khiển hoạt động mạch, còn valid cho biết khi nào một mẫu thật sự được nhận. Cần phân biệt hai khái niệm thời gian: trễ một mẫu ở đây tương ứng một giờ trong chuỗi dữ liệu; độ trễ tính toán của mạch được tính bằng chu kỳ clock. Mạch không phải chờ ba giờ thực để tạo giá trị dự báo.

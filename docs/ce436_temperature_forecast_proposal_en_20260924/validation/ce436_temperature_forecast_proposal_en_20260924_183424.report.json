@@ -1,0 +1,255 @@
+{
+  "schema": "ppt-master.pptx-postflight-report.v1",
+  "status": "passed",
+  "output": {
+    "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_20260924/exports/ce436_temperature_forecast_proposal_en_20260924_183424.pptx",
+    "bytes": 84792
+  },
+  "source": {
+    "svg_slide_count": 15,
+    "layout_definition_count": 0,
+    "fingerprint": {
+      "algorithm": "sha256",
+      "digest": "e06d2ba2417d2ad9f25afe1ee4198f56778115a9d86acd9187e6655fc0252c7b",
+      "file_count": 15,
+      "files": [
+        {
+          "file": "01_cover.svg",
+          "sha256": "b0a43c3104dd035adf159317e501fe4cac8354cb8da38fe366b230cc6941e412"
+        },
+        {
+          "file": "02_scope.svg",
+          "sha256": "316c13d334156bf332b26ba6e3b5a9e17fb1e3ffdfad501b57ec7920cc814f00"
+        },
+        {
+          "file": "03_system.svg",
+          "sha256": "65727af4f2fa709ebc79bcf94d10a07676cf18441bd3e5ff1e0ad35fa2f534fa"
+        },
+        {
+          "file": "04_samples.svg",
+          "sha256": "22d2df449d1160db268b8bb62a32903e7c18080333cad0927ddc01b9f8449b0d"
+        },
+        {
+          "file": "05_model.svg",
+          "sha256": "afdc1278274fedbc6c8ce87b67342cc35cd52b15f710230664eb1b4c44e02ef1"
+        },
+        {
+          "file": "06_example.svg",
+          "sha256": "fe84da076e5be33f9bc9cc8663dc11f43624b267ee0a1500ae52d2a50bab732b"
+        },
+        {
+          "file": "07_training.svg",
+          "sha256": "2d2c76af69951c22980ebfed3c90bf521e05b106252e4b3a0e9f1f4b285be95e"
+        },
+        {
+          "file": "08_evaluation.svg",
+          "sha256": "4c2865ae25a6e4888c082146fea51eccae2bf9054efdd3985b3b43c050c16f81"
+        },
+        {
+          "file": "09_fixed_point.svg",
+          "sha256": "2274c7b526ff93031b317a02b4ca5e82e39d0f9acdb11feee4a39484a76ab2ac"
+        },
+        {
+          "file": "10_architecture.svg",
+          "sha256": "0f9c1be25fac0740e0bfaeefc8aa127a3fc3f5675305d1c0834c14ebcc87968f"
+        },
+        {
+          "file": "11_verification.svg",
+          "sha256": "e28e1df7792c12904a7a174ff7c4c4cc87db44153a0b0602dfee461cfc94a25f"
+        },
+        {
+          "file": "12_demo.svg",
+          "sha256": "ac87d662a7bae4e21f3ff61d786815fa3eb68b14795b10bc01e432f803b6b28a"
+        },
+        {
+          "file": "13_schedule.svg",
+          "sha256": "3308c82d9815d78f6993e43645faa1afdb2b369af72696c92b59d29133b9ef61"
+        },
+        {
+          "file": "14_team_risks.svg",
+          "sha256": "b276d36b119ef1d596a04360789b3b9ccdda9599526d6ea5fe8e4f42af6f7ce1"
+        },
+        {
+          "file": "15_conclusion.svg",
+          "sha256": "877e23fbc79cd303162cb1f1d815ee4ee5d4bd0de62a94680d232da4c0f67e7a"
+        }
+      ]
+    },
+    "authoring_roundtrip": null
+  },
+  "package": {
+    "zip_integrity": "passed",
+    "corrupt_member": null,
+    "slides": 15,
+    "notes": 15,
+    "masters": 1,
+    "layouts": 6
+  },
+  "checks": {
+    "zip_integrity": "passed",
+    "slide_count": "passed",
+    "internal_relationships": "enforced-at-build",
+    "structured_package": "enforced-at-build",
+    "transitions": "enforced-at-build",
+    "animations": "enforced-at-build",
+    "project_svg_contract": "enforced-at-build",
+    "compatibility_normalization": "not-applicable",
+    "authoring_roundtrip": "not-applicable",
+    "quality_gate": "passed",
+    "quality_warnings": "passed",
+    "template_tokens": "passed",
+    "external_images": "passed",
+    "font_portability": "passed"
+  },
+  "quality": {
+    "status": "loaded",
+    "path": "docs/ce436_temperature_forecast_proposal_en_20260924/validation/svg_quality_report.json",
+    "schema": "ppt-master.svg-quality-report.v1",
+    "stage": "final",
+    "source_match": "passed",
+    "source_fingerprint": {
+      "algorithm": "sha256",
+      "digest": "e06d2ba2417d2ad9f25afe1ee4198f56778115a9d86acd9187e6655fc0252c7b",
+      "file_count": 15,
+      "files": [
+        {
+          "file": "01_cover.svg",
+          "sha256": "b0a43c3104dd035adf159317e501fe4cac8354cb8da38fe366b230cc6941e412"
+        },
+        {
+          "file": "02_scope.svg",
+          "sha256": "316c13d334156bf332b26ba6e3b5a9e17fb1e3ffdfad501b57ec7920cc814f00"
+        },
+        {
+          "file": "03_system.svg",
+          "sha256": "65727af4f2fa709ebc79bcf94d10a07676cf18441bd3e5ff1e0ad35fa2f534fa"
+        },
+        {
+          "file": "04_samples.svg",
+          "sha256": "22d2df449d1160db268b8bb62a32903e7c18080333cad0927ddc01b9f8449b0d"
+        },
+        {
+          "file": "05_model.svg",
+          "sha256": "afdc1278274fedbc6c8ce87b67342cc35cd52b15f710230664eb1b4c44e02ef1"
+        },
+        {
+          "file": "06_example.svg",
+          "sha256": "fe84da076e5be33f9bc9cc8663dc11f43624b267ee0a1500ae52d2a50bab732b"
+        },
+        {
+          "file": "07_training.svg",
+          "sha256": "2d2c76af69951c22980ebfed3c90bf521e05b106252e4b3a0e9f1f4b285be95e"
+        },
+        {
+          "file": "08_evaluation.svg",
+          "sha256": "4c2865ae25a6e4888c082146fea51eccae2bf9054efdd3985b3b43c050c16f81"
+        },
+        {
+          "file": "09_fixed_point.svg",
+          "sha256": "2274c7b526ff93031b317a02b4ca5e82e39d0f9acdb11feee4a39484a76ab2ac"
+        },
+        {
+          "file": "10_architecture.svg",
+          "sha256": "0f9c1be25fac0740e0bfaeefc8aa127a3fc3f5675305d1c0834c14ebcc87968f"
+        },
+        {
+          "file": "11_verification.svg",
+          "sha256": "e28e1df7792c12904a7a174ff7c4c4cc87db44153a0b0602dfee461cfc94a25f"
+        },
+        {
+          "file": "12_demo.svg",
+          "sha256": "ac87d662a7bae4e21f3ff61d786815fa3eb68b14795b10bc01e432f803b6b28a"
+        },
+        {
+          "file": "13_schedule.svg",
+          "sha256": "3308c82d9815d78f6993e43645faa1afdb2b369af72696c92b59d29133b9ef61"
+        },
+        {
+          "file": "14_team_risks.svg",
+          "sha256": "b276d36b119ef1d596a04360789b3b9ccdda9599526d6ea5fe8e4f42af6f7ce1"
+        },
+        {
+          "file": "15_conclusion.svg",
+          "sha256": "877e23fbc79cd303162cb1f1d815ee4ee5d4bd0de62a94680d232da4c0f67e7a"
+        }
+      ]
+    },
+    "summary": {
+      "total": 15,
+      "passed": 15,
+      "warnings": 0,
+      "errors": 0
+    },
+    "categories": {
+      "blocking": {
+        "count": 0,
+        "issues": []
+      },
+      "introduced": {
+        "count": 0,
+        "issues": []
+      },
+      "inherited": {
+        "count": 0,
+        "issues": []
+      },
+      "source-import": {
+        "count": 0,
+        "summary": {
+          "warning_count": 0,
+          "by_code": {}
+        }
+      }
+    }
+  },
+  "resources": {
+    "unresolved_template_tokens": [],
+    "fonts": {
+      "stacks": [
+        "Arial",
+        "Consolas"
+      ],
+      "generic_only_stacks": [],
+      "unsafe_exported_faces": []
+    },
+    "images": {
+      "data_uri": 0,
+      "local": 0,
+      "external": 0,
+      "external_references": []
+    }
+  },
+  "export_policy": {
+    "project_svg_contract": "strict",
+    "dangerous_normalization_count": 0
+  },
+  "deck_motion": {
+    "transition": {
+      "effect": "fade",
+      "effect_options": {},
+      "duration": 0.4,
+      "auto_advance": null,
+      "sound": null
+    },
+    "animation": {
+      "effect": "none",
+      "effect_request": null,
+      "duration": 0.4,
+      "stagger": 0.5,
+      "trigger": "after-previous"
+    },
+    "cli_overrides": {
+      "transition": false,
+      "transition_duration": false,
+      "auto_advance": false,
+      "transition_sound": false,
+      "animation": false,
+      "animation_duration": false,
+      "animation_stagger": false,
+      "animation_trigger": false
+    },
+    "narration_timings": false
+  },
+  "backup_path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_20260924/backup/20260924_183424/svg_output",
+  "conversion_trace_path": null
+}

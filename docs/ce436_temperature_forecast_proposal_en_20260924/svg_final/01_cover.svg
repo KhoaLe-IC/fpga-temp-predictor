@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Arial" font-size="28" data-pptx-master="presentation_core_master" data-pptx-master-name="Presentation Core" data-pptx-layout="cover-expanded" data-pptx-layout-name="Cover Expanded">
+<rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false"/>
+<rect id="cover-expanded-rule" x="64" y="120" width="1152" height="2" fill="#E0E0E0" data-pptx-layer="layout"/>
+<g id="cover-expanded-title-slot" data-pptx-placeholder="title" data-pptx-bounds="64 160 1152 140">
+  <text data-pptx-carrier="true" x="64" y="240" font-size="50" font-weight="bold" fill="#161616">3-Hour Temperature Forecast on FPGA</text>
+</g>
+<g id="cover-expanded-subtitle-slot" data-pptx-placeholder="subtitle" data-pptx-idx="1" data-pptx-bounds="64 320 1152 70">
+  <text data-pptx-carrier="true" x="64" y="365" font-size="30" font-weight="bold" fill="#002D9C">Linear Time-Series Modeling &amp; RTL Verification</text>
+</g>
+<g id="cover-expanded-body-slot" data-pptx-placeholder="body" data-pptx-idx="2" data-pptx-bounds="64 530 1152 70">
+  <text data-pptx-carrier="true" x="64" y="575" font-size="26" fill="#525252">CE436 DSP Project Proposal  ·  12-Week Roadmap  ·  3 Members</text>
+</g>
+<g id="page-number" data-pptx-placeholder="slide-number" data-pptx-idx="9" data-pptx-bounds="1140 668 76 28">
+  <text data-pptx-carrier="true" x="1216" y="688" text-anchor="end" font-size="16" fill="#525252">01 / 15</text>
+</g>
+</svg>

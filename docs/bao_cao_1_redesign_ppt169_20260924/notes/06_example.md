@@ -1,0 +1,5 @@
+Để minh họa một lần tính, giả sử nhiệt độ hai mươi bốn giờ trước là mười chín độ, hai mươi mốt giờ trước là hai mươi mốt độ, ba giờ trước là mười tám độ và hiện tại là hai mươi độ. Giả sử a bằng không phẩy năm, b bằng không phẩy hai và c bằng không. Tất cả các giá trị này được chọn để giải thích phép tính, chưa phải dữ liệu hay hệ số đo được.
+
+Hiệu liên ngày là hai mươi trừ mười chín, bằng một độ. Nhân với a, phần hiệu chỉnh thứ nhất bằng không phẩy năm độ. Hiệu ba giờ gần nhất là hai mươi trừ mười tám, bằng hai độ; nhân với b cho không phẩy bốn độ. Cộng hai phần này vào mốc nền hai mươi mốt độ, ta được dự báo hai mươi mốt phẩy chín độ C.
+
+Ví dụ này cho thấy lõi phần cứng cần thực hiện các phép trừ, nhân hệ số rồi cộng. Giá trị dự báo không được xem là đúng chỉ vì phép tính đúng. Muốn biết dự báo tốt đến đâu, sau đó vẫn phải so với nhiệt độ thực tại thời điểm mục tiêu.

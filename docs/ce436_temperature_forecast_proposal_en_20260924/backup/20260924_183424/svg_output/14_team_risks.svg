@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Arial" font-size="28" data-pptx-master="presentation_core_master" data-pptx-master-name="Presentation Core" data-pptx-layout="three-columns" data-pptx-layout-name="Three Columns">
+<rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false" />
+<rect id="three-card-panel-one" x="64" y="168" width="368" height="472" rx="4" fill="#F4F4F4" data-pptx-layer="layout" />
+<rect id="three-card-panel-two" x="456" y="168" width="368" height="472" rx="4" fill="#F4F4F4" data-pptx-layer="layout" />
+<rect id="three-card-panel-three" x="848" y="168" width="368" height="472" rx="4" fill="#F4F4F4" data-pptx-layer="layout" />
+<g id="three-card-title-slot" data-pptx-placeholder="title" data-pptx-bounds="64 40 1152 88">
+  <text data-pptx-carrier="true" x="64" y="96" font-size="50" font-weight="bold" fill="#161616">Three students, two-phase workload</text>
+</g>
+<g id="three-card-one-slot" data-pptx-placeholder="object" data-pptx-binding="proxy" data-pptx-idx="1" data-pptx-bounds="88 192 320 424">
+  <text x="88" y="236" font-weight="bold" fill="#002D9C">STUDENT 1</text>
+  <text x="88" y="280" font-size="24" font-weight="bold" fill="#161616">Algorithms &amp; Data</text>
+  <text x="88" y="325" font-size="20" fill="#0F62FE" font-weight="bold">Phase 1: Baseline Core</text>
+  <text x="88" y="355" font-size="20" fill="#525252">• CSV cleaning &amp; gap repair<tspan x="88" dy="26">• Baseline models &amp; OLS fit</tspan><tspan x="88" dy="26">• C++ fixed-point golden model</tspan></text>
+  <line x1="88" y1="425" x2="408" y2="425" stroke="#E0E0E0" />
+  <text x="88" y="460" font-size="20" fill="#002D9C" font-weight="bold">Phase 2: Advanced Scope</text>
+  <text x="88" y="490" font-size="20" fill="#525252">• Multi-variable data (RH, P)<tspan x="88" dy="26">• ARX / non-linear models</tspan><tspan x="88" dy="26">• Quantization SNR analysis</tspan></text>
+</g>
+<g id="three-card-two-slot" data-pptx-placeholder="object" data-pptx-binding="proxy" data-pptx-idx="2" data-pptx-bounds="480 192 320 424">
+  <text x="480" y="236" font-weight="bold" fill="#002D9C">STUDENT 2</text>
+  <text x="480" y="280" font-size="24" font-weight="bold" fill="#161616">RTL &amp; Architecture</text>
+  <text x="480" y="325" font-size="20" fill="#0F62FE" font-weight="bold">Phase 1: Baseline Core</text>
+  <text x="480" y="355" font-size="20" fill="#525252">• 25-stage shift register RTL<tspan x="480" dy="26">• Fixed-point pipelined datapath</tspan><tspan x="480" dy="26">• Saturation &amp; valid handshake</tspan></text>
+  <line x1="480" y1="425" x2="800" y2="425" stroke="#E0E0E0" />
+  <text x="480" y="460" font-size="20" fill="#002D9C" font-weight="bold">Phase 2: Advanced Scope</text>
+  <text x="480" y="490" font-size="20" fill="#525252">• Parallel vs. Shared-MAC FSM<tspan x="480" dy="26">• Area &amp; Fmax optimization</tspan><tspan x="480" dy="26">• Synthesis on target FPGA</tspan></text>
+</g>
+<g id="three-card-three-slot" data-pptx-placeholder="object" data-pptx-binding="proxy" data-pptx-idx="3" data-pptx-bounds="872 192 320 424">
+  <text x="872" y="236" font-weight="bold" fill="#002D9C">STUDENT 3</text>
+  <text x="872" y="280" font-size="24" font-weight="bold" fill="#161616">DV &amp; System Demo</text>
+  <text x="872" y="325" font-size="20" fill="#0F62FE" font-weight="bold">Phase 1: Baseline Core</text>
+  <text x="872" y="355" font-size="20" fill="#525252">• Automated test vector suite<tspan x="872" dy="26">• Bit-exact RTL testbench</tspan><tspan x="872" dy="26">• Reset &amp; warm-up verification</tspan></text>
+  <line x1="872" y1="425" x2="1192" y2="425" stroke="#E0E0E0" />
+  <text x="872" y="460" font-size="20" fill="#002D9C" font-weight="bold">Phase 2: Advanced Scope</text>
+  <text x="872" y="490" font-size="20" fill="#525252">• UART controller integration<tspan x="872" dy="26">• PC live display dashboard</tspan><tspan x="872" dy="26">• Code coverage &amp; assertions</tspan></text>
+</g>
+<g id="page-number" data-pptx-placeholder="slide-number" data-pptx-idx="9" data-pptx-bounds="1140 668 76 28">
+  <text data-pptx-carrier="true" x="1216" y="688" text-anchor="end" font-size="16" fill="#525252">14 / 15</text>
+</g>
+<g id="shared-interface" data-pptx-bounds="64 648 1040 46">
+  <text x="64" y="679" font-size="22" fill="#525252">Unified arithmetic specification co-authored early: wordlengths, rounding, saturation, valid, latency.</text>
+</g>
+</svg>

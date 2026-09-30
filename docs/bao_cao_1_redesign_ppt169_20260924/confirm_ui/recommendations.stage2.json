@@ -1,0 +1,200 @@
+{
+  "stage": "stage2",
+  "lang": "en",
+  "selection_sha256": "21f03a55af76818db028d369d8d93991192415a62a581fd1d1a12acd1f0cd940",
+  "recommend": {
+    "delivery_purpose": "balanced",
+    "mode": "custom",
+    "visual_style": "custom",
+    "image_strategy": "custom",
+    "image_usage": [
+      "none"
+    ],
+    "generation_mode": "continuous"
+  },
+  "page_count": {
+    "value": "20"
+  },
+  "image_notes": {
+    "value": "20 trang: 18 trang trình bày chính cho 15–18 phút và 2 trang phụ lục. Dùng sơ đồ chỉnh sửa được cho trục thời gian, công thức, kiến trúc và kiểm chứng; chưa có ảnh board hoặc dữ liệu thực nên không tạo ảnh minh họa thay kết quả. Không cần ảnh trang trí."
+  },
+  "proactive_speaker_notes": {
+    "value": true
+  },
+  "proactive_custom_animations": {
+    "value": false
+  },
+  "proactive_narration_audio": {
+    "value": false
+  },
+  "refine_spec": {
+    "value": false
+  },
+  "design_spec_depth": {
+    "value": "brief"
+  },
+  "template_application": {
+    "value": "Áp dụng màu xanh IBM, nền trắng/xám và Arial; không dùng logo. Giữ phương pháp Technical Deepdive: giải thích cơ chế cùng điều kiện và phép kiểm chứng. Dùng chọn lọc Presentation Core: 01_title_slide.svg cho mở đầu, 05_comparison.svg cho đối chiếu, 06_title_only.svg cho sơ đồ, 12_three_card.svg cho phân công và kiểm chứng, 14_process_timeline.svg cho kế hoạch, 10_hero_statement.svg cho kết luận. Các bố cục ảnh và biểu đồ số liệu mẫu được bỏ qua; nội dung, thứ tự và vùng sơ đồ được điều chỉnh để phù hợp đề xuất, với Master/Layout và các đối tượng chỉnh sửa được. Bổ sung lý do chọn mô hình, trục thời gian, cách chia dữ liệu, vai trò FPGA và tiêu chí đánh giá; phân biệt rõ đề xuất với kết quả chưa thực nghiệm."
+  },
+  "design_directions": {
+    "selected": 0,
+    "candidates": [
+      {
+        "id": "sample-journey",
+        "name": "Theo một mẫu nhiệt độ — đề xuất",
+        "note": "Đi từ bốn mốc nhiệt độ đến phép dự báo, rồi ánh xạ từng bước sang mạch. Dễ giải thích công thức và cách triển khai trong buổi đầu.",
+        "mode": "custom",
+        "mode_behavior": "Bắt đầu với phạm vi +3 giờ và giới hạn nhóm, theo một mẫu từ quá khứ qua mô hình, số cố định, phần cứng và kiểm chứng; kết thúc bằng kế hoạch và các điểm cần thầy góp ý.",
+        "mode_references": [
+          "instructional"
+        ],
+        "visual_style": "custom",
+        "visual_style_behavior": "Trục thời gian và các nhánh phép tính chiếm vùng chính; đường dẫn đi từ trái sang phải, mốc đang xét dùng xanh, phần giải thích nằm sát nhánh tương ứng. Giữ nền trắng, khối xám nhạt, nét sơ đồ chính xác và khoảng trống quanh công thức. Vận dụng nét sơ đồ blueprint trên nền sáng theo bộ nhận diện IBM đã chọn.",
+        "visual_style_references": [
+          "blueprint"
+        ],
+        "icons": "tabler-outline",
+        "color": {
+          "name": "IBM Blue và thang xám",
+          "palette": {
+            "background": "#FFFFFF",
+            "secondary_bg": "#F4F4F4",
+            "primary": "#0F62FE",
+            "accent": "#002D9C",
+            "secondary_accent": "#525252",
+            "body_text": "#161616"
+          }
+        },
+        "typography": {
+          "name": "Arial — dễ đọc khi trình chiếu",
+          "fixed": true,
+          "heading": {
+            "primary": "Arial",
+            "english": "Arial",
+            "css": "sans-serif"
+          },
+          "body": {
+            "primary": "Arial",
+            "english": "Arial",
+            "css": "sans-serif"
+          },
+          "body_size": 28
+        },
+        "image_strategy": {
+          "name": "Minh hoạ cấu trúc có kiểm soát",
+          "rendering": "custom",
+          "visual": "Khối kỹ thuật cạnh sắc, các mặt phẳng phân biệt bằng độ đậm nhạt trong bộ màu đã chọn.",
+          "mood": "Rõ ràng như mô hình khối trên bàn thực hành kỹ thuật.",
+          "behavior": "Nếu cần hình minh họa vật lý, dùng góc nhìn đẳng cự, nét cạnh đồng đều và mặt phẳng không có vân. Chiều sâu đến từ các mặt đậm nhạt, vật liệu mờ, cảm giác như mô hình lắp ráp kỹ thuật. Các sơ đồ giải thích phép tính vẫn dùng hình và chữ chỉnh sửa được.",
+          "references": [
+            "3d-isometric"
+          ]
+        }
+      },
+      {
+        "id": "system-layers",
+        "name": "Giải thích từ kiến trúc tổng thể",
+        "note": "Bắt đầu bằng toàn bộ hệ thống rồi phóng vào từng khối C++, bộ đệm và lõi số học. Phù hợp khi muốn nhấn mạnh thiết kế FPGA.",
+        "mode": "custom",
+        "mode_behavior": "Giới thiệu sơ đồ hệ thống trước, lần lượt giải thích dữ liệu, huấn luyện offline, tính toán online và giao tiếp; mỗi phần kết thúc bằng đầu vào, đầu ra và phép kiểm tra.",
+        "mode_references": [
+          "instructional"
+        ],
+        "visual_style": "custom",
+        "visual_style_behavior": "Các miền máy tính và FPGA có ranh giới rõ, vị trí khối được giữ xuyên suốt các trang; trang chi tiết dùng sơ đồ lớn kèm dải chú thích bên phải. Nền trắng và xám nhạt, nét xanh cho đường dữ liệu được giải thích. Vận dụng nét sơ đồ blueprint trên nền sáng theo bộ nhận diện IBM đã chọn.",
+        "visual_style_references": [
+          "blueprint"
+        ],
+        "icons": "tabler-outline",
+        "color": {
+          "name": "IBM Blue và thang xám",
+          "palette": {
+            "background": "#FFFFFF",
+            "secondary_bg": "#F4F4F4",
+            "primary": "#0F62FE",
+            "accent": "#002D9C",
+            "secondary_accent": "#525252",
+            "body_text": "#161616"
+          }
+        },
+        "typography": {
+          "name": "Arial — dễ đọc khi trình chiếu",
+          "fixed": true,
+          "heading": {
+            "primary": "Arial",
+            "english": "Arial",
+            "css": "sans-serif"
+          },
+          "body": {
+            "primary": "Arial",
+            "english": "Arial",
+            "css": "sans-serif"
+          },
+          "body_size": 28
+        },
+        "image_strategy": {
+          "name": "Minh hoạ cấu trúc có kiểm soát",
+          "rendering": "custom",
+          "visual": "Khối kỹ thuật cạnh sắc, các mặt phẳng phân biệt bằng độ đậm nhạt trong bộ màu đã chọn.",
+          "mood": "Rõ ràng như mô hình khối trên bàn thực hành kỹ thuật.",
+          "behavior": "Nếu cần hình minh họa vật lý, dùng góc nhìn đẳng cự, nét cạnh đồng đều và mặt phẳng không có vân. Chiều sâu đến từ các mặt đậm nhạt, vật liệu mờ, cảm giác như mô hình lắp ráp kỹ thuật. Các sơ đồ giải thích phép tính vẫn dùng hình và chữ chỉnh sửa được.",
+          "references": [
+            "3d-isometric"
+          ]
+        }
+      },
+      {
+        "id": "verification-led",
+        "name": "Giải thích qua cách kiểm chứng",
+        "note": "Tổ chức quanh ba câu hỏi: dự báo có ích không, số cố định sai lệch bao nhiêu, RTL có đúng không. Phù hợp khi muốn nhấn mạnh tư duy kiểm chứng.",
+        "mode": "custom",
+        "mode_behavior": "Sau định nghĩa bài toán và mô hình, chia thành ba phép đối chiếu: baseline với dự báo, số thực với số cố định, reference với RTL; nối mỗi phép kiểm tra với sản phẩm và mốc bàn giao.",
+        "mode_references": [
+          "instructional"
+        ],
+        "visual_style": "custom",
+        "visual_style_behavior": "Dùng cặp vùng đối chiếu có cùng chiều đọc và một vùng kết luận; sơ đồ đưa dữ liệu chung vào hai nhánh so sánh. Màu xanh đánh dấu đại lượng đang kiểm tra, các ghi chú điều kiện đặt cạnh điểm so sánh, nền trắng với đường kẻ xám mảnh. Vận dụng nét sơ đồ blueprint trên nền sáng theo bộ nhận diện IBM đã chọn.",
+        "visual_style_references": [
+          "blueprint"
+        ],
+        "icons": "tabler-outline",
+        "color": {
+          "name": "IBM Blue và thang xám",
+          "palette": {
+            "background": "#FFFFFF",
+            "secondary_bg": "#F4F4F4",
+            "primary": "#0F62FE",
+            "accent": "#002D9C",
+            "secondary_accent": "#525252",
+            "body_text": "#161616"
+          }
+        },
+        "typography": {
+          "name": "Arial — dễ đọc khi trình chiếu",
+          "fixed": true,
+          "heading": {
+            "primary": "Arial",
+            "english": "Arial",
+            "css": "sans-serif"
+          },
+          "body": {
+            "primary": "Arial",
+            "english": "Arial",
+            "css": "sans-serif"
+          },
+          "body_size": 28
+        },
+        "image_strategy": {
+          "name": "Minh hoạ cấu trúc có kiểm soát",
+          "rendering": "custom",
+          "visual": "Khối kỹ thuật cạnh sắc, các mặt phẳng phân biệt bằng độ đậm nhạt trong bộ màu đã chọn.",
+          "mood": "Rõ ràng như mô hình khối trên bàn thực hành kỹ thuật.",
+          "behavior": "Nếu cần hình minh họa vật lý, dùng góc nhìn đẳng cự, nét cạnh đồng đều và mặt phẳng không có vân. Chiều sâu đến từ các mặt đậm nhạt, vật liệu mờ, cảm giác như mô hình lắp ráp kỹ thuật. Các sơ đồ giải thích phép tính vẫn dùng hình và chữ chỉnh sửa được.",
+          "references": [
+            "3d-isometric"
+          ]
+        }
+      }
+    ]
+  }
+}

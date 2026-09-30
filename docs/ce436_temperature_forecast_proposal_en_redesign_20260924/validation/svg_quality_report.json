@@ -1,0 +1,1183 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "42c3ba1aef898d031c5eeea87b3c002d17be5de990d5e6fa9701926a83701d19",
+    "file_count": 15,
+    "files": [
+      {
+        "file": "01_cover.svg",
+        "sha256": "2e1f66cbd4abbec70633ae1f9a304cce217d0af6cf3e22a9a8c8f6865df8910c"
+      },
+      {
+        "file": "02_scope.svg",
+        "sha256": "fe40373695dfd9dd668cf5c1a510b5e163342d9b74f3e6921f080de5b587ec05"
+      },
+      {
+        "file": "03_system.svg",
+        "sha256": "4b1fac0bb4f0e3cb931f3c5df31961417511e2248f33aae8f9ff78f6a4ddc898"
+      },
+      {
+        "file": "04_samples.svg",
+        "sha256": "36c4bae21d7f77f0572d8552d4cf977916e433ee7604c8d8e3ce038d89af2db8"
+      },
+      {
+        "file": "05_model.svg",
+        "sha256": "7b3c70b29fd7d091acd936b3a73c513ce6cb0522551a9b0cd4ab03ada2eab1e1"
+      },
+      {
+        "file": "06_example.svg",
+        "sha256": "1c5ab3fb1f809d665850ded36e72c4fae5689eb2072336a0884dbd274a2efb6c"
+      },
+      {
+        "file": "07_training.svg",
+        "sha256": "a61740f76e40e0228fd70617a519ef2778698f2ac960c5d3c6da63cbdb8d8089"
+      },
+      {
+        "file": "08_evaluation.svg",
+        "sha256": "0a5a19ab924ea6a31022f4dc14069529b873af0c759412f903a690ba50980fe6"
+      },
+      {
+        "file": "09_fixed_point.svg",
+        "sha256": "8338f49d087936d69fb2fcba5c9534132650f7b01d7cda256fdbd4fdb6632555"
+      },
+      {
+        "file": "10_architecture.svg",
+        "sha256": "27aebd65ef4137d18792934a70a6bab26e0f1909ecab806802981dbd3ec6b4e9"
+      },
+      {
+        "file": "11_verification.svg",
+        "sha256": "3d225e6e20ca60298c7695eca334045fe036a1dee63c25fbc3250882782d3a34"
+      },
+      {
+        "file": "12_demo.svg",
+        "sha256": "b7b62830c8f0e62ee5dec020aaff9e36610b1f0f4e8bfe8b1d40b92742bf9f76"
+      },
+      {
+        "file": "13_schedule.svg",
+        "sha256": "a609ab44861ffe53da0771617d85315d405f76f109263c0dce7f80f596d3fcba"
+      },
+      {
+        "file": "14_team_risks.svg",
+        "sha256": "cd3acb25e8401b8b3f215292087932723e8fcbf03634e0fc6f35d852bda805b0"
+      },
+      {
+        "file": "15_conclusion.svg",
+        "sha256": "89831ec16f0722cb9aea6740d2bdf1b2efc53a0efe68d8691bdb4e8dfbc9f94c"
+      }
+    ]
+  },
+  "summary": {
+    "total": 15,
+    "passed": 9,
+    "warnings": 6,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 6,
+      "issues": [
+        {
+          "file": "01_cover.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"cover-content\"> x=102.0, y=250.0..320.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "05_model.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"model-equation\"> x=96.0, y=346.0..432.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "06_example.svg",
+          "message": "<text> (x=64, y=640; text='subtract → multiply …') exceeds <g id=\"worked-example\"> data-pptx-bounds on the vertical axis: content (64.0, 610.2)-(498.2, 652.2), container (64.0, 150.0)-(1216.0, 650.0), overflow horizontal 0.0%, vertical 0.4% (error above 5%); expand the root module bounds into available non-overlapping space; otherwise reflow the text"
+        },
+        {
+          "file": "07_training.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"regression\"> x=91.0, y=235.0..299.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "10_architecture.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"rtl-datapath\"> x=86.0, y=244.0..284.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "15_conclusion.svg",
+          "message": "Detected 2 paragraph-like line run(s) split across sibling <text> elements (<g id=\"closing-proof\"> x=94.0, y=251.0..303.0, 2 lines; <g id=\"closing-proof\"> x=698.0, y=251.0..303.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        }
+      ]
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {
+      "#DDE1E6": [
+        "01_cover.svg",
+        "02_scope.svg",
+        "03_system.svg",
+        "04_samples.svg",
+        "05_model.svg",
+        "06_example.svg",
+        "07_training.svg",
+        "08_evaluation.svg",
+        "09_fixed_point.svg",
+        "10_architecture.svg",
+        "11_verification.svg",
+        "12_demo.svg",
+        "13_schedule.svg",
+        "14_team_risks.svg",
+        "15_conclusion.svg"
+      ]
+    },
+    "fonts": {},
+    "sizes": {
+      "112": [
+        "01_cover.svg"
+      ],
+      "60": [
+        "01_cover.svg"
+      ],
+      "78": [
+        "06_example.svg"
+      ]
+    }
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 15,
+    "totals": {
+      "text_elements": 182,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 148,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": 1,
+    "geometry_elements": {
+      "circle": 10,
+      "ellipse": 0,
+      "line": 37,
+      "path": 0,
+      "polygon": 12,
+      "polyline": 0,
+      "rect": 89
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01_cover.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/01_cover.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"cover-content\"> x=102.0, y=250.0..320.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 10,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 2,
+              "circle": 4,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 10,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        },
+        "sparse_typography_sizes": {
+          "112": 1,
+          "60": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "2e1f66cbd4abbec70633ae1f9a304cce217d0af6cf3e22a9a8c8f6865df8910c"
+    },
+    {
+      "file": "02_scope.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/02_scope.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 8,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 1,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 8,
+        "tspan_elements": 2,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "fe40373695dfd9dd668cf5c1a510b5e163342d9b74f3e6921f080de5b587ec05"
+    },
+    {
+      "file": "03_system.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/03_system.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 11,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 8,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 6,
+              "polyline": 0,
+              "polygon": 4,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 11,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "4b1fac0bb4f0e3cb931f3c5df31961417511e2248f33aae8f9ff78f6a4ddc898"
+    },
+    {
+      "file": "04_samples.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/04_samples.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 9,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 5,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 9,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "36c4bae21d7f77f0572d8552d4cf977916e433ee7604c8d8e3ce038d89af2db8"
+    },
+    {
+      "file": "05_model.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/05_model.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"model-equation\"> x=96.0, y=346.0..432.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 12,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 6,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 12,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "7b3c70b29fd7d091acd936b3a73c513ce6cb0522551a9b0cd4ab03ada2eab1e1"
+    },
+    {
+      "file": "06_example.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/06_example.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "<text> (x=64, y=640; text='subtract → multiply …') exceeds <g id=\"worked-example\"> data-pptx-bounds on the vertical axis: content (64.0, 610.2)-(498.2, 652.2), container (64.0, 150.0)-(1216.0, 650.0), overflow horizontal 0.0%, vertical 0.4% (error above 5%); expand the root module bounds into available non-overlapping space; otherwise reflow the text"
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 20,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 1,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 20,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        },
+        "sparse_typography_sizes": {
+          "78": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "1c5ab3fb1f809d665850ded36e72c4fae5689eb2072336a0884dbd274a2efb6c"
+    },
+    {
+      "file": "07_training.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/07_training.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"regression\"> x=91.0, y=235.0..299.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 13,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 9,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 13,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "a61740f76e40e0228fd70617a519ef2778698f2ac960c5d3c6da63cbdb8d8089"
+    },
+    {
+      "file": "08_evaluation.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/08_evaluation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 9,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 9,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 9,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "0a5a19ab924ea6a31022f4dc14069529b873af0c759412f903a690ba50980fe6"
+    },
+    {
+      "file": "09_fixed_point.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/09_fixed_point.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 11,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 9,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 2,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 11,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "8338f49d087936d69fb2fcba5c9534132650f7b01d7cda256fdbd4fdb6632555"
+    },
+    {
+      "file": "10_architecture.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/10_architecture.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"rtl-datapath\"> x=86.0, y=244.0..284.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 15,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 1,
+              "ellipse": 0,
+              "line": 5,
+              "polyline": 0,
+              "polygon": 2,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 15,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "27aebd65ef4137d18792934a70a6bab26e0f1909ecab806802981dbd3ec6b4e9"
+    },
+    {
+      "file": "11_verification.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/11_verification.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 15,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 4,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 15,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "3d225e6e20ca60298c7695eca334045fe036a1dee63c25fbc3250882782d3a34"
+    },
+    {
+      "file": "12_demo.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/12_demo.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 9,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 6,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 2,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 9,
+        "tspan_elements": 0,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "b7b62830c8f0e62ee5dec020aaff9e36610b1f0f4e8bfe8b1d40b92742bf9f76"
+    },
+    {
+      "file": "13_schedule.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/13_schedule.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 15,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 10,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 15,
+        "tspan_elements": 4,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "a609ab44861ffe53da0771617d85315d405f76f109263c0dce7f80f596d3fcba"
+    },
+    {
+      "file": "14_team_risks.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/14_team_risks.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 15,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 4,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 15,
+        "tspan_elements": 3,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "cd3acb25e8401b8b3f215292087932723e8fcbf03634e0fc6f35d852bda805b0"
+    },
+    {
+      "file": "15_conclusion.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_redesign_20260924/svg_output/15_conclusion.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 2 paragraph-like line run(s) split across sibling <text> elements (<g id=\"closing-proof\"> x=94.0, y=251.0..303.0, 2 lines; <g id=\"closing-proof\"> x=698.0, y=251.0..303.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 10,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 10,
+        "tspan_elements": 2,
+        "contextual_values": {
+          "colors": [
+            "#DDE1E6"
+          ]
+        }
+      },
+      "passed": true,
+      "source_sha256": "89831ec16f0722cb9aea6740d2bdf1b2efc53a0efe68d8691bdb4e8dfbc9f94c"
+    }
+  ]
+}

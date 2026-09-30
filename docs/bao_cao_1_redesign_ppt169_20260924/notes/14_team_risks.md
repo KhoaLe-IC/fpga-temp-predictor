@@ -1,0 +1,5 @@
+Nhóm phân công theo ba mảng nhưng thống nhất giao diện chung từ đầu. Người thứ nhất phụ trách dữ liệu và C++, tạo CSV, baseline, hệ số, MAE và reference. Rủi ro chính ở mảng này là giờ bị thiếu, lặp hoặc không cùng chuẩn thời gian; cần phát hiện và xử lý trước khi tạo mẫu, không chỉ xóa một dòng rồi coi các dòng còn lại là liên tiếp.
+
+Người thứ hai phụ trách số cố định và RTL, gồm bộ đệm, lõi số học, tổng hợp và phối hợp tích hợp board. Khi board chưa rõ, vẫn có thể làm lõi tính toán độc lập và kiểm chứng bằng mô phỏng trước. Người thứ ba phụ trách testbench và demo, từ test vector, so bit đến truyền nhận và log kết quả. Rủi ro mô hình có sai số cao là trách nhiệm của cả nhóm: cùng xem lại trên validation và báo cáo trung thực kết quả cuối trên test.
+
+Ba người cần cùng hiểu định dạng dữ liệu và hệ số, dấu của số, quy tắc làm tròn và tràn, valid và latency. Các thỏa thuận này giúp mã C++, RTL và testbench khớp nhau. Trước khi thuyết trình, nhóm thay nhãn Người một, Người hai, Người ba bằng tên thành viên thực tế.

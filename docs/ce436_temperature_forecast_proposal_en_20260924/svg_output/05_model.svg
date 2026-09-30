@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Arial" font-size="28" data-pptx-master="presentation_core_master" data-pptx-master-name="Presentation Core" data-pptx-layout="schematic-title" data-pptx-layout-name="Schematic Title">
+<rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false" />
+<rect id="title-only-rule" x="64" y="120" width="1152" height="2" fill="#E0E0E0" data-pptx-layer="layout" />
+<g id="title-only-title-slot" data-pptx-placeholder="title" data-pptx-bounds="64 40 1152 72">
+  <text data-pptx-carrier="true" x="64" y="90" font-size="50" font-weight="bold" fill="#161616">Chronological Training &amp; Data Split</text>
+</g>
+<g id="page-number" data-pptx-placeholder="slide-number" data-pptx-idx="9" data-pptx-bounds="1140 668 76 28">
+  <text data-pptx-carrier="true" x="1216" y="688" text-anchor="end" font-size="16" fill="#525252">05 / 15</text>
+</g>
+<g id="regression-inputs" data-pptx-bounds="64 140 1152 110">
+  <rect x="64" y="140" width="1152" height="110" rx="4" fill="#F4F4F4" />
+  <text x="88" y="185" font-family="Consolas" font-weight="bold" fill="#002D9C">Regression Target: y = a·x₁ + b·x₂ + c</text>
+  <text x="88" y="228" font-size="24" fill="#161616">x₁ = T(t)−T(t−24)   ·   x₂ = T(t)−T(t−3)   ·   y = T(t+3)−T(t−21)   ·   Solved via C++ OLS</text>
+</g>
+<g id="train-stage" data-pptx-bounds="64 275 350 240">
+  <rect x="64" y="275" width="350" height="240" rx="4" fill="#F4F4F4" />
+  <text x="88" y="325" font-weight="bold" fill="#002D9C">01  TRAIN</text>
+  <text x="88" y="380" font-size="26" fill="#161616">• Past historical records</text>
+  <text x="88" y="425" font-size="26" fill="#161616">• Fit weights a, b, c</text>
+  <text x="88" y="470" font-size="26" fill="#525252">• Eigen least squares</text>
+</g>
+<g id="validation-stage" data-pptx-bounds="464 275 350 240">
+  <rect x="464" y="275" width="350" height="240" rx="4" fill="#F4F4F4" />
+  <text x="488" y="325" font-weight="bold" fill="#002D9C">02  VALIDATE</text>
+  <text x="488" y="380" font-size="26" fill="#161616">• Model evaluation</text>
+  <text x="488" y="425" font-size="26" fill="#161616">• Tune Q-format widths</text>
+  <text x="488" y="470" font-size="26" fill="#525252">• Profile dynamic range</text>
+</g>
+<g id="test-stage" data-pptx-bounds="864 275 352 240">
+  <rect x="864" y="275" width="352" height="240" rx="4" fill="#F4F4F4" />
+  <text x="888" y="325" font-weight="bold" fill="#002D9C">03  TEST</text>
+  <text x="888" y="380" font-size="26" fill="#161616">• Unseen future period</text>
+  <text x="888" y="425" font-size="26" fill="#161616">• Final accuracy score</text>
+  <text x="888" y="470" font-size="26" fill="#525252">• Zero look-ahead leakage</text>
+</g>
+<g id="split-contract" data-pptx-bounds="64 540 1152 80">
+  <rect x="64" y="540" width="1152" height="80" rx="4" fill="#F4F4F4" />
+  <text x="88" y="590" font-size="26" font-weight="bold" fill="#161616">Strict chronological order: Past history provides buffer context without label leakage.</text>
+</g>
+<g id="training-source" data-pptx-bounds="64 645 1040 34">
+  <a href="https://eigen.tuxfamily.org/dox/group__LeastSquares.html"><text x="64" y="670" font-size="16" fill="#0F62FE">Implementation reference: Eigen — Solving linear least squares systems</text></a>
+</g>
+</svg>

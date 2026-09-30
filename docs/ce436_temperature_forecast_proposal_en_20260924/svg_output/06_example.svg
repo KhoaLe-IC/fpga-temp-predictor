@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Arial" font-size="28" data-pptx-master="presentation_core_master" data-pptx-master-name="Presentation Core" data-pptx-layout="schematic-title" data-pptx-layout-name="Schematic Title">
+<rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false" />
+<rect id="title-only-rule" x="64" y="120" width="1152" height="2" fill="#E0E0E0" data-pptx-layer="layout" />
+<g id="title-only-title-slot" data-pptx-placeholder="title" data-pptx-bounds="64 40 1152 72">
+  <text data-pptx-carrier="true" x="64" y="90" font-size="50" font-weight="bold" fill="#161616">Algorithmic Baseline Benchmarking</text>
+</g>
+<g id="page-number" data-pptx-placeholder="slide-number" data-pptx-idx="9" data-pptx-bounds="1140 668 76 28">
+  <text data-pptx-carrier="true" x="1216" y="688" text-anchor="end" font-size="16" fill="#525252">06 / 15</text>
+</g>
+<g id="left-card" data-pptx-bounds="64 150 552 470">
+  <rect x="64" y="150" width="552" height="470" rx="4" fill="#F4F4F4" />
+  <text x="88" y="200" font-weight="bold" fill="#002D9C">EVALUATION METRIC: MAE</text>
+  <text x="88" y="255" font-size="24" fill="#525252">Mean Absolute Error on held-out test data:</text>
+  <text x="88" y="315" font-family="Consolas" font-size="26" font-weight="bold" fill="#002D9C">MAE = (1/N) ∑ |T̂(i) − T_true(i)|</text>
+  <line x1="88" y1="365" x2="584" y2="365" stroke="#E0E0E0" />
+  <text x="88" y="420" font-size="26" font-weight="bold" fill="#161616">Core Evaluation Question:</text>
+  <text x="88" y="470" font-size="24" fill="#161616">Does our hardware model actually<tspan x="88" dy="34">outperform simple no-math heuristics?</tspan></text>
+</g>
+<g id="right-card" data-pptx-bounds="664 150 552 470">
+  <rect x="664" y="150" width="552" height="470" rx="4" fill="#F4F4F4" />
+  <text x="688" y="200" font-weight="bold" fill="#002D9C">TWO NAIVE BASELINES</text>
+  <text x="688" y="255" font-size="24" font-weight="bold" fill="#161616">1. Persistence Baseline: T̂(t+3) = T(t)</text>
+  <text x="710" y="295" font-size="22" fill="#525252">Assumes temperature stays unchanged</text>
+  <text x="688" y="365" font-size="24" font-weight="bold" fill="#161616">2. Diurnal Baseline: T̂(t+3) = T(t−21)</text>
+  <text x="710" y="405" font-size="22" fill="#525252">Assumes today repeats yesterday at same hour</text>
+  <line x1="688" y1="455" x2="1184" y2="455" stroke="#E0E0E0" />
+  <text x="688" y="505" font-size="24" font-weight="bold" fill="#0F62FE">Academic Integrity Standard:</text>
+  <text x="688" y="545" font-size="22" fill="#161616">Residuals and MAE are reported honestly.<tspan x="688" dy="28">Evaluated on identical test period.</tspan></text>
+</g>
+<g id="baseline-source" data-pptx-bounds="64 645 1040 34">
+  <a href="https://otexts.com/fpp3/simple-methods.html"><text x="64" y="670" font-size="16" fill="#0F62FE">Baseline reference: Forecasting: Principles and Practice — Simple forecasting methods</text></a>
+</g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Arial" font-size="28" data-pptx-master="presentation_core_master" data-pptx-master-name="Presentation Core" data-pptx-layout="schematic-title" data-pptx-layout-name="Schematic Title">
+<rect id="master-background" x="0" y="0" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false" />
+<rect id="title-only-rule" x="64" y="120" width="1152" height="2" fill="#E0E0E0" data-pptx-layer="layout" />
+<g id="title-only-title-slot" data-pptx-placeholder="title" data-pptx-bounds="64 40 1152 72">
+  <text data-pptx-carrier="true" x="64" y="90" font-size="50" font-weight="bold" fill="#161616">Hardware Architecture Trade-Off Study</text>
+</g>
+<g id="page-number" data-pptx-placeholder="slide-number" data-pptx-idx="9" data-pptx-bounds="1140 668 76 28">
+  <text data-pptx-carrier="true" x="1216" y="688" text-anchor="end" font-size="16" fill="#525252">12 / 15</text>
+</g>
+<g id="arch-a-panel" data-pptx-bounds="64 150 552 440">
+  <rect x="64" y="150" width="552" height="440" rx="4" fill="#F4F4F4" />
+  <text x="88" y="200" font-weight="bold" fill="#002D9C">ARCH A: PARALLEL DSP</text>
+  <text x="88" y="245" font-size="26" font-weight="bold" fill="#0F62FE">Dedicated Multipliers per Branch</text>
+  <line x1="88" y1="275" x2="584" y2="275" stroke="#E0E0E0" />
+  <text x="88" y="325" font-size="26" fill="#161616">• Parallel units for Δday and Δ3h</text>
+  <text x="88" y="375" font-size="26" fill="#161616">• Latency: 2 clock cycles</text>
+  <text x="88" y="425" font-size="26" fill="#161616">• Throughput: 1 prediction / cycle</text>
+  <text x="88" y="475" font-size="26" fill="#161616">• Resource: Uses multiple DSP slices</text>
+  <line x1="88" y1="510" x2="584" y2="510" stroke="#E0E0E0" />
+  <text x="88" y="555" font-size="24" font-weight="bold" fill="#161616">Target: High-speed multi-channel sensing</text>
+</g>
+<g id="arch-b-panel" data-pptx-bounds="664 150 552 440">
+  <rect x="664" y="150" width="552" height="440" rx="4" fill="#F4F4F4" />
+  <text x="688" y="200" font-weight="bold" fill="#002D9C">ARCH B: SHARED-MAC FSM</text>
+  <text x="688" y="245" font-size="26" font-weight="bold" fill="#0F62FE">Time-Multiplexed Single MAC</text>
+  <line x1="688" y1="275" x2="1184" y2="275" stroke="#E0E0E0" />
+  <text x="688" y="325" font-size="26" fill="#161616">• Single shared multiplier-accumulator</text>
+  <text x="688" y="375" font-size="26" fill="#161616">• FSM controller cycles through taps</text>
+  <text x="688" y="425" font-size="26" fill="#161616">• Latency: 5–6 clock cycles</text>
+  <text x="688" y="475" font-size="26" fill="#161616">• Resource: Ultra-compact (1 or 0 DSPs)</text>
+  <line x1="688" y1="510" x2="1184" y2="510" stroke="#E0E0E0" />
+  <text x="688" y="555" font-size="24" font-weight="bold" fill="#161616">Target: Ultra-low-power IoT edge nodes</text>
+</g>
+<g id="tradeoff-takeaway" data-pptx-bounds="64 610 1152 50">
+  <text x="64" y="640" font-size="26" font-weight="bold" fill="#0F62FE">Evaluation: Synthesize both on target FPGA to compare LUTs, DSPs, and Fmax.</text>
+</g>
+</svg>

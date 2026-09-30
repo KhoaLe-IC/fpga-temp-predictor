@@ -1,0 +1,141 @@
+{
+  "source": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/bao_cao_1_redesign_ppt169_20260924/sources/bao_cao_de_xuat_buoi_1_chi_tiet.pptx",
+  "slide_count": 15,
+  "canvas": {
+    "width_px": 1280,
+    "height_px": 720,
+    "aspect": 1.7778
+  },
+  "theme": {
+    "palette": {
+      "background": "#FFFFFF",
+      "background_alt": "#E8E8E8",
+      "text": "#000000",
+      "text_alt": "#0E2841",
+      "hyperlink": "#467886",
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "primary": "#156082"
+    },
+    "fonts": {
+      "title": {
+        "latin": "Aptos"
+      },
+      "body": {
+        "latin": "Aptos"
+      }
+    },
+    "sizes": {
+      "title": 44.0,
+      "body": 28.0,
+      "body_levels": [
+        28.0,
+        24.0,
+        20.0,
+        18.0,
+        18.0,
+        18.0,
+        18.0,
+        18.0,
+        18.0
+      ]
+    }
+  },
+  "observed": {
+    "fonts": {
+      "latin": [
+        {
+          "value": "Noto Sans",
+          "count": 330
+        }
+      ],
+      "ea": [
+        {
+          "value": "Noto Sans",
+          "count": 330
+        }
+      ]
+    },
+    "sizes_pt": [
+      {
+        "value": 17.25,
+        "count": 21,
+        "chars": 855
+      },
+      {
+        "value": 15.75,
+        "count": 23,
+        "chars": 815
+      },
+      {
+        "value": 16.5,
+        "count": 11,
+        "chars": 476
+      },
+      {
+        "value": 28.5,
+        "count": 14,
+        "chars": 359
+      },
+      {
+        "value": 18.0,
+        "count": 19,
+        "chars": 344
+      },
+      {
+        "value": 18.75,
+        "count": 13,
+        "chars": 279
+      },
+      {
+        "value": 21.0,
+        "count": 12,
+        "chars": 228
+      },
+      {
+        "value": 15.0,
+        "count": 8,
+        "chars": 217
+      }
+    ],
+    "colors": [
+      {
+        "value": "#243B49",
+        "count": 100
+      },
+      {
+        "value": "#17324D",
+        "count": 99
+      },
+      {
+        "value": "#C46B42",
+        "count": 57
+      },
+      {
+        "value": "#24717A",
+        "count": 55
+      },
+      {
+        "value": "#61737A",
+        "count": 30
+      },
+      {
+        "value": "#CBD8D7",
+        "count": 19
+      },
+      {
+        "value": "#F9FAF8",
+        "count": 14
+      },
+      {
+        "value": "#E7F0EF",
+        "count": 7
+      }
+    ]
+  },
+  "layout_sizes_pt": []
+}

@@ -1,0 +1,1053 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "90f0fa77441667fdc242ce5d88247f3dda9f599739242daa189a6bc44f298d20",
+    "file_count": 15,
+    "files": [
+      {
+        "file": "01_cover.svg",
+        "sha256": "e1869e2a5760c208fb5039a5d60a7f6338cee4f6905c7ce87b53f4a4fc5bc096"
+      },
+      {
+        "file": "02_scope.svg",
+        "sha256": "b07f4532f85cee47acede37447a273714b5a1458e926723bd6ede5f9c14f6538"
+      },
+      {
+        "file": "03_system.svg",
+        "sha256": "51b9fdb5fb8bc86ec98d393386cc38077de05b186c30f3dbbfbb12b562706f98"
+      },
+      {
+        "file": "04_samples.svg",
+        "sha256": "b53aa9044443bd7e58265313f735129f71a09b40772161f26fb6e0fc07d61a83"
+      },
+      {
+        "file": "05_model.svg",
+        "sha256": "52cbe16636df20e177cd2da5c3600bcc2a07ec0ac9a5b81b4891baee6f658d0a"
+      },
+      {
+        "file": "06_example.svg",
+        "sha256": "99712bd93d8a7c51faeb4594e03df44aed1b259b9bd62a166dba95e45470d898"
+      },
+      {
+        "file": "07_training.svg",
+        "sha256": "96de42361cfcf7ca3f13f5de3eddb960afbfb790b00fae3f17c4a8b9443b8456"
+      },
+      {
+        "file": "08_evaluation.svg",
+        "sha256": "621cd9d98e53337882178a5cf7ed721d4356dd0029dbb0239a8a2a9ba55580e1"
+      },
+      {
+        "file": "09_fixed_point.svg",
+        "sha256": "45bfa5abc691354e3262a27ac1c666e99de14b9d4a0357d82b048434cb952ff4"
+      },
+      {
+        "file": "10_architecture.svg",
+        "sha256": "7e60f9ce2a5806fde2ab73a2e33bb8f614e83a3f95fcce22d81a57e176fbc9f1"
+      },
+      {
+        "file": "11_verification.svg",
+        "sha256": "438e79d40b0160cc5b035b39d7ea5ba56128ae9af563ebab495bf7d910556673"
+      },
+      {
+        "file": "12_demo.svg",
+        "sha256": "6ddc84335b61eaaa0aedae21d429a6b13f4eaf92dfe5dfee7385b6cc3d649caa"
+      },
+      {
+        "file": "13_schedule.svg",
+        "sha256": "3f71ba1417b36dee581ba3436aadaa06d83c42d0909e7505d29ab53d3b00fd88"
+      },
+      {
+        "file": "14_team_risks.svg",
+        "sha256": "420edbc5df6295bcdc07ef0bdfaadbf92dcf747bbc49c515f5531f576843605b"
+      },
+      {
+        "file": "15_conclusion.svg",
+        "sha256": "9f61e82f1c1d5e57b11e875ca1b1538ddb4aae81ddf2098a06b80e93bb2c4073"
+      }
+    ]
+  },
+  "summary": {
+    "total": 15,
+    "passed": 14,
+    "warnings": 1,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 1,
+      "issues": [
+        {
+          "file": "09_fixed_point.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"arithmetic-contract\"> x=88.0, y=464.0..514.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        }
+      ]
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {
+      "34": [
+        "01_cover.svg"
+      ]
+    }
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 15,
+    "totals": {
+      "text_elements": 202,
+      "image_placements": 0,
+      "icons": 3,
+      "svg_geometry_elements": 96,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 12,
+      "inline_emphasis_runs": 2,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 2,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 2,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": 0,
+    "geometry_elements": {
+      "circle": 14,
+      "ellipse": 0,
+      "line": 30,
+      "path": 0,
+      "polygon": 0,
+      "polyline": 0,
+      "rect": 52
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01_cover.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/01_cover.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 9,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 2,
+              "circle": 4,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 9,
+        "tspan_elements": 0,
+        "sparse_typography_sizes": {
+          "34": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "e1869e2a5760c208fb5039a5d60a7f6338cee4f6905c7ce87b53f4a4fc5bc096"
+    },
+    {
+      "file": "02_scope.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/02_scope.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 11,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 1,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 11,
+        "tspan_elements": 3
+      },
+      "passed": true,
+      "source_sha256": "b07f4532f85cee47acede37447a273714b5a1458e926723bd6ede5f9c14f6538"
+    },
+    {
+      "file": "03_system.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/03_system.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 13,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 2,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 5,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 4
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 13,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "51b9fdb5fb8bc86ec98d393386cc38077de05b186c30f3dbbfbb12b562706f98"
+    },
+    {
+      "file": "04_samples.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/04_samples.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 13,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 1,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 5,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 13,
+        "tspan_elements": 2,
+        "hyperlinks": 1
+      },
+      "passed": true,
+      "source_sha256": "b53aa9044443bd7e58265313f735129f71a09b40772161f26fb6e0fc07d61a83"
+    },
+    {
+      "file": "05_model.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/05_model.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 11,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 11,
+        "tspan_elements": 4
+      },
+      "passed": true,
+      "source_sha256": "52cbe16636df20e177cd2da5c3600bcc2a07ec0ac9a5b81b4891baee6f658d0a"
+    },
+    {
+      "file": "06_example.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/06_example.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 9,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 1,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 9,
+        "tspan_elements": 1
+      },
+      "passed": true,
+      "source_sha256": "99712bd93d8a7c51faeb4594e03df44aed1b259b9bd62a166dba95e45470d898"
+    },
+    {
+      "file": "07_training.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/07_training.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 18,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 18,
+        "tspan_elements": 4,
+        "hyperlinks": 1
+      },
+      "passed": true,
+      "source_sha256": "96de42361cfcf7ca3f13f5de3eddb960afbfb790b00fae3f17c4a8b9443b8456"
+    },
+    {
+      "file": "08_evaluation.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/08_evaluation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 19,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 19,
+        "tspan_elements": 2,
+        "hyperlinks": 1
+      },
+      "passed": true,
+      "source_sha256": "621cd9d98e53337882178a5cf7ed721d4356dd0029dbb0239a8a2a9ba55580e1"
+    },
+    {
+      "file": "09_fixed_point.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/09_fixed_point.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"arithmetic-contract\"> x=88.0, y=464.0..514.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 12,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 12,
+        "tspan_elements": 2
+      },
+      "passed": true,
+      "source_sha256": "45bfa5abc691354e3262a27ac1c666e99de14b9d4a0357d82b048434cb952ff4"
+    },
+    {
+      "file": "10_architecture.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/10_architecture.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 17,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 1,
+              "ellipse": 0,
+              "line": 6,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 6
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Consolas"
+        ],
+        "text_elements": 17,
+        "tspan_elements": 2
+      },
+      "passed": true,
+      "source_sha256": "7e60f9ce2a5806fde2ab73a2e33bb8f614e83a3f95fcce22d81a57e176fbc9f1"
+    },
+    {
+      "file": "11_verification.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/11_verification.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 15,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 15,
+        "tspan_elements": 9
+      },
+      "passed": true,
+      "source_sha256": "438e79d40b0160cc5b035b39d7ea5ba56128ae9af563ebab495bf7d910556673"
+    },
+    {
+      "file": "12_demo.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/12_demo.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 14,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 2
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 14,
+        "tspan_elements": 4
+      },
+      "passed": true,
+      "source_sha256": "6ddc84335b61eaaa0aedae21d429a6b13f4eaf92dfe5dfee7385b6cc3d649caa"
+    },
+    {
+      "file": "13_schedule.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/13_schedule.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 15,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 2,
+              "circle": 4,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 15,
+        "tspan_elements": 8
+      },
+      "passed": true,
+      "source_sha256": "3f71ba1417b36dee581ba3436aadaa06d83c42d0909e7505d29ab53d3b00fd88"
+    },
+    {
+      "file": "14_team_risks.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/14_team_risks.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 18,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 18,
+        "tspan_elements": 6
+      },
+      "passed": true,
+      "source_sha256": "420edbc5df6295bcdc07ef0bdfaadbf92dcf747bbc49c515f5531f576843605b"
+    },
+    {
+      "file": "15_conclusion.svg",
+      "path": "fpga-temp-predictor/docs/ce436_temperature_forecast_proposal_en_layout_only_20260924/svg_output/15_conclusion.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 8,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 0,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 8,
+        "tspan_elements": 1
+      },
+      "passed": true,
+      "source_sha256": "9f61e82f1c1d5e57b11e875ca1b1538ddb4aae81ddf2098a06b80e93bb2c4073"
+    }
+  ]
+}
