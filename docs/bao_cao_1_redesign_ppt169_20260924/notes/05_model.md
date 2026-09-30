@@ -1,5 +1,0 @@
-Mô hình đề xuất bắt đầu từ nhiệt độ cùng giờ ngày hôm trước, tức T tại t trừ hai mươi mốt. Nhóm dùng giá trị này làm mốc nền, rồi cộng hai phần hiệu chỉnh và một độ lệch hằng c. Dấu mũ trên T biểu thị đây là giá trị dự báo, chưa phải nhiệt độ thực.
-
-Phần hiệu chỉnh thứ nhất lấy nhiệt độ hiện tại trừ nhiệt độ cùng giờ hôm trước, rồi nhân với hệ số a. Nếu hôm nay nóng hoặc lạnh hơn hôm trước tại giờ hiện tại, đại lượng này thể hiện sự chênh lệch đó. Phần thứ hai lấy nhiệt độ hiện tại trừ nhiệt độ ba giờ trước, rồi nhân với b. Đại lượng này mô tả biến thiên gần đây. Hệ số c cho phép mô hình có thêm một mức dịch cố định, có cùng đơn vị nhiệt độ; a và b không có đơn vị.
-
-Ba hệ số được ước lượng trên dữ liệu lịch sử bằng C++. Các giải thích trực quan giúp hình thành giả thuyết mô hình, nhưng không bảo đảm các đặc trưng này sẽ dự báo tốt. Nhóm phải kiểm tra trên dữ liệu mới và so với baseline trước khi kết luận. Trong phạm vi hiện tại, FPGA chỉ thực hiện công thức với những hệ số đã học.

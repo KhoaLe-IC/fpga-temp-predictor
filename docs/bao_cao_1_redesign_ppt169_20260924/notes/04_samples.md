@@ -1,5 +1,0 @@
-Nguồn dữ liệu nhóm dự kiến sử dụng là NASA POWER, với biến nhiệt độ T2M theo giờ. Đây là dữ liệu trên lưới gắn với tọa độ được chọn, không phải nhiệt độ đo bởi một cảm biến đúng tại điểm đó. Nhóm chưa chốt tọa độ và khoảng thời gian lấy dữ liệu. Trước khi tạo mẫu, cần thống nhất mốc thời gian, kiểm tra giờ thiếu hoặc bị lặp và kiểm tra đơn vị nhiệt độ. Tài liệu API theo giờ đã được liên kết ngay trên slide.
-
-Sơ đồ này biểu diễn thứ tự các mốc, không biểu diễn khoảng cách theo tỷ lệ. Ở thời điểm t, nhóm dùng nhiệt độ hiện tại, ba giờ trước, hai mươi mốt giờ trước và hai mươi bốn giờ trước. Mốc dễ nhầm nhất là t trừ hai mươi mốt. Vì mục tiêu nằm ở t cộng ba, thời điểm cùng giờ của ngày hôm trước sẽ là t cộng ba trừ hai mươi bốn, tức t trừ hai mươi mốt.
-
-Để truy cập được đến t trừ hai mươi bốn, bộ đệm cần giữ hai mươi lăm mẫu liên tiếp, tính cả mẫu hiện tại. Nhiệt độ thực tại t cộng ba chỉ dùng làm nhãn huấn luyện hoặc đánh giá; nó không được đưa vào đầu vào dự báo tại thời điểm t.

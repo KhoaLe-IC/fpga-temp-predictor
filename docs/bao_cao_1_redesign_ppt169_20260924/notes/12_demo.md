@@ -1,5 +1,0 @@
-Kịch bản demo dự kiến là phát lại dữ liệu lịch sử từ máy tính. Nhóm không cần chờ mỗi giờ mới có một mẫu, nhưng vẫn giữ nguyên thứ tự của chuỗi. PC đọc CSV, gửi các mẫu lần lượt vào FPGA. UART là một phương án dự kiến nếu board và công cụ hỗ trợ thuận tiện; giao tiếp cuối cùng sẽ chốt khi biết phần cứng.
-
-Sau khi nhận đủ lịch sử, FPGA tính dự báo và gửi kết quả về. PC ghi log, ghép dự báo với thời điểm mục tiêu rồi đối chiếu với nhiệt độ thực trong CSV. Có thể hiển thị kết quả để người xem nhận ra các đoạn dự báo tốt hoặc sai lệch lớn. Đây mới là kịch bản thiết kế; nhóm chưa có giao diện hay kết quả chạy board để trình diễn ở buổi này.
-
-Điều quan trọng là PC có thể biết toàn bộ dữ liệu lịch sử để đánh giá, nhưng ở mỗi bước chỉ được truyền những mẫu đến thời điểm t vào FPGA. Nhãn tại t cộng ba không được đưa vào đầu vào của phép dự báo. Như vậy việc phát nhanh chỉ rút ngắn thời gian demo, vẫn giữ được điều kiện sử dụng dữ liệu quá khứ của bài toán.

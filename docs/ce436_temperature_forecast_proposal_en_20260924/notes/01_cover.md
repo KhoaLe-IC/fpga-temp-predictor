@@ -1,1 +1,0 @@
-Good afternoon, Professor and classmates. Our group proposes a three-hour-ahead temperature forecasting system on FPGA using a linear time-series model built from past values. This is a focused, rigorous realization of the assigned weather forecasting topic. Today we present our proposed algorithmic model, hardware micro-architecture, and upgraded twelve-week execution plan.

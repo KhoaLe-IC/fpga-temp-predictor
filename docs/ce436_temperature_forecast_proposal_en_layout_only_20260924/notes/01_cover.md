@@ -1,1 +1,0 @@
-Good afternoon, professor and classmates. Our group proposes a three-hour-ahead temperature forecast on an FPGA using a linear model built from past values. This is a focused version of the assigned weather forecasting topic. Today we present the proposed method and twelve-week plan; we do not yet have fitted coefficients, accuracy results, or a board demonstration.

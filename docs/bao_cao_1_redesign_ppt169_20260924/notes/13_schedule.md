@@ -1,5 +1,0 @@
-Nhóm chia mười hai tuần thành bốn giai đoạn với sản phẩm cụ thể. Ba tuần đầu tập trung học những kiến thức cần dùng, lấy và kiểm dữ liệu, tạo CSV sạch cùng hai baseline. Đây là bước quan trọng vì nếu chuỗi thời gian sai thì mô hình và RTL có thể cùng cho ra một kết quả không có ý nghĩa.
-
-Trong tuần bốn đến sáu, nhóm xây chương trình C++, tìm hệ số, thử đặc trưng trên validation và bắt đầu đánh giá số cố định. Tuần bảy đến chín dành cho lõi RTL, testbench và đối chiếu bit. Song song với mô phỏng, nhóm chuẩn bị giao tiếp và điều kiện tích hợp để không dồn toàn bộ việc board vào cuối kỳ.
-
-Ba tuần cuối dùng để hoàn thiện demo, đánh giá cuối trên tập test, lấy báo cáo tài nguyên và tổng hợp các giới hạn. Mỗi giai đoạn phải có thứ có thể chạy hoặc kiểm tra, chẳng hạn file dữ liệu hợp lệ, hệ số kèm phép đánh giá, hoặc testbench khớp reference. Đây là lịch dự kiến theo tuần thực hiện; ngày báo cáo buổi hai sẽ được điều chỉnh theo thông báo chính thức của thầy.

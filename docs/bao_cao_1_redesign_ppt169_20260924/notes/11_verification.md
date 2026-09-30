@@ -1,5 +1,0 @@
-Nhóm dự kiến kiểm chứng theo ba tầng, dùng cùng bộ dữ liệu để thuận tiện truy vết. Tầng thứ nhất nằm trong C++, so mô hình số thực với mô hình số cố định. Mục đích là đánh giá phần sai lệch thêm do lượng tử hóa và kiểm tra các miền giá trị khó, chẳng hạn nhiệt độ âm, gần biên biểu diễn hoặc thay đổi nhanh.
-
-Tầng thứ hai dùng testbench, viết tắt là TB trên slide, để kiểm tra RTL. Với mỗi đầu vào hợp lệ, testbench xác định đầu ra cần so và thời điểm đầu ra xuất hiện. Mục tiêu là khớp bit với reference fixed, không chỉ gần nhau về giá trị. Ngoài phép tính, phải kiểm cả reset, tràn số, trạng thái chưa đủ mẫu và các khoảng gián đoạn valid. Khi có khoảng nghỉ mà không nhận mẫu, bộ đệm không được tự hiểu đó là một mẫu mới.
-
-Tầng thứ ba chạy cùng dữ liệu trên board và đối chiếu với reference. Tầng này kiểm thêm giao tiếp, thứ tự các mẫu, cách đóng gói dữ liệu và log đầu ra. Một lõi đúng trong mô phỏng vẫn có thể tích hợp sai nếu truyền dữ liệu sai dấu hoặc sai thứ tự byte. Vì vậy ba tầng bổ sung cho nhau và mỗi tầng có một câu hỏi kiểm chứng cụ thể.

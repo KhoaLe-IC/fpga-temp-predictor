@@ -1,5 +1,0 @@
-Nhóm sẽ đánh giá hai câu hỏi riêng. Câu thứ nhất là mô hình có tạo ra dự báo hữu ích hơn những cách đơn giản hay không. Baseline thứ nhất dự báo bằng nhiệt độ hiện tại T tại t. Baseline thứ hai dự báo bằng nhiệt độ cùng giờ ngày hôm trước của thời điểm mục tiêu, tức T tại t trừ hai mươi mốt. Hai baseline và mô hình nhóm phải được đánh giá trên đúng cùng tập test và cùng các thời điểm hợp lệ.
-
-Thước đo chính dự kiến là MAE, tức lấy trị tuyệt đối của sai số mỗi lần dự báo rồi tính trung bình. Vì nhiệt độ dùng độ C, MAE cũng có đơn vị độ C. Hiện chưa có số liệu để khẳng định mô hình sẽ thắng baseline. Nếu kết quả không tốt hơn, nhóm vẫn cần báo cáo đúng và phân tích giới hạn.
-
-Câu thứ hai là phần cứng có thực hiện đúng phép tính đã đặc tả hay không. Nhóm đo sai lệch giữa C++ số thực và số cố định để thấy tác động của lượng tử hóa. Sau đó yêu cầu RTL khớp bit với reference số cố định khi xét đúng valid và latency. Các số LUT, FF, DSP và độ trễ lấy từ kết quả tổng hợp. Ngưỡng sai lệch lượng tử hóa sẽ được chốt sau thử nghiệm, không đặt một con số tùy ý ở buổi đề xuất.

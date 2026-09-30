@@ -1,5 +1,0 @@
-Mô hình ban đầu được tính bằng số thực trong C++ để thuận tiện nghiên cứu. Khi chuyển sang FPGA, nhóm dự kiến dùng số cố định. Trước hết phải xem nhiệt độ nằm trong khoảng nào, các hệ số lớn đến đâu và tổng trung gian có thể tăng lên bao nhiêu. Từ đó mới chọn số bit có dấu và số bit phần lẻ. Vì chưa có dữ liệu và hệ số thực nghiệm, nhóm chưa chốt một Q format cụ thể.
-
-Việc thống nhất định dạng đầu vào và đầu ra vẫn chưa đủ. Nhóm còn phải quy định độ rộng của tích và tổng, vị trí dịch bit, cách làm tròn và cách xử lý tràn. Saturation nghĩa là chặn tại biên biểu diễn; wrap là giữ các bit theo độ rộng quy định. Chọn cách nào phải được ghi thành đặc tả và dùng giống nhau trong C++ fixed và RTL.
-
-Mô hình tham chiếu cần làm đúng từng bước như mạch, kể cả những chỗ giảm độ rộng. Các trường hợp nhiệt độ âm, biên biểu diễn và tràn số được kiểm tra có chủ đích. Nhóm sẽ luôn tách sai số dự báo so với thực tế khỏi sai lệch do số cố định so với số thực, vì hai loại sai số có nguyên nhân khác nhau.

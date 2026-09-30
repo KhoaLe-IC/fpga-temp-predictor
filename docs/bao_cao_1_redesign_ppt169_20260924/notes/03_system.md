@@ -1,5 +1,0 @@
-Toàn bộ hệ thống có thể chia thành giai đoạn chuẩn bị trên máy tính và giai đoạn tính dự báo trên FPGA. Trong giai đoạn offline, chương trình C++ đọc dữ liệu CSV, kiểm tra và làm sạch chuỗi thời gian. Từ dữ liệu này, chương trình tạo các cách dự báo đơn giản làm mốc so sánh, sau đó tìm ba hệ số a, b và c của mô hình đề xuất.
-
-C++ còn có một nhiệm vụ quan trọng là tạo mô hình tham chiếu số cố định và bộ dữ liệu kiểm tra. Mô hình tham chiếu sẽ mô phỏng cùng quy tắc số học mà RTL sử dụng. Khi chạy trên FPGA, các hệ số đã được xác định và giữ cố định. Mạch nhận từng mẫu nhiệt độ, lưu lịch sử cần thiết, tính dự báo và xuất kết quả. Việc học hệ số không nằm trong phạm vi lõi FPGA của phương án này.
-
-Đầu ra cuối kỳ vì vậy gồm chương trình C++, mạch RTL, testbench, demo trên board và báo cáo đánh giá. Báo cáo sẽ trình bày riêng sai số dự báo, sai lệch số cố định và tài nguyên phần cứng, để mỗi kết quả đều có phép đối chiếu phù hợp.
