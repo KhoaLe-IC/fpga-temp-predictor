@@ -1,6 +1,6 @@
 # Resource-Optimized Linear OLS Temperature Predictor — RTL Specification
 
-**Status:** Proposed implementation specification, 30 September 2026  
+**Status:** Revision 2 — clarified implementation and evaluation contract, 2 October 2026  
 **Target:** Original Terasic DE2 board, Cyclone II EP2C35F672C6, 50 MHz system clock. Confirm the physical board variant before assigning pins.  
 **Priority:** Reduce arithmetic hardware through time-multiplexing while preserving the exact same forecast and numerical behavior as the speed-optimized core.
 
@@ -84,9 +84,64 @@ This variant is accepted when all of the following are demonstrated:
 
 **Deliverables:** Verilog RTL and FSM schedule, coefficient manifest, shared C++ reference/vectors, self-checking testbench, DE2 `.qsf`/timing constraints, paired synthesis/timing comparison, and a board-demo log. These are proposed requirements; no timing or resource outcome is claimed as already measured.
 
+## 7. Implementation and evaluation contract — revision 2
+
+### Cycle accounting and tap capture
+
+Number rising edges consecutively. An eligible sample accepted at edge N shall produce an output visible after edge N+L, where L is the declared fixed latency. Observe input transfers using pre-edge ready/valid, and outputs after sequential updates. Latency includes output registration; it does not include UART transmission. Back-to-back valid output cycles are legal in the speed core. When forecast_valid is low, forecast_out is unspecified.
+
+For a new accepted sample at time t, capture the current input as T(t); before shifting history, old history[2], history[20], and history[23] represent T(t−3), T(t−21), and T(t−24). Alternatively use equivalent next-history logic. Reading old history[3]/[21]/[24] on the same nonblocking-update edge is incorrect. Only accepted samples advance history. Reset has priority over acceptance and output, cancels pending results, and requires 25 fresh acceptances. No acceptance is counted on a reset edge.
+
+### Coefficients and safe integer evaluation
+
+Use signed integer module parameters A_Q, B_Q, C_Q, each restricted to [-32768,32767], unless an explicitly documented integration adapter supplies fixed constants. Coefficients are compile-time constants for revision 2; runtime updates are outside scope. Testbench defaults are synthetic verification coefficients, not trained values. The release manifest shall record floating coefficients, raw quantized integers, fractional-bit counts, training-data/split identifiers, model equation/version and actual latency for each variant.
+
+Sign-extend each anchor and offset to 35 bits **before** shifting left by 14; sign-extend 33-bit products to 35 bits before addition. Shifting a 16-bit operand before widening loses significant bits. Differences range from -65535 to 65535. With every legal input/coefficient, a conservative accumulator magnitude bound is 2×32768×65535 + 2×32768×16384 = 5368643584, below the signed 35-bit limit. Thus intermediate wraparound is forbidden and unnecessary. Apply the floor shift and signed saturation once, at the final output. No arithmetic-format change is authorized by this revision.
+
+### Three separate accuracy checks
+
+1. **RTL correctness:** live SystemVerilog DPI-C calls to the shared C++ integer reference; zero mismatches for both variants, correct reset/handshake accounting, configured fixed latency and initiation interval. Use trained coefficients as well as synthetic corner cases. Behavioral DUT checker self-tests do not verify production RTL.
+2. **Numerical error:** on identical test windows, compare the original floating model, the floating model evaluated with quantized inputs/coefficients, and the final integer result converted to degrees Celsius. Report MAE, RMSE, maximum absolute difference and saturation count; distinguish coefficient/input quantization from final floor-shift effects. For nonsaturated outputs, the final floor shift alone introduces error below 1/256 °C; this is not a bound on total quantization error.
+3. **Forecast quality:** chronological held-out targets, same windows for all models; report MAE/RMSE in °C against actual T(t+3). Include persistence T(t) and previous-day same-target-hour T(t−21) baselines. Fit coefficients on training data only; choose formats/settings on training/validation data before final test evaluation. Record split boundaries and sample counts. Report both variants' results; identical bit-exact arithmetic must give identical forecasts.
+
+Before a board release, profile training/validation ranges, freeze the coefficient manifest and approve a numerical-error budget in °C. Record it as an explicit project decision, not a number borrowed from unrelated paper datasets. No forecast-accuracy superiority is assumed as an RTL acceptance condition. Explain any saturation on the historical test set.
+
+### Reproducible hardware comparison and lessons from papers
+
+Archive core and wrapper compilation boundaries, Quartus version/device/constraints, optimization settings, coefficient manifest and achieved latency/II. Static-coefficient synthesis may optimize multipliers into logic; report actual mapping rather than promise exact DSP counts. For the two variants, use the same coefficients and mapping policy. Report Fmax as timing-analysis evidence, latency in cycles and ns at 50 MHz, and sustained throughput separately. Do not infer initiation interval from latency alone.
+
+[Royer 2011](ols_fpga_literature_review.md) motivates explicit scheduling, width alignment and sharing; [Ferreira 2019](../papers/willian-de-assis-pedrobon-ferreira-fpga-hardware.pdf), PDF pp. 3–5, illustrates the resource cost of spatial parallelism and hardware-versus-software numerical checks; Prediction Techniques 2022 illustrates reporting numerical error separately from hardware throughput. These are design lessons, not instructions to add FPGA coefficient fitting. Our offline OLS/inference partition remains unchanged.
+
+## 8. Acceptance checklist and report fields
+
+This checklist complements Section 6; it does not replace the architectural or timing requirements. A pending item is not a passing result.
+
+| Check | Required evidence / pass condition |
+|---|---|
+| Frozen configuration | Coefficient manifest, numerical-format version, input-data identifier and chronological split boundaries |
+| Production RTL arithmetic | DPI-C scoreboard log: zero mismatches with the C++ integer reference using trained coefficients and directed corner cases |
+| Transaction accounting | Exactly one ordered result for every eligible accepted sample, except transactions canceled by reset; no warm-up output |
+| Fixed latency and II | Cycle trace with declared L and measured sustained acceptance interval; meet this variant's ceilings |
+| Cross-variant equivalence | Match speed/resource results by accepted-sample index, not wall-clock cycle; zero mismatches on identical streams |
+| Numerical accuracy | MAE, RMSE and maximum absolute FPGA-versus-floating difference in °C, saturation count, and the numerical-error budget approved before final test evaluation |
+| Forecast accuracy | Held-out MAE/RMSE in °C for floating OLS, fixed OLS, persistence and seasonal baseline; same target timestamps and sample count |
+| FPGA timing | Completed timing analysis for the actual target and 20 ns clock, with constrained paths and no unexplained unconstrained core paths |
+| FPGA resources | Core-only LE/register/multiplier/M4K counts; document constant optimization and sharing; report wrapper totals separately |
+| Board function | Input/output replay log matching the integer reference; serial timing reported separately from core throughput |
+
+### Required report tables
+
+The paired architecture table shall contain device, tool version, coefficient identifier, numerical format, compilation boundary, LE count, register count, multiplier count, M4K count, timing-analysis Fmax, operating clock, latency cycles, latency ns, II cycles and sustained forecasts/s. At the 50 MHz operating clock, latency is 20×L ns and ideal sustained core throughput is 50 million/II forecasts/s; label these as calculated from the verified schedule, not measured UART rates.
+
+The accuracy table shall contain model name, dataset/split identifier, target count, MAE and RMSE in °C, maximum absolute numerical deviation where applicable, and saturation count. Baseline errors are forecast errors, not fixed-point numerical errors. Do not copy error values from paper datasets as our acceptance thresholds.
+
+### Release evidence bundle
+
+Include the two RTL source lists, exact per-core schedules, coefficient manifest, C++ floating and integer models, DPI-C bridge, simulator commands/logs, historical vectors, paired accuracy tables, Quartus project/constraints and compilation reports, plus the board replay log. Record simulator/tool versions and the input/output sampling convention so another group can reproduce the results. Until these artifacts exist, retain targets and pending results rather than filling comparison tables with assumed measurements.
+
 ## Sources
 
-- [Project model and folder structure](../README.md).
+- [Project model and folder structure](../../README.md).
 - [Terasic original DE2 board documentation and pin table](https://www.terasic.com.tw/cgi-bin/page/archive.pl?CategoryNo=53&Language=English&No=30&PartNo=4).
 - [Intel Cyclone II device handbook: EP2C35 resources and embedded multipliers](https://cdrdv2-public.intel.com/654376/cyc2_cii5v1.pdf).
 - [Intel Quartus II 13.1 release notes: Cyclone II support removed](https://cdrdv2-public.intel.com/682216/rn_qts_131_dev_support.pdf).
