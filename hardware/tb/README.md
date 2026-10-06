@@ -5,7 +5,7 @@ Two SystemVerilog entry points implement the existing specifications:
 - `tb_temp_predictor_speed.sv` verifies `temp_predictor_speed` against [the speed specification](../../docs/specs/linear_ols_speed_optimized_spec.md).
 - `tb_temp_predictor_resource.sv` verifies `temp_predictor_resource` against [the resource specification](../../docs/specs/linear_ols_resource_optimized_spec.md).
 
-They share `ols_tb_driver.sv` for stimulus, a black-box scoreboard, live DPI-C calls to the C++ reference model, and failure reporting. The current production RTL files in `../rtl/` are empty placeholders; **the real DUTs have not been simulated**. `support/behavioral_duts.sv` exists solely to exercise the checkers and is never automatically substituted for real RTL.
+They share `ols_tb_driver.sv` for stimulus, a black-box scoreboard, live DPI-C calls to the C++ reference model, and failure reporting. Production cores now exist in `../speed_optimized/` and `../resource_optimized/`. They load coefficients from files instead of A_Q/B_Q/C_Q DUT parameters. See the real-RTL integration section below for commands and verification reports. `support/behavioral_duts.sv` exists solely to exercise the checkers and is never automatically substituted for real RTL.
 
 ## Contract and DUT connection
 
@@ -135,3 +135,25 @@ python3 hardware/tb/run_tests.py --selftest --matrix --model software/models_cpp
 ```
 
 `--model` loads floating `a,b,c`, quantizes them using the spec's nearest/half-away-from-zero rule, and rejects values outside the signed 16-bit format. It overrides `--a/--b/--c`. For real RTL, replace `--selftest` with `--rtl <sources>` and provide the actual per-core latency. The model option does not train coefficients or measure forecast MAE/RMSE. CSV predictions are raw Q8.8 values, not ground-truth errors.
+
+## Real RTL integration (6 October 2026)
+
+Use `--file-coefficients` for the current production cores. The runner writes `coeffs.txt` and `coefficients.txt` in each isolated simulation directory from the requested raw coefficients, then runs the simulator there. It does not overwrite checked-in coefficient files. The mode omits DUT coefficient parameters and supports coefficient-matrix runs. Compile warnings remain visible and are saved in `compile.log`; warnings are nonfatal, but compilation errors and scoreboard failures are fatal.
+
+From the project directory, strict verification with common trained coefficients:
+
+```bash
+python3 hardware/tb/run_tests.py --file-coefficients \
+  --model software/models_cpp/model.json --matrix \
+  --speed-latency 5 --resource-latency 9 \
+  --rtl hardware/speed_optimized/temp_predictor_speed.v \
+        hardware/resource_optimized/temp_predictor_resource.v \
+        hardware/resource_optimized/temp_history_buffer.v \
+        hardware/resource_optimized/ols_shared_datapath.v
+```
+
+The speed pipeline's acceptance-to-output latency is 5 edges; its source comment now distinguishes six register stages from five-edge latency. The resource controller's latency is 9 edges and sustained acceptance interval is 10. Do not retain the behavioral resource default of 8 when checking this RTL.
+
+The initial speed core failed the strict ready requirement on the first active edge following reset. The RTL fix uses `sample_ready = rst_n` and gates acceptance with ready, eliminating that startup bubble and preventing history shifts during reset. `--diagnostic-speed-reset-bubble` tolerates only that first-edge low ready to investigate arithmetic and later traffic. This option is **diagnostic only**, prints a warning and a qualified completion message, and must not be used to claim specification acceptance. The normal run retains the strict check. Each core is still checked against DPI-C, and paired replay results are compared by sample index.
+
+These commands test arithmetic cores, not UART wrappers, board operation, synthesis resource use or Fmax.

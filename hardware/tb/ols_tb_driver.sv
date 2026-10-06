@@ -33,6 +33,8 @@ module ols_tb_driver #(
     bit file_enable = 0;
     integer file_has_result = 0, file_result = 0;
     bit reset_seen = 0;
+    bit first_active_edge;
+    bit diagnostic_reset_bubble = 0;
     longint signed raw_sum, scaled;
     logic signed [15:0] predicted;
     logic [31:0] rng = 32'h6b8b4567;
@@ -74,6 +76,7 @@ module ols_tb_driver #(
             if (forecast_valid !== 1'b0)
                 $fatal(1, "RESET: forecast_valid must clear at reset edge (cycle %0d)", cycle);
         end else begin
+            first_active_edge = reset_seen;
             reset_seen = 0;
             if (stalled_previous && (!sample_valid || temp_in !== stalled_value))
                 $fatal(1, "STIMULUS: pending input changed before acceptance");
@@ -81,7 +84,8 @@ module ols_tb_driver #(
             stalled_value = temp_in;
             if (sample_ready !== 1'b0 && sample_ready !== 1'b1)
                 $fatal(1, "UNKNOWN: sample_ready at cycle %0d", cycle);
-            if (SPEED_MODE && sample_ready !== 1'b1)
+            if (SPEED_MODE && sample_ready !== 1'b1 &&
+                !(diagnostic_reset_bubble && first_active_edge && sample_ready === 1'b0))
                 $fatal(1, "READY: speed core must stay ready, cycle %0d", cycle);
             if (!SPEED_MODE && tail > head && due[head] > cycle && sample_ready !== 1'b0)
                 $fatal(1, "BUSY: resource core ready while inference is pending, cycle %0d", cycle);
@@ -214,6 +218,9 @@ module ols_tb_driver #(
 
     integer i, value, gap;
     initial begin
+        diagnostic_reset_bubble = $test$plusargs("DIAGNOSTIC_RESET_BUBBLE");
+        if (diagnostic_reset_bubble && SPEED_MODE)
+            $display("DIAGNOSTIC ONLY: tolerating one speed-ready bubble at each reset release; not spec acceptance");
         if (LATENCY < 1 || LATENCY > MAX_LATENCY) $fatal(1, "Invalid LATENCY parameter");
         if (A_Q < -32768 || A_Q > 32767 || B_Q < -32768 || B_Q > 32767 ||
             C_Q < -32768 || C_Q > 32767) $fatal(1, "Coefficients must be signed 16-bit integers");

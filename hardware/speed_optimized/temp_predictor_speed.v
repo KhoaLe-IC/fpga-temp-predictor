@@ -19,7 +19,7 @@
 //   e+4   : stage4  S = (P1+P2) + base
 //   e+5   : stage5  shift + saturate -> forecast_out / forecast_valid
 // forecast_valid is therefore visible 5 clock edges after the accepting edge
-// (6 register stages counting the capture stage)  => L_speed = 6 <= 8.
+// (6 register stages counting capture) => acceptance-to-output L_speed = 5 <= 8.
 // -----------------------------------------------------------------------------
 (* multstyle = "dsp" *)
 module temp_predictor_speed #(
@@ -54,18 +54,17 @@ module temp_predictor_speed #(
     // ------------------------------------------------------------------
     // Input handshake + warm-up counter
     // ------------------------------------------------------------------
-    reg        ready_r;
     reg  [4:0] cnt;                 // accepted samples so far, saturates at 24
-    wire       accept = sample_valid & ready_r;
+    wire       accept = sample_valid & sample_ready;
 
-    assign sample_ready = ready_r;
+    // No input backpressure. Ready is high before the first active edge
+    // after reset release; reset edges never accept or shift history.
+    assign sample_ready = rst_n;
 
     always @(posedge clk) begin
         if (!rst_n) begin
-            ready_r <= 1'b0;
             cnt     <= 5'd0;
         end else begin
-            ready_r <= 1'b1;
             if (accept && cnt != 5'd24)
                 cnt <= cnt + 5'd1;
         end

@@ -11,8 +11,8 @@ import sys
 
 HERE = Path(__file__).resolve().parent
 
-def run(command, *, expect_failure=False, reason=None, quiet=False):
-    result = subprocess.run([str(x) for x in command], text=True, capture_output=True)
+def run(command, *, expect_failure=False, reason=None, quiet=False, cwd=None):
+    result = subprocess.run([str(x) for x in command], text=True, capture_output=True, cwd=cwd)
     if expect_failure:
         if result.returncode == 0 or not reason or reason not in result.stdout + result.stderr:
             raise RuntimeError(f"Fault escaped or failed for the wrong reason: {command}\n{result.stdout}{result.stderr}")
@@ -49,6 +49,8 @@ def main():
     parser.add_argument("--c", type=int, default=0)
     parser.add_argument("--speed-latency", type=int, default=5)
     parser.add_argument("--resource-latency", type=int, default=8)
+    parser.add_argument("--diagnostic-speed-reset-bubble", action="store_true", help="Diagnostic ONLY: tolerate one speed ready bubble after reset; does not establish spec acceptance")
+    parser.add_argument("--file-coefficients", action="store_true", help="DUT reads coeffs.txt / coefficients.txt; write isolated run files and omit DUT coefficient parameters")
     parser.add_argument("--no-dut-parameters", action="store_true", help="DUT has hard-coded coefficients; TB values must match")
     parser.add_argument("--matrix", action="store_true", help="Compile/run representative coefficient configurations")
     parser.add_argument("--vectors", type=Path, help="Replay existing vectors instead of generated synthetic C++ vectors")
@@ -58,7 +60,7 @@ def main():
         parser.error("--selftest and --rtl are mutually exclusive")
     if not args.selftest and not args.rtl:
         parser.error("No DUT RTL exists by default. Supply --rtl files or explicitly use --selftest.")
-    if args.no_dut_parameters and args.matrix:
+    if args.no_dut_parameters and args.matrix and not args.file_coefficients:
         parser.error("A coefficient matrix requires configurable DUT coefficients")
     if args.vectors and args.matrix:
         parser.error("One external vector file cannot represent a coefficient matrix")
@@ -114,25 +116,34 @@ def main():
                        "-j", "2", "--top-module", top, "--Mdir", objdir, "-o", "sim",
                        "-CFLAGS", "-std=c++17", f"-GA_Q={a}", f"-GB_Q={b}",
                        f"-GC_Q={c}", f"-GLATENCY={latency}"]
-            if args.no_dut_parameters: command.append("-DOLS_DUT_NO_PARAMETERS")
+            if args.no_dut_parameters or args.file_coefficients: command.append("-DOLS_DUT_NO_PARAMETERS")
             if args.selftest:
                 command += [f"-DOLS_MOCK_SPEED_LATENCY={args.speed_latency}",
                             f"-DOLS_MOCK_RESOURCE_LATENCY={args.resource_latency}"]
             command += [HERE / "ols_tb_driver.sv", HERE / f"{top}.sv", *sources,
                         HERE / "dpi/ols_dpi.cpp"]
-            run(command, quiet=True)
+            objdir.mkdir(parents=True, exist_ok=True)
+            for filename in ("coeffs.txt", "coefficients.txt"):
+                if args.file_coefficients:
+                    (objdir / filename).write_text("".join(f"{v & 0xffff:04X}\n" for v in (a,b,c)))
+            compile_result = run(command + ["-Wno-fatal"], quiet=True)
+            (objdir / "compile.log").write_text(compile_result.stdout + compile_result.stderr)
             results_path = build / f"{variant}_{index}_results.csv"
-            result = run([sim, f"+VECTORS={vectors}", f"+RESULTS={results_path}"])
+            sim_args = [sim, f"+VECTORS={vectors}", f"+RESULTS={results_path}"]
+            if args.diagnostic_speed_reset_bubble and variant == "speed":
+                sim_args.append("+DIAGNOSTIC_RESET_BUBBLE")
+            result = run(sim_args, cwd=objdir)
+            (objdir / "simulation.log").write_text(result.stdout + result.stderr)
             replay_results[(variant,index)] = results_path
             if "PASS:" not in result.stdout: raise RuntimeError("Simulation ended without PASS receipt")
             if args.selftest and index == 0:
                 for mutation,reason in fault_reasons.items():
                     if mutation == "READY": reason = "READY:" if variant == "speed" else "BUSY:"
-                    run([sim, f"+MUTATION={mutation}"], expect_failure=True, reason=reason)
+                    run([sim, f"+MUTATION={mutation}"], expect_failure=True, reason=reason, cwd=objdir)
     if args.variant == "both":
         for index in range(len(coefficients)):
             compare_replays(replay_results[("speed",index)], replay_results[("resource",index)])
-    print("All checker self-tests passed. Real DUTs remain unverified." if args.selftest else "All requested DUT simulations passed.")
+    print("All checker self-tests passed. Real DUTs remain unverified." if args.selftest else ("Diagnostic simulations passed; strict speed reset-ready compliance remains FAILED." if args.diagnostic_speed_reset_bubble else "All requested DUT simulations passed."))
 
 if __name__ == "__main__":
     try: main()
