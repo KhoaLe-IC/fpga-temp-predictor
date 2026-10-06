@@ -37,8 +37,9 @@ fpga-temp-predictor/
 │   └── Makefile                        # Compiles C++ golden models
 │
 ├── hardware/                           # Student 2: RTL Design & Student 3: Design Verification
-│   ├── rtl/                            # Synthesizable Verilog (temp_predictor_core.v, top.v, uart_rx/tx.v)
-│   ├── tb/                             # Self-checking testbenches & SystemVerilog Assertions (tb_top.v)
+│   ├── speed_optimized/                # Fully pipelined, II=1 RTL architecture & standalone testbenches
+│   ├── resource_optimized/             # Time-multiplexed, 1-MAC FSM RTL architecture & standalone testbenches
+│   ├── tb/                             # Unified SystemVerilog DPI-C verification testbenches & driver
 │   └── constrs/                        # Pin constraints (DE2 Cyclone II .qsf pin assignments)
 │
 ├── docs/                               # Project documentation & presentations
@@ -58,7 +59,7 @@ fpga-temp-predictor/
 | Role / Track | Lead | Key Deliverables & Directory Scope |
 | :--- | :--- | :--- |
 | **Track 1: DSP Algorithm & Data** | Student 1 | `data/`, `software/training/`, `software/models_cpp/`<br>• NASA POWER data preprocessing and train/validation/test splitting.<br>• OLS/Ridge model training and fixed-point quantization analysis ($Q8.8$).<br>• Host-PC Python serial communication tool. |
-| **Track 2: Digital RTL Design** | Student 2 | `hardware/rtl/`, `hardware/constrs/`<br>• Synthesizable Verilog datapath, shift register / circular buffer for 25 taps.<br>• Shared-MAC FSM, multiplier integration, and saturation arithmetic unit.<br>• Quartus II synthesis and timing closure ($F_{\max}$) on Altera DE2. |
+| **Track 2: Digital RTL Design** | Student 2 | `hardware/speed_optimized/`, `hardware/resource_optimized/`, `hardware/constrs/`<br>• Synthesizable Verilog datapath, shift register / circular buffer for 25 taps.<br>• Shared-MAC FSM, multiplier integration, and saturation arithmetic unit.<br>• Quartus II synthesis and timing closure ($F_{\max}$) on Altera DE2. |
 | **Track 3: Design Verification (DV)** | Student 3 | `hardware/tb/`, `data/testvectors/`<br>• Bit-exact C++ reference model alignment.<br>• Self-checking SystemVerilog testbenches consuming `test_vectors_float.csv`.<br>• SystemVerilog Assertions (SVA) for FSM handshakes and saturation bounds.<br>• UART hardware-in-the-loop scoreboard. |
 
 ---
@@ -82,6 +83,11 @@ python3 software/training/train_ols_basic.py
 
 ### Hardware Simulation (Icarus Verilog)
 ```bash
-iverilog -g2012 -o hardware/tb/sim.vvp hardware/rtl/*.v hardware/tb/tb_temp_predictor_core.v
-vvp hardware/tb/sim.vvp
+# Resource-optimized standalone testbench:
+iverilog -g2012 -o sim_resource.vvp hardware/resource_optimized/temp_predictor_resource.v hardware/resource_optimized/ols_shared_datapath.v hardware/resource_optimized/temp_history_buffer.v hardware/resource_optimized/tb_temp_predictor_resource.v
+vvp sim_resource.vvp
+
+# Speed-optimized standalone testbench:
+iverilog -g2012 -o sim_speed.vvp hardware/speed_optimized/temp_predictor_speed.v hardware/speed_optimized/tb_temp_predictor_speed.v
+vvp sim_speed.vvp
 ```
