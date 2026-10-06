@@ -294,9 +294,15 @@ module tb_top_temp_predictor_uart;
         repeat (10) @(posedge CLOCK_50);
         #5;
 
-        // ---- send all samples back-to-back
-        for (i = 0; i < N; i = i + 1)
+        // ---- first WARMUP samples back-to-back (history only, no output)
+        for (i = 0; i < WARMUP; i = i + 1)
             send_sample(i);
+
+        // ---- from sample #25: send one, wait for its result line, repeat
+        for (i = WARMUP; i < N; i = i + 1) begin
+            send_sample(i);
+            wait (lines_rx == (i - WARMUP + 1));
+        end
         t_last_send = $time;
 
         // ---- wait for all expected lines (or timeout)

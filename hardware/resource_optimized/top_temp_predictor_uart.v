@@ -89,12 +89,12 @@ module top_temp_predictor_uart (
 
     wire rx_fifo_rd_en;
 
-    wire [8:0] rx_fifo_count;
+    wire [4:0] rx_fifo_count;
 
 
     simple_fifo #(
         .DATA_WIDTH(8),
-        .ADDR_WIDTH(8)
+        .ADDR_WIDTH(4)
     ) rx_fifo_inst (
 
         .clk(CLOCK_50),
@@ -139,12 +139,12 @@ module top_temp_predictor_uart (
 
     wire tx_fifo_rd_en;
 
-    wire [9:0] tx_fifo_count;
+    wire [4:0] tx_fifo_count;
 
 
     simple_fifo #(
         .DATA_WIDTH(8),
-        .ADDR_WIDTH(9)
+        .ADDR_WIDTH(4)
     ) tx_fifo_inst (
 
         .clk(CLOCK_50),
