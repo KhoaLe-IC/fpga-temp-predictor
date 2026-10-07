@@ -1,0 +1,1512 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "d2381e1319f39796f2d7564611384b6925f84e0ae568d5bcd23e323410d3952e",
+    "file_count": 22,
+    "files": [
+      {
+        "file": "01_title_welcome.svg",
+        "sha256": "e426c1cb218823cfbeb55b48356baa37c2b524212e0d0d1451e0938f53a7195c"
+      },
+      {
+        "file": "02_team_overview.svg",
+        "sha256": "6469ec6cc55fb593ec6da2d9d327e910a36a85ddb9c5b9b1b203f711a8cbf41f"
+      },
+      {
+        "file": "03_agenda.svg",
+        "sha256": "f14fe42a71f3911473a79decfdd0b504f0f6537ede9ebbecf3d97942ff07ad92"
+      },
+      {
+        "file": "04_problem_formulation.svg",
+        "sha256": "1a313a540c0dec215ec73c96bf6fc6080ce06b7438e075ca013afa5b7232fe6d"
+      },
+      {
+        "file": "05_math_formulation.svg",
+        "sha256": "885ea0986fd868107912933d7cf7c7e10f63c8d363e64fb755d6bf2d07c7be71"
+      },
+      {
+        "file": "06_ml_benchmarks.svg",
+        "sha256": "3690eb8ef9ab68f498e60f25e9995fdc7e34f9b6ba8469153adffd2f9ff993bf"
+      },
+      {
+        "file": "07_hardware_tradeoff.svg",
+        "sha256": "b2bd5ec21dea3042b6838bf1f0ac05091bb753a1a148a7330038aa9798add2cf"
+      },
+      {
+        "file": "08_fixed_point_contract.svg",
+        "sha256": "0c00850fbf25c3db7fc344e8eed1fc13333a1102c02c989fac9c0e7404c47ef3"
+      },
+      {
+        "file": "09_binary_alignment.svg",
+        "sha256": "2c27ee186515b3a5e17af07dc0d750efa20177aa25e90651e5d1b447b8aa8606"
+      },
+      {
+        "file": "10_floor_scaling.svg",
+        "sha256": "a309f0a8208ac45e3858712c2afab691241127f825cc9e3f7f0206f20b0a8973"
+      },
+      {
+        "file": "11_saturation_arithmetic.svg",
+        "sha256": "3fee62ff805f241251ca8302bfe6c6df5bd5d6b2930fd65551538939d6f48bbe"
+      },
+      {
+        "file": "12_dual_architectures.svg",
+        "sha256": "e607287e38b809efbb79e0af6a666168288de78eef3c85979992fec5adbaf03d"
+      },
+      {
+        "file": "13_speed_microarchitecture.svg",
+        "sha256": "f43f7f1754fb39ebd73f851273786afbfd0b7abdc69afbbbc51fefb9218385c1"
+      },
+      {
+        "file": "14_resource_datapath.svg",
+        "sha256": "2da2c8bca41e11928112f62c89b377707b17106d9ea5a1cfaab45c3ce824f3ff"
+      },
+      {
+        "file": "15_resource_fsm.svg",
+        "sha256": "9f6db9fb965cdfc42417ae1bdf1c792fa1a60d548abfedf442e72f58c57a076a"
+      },
+      {
+        "file": "16_top_level_peripherals.svg",
+        "sha256": "4683c2eff8de2406151373aea643f4f789151048e56d58475ec6fb85b220db61"
+      },
+      {
+        "file": "17_verification_architecture.svg",
+        "sha256": "b6b904af9fff5ee59fd5337cd954453cc97092453d6b550c9c2debc815ff49eb"
+      },
+      {
+        "file": "18_corner_cases.svg",
+        "sha256": "2072a1ea646e8a5953e6911e412f4b6a46de57e0fb5661d59216d282db6d7dc1"
+      },
+      {
+        "file": "19_synthesis_results.svg",
+        "sha256": "2608697109ae5cd827dc61d9365122a18a322ebd0ef454d645fa603b79f90978"
+      },
+      {
+        "file": "20_real_world_validation.svg",
+        "sha256": "bb056c01e1818477eb174b33ec5d7a9e4f5758d5b8a3cb08c99354744c35acf2"
+      },
+      {
+        "file": "21_conclusion_roadmap.svg",
+        "sha256": "23b016da7ccd675da3759957a7d0f057a5c2b3571812bdfbb9087ef4071d788b"
+      },
+      {
+        "file": "22_qa_defense.svg",
+        "sha256": "d4be4e37a773335f07969c9ef490121745294b19e05be61faa0040945578f834"
+      }
+    ]
+  },
+  "summary": {
+    "total": 22,
+    "passed": 15,
+    "warnings": 7,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 7,
+      "issues": [
+        {
+          "file": "01_title_welcome.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_platform\"> x=80.0, y=512.0..534.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "08_fixed_point_contract.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_q88\"> x=95.0, y=535.0..555.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "10_floor_scaling.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_cpp_trap\"> x=710.0, y=488.0..506.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "14_resource_datapath.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_history_lock\"> x=695.0, y=325.0..347.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "16_top_level_peripherals.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_clk_rst\"> x=675.0, y=562.0..582.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "17_verification_architecture.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_zero_tol\"> x=80.0, y=592.0..612.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "21_conclusion_roadmap.svg",
+          "message": "Detected 3 paragraph-like line run(s) split across sibling <text> elements (<g id=\"sum_algo\"> x=80.0, y=215.0..235.0, 2 lines; <g id=\"sum_rtl\"> x=475.0, y=215.0..235.0, 2 lines; <g id=\"sum_dv\"> x=870.0, y=215.0..235.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        }
+      ]
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 22,
+    "totals": {
+      "text_elements": 972,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 399,
+      "preset_shapes": 0,
+      "page_frame_elements": 22,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 6,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 3,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": null,
+    "geometry_elements": {
+      "circle": 0,
+      "ellipse": 0,
+      "line": 42,
+      "path": 0,
+      "polygon": 14,
+      "polyline": 0,
+      "rect": 343
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01_title_welcome.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/01_title_welcome.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_platform\"> x=80.0, y=512.0..534.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 34,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 15,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 34,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "e426c1cb218823cfbeb55b48356baa37c2b524212e0d0d1451e0938f53a7195c"
+    },
+    {
+      "file": "02_team_overview.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/02_team_overview.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 53,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 12,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 53,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "6469ec6cc55fb593ec6da2d9d327e910a36a85ddb9c5b9b1b203f711a8cbf41f"
+    },
+    {
+      "file": "03_agenda.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/03_agenda.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 51,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 34,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 51,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "f14fe42a71f3911473a79decfdd0b504f0f6537ede9ebbecf3d97942ff07ad92"
+    },
+    {
+      "file": "04_problem_formulation.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/04_problem_formulation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 41,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 11,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 41,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "1a313a540c0dec215ec73c96bf6fc6080ce06b7438e075ca013afa5b7232fe6d"
+    },
+    {
+      "file": "05_math_formulation.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/05_math_formulation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 41,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 4,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 41,
+        "tspan_elements": 4
+      },
+      "passed": true,
+      "source_sha256": "885ea0986fd868107912933d7cf7c7e10f63c8d363e64fb755d6bf2d07c7be71"
+    },
+    {
+      "file": "06_ml_benchmarks.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/06_ml_benchmarks.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 65,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 18,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 65,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "3690eb8ef9ab68f498e60f25e9995fdc7e34f9b6ba8469153adffd2f9ff993bf"
+    },
+    {
+      "file": "07_hardware_tradeoff.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/07_hardware_tradeoff.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 35,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 12,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 35,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "b2bd5ec21dea3042b6838bf1f0ac05091bb753a1a148a7330038aa9798add2cf"
+    },
+    {
+      "file": "08_fixed_point_contract.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/08_fixed_point_contract.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_q88\"> x=95.0, y=535.0..555.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 52,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 16,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 52,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "0c00850fbf25c3db7fc344e8eed1fc13333a1102c02c989fac9c0e7404c47ef3"
+    },
+    {
+      "file": "09_binary_alignment.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/09_binary_alignment.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 39,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 10,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 39,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "2c27ee186515b3a5e17af07dc0d750efa20177aa25e90651e5d1b447b8aa8606"
+    },
+    {
+      "file": "10_floor_scaling.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/10_floor_scaling.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_cpp_trap\"> x=710.0, y=488.0..506.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 37,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 12,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif",
+          "Consolas, monospace"
+        ],
+        "text_elements": 37,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "a309f0a8208ac45e3858712c2afab691241127f825cc9e3f7f0206f20b0a8973"
+    },
+    {
+      "file": "11_saturation_arithmetic.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/11_saturation_arithmetic.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 38,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 11,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif",
+          "Consolas, monospace"
+        ],
+        "text_elements": 38,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "3fee62ff805f241251ca8302bfe6c6df5bd5d6b2930fd65551538939d6f48bbe"
+    },
+    {
+      "file": "12_dual_architectures.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/12_dual_architectures.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 34,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 1,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 34,
+        "tspan_elements": 1
+      },
+      "passed": true,
+      "source_sha256": "e607287e38b809efbb79e0af6a666168288de78eef3c85979992fec5adbaf03d"
+    },
+    {
+      "file": "13_speed_microarchitecture.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/13_speed_microarchitecture.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 56,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 28,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 6,
+              "polyline": 0,
+              "polygon": 5,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 56,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "f43f7f1754fb39ebd73f851273786afbfd0b7abdc69afbbbc51fefb9218385c1"
+    },
+    {
+      "file": "14_resource_datapath.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/14_resource_datapath.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_history_lock\"> x=695.0, y=325.0..347.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 40,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 12,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 40,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "2da2c8bca41e11928112f62c89b377707b17106d9ea5a1cfaab45c3ce824f3ff"
+    },
+    {
+      "file": "15_resource_fsm.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/15_resource_fsm.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 44,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 19,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif",
+          "Consolas, monospace"
+        ],
+        "text_elements": 44,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "9f6db9fb965cdfc42417ae1bdf1c792fa1a60d548abfedf442e72f58c57a076a"
+    },
+    {
+      "file": "16_top_level_peripherals.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/16_top_level_peripherals.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_clk_rst\"> x=675.0, y=562.0..582.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 47,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 16,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 6,
+              "polyline": 0,
+              "polygon": 5,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 47,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "4683c2eff8de2406151373aea643f4f789151048e56d58475ec6fb85b220db61"
+    },
+    {
+      "file": "17_verification_architecture.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/17_verification_architecture.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_zero_tol\"> x=80.0, y=592.0..612.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 36,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 12,
+              "polyline": 0,
+              "polygon": 4,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 36,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "b6b904af9fff5ee59fd5337cd954453cc97092453d6b550c9c2debc815ff49eb"
+    },
+    {
+      "file": "18_corner_cases.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/18_corner_cases.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 37,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 15,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 37,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "2072a1ea646e8a5953e6911e412f4b6a46de57e0fb5661d59216d282db6d7dc1"
+    },
+    {
+      "file": "19_synthesis_results.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/19_synthesis_results.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 58,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 18,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 58,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "2608697109ae5cd827dc61d9365122a18a322ebd0ef454d645fa603b79f90978"
+    },
+    {
+      "file": "20_real_world_validation.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/20_real_world_validation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 40,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 12,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 40,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "bb056c01e1818477eb174b33ec5d7a9e4f5758d5b8a3cb08c99354744c35acf2"
+    },
+    {
+      "file": "21_conclusion_roadmap.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/21_conclusion_roadmap.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 3 paragraph-like line run(s) split across sibling <text> elements (<g id=\"sum_algo\"> x=80.0, y=215.0..235.0, 2 lines; <g id=\"sum_rtl\"> x=475.0, y=215.0..235.0, 2 lines; <g id=\"sum_dv\"> x=870.0, y=215.0..235.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 58,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 18,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 58,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "23b016da7ccd675da3759957a7d0f057a5c2b3571812bdfbb9087ef4071d788b"
+    },
+    {
+      "file": "22_qa_defense.svg",
+      "path": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007/svg_output/22_qa_defense.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 36,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 1,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 12,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 36,
+        "tspan_elements": 1
+      },
+      "passed": true,
+      "source_sha256": "d4be4e37a773335f07969c9ef490121745294b19e05be61faa0040945578f834"
+    }
+  ]
+}

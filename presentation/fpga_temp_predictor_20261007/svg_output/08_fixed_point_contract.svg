@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <g id="hdr_08" data-pptx-bounds="60 30 1160 85">
+    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">NUMERICAL QUANTIZATION CONTRACT</text>
+    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Fixed-Point Numerical Formats &amp; Quantization Budget</text>
+    <text x="60" y="108" fill="#8D99AE" font-size="14">Strict contract defining bit allocations, scaling factors, and rounding methods across the entire compute pipeline</text>
+    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+  </g>
+  <g id="card_q88" data-pptx-bounds="60 135 365 500">
+    <rect x="60" y="135" width="365" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="135" width="365" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="162" fill="#48CAE4" font-size="14" font-weight="bold">INPUTS &amp; OUTPUTS: SIGNED Q8.8</text>
+    
+    <text x="80" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Bitfield Allocation:</text>
+    <rect x="80" y="225" width="325" height="50" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="95" y="248" fill="#F77F00" font-size="12" font-weight="bold">[15] Sign | [14:8] 7 Integer | [7:0] 8 Fraction</text>
+    <text x="95" y="266" fill="#8D99AE" font-size="11">Total wordlength = 16 bits signed</text>
+    
+    <text x="80" y="305" fill="#FFFFFF" font-size="14" font-weight="bold">Scaling &amp; Dynamic Range:</text>
+    <text x="80" y="328" fill="#8D99AE" font-size="13">• Scale Factor: 2^8 = 256</text>
+    <text x="80" y="348" fill="#8D99AE" font-size="13">• Min Value: -128.000°C (0x8000)</text>
+    <text x="80" y="368" fill="#8D99AE" font-size="13">• Max Value: +127.996°C (0x7FFF)</text>
+    <text x="80" y="388" fill="#48CAE4" font-size="13" font-weight="bold">• LSB Resolution: 1/256 ≈ 0.00390625°C</text>
+    
+    <rect x="80" y="420" width="325" height="195" rx="8" fill="#1E2D4A" stroke="#2A3D66" stroke-width="1"/>
+    <text x="95" y="445" fill="#10B981" font-size="12" font-weight="bold">METEOROLOGICAL FIT:</text>
+    <text x="95" y="470" fill="#FFFFFF" font-size="12">• Dynamic range comfortably spans all</text>
+    <text x="95" y="490" fill="#FFFFFF" font-size="12">  terrestrial weather (-50°C to +60°C).</text>
+    <text x="95" y="515" fill="#8D99AE" font-size="12">• LSB resolution of 0.0039°C is 50x finer</text>
+    <text x="95" y="535" fill="#8D99AE" font-size="12">  than the standard ±0.2°C physical</text>
+    <text x="95" y="555" fill="#8D99AE" font-size="12">  sensor tolerance.</text>
+    <text x="95" y="585" fill="#48CAE4" font-size="12" font-weight="bold">→ Zero quantization penalty on inputs!</text>
+  </g>
+  <g id="card_q214" data-pptx-bounds="455 135 365 500">
+    <rect x="455" y="135" width="365" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="455" y="135" width="365" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="475" y="162" fill="#F77F00" font-size="14" font-weight="bold">COEFFICIENTS: SIGNED Q2.14</text>
+    
+    <text x="475" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Bitfield Allocation:</text>
+    <rect x="475" y="225" width="325" height="50" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="490" y="248" fill="#F77F00" font-size="12" font-weight="bold">[15] Sign | [14] 1 Integer | [13:0] 14 Fraction</text>
+    <text x="490" y="266" fill="#8D99AE" font-size="11">Total wordlength = 16 bits signed</text>
+    
+    <text x="475" y="305" fill="#FFFFFF" font-size="14" font-weight="bold">Parameter Quantization:</text>
+    <text x="475" y="328" fill="#8D99AE" font-size="13">• Scale Factor: 2^14 = 16,384</text>
+    <text x="475" y="348" fill="#FFFFFF" font-size="13">• Weight a: 0.745502 × 16384 = 12214.3</text>
+    <text x="475" y="368" fill="#48CAE4" font-size="13" font-weight="bold">  → Quantized A = 12214 (0.745483)</text>
+    <text x="475" y="392" fill="#FFFFFF" font-size="13">• Weight b: 0.009139 × 16384 = 149.73</text>
+    <text x="475" y="412" fill="#10B981" font-size="13" font-weight="bold">  → Quantized B = 150 (0.009155)</text>
+    <text x="475" y="436" fill="#FFFFFF" font-size="13">• Bias c: 0.001147 × 256 = 0.29</text>
+    <text x="475" y="456" fill="#8D99AE" font-size="13">  → Quantized C = 0 (Q8.8 bias)</text>
+    
+    <rect x="475" y="490" width="325" height="125" rx="8" fill="#1E2D4A" stroke="#2A3D66" stroke-width="1"/>
+    <text x="490" y="515" fill="#F77F00" font-size="12" font-weight="bold">ROUNDING METHODOLOGY:</text>
+    <text x="490" y="540" fill="#FFFFFF" font-size="12">• Symmetric round-half-away-from-zero:</text>
+    <text x="490" y="560" fill="#48CAE4" font-size="11">  round(x) = (x &gt;= 0) ? floor(x+0.5) : ceil(x-0.5)</text>
+    <text x="490" y="585" fill="#8D99AE" font-size="11">• Eliminates directional DC thermal drift.</text>
+  </g>
+  <g id="card_why_q214" data-pptx-bounds="850 135 370 500">
+    <rect x="850" y="135" width="370" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="850" y="135" width="370" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="870" y="162" fill="#48CAE4" font-size="14" font-weight="bold">WHY Q2.14 FOR COEFFICIENTS?</text>
+    
+    <text x="870" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">The Small Coefficient Danger:</text>
+    <text x="870" y="235" fill="#8D99AE" font-size="13">Weight b = 0.009139 is very small!</text>
+    
+    <rect x="870" y="255" width="330" height="105" rx="6" fill="#EF4444" fill-opacity="0.1" stroke="#EF4444" stroke-width="1"/>
+    <text x="885" y="280" fill="#EF4444" font-size="13" font-weight="bold">CASE 1: If Coefficients Used Q8.8</text>
+    <text x="885" y="302" fill="#FFFFFF" font-size="12">b = round(0.009139 × 256) = 2 (0.0078125)</text>
+    <text x="885" y="325" fill="#EF4444" font-size="14" font-weight="bold">Quantization Error = 14.5% !!</text>
+    <text x="885" y="345" fill="#8D99AE" font-size="11">Severely degrades short-term thermal tracking!</text>
+    
+    <rect x="870" y="375" width="330" height="105" rx="6" fill="#10B981" fill-opacity="0.1" stroke="#10B981" stroke-width="1"/>
+    <text x="885" y="400" fill="#10B981" font-size="13" font-weight="bold">CASE 2: Our Design: Q2.14</text>
+    <text x="885" y="422" fill="#FFFFFF" font-size="12">b = round(0.009139 × 16384) = 150 (0.009155)</text>
+    <text x="885" y="445" fill="#10B981" font-size="14" font-weight="bold">Quantization Error &lt; 0.06% !!</text>
+    <text x="885" y="465" fill="#8D99AE" font-size="11">Maintains near-perfect mathematical fidelity!</text>
+    
+    <rect x="870" y="495" width="330" height="120" rx="8" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="885" y="520" fill="#48CAE4" font-size="12" font-weight="bold">SUMMARY TAKEAWAY:</text>
+    <text x="885" y="542" fill="#FFFFFF" font-size="12">• Q2.14 provides 64x higher precision than Q8.8</text>
+    <text x="885" y="562" fill="#FFFFFF" font-size="12">  without adding a single extra multiplier bit!</text>
+    <text x="885" y="585" fill="#10B981" font-size="12" font-weight="bold">→ 17x16 multiplier handles Q2.14 natively.</text>
+  </g>
+  <g id="ftr_08" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
+    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="220" y="679" fill="#FFFFFF" font-size="13">Precision Budget: Inputs/Outputs in Q8.8 | Coefficients in Q2.14 (A=12214, B=150) | Quantization Error &lt; 0.06%</text>
+  </g>
+</svg>

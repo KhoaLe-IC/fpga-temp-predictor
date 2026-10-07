@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <g id="hdr_15" data-pptx-bounds="60 30 1160 85">
+    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">FSM SEQUENCING &amp; HANDSHAKE</text>
+    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Resource Core 10-State FSM Controller &amp; Handshake Protocol</text>
+    <text x="60" y="108" fill="#8D99AE" font-size="14">Deterministic cycle sequencing, backpressure deassertion, and structural hazard resolution</text>
+    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+  </g>
+  <g id="card_fsm_states" data-pptx-bounds="60 135 565 500">
+    <rect x="60" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="162" fill="#48CAE4" font-size="14" font-weight="bold">10-STATE CONTROLLER EXECUTION FLOW (ols_fsm_ctrl.v)</text>
+    
+    <text x="80" y="205" fill="#FFFFFF" font-size="14" font-weight="bold">State Flow Table:</text>
+    
+    <rect x="80" y="220" width="525" height="34" rx="4" fill="#0B132B"/>
+    <text x="95" y="242" fill="#48CAE4" font-size="12" font-weight="bold">ST_IDLE (0)</text>
+    <text x="200" y="242" fill="#10B981" font-size="12">sample_ready = 1; awaits sample_valid</text>
+    
+    <rect x="80" y="258" width="525" height="34" rx="4" fill="#1E2D4A" fill-opacity="0.4"/>
+    <text x="95" y="280" fill="#F77F00" font-size="12" font-weight="bold">ST_DIFF_A (1)</text>
+    <text x="200" y="280" fill="#FFFFFF" font-size="12">diff_sel_b = 0; computes D1 = T(t) - T(t-24)</text>
+    
+    <rect x="80" y="296" width="525" height="34" rx="4" fill="#162238"/>
+    <text x="95" y="318" fill="#F77F00" font-size="12" font-weight="bold">ST_MUL_A (2)</text>
+    <text x="200" y="318" fill="#FFFFFF" font-size="12">multiply_sel_b = 0; latches P1 = A · D1</text>
+    
+    <rect x="80" y="334" width="525" height="34" rx="4" fill="#1E2D4A" fill-opacity="0.4"/>
+    <text x="95" y="356" fill="#10B981" font-size="12" font-weight="bold">ST_DIFF_B (3)</text>
+    <text x="200" y="356" fill="#FFFFFF" font-size="12">diff_sel_b = 1; computes D2 = T(t) - T(t-3)</text>
+    
+    <rect x="80" y="372" width="525" height="34" rx="4" fill="#162238"/>
+    <text x="95" y="394" fill="#10B981" font-size="12" font-weight="bold">ST_MUL_B (4)</text>
+    <text x="200" y="394" fill="#FFFFFF" font-size="12">multiply_sel_b = 1; latches P2 = B · D2</text>
+    
+    <rect x="80" y="410" width="525" height="34" rx="4" fill="#1E2D4A" fill-opacity="0.4"/>
+    <text x="95" y="432" fill="#48CAE4" font-size="12" font-weight="bold">ST_ACC_P1 (5)</text>
+    <text x="200" y="432" fill="#FFFFFF" font-size="12">accum &lt;= P1 (initializes accumulator)</text>
+    
+    <rect x="80" y="448" width="525" height="34" rx="4" fill="#162238"/>
+    <text x="95" y="470" fill="#48CAE4" font-size="12" font-weight="bold">ST_ACC_P2 (6)</text>
+    <text x="200" y="470" fill="#FFFFFF" font-size="12">accum &lt;= accum + P2</text>
+    
+    <rect x="80" y="486" width="525" height="34" rx="4" fill="#1E2D4A" fill-opacity="0.4"/>
+    <text x="95" y="508" fill="#48CAE4" font-size="12" font-weight="bold">ST_ACC_ANC (7)</text>
+    <text x="200" y="508" fill="#FFFFFF" font-size="12">accum &lt;= accum + (T21 &lt;&lt; 14)</text>
+    
+    <rect x="80" y="524" width="525" height="34" rx="4" fill="#162238"/>
+    <text x="95" y="546" fill="#48CAE4" font-size="12" font-weight="bold">ST_ACC_C (8)</text>
+    <text x="200" y="546" fill="#FFFFFF" font-size="12">accum &lt;= accum + (C &lt;&lt; 14)</text>
+    
+    <rect x="80" y="562" width="525" height="55" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1.5"/>
+    <text x="95" y="585" fill="#10B981" font-size="13" font-weight="bold">ST_OUTPUT (9)</text>
+    <text x="200" y="585" fill="#FFFFFF" font-size="12">Asserts forecast_valid = 1; outputs sat16 result;</text>
+    <text x="200" y="605" fill="#8D99AE" font-size="11">Transitions unconditionally back to ST_IDLE on next clock.</text>
+  </g>
+  <g id="card_handshake" data-pptx-bounds="655 135 565 500">
+    <rect x="655" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="655" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="675" y="162" fill="#F77F00" font-size="14" font-weight="bold">BACKPRESSURE &amp; HAZARD ELIMINATION</text>
+    
+    <text x="675" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">The sample_ready Handshake Protocol:</text>
+    <text x="675" y="235" fill="#8D99AE" font-size="13">• sample_ready = 1 ONLY in ST_IDLE state.</text>
+    <text x="675" y="255" fill="#8D99AE" font-size="13">• Pulled LOW (sample_ready = 0) immediately upon sample_valid</text>
+    <text x="675" y="275" fill="#8D99AE" font-size="13">  and stays LOW throughout states 1 through 9.</text>
+    
+    <rect x="675" y="295" width="525" height="135" rx="8" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="695" y="322" fill="#48CAE4" font-size="13" font-weight="bold">HAZARDS PREVENTED BY CONTROLLER:</text>
+    <text x="695" y="348" fill="#FFFFFF" font-size="12">1. Structural Multiplier Hazard:</text>
+    <text x="695" y="368" fill="#8D99AE" font-size="11">   Guarantees Multiply A and Multiply B never compete for DSP block.</text>
+    <text x="695" y="392" fill="#FFFFFF" font-size="12">2. Datapath Bus Contention:</text>
+    <text x="695" y="412" fill="#8D99AE" font-size="11">   Accumulator MUX inputs are switched only when stable.</text>
+    
+    <rect x="675" y="445" width="525" height="170" rx="8" fill="#1E2D4A" stroke="#2A3D66" stroke-width="1"/>
+    <text x="695" y="472" fill="#10B981" font-size="13" font-weight="bold">SYSTEMVERILOG SCOREBOARD VERIFICATION:</text>
+    <text x="695" y="498" fill="#FFFFFF" font-size="12">• Automated assertion checks backpressure behavior:</text>
+    <text x="695" y="522" fill="#F77F00" font-size="11" font-family="Consolas, monospace">assert property (@(posedge clk) (state != ST_IDLE) |-&gt; !sample_ready);</text>
+    <text x="695" y="548" fill="#FFFFFF" font-size="12">• Zero protocol violations detected across 10,000 test transactions.</text>
+    <text x="695" y="572" fill="#8D99AE" font-size="11">• Upstream UART FIFO responds correctly by buffering incoming bytes.</text>
+    <text x="695" y="598" fill="#10B981" font-size="12" font-weight="bold">→ Complete, self-contained, hazard-free control architecture.</text>
+  </g>
+  <g id="ftr_15" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
+    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="220" y="679" fill="#FFFFFF" font-size="13">FSM Sequencing: 10 deterministic states; sample_ready deasserted during run to eliminate all structural hazards</text>
+  </g>
+</svg>

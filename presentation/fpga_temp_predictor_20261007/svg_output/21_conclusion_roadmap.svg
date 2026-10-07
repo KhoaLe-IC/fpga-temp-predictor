@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="ending" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <g id="hdr_21" data-pptx-bounds="60 30 1160 85">
+    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">PROJECT SUMMARY &amp; DEMONSTRATION</text>
+    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Project Milestones, Deliverables &amp; Hardware Demo Roadmap</text>
+    <text x="60" y="108" fill="#8D99AE" font-size="14">Summary of completed engineering accomplishments and live laboratory demonstration setup</text>
+    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+  </g>
+  <g id="sum_algo" data-pptx-bounds="60 135 365 235">
+    <rect x="60" y="135" width="365" height="235" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="135" width="365" height="38" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="160" fill="#48CAE4" font-size="13" font-weight="bold">1. MATHEMATICAL FORMULATION</text>
+    
+    <text x="80" y="195" fill="#FFFFFF" font-size="13" font-weight="bold">• Lightweight Diurnal Model:</text>
+    <text x="80" y="215" fill="#8D99AE" font-size="12">  Achieved MAE = 0.538°C on 5-year HCMC</text>
+    <text x="80" y="235" fill="#8D99AE" font-size="12">  NASA POWER dataset (43,800+ points).</text>
+    
+    <text x="80" y="265" fill="#FFFFFF" font-size="13" font-weight="bold">• Hardware-Aware Quantization:</text>
+    <text x="80" y="285" fill="#8D99AE" font-size="12">  Q8.8 inputs/outputs, Q2.14 coeffs,</text>
+    <text x="80" y="305" fill="#10B981" font-size="12" font-weight="bold">  Quantization error &lt; 0.06%.</text>
+    
+    <rect x="80" y="325" width="325" height="32" rx="4" fill="#0B132B"/>
+    <text x="95" y="347" fill="#48CAE4" font-size="11" font-weight="bold">Status: Complete &amp; Published in repo</text>
+  </g>
+  <g id="sum_rtl" data-pptx-bounds="455 135 365 235">
+    <rect x="455" y="135" width="365" height="235" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="455" y="135" width="365" height="38" rx="10" fill="#1E2D4A"/>
+    <text x="475" y="160" fill="#F77F00" font-size="13" font-weight="bold">2. DUAL RTL ARCHITECTURES</text>
+    
+    <text x="475" y="195" fill="#FFFFFF" font-size="13" font-weight="bold">• Speed Core (II = 1):</text>
+    <text x="475" y="215" fill="#8D99AE" font-size="12">  50 MSps peak streaming rate,</text>
+    <text x="475" y="235" fill="#8D99AE" font-size="12">  6-stage pipelined datapath, 2 mults.</text>
+    
+    <text x="475" y="265" fill="#FFFFFF" font-size="13" font-weight="bold">• Resource Core (10-State FSM):</text>
+    <text x="475" y="285" fill="#8D99AE" font-size="12">  Shared datapath with single multiplier,</text>
+    <text x="475" y="305" fill="#F77F00" font-size="12" font-weight="bold">  50% DSP savings, ~245 LEs.</text>
+    
+    <rect x="475" y="325" width="325" height="32" rx="4" fill="#0B132B"/>
+    <text x="490" y="347" fill="#F77F00" font-size="11" font-weight="bold">Status: Synthesized on Cyclone II DE2</text>
+  </g>
+  <g id="sum_dv" data-pptx-bounds="850 135 370 235">
+    <rect x="850" y="135" width="370" height="235" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="850" y="135" width="370" height="38" rx="10" fill="#1E2D4A"/>
+    <text x="870" y="160" fill="#10B981" font-size="13" font-weight="bold">3. BIT-EXACT DPI-C VERIFICATION</text>
+    
+    <text x="870" y="195" fill="#FFFFFF" font-size="13" font-weight="bold">• Golden C++ Reference Model:</text>
+    <text x="870" y="215" fill="#8D99AE" font-size="12">  Custom floor_scale() and sat16</text>
+    <text x="870" y="235" fill="#8D99AE" font-size="12">  mirroring RTL wire-for-wire.</text>
+    
+    <text x="870" y="265" fill="#FFFFFF" font-size="13" font-weight="bold">• 7-Phase Test Suite:</text>
+    <text x="870" y="285" fill="#8D99AE" font-size="12">  10,000+ verification transactions,</text>
+    <text x="870" y="305" fill="#10B981" font-size="12" font-weight="bold">  0 mismatches (100% pass rate).</text>
+    
+    <rect x="870" y="325" width="330" height="32" rx="4" fill="#0B132B"/>
+    <text x="885" y="347" fill="#10B981" font-size="11" font-weight="bold">Status: Regression harness automated</text>
+  </g>
+  <g id="demo_roadmap" data-pptx-bounds="60 390 1160 245">
+    <rect x="60" y="390" width="1160" height="245" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="390" width="1160" height="40" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="416" fill="#48CAE4" font-size="14" font-weight="bold">LIVE HARDWARE DEMONSTRATION WORKFLOW (DE2 TESTBED)</text>
+    
+    <!-- 4 Step Flow -->
+    <rect x="80" y="445" width="260" height="175" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="95" y="472" fill="#48CAE4" font-size="12" font-weight="bold">STEP 1: HOST STREAMER</text>
+    <text x="95" y="495" fill="#FFFFFF" font-size="12">Python Driver (PC)</text>
+    <text x="95" y="520" fill="#8D99AE" font-size="11">• Reads HCMC 2024 test CSV.</text>
+    <text x="95" y="540" fill="#8D99AE" font-size="11">• Formats 4-byte serial packets.</text>
+    <text x="95" y="560" fill="#8D99AE" font-size="11">• Transmits over USB-UART DB9</text>
+    <text x="95" y="580" fill="#8D99AE" font-size="11">  at 115,200 Baud.</text>
+    <text x="95" y="605" fill="#10B981" font-size="11" font-weight="bold">Live telemetry feed</text>
+    
+    <rect x="365" y="445" width="260" height="175" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="380" y="472" fill="#48CAE4" font-size="12" font-weight="bold">STEP 2: FPGA INFERENCE</text>
+    <text x="380" y="495" fill="#FFFFFF" font-size="12">Altera Cyclone II (DE2)</text>
+    <text x="380" y="520" fill="#8D99AE" font-size="11">• Top-level SoC receives bytes.</text>
+    <text x="380" y="540" fill="#8D99AE" font-size="11">• Predictor core computes</text>
+    <text x="380" y="560" fill="#8D99AE" font-size="11">  T_hat(t+3) in 5 cycles.</text>
+    <text x="380" y="580" fill="#8D99AE" font-size="11">• Clamps out-of-range via sat16.</text>
+    <text x="380" y="605" fill="#10B981" font-size="11" font-weight="bold">Real-time hardware math</text>
+    
+    <rect x="650" y="445" width="260" height="175" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="665" y="472" fill="#48CAE4" font-size="12" font-weight="bold">STEP 3: BOARD READOUT</text>
+    <text x="665" y="495" fill="#FFFFFF" font-size="12">7-Segment Displays</text>
+    <text x="665" y="520" fill="#8D99AE" font-size="11">• HEX7..4: Displays current T(t).</text>
+    <text x="665" y="540" fill="#8D99AE" font-size="11">• HEX3..0: Displays T_hat(t+3).</text>
+    <text x="665" y="560" fill="#8D99AE" font-size="11">• LEDR switches show saturation</text>
+    <text x="665" y="580" fill="#8D99AE" font-size="11">  clamp status (sat_hi, sat_lo).</text>
+    <text x="665" y="605" fill="#10B981" font-size="11" font-weight="bold">Visual temperature display</text>
+    
+    <rect x="935" y="445" width="270" height="175" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="950" y="472" fill="#48CAE4" font-size="12" font-weight="bold">STEP 4: OSCILLOSCOPE</text>
+    <text x="950" y="495" fill="#FFFFFF" font-size="12">Timing Verification</text>
+    <text x="950" y="520" fill="#8D99AE" font-size="11">• GPIO pin probes forecast_valid.</text>
+    <text x="950" y="540" fill="#8D99AE" font-size="11">• Measures latency pulse width</text>
+    <text x="950" y="560" fill="#8D99AE" font-size="11">  on digital oscilloscope.</text>
+    <text x="950" y="580" fill="#8D99AE" font-size="11">• Validates exact 100 ns execution.</text>
+    <text x="950" y="605" fill="#10B981" font-size="11" font-weight="bold">Hardware signal capture</text>
+  </g>
+  <g id="ftr_21" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
+    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="220" y="679" fill="#FFFFFF" font-size="13">Capstone Milestone: 100% RTL, Testbenches, and C++ Models Completed; Prepared for Live Hardware Demonstration</text>
+  </g>
+</svg>

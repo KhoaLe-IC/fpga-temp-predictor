@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="ending" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <g id="hdr_22" data-pptx-bounds="60 30 1160 85">
+    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">PROJECT DEFENSE &amp; EXAMINATION</text>
+    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Technical Defense &amp; Q&amp;A: Quick-Reference Summary</text>
+    <text x="60" y="108" fill="#8D99AE" font-size="14">Summary anchors for technical defense covering numerical contracts, RTL trade-offs, and verification</text>
+    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+  </g>
+  <g id="anchor_qformats" data-pptx-bounds="60 135 565 200">
+    <rect x="60" y="135" width="565" height="200" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="135" width="565" height="36" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="159" fill="#48CAE4" font-size="13" font-weight="bold">ANCHOR 1: FIXED-POINT ARITHMETIC SIZING</text>
+    
+    <text x="80" y="195" fill="#FFFFFF" font-size="13" font-weight="bold">• Temperatures: Signed Q8.8</text>
+    <text x="80" y="215" fill="#8D99AE" font-size="12">  Scale = 256; Range = [-128°C, +127.99°C]; LSB = 1/256 ≈ 0.0039°C.</text>
+    
+    <text x="80" y="245" fill="#FFFFFF" font-size="13" font-weight="bold">• Coefficients: Signed Q2.14</text>
+    <text x="80" y="265" fill="#8D99AE" font-size="12">  Scale = 16,384; A = 12214 (0.7455); B = 150 (0.0091); C = 0 (bias).</text>
+    
+    <text x="80" y="295" fill="#FFFFFF" font-size="13" font-weight="bold">• Accumulator: Signed 35-Bit Q13.22</text>
+    <text x="80" y="315" fill="#10B981" font-size="12" font-weight="bold">  Scale = 2^22; 3.19x headroom mathematically prevents overflow.</text>
+  </g>
+  <g id="anchor_precision" data-pptx-bounds="655 135 565 200">
+    <rect x="655" y="135" width="565" height="200" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="655" y="135" width="565" height="36" rx="10" fill="#1E2D4A"/>
+    <text x="675" y="159" fill="#F77F00" font-size="13" font-weight="bold">ANCHOR 2: FLOOR-SCALING &amp; SATURATION (sat16)</text>
+    
+    <text x="675" y="195" fill="#FFFFFF" font-size="13" font-weight="bold">• Hardware Arithmetic Right Shift: &gt;&gt;&gt; 14</text>
+    <text x="675" y="215" fill="#8D99AE" font-size="12">  Scales Q22 → Q8 at 0 logic gate cost (pure wire slicing).</text>
+    
+    <text x="675" y="245" fill="#FFFFFF" font-size="13" font-weight="bold">• The C++ vs. Verilog Divergence Fix:</text>
+    <text x="675" y="265" fill="#8D99AE" font-size="12">  C++ division rounds toward 0; Verilog rounds toward -inf.</text>
+    <text x="675" y="285" fill="#F77F00" font-size="12" font-weight="bold">  floor_scale(s) in C++ guarantees 100% bit-exact equivalence.</text>
+    
+    <text x="675" y="315" fill="#10B981" font-size="12" font-weight="bold">• sat16 clamps cleanly to [+32767, -32768] without wrapping.</text>
+  </g>
+  <g id="anchor_arch" data-pptx-bounds="60 350 565 200">
+    <rect x="60" y="350" width="565" height="200" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="350" width="565" height="36" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="374" fill="#48CAE4" font-size="13" font-weight="bold">ANCHOR 3: DUAL RTL PARADIGMS</text>
+    
+    <text x="80" y="410" fill="#FFFFFF" font-size="13" font-weight="bold">• Speed Core (temp_predictor_speed.v):</text>
+    <text x="80" y="430" fill="#8D99AE" font-size="12">  II = 1 cycle; Latency = 5 cycles; 2 DSP blocks; 50 MSamples/sec.</text>
+    
+    <text x="80" y="460" fill="#FFFFFF" font-size="13" font-weight="bold">• Resource Core (temp_predictor_resource.v):</text>
+    <text x="80" y="480" fill="#8D99AE" font-size="12">  II &lt;= 10 cycles; Latency = 8–10 cycles; 1 shared DSP block; 10-state FSM.</text>
+    
+    <text x="80" y="510" fill="#FFFFFF" font-size="13" font-weight="bold">• Bit-Exact Equivalence:</text>
+    <text x="80" y="530" fill="#10B981" font-size="12" font-weight="bold">  Both cores output identical values for identical inputs.</text>
+  </g>
+  <g id="anchor_dv_hw" data-pptx-bounds="655 350 565 200">
+    <rect x="655" y="350" width="565" height="200" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="655" y="350" width="565" height="36" rx="10" fill="#1E2D4A"/>
+    <text x="675" y="374" fill="#10B981" font-size="13" font-weight="bold">ANCHOR 4: VERIFICATION &amp; SILICON TARGET</text>
+    
+    <text x="675" y="410" fill="#FFFFFF" font-size="13" font-weight="bold">• Target Silicon &amp; Clock:</text>
+    <text x="675" y="430" fill="#8D99AE" font-size="12">  Altera Cyclone II EP2C35F672C6 on DE2 Board @ 50.0 MHz.</text>
+    
+    <text x="675" y="460" fill="#FFFFFF" font-size="13" font-weight="bold">• Synthesis Metrics:</text>
+    <text x="675" y="480" fill="#8D99AE" font-size="12">  Fmax &gt; 128 MHz (2.5x timing slack); &lt;1% LEs; 0 BRAM used.</text>
+    
+    <text x="675" y="510" fill="#FFFFFF" font-size="13" font-weight="bold">• Testbench Regression:</text>
+    <text x="675" y="530" fill="#10B981" font-size="12" font-weight="bold">  10,000+ DPI-C vectors simulated with 0 mismatches.</text>
+  </g>
+  <g id="box_defense_footer" data-pptx-bounds="60 565 1160 75">
+    <rect x="60" y="565" width="1160" height="75" rx="8" fill="#1E2D4A" stroke="#48CAE4" stroke-width="1"/>
+    <text x="85" y="595" fill="#48CAE4" font-size="13" font-weight="bold">CODEBASE REPOSITORY READY FOR COMMITTEE AUDIT:</text>
+    <text x="85" y="618" fill="#FFFFFF" font-size="12">
+      Repository: <tspan fill="#10B981" font-weight="bold">CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor</tspan> | Includes clean RTL, DPI-C testbenches &amp; Python scripts.
+    </text>
+    <text x="1195" y="618" fill="#8D99AE" font-size="13" text-anchor="end">Open for Questions</text>
+  </g>
+  <g id="ftr_22" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
+    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">DEFENSE READY</text>
+    <text x="220" y="679" fill="#FFFFFF" font-size="13">CE436 Final Capstone Defense: Open for Technical Questions from Professor and Evaluation Committee</text>
+  </g>
+</svg>

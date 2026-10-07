@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <g id="hdr_04" data-pptx-bounds="60 30 1160 85">
+    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">METEOROLOGICAL EDGE COMPUTING</text>
+    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Edge Meteorological Forecasting: Constraints &amp; Dataset</text>
+    <text x="60" y="108" fill="#8D99AE" font-size="14">Real-time 3-hour ahead surface temperature prediction for resource-constrained IoT weather stations</text>
+    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+  </g>
+  <g id="col_edge_context" data-pptx-bounds="60 135 565 500">
+    <rect x="60" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="162" fill="#48CAE4" font-size="14" font-weight="bold">EDGE COMPUTING MOTIVATION &amp; TRADEOFFS</text>
+    
+    <text x="80" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">The Telemetry Energy Bottleneck</text>
+    <text x="80" y="235" fill="#8D99AE" font-size="13">• Remote edge weather stations operate on solar / battery budgets.</text>
+    <text x="80" y="255" fill="#8D99AE" font-size="13">• Wireless RF transmission (Cellular / LoRa) burns 10x–100x more energy</text>
+    <text x="80" y="275" fill="#8D99AE" font-size="13">  per bit than local on-chip digital arithmetic.</text>
+    <text x="80" y="295" fill="#8D99AE" font-size="13">• Cloud dependency introduces network latency, jitter, and outage risks.</text>
+    
+    <text x="80" y="335" fill="#FFFFFF" font-size="15" font-weight="bold">On-Chip FPGA Inference Advantage</text>
+    <text x="80" y="360" fill="#8D99AE" font-size="13">• Performs local predictive filtering at sub-milliwatt dynamic power.</text>
+    <text x="80" y="380" fill="#8D99AE" font-size="13">• Deterministic cycle-level latency: results ready within microseconds.</text>
+    <text x="80" y="400" fill="#8D99AE" font-size="13">• Transmit over RF only on severe micro-climate divergence / alerts.</text>
+    
+    <rect x="80" y="440" width="525" height="175" rx="8" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="100" y="468" fill="#F77F00" font-size="13" font-weight="bold">TARGET FORECAST HORIZON SPECIFICATION</text>
+    <text x="100" y="495" fill="#FFFFFF" font-size="13">Target: Predict temperature 3 hours in advance: </text>
+    <text x="420" y="495" fill="#48CAE4" font-size="14" font-weight="bold">T_hat(t+3)</text>
+    <text x="100" y="522" fill="#8D99AE" font-size="12">• Horizon allows agricultural shade deployment and HVAC pre-cooling.</text>
+    <text x="100" y="544" fill="#8D99AE" font-size="12">• System clock: 50.0 MHz | Processing latency: 5 clock cycles (100 ns!).</text>
+    <text x="100" y="566" fill="#8D99AE" font-size="12">• Zero external DRAM requirement; internal logic registers store history.</text>
+    <text x="100" y="588" fill="#10B981" font-size="12" font-weight="bold">Achieves full edge autonomy with zero cloud dependency.</text>
+  </g>
+  <g id="col_dataset_profile" data-pptx-bounds="655 135 565 500">
+    <rect x="655" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="655" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="675" y="162" fill="#48CAE4" font-size="14" font-weight="bold">DATASET PROFILE: NASA POWER SATELLITE API</text>
+    
+    <text x="675" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Geographic &amp; Climatic Parameters</text>
+    <text x="675" y="235" fill="#8D99AE" font-size="13">• Target Location: Ho Chi Minh City, Vietnam (10.82°N, 106.63°E).</text>
+    <text x="675" y="255" fill="#8D99AE" font-size="13">• Climate Zone: Tropical Monsoon (pronounced dry &amp; wet rainy seasons).</text>
+    <text x="675" y="275" fill="#8D99AE" font-size="13">• Telemetry: Hourly Surface Temperature at 2 Meters (T2M) in °C.</text>
+    
+    <text x="675" y="315" fill="#FFFFFF" font-size="15" font-weight="bold">Chronological Partition &amp; Scale</text>
+    <text x="675" y="340" fill="#8D99AE" font-size="13">• Total Dataset Span: 5 Full Years (2021 – 2025), 43,800+ hourly points.</text>
+    <text x="675" y="360" fill="#8D99AE" font-size="13">• Training Set: 2021–2023 (26,280 samples) for offline OLS fitting.</text>
+    <text x="675" y="380" fill="#8D99AE" font-size="13">• Held-Out Test Set: 2024–2025 (17,520 samples) for hardware validation.</text>
+    
+    <rect x="675" y="415" width="525" height="200" rx="8" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="695" y="443" fill="#48CAE4" font-size="13" font-weight="bold">STATISTICAL DATA DISTRIBUTION &amp; DYNAMICS</text>
+    
+    <rect x="695" y="460" width="245" height="60" rx="6" fill="#1E2D4A"/>
+    <text x="710" y="482" fill="#8D99AE" font-size="11">MIN / MAX RANGE</text>
+    <text x="710" y="506" fill="#FFFFFF" font-size="16" font-weight="bold">+16.4°C to +40.8°C</text>
+    
+    <rect x="955" y="460" width="245" height="60" rx="6" fill="#1E2D4A"/>
+    <text x="970" y="482" fill="#8D99AE" font-size="11">MEAN &amp; STD DEV</text>
+    <text x="970" y="506" fill="#48CAE4" font-size="16" font-weight="bold">28.12°C | σ = 3.65°C</text>
+    
+    <text x="695" y="545" fill="#FFFFFF" font-size="12" font-weight="bold">Diurnal Dynamic:</text>
+    <text x="805" y="545" fill="#8D99AE" font-size="12">Peak solar heating ~13:00; minimum ~05:00.</text>
+    
+    <text x="695" y="568" fill="#FFFFFF" font-size="12" font-weight="bold">Monsoon Dynamic:</text>
+    <text x="815" y="568" fill="#8D99AE" font-size="12">Afternoon rain drops temperature by 4°C–6°C in 2 hrs.</text>
+    
+    <text x="695" y="595" fill="#10B981" font-size="12" font-weight="bold">→ Rigorous testbed for testing both periodic and sudden thermal transients.</text>
+  </g>
+  <g id="ftr_04" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
+    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="220" y="679" fill="#FFFFFF" font-size="13">Forecast Horizon: 3 Hours Ahead | Latency: 5 Clock Cycles @ 50 MHz (100 ns) vs Multi-Second Cloud REST APIs</text>
+  </g>
+</svg>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="toc" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <g id="hdr_03" data-pptx-bounds="60 30 1160 85">
+    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">PRESENTATION ROADMAP</text>
+    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Technical Agenda: 4 Sequential Phases of Defense</text>
+    <text x="60" y="108" fill="#8D99AE" font-size="14">Structured walkthrough of theoretical derivation, fixed-point sizing, RTL micro-architecture, and verification</text>
+    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+  </g>
+  <g id="agenda_col_1" data-pptx-bounds="60 135 270 500">
+    <rect x="60" y="135" width="270" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="135" width="270" height="50" rx="10" fill="#1E2D4A"/>
+    <rect x="60" y="135" width="4" height="50" rx="2" fill="#3B82F6"/>
+    <text x="75" y="157" fill="#3B82F6" font-size="11" font-weight="bold">PHASE I: MATHEMATICAL FOUNDATIONS</text>
+    <text x="75" y="174" fill="#8D99AE" font-size="12">Slides 4 – 7</text>
+    
+    <g id="agenda_items_1">
+      <rect x="72" y="205" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="82" y="223" fill="#48CAE4" font-size="11" font-weight="bold">Slide 4</text>
+      <text x="82" y="237" fill="#FFFFFF" font-size="11">Problem Formulation &amp; Edge Context</text>
+      <rect x="72" y="253" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="82" y="271" fill="#48CAE4" font-size="11" font-weight="bold">Slide 5</text>
+      <text x="82" y="285" fill="#FFFFFF" font-size="11">Diurnal Residual Math Equation</text>
+      <rect x="72" y="301" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="82" y="319" fill="#48CAE4" font-size="11" font-weight="bold">Slide 6</text>
+      <text x="82" y="333" fill="#FFFFFF" font-size="11">ML Benchmark Suite (OLS vs MLP)</text>
+      <rect x="72" y="349" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="82" y="367" fill="#48CAE4" font-size="11" font-weight="bold">Slide 7</text>
+      <text x="82" y="381" fill="#FFFFFF" font-size="11">Hardware vs Accuracy Trade-off</text>
+    </g>
+  </g>
+  <g id="agenda_col_2" data-pptx-bounds="355 135 270 500">
+    <rect x="355" y="135" width="270" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="355" y="135" width="270" height="50" rx="10" fill="#1E2D4A"/>
+    <rect x="355" y="135" width="4" height="50" rx="2" fill="#48CAE4"/>
+    <text x="370" y="157" fill="#48CAE4" font-size="11" font-weight="bold">PHASE II: FIXED-POINT ARITHMETIC</text>
+    <text x="370" y="174" fill="#8D99AE" font-size="12">Slides 8 – 11</text>
+    
+    <g id="agenda_items_2">
+      <rect x="367" y="205" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="377" y="223" fill="#48CAE4" font-size="11" font-weight="bold">Slide 8</text>
+      <text x="377" y="237" fill="#FFFFFF" font-size="11">Q8.8 &amp; Q2.14 Quantization Contract</text>
+      <rect x="367" y="253" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="377" y="271" fill="#48CAE4" font-size="11" font-weight="bold">Slide 9</text>
+      <text x="377" y="285" fill="#FFFFFF" font-size="11">Binary Alignment &amp; 35-bit Acc</text>
+      <rect x="367" y="301" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="377" y="319" fill="#48CAE4" font-size="11" font-weight="bold">Slide 10</text>
+      <text x="377" y="333" fill="#FFFFFF" font-size="11">Hardware Floor-Scaling Pitfall</text>
+      <rect x="367" y="349" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="377" y="367" fill="#48CAE4" font-size="11" font-weight="bold">Slide 11</text>
+      <text x="377" y="381" fill="#FFFFFF" font-size="11">Output Saturation Unit (sat16)</text>
+    </g>
+  </g>
+  <g id="agenda_col_3" data-pptx-bounds="650 135 270 500">
+    <rect x="650" y="135" width="270" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="650" y="135" width="270" height="50" rx="10" fill="#1E2D4A"/>
+    <rect x="650" y="135" width="4" height="50" rx="2" fill="#F77F00"/>
+    <text x="665" y="157" fill="#F77F00" font-size="11" font-weight="bold">PHASE III: DUAL RTL ARCHITECTURES</text>
+    <text x="665" y="174" fill="#8D99AE" font-size="12">Slides 12 – 16</text>
+    
+    <g id="agenda_items_3">
+      <rect x="662" y="205" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="672" y="223" fill="#48CAE4" font-size="11" font-weight="bold">Slide 12</text>
+      <text x="672" y="237" fill="#FFFFFF" font-size="11">Speed vs Resource Paradigms</text>
+      <rect x="662" y="253" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="672" y="271" fill="#48CAE4" font-size="11" font-weight="bold">Slide 13</text>
+      <text x="672" y="285" fill="#FFFFFF" font-size="11">6-Stage Pipelined Speed Core</text>
+      <rect x="662" y="301" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="672" y="319" fill="#48CAE4" font-size="11" font-weight="bold">Slide 14</text>
+      <text x="672" y="333" fill="#FFFFFF" font-size="11">Shared Datapath Resource Core</text>
+      <rect x="662" y="349" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="672" y="367" fill="#48CAE4" font-size="11" font-weight="bold">Slide 15</text>
+      <text x="672" y="381" fill="#FFFFFF" font-size="11">10-State FSM Controller</text>
+      <rect x="662" y="397" width="246" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="672" y="415" fill="#48CAE4" font-size="11" font-weight="bold">Slide 16</text>
+      <text x="672" y="429" fill="#FFFFFF" font-size="11">Top-Level SoC &amp; UART Telemetry</text>
+    </g>
+  </g>
+  <g id="agenda_col_4" data-pptx-bounds="945 135 275 500">
+    <rect x="945" y="135" width="275" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="945" y="135" width="275" height="50" rx="10" fill="#1E2D4A"/>
+    <rect x="945" y="135" width="4" height="50" rx="2" fill="#10B981"/>
+    <text x="960" y="157" fill="#10B981" font-size="11" font-weight="bold">PHASE IV: VERIFICATION &amp; DEFENSE</text>
+    <text x="960" y="174" fill="#8D99AE" font-size="12">Slides 17 – 22</text>
+    
+    <g id="agenda_items_4">
+      <rect x="957" y="205" width="251" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="967" y="223" fill="#48CAE4" font-size="11" font-weight="bold">Slide 17</text>
+      <text x="967" y="237" fill="#FFFFFF" font-size="11">SystemVerilog DPI-C Architecture</text>
+      <rect x="957" y="253" width="251" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="967" y="271" fill="#48CAE4" font-size="11" font-weight="bold">Slide 18</text>
+      <text x="967" y="285" fill="#FFFFFF" font-size="11">7-Phase Corner-Case Stress Suite</text>
+      <rect x="957" y="301" width="251" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="967" y="319" fill="#48CAE4" font-size="11" font-weight="bold">Slide 19</text>
+      <text x="967" y="333" fill="#FFFFFF" font-size="11">Cyclone II Synthesis &amp; Timing</text>
+      <rect x="957" y="349" width="251" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="967" y="367" fill="#48CAE4" font-size="11" font-weight="bold">Slide 20</text>
+      <text x="967" y="381" fill="#FFFFFF" font-size="11">HCMC 2-Year In-Silico Inference</text>
+      <rect x="957" y="397" width="251" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="967" y="415" fill="#48CAE4" font-size="11" font-weight="bold">Slide 21</text>
+      <text x="967" y="429" fill="#FFFFFF" font-size="11">Conclusion &amp; Hardware Demo</text>
+      <rect x="957" y="445" width="251" height="42" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+      <text x="967" y="463" fill="#48CAE4" font-size="11" font-weight="bold">Slide 22</text>
+      <text x="967" y="477" fill="#FFFFFF" font-size="11">Technical Defense &amp; Q&amp;A</text>
+    </g>
+  </g>
+  <g id="ftr_03" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
+    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="220" y="679" fill="#FFFFFF" font-size="13">22 Dense Technical Slides | 100% Aligned with CE436 Syllabus &amp; DE2 Hardware Implementation</text>
+  </g>
+</svg>

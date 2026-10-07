@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="section" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <g id="hdr_02" data-pptx-bounds="60 30 1160 85">
+    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">PROJECT STRUCTURE &amp; WORKFLOW</text>
+    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Full-Stack IC Design Flow: From Math to Silicon</text>
+    <text x="60" y="108" fill="#8D99AE" font-size="14">Division of engineering responsibilities across algorithm, micro-architecture, and verification pillars</text>
+    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+  </g>
+  <g id="pillar_algo" data-pptx-bounds="60 135 365 500">
+    <rect x="60" y="135" width="365" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="135" width="365" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="80" y="162" fill="#48CAE4" font-size="14" font-weight="bold">PILLAR 1: DSP &amp; ALGORITHMS</text>
+    
+    <text x="80" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Meteorological Time-Series</text>
+    <text x="80" y="235" fill="#8D99AE" font-size="13">• NASA POWER satellite API integration</text>
+    <text x="80" y="255" fill="#8D99AE" font-size="13">• 5-year HCMC hourly dataset (43,800 pts)</text>
+    <text x="80" y="275" fill="#8D99AE" font-size="13">• Diurnal residual formulation: T(t-21)</text>
+    
+    <text x="80" y="315" fill="#FFFFFF" font-size="15" font-weight="bold">Model Benchmark Suite</text>
+    <text x="80" y="340" fill="#8D99AE" font-size="13">• Evaluated OLS, Ridge, MLP, GBDT</text>
+    <text x="80" y="360" fill="#8D99AE" font-size="13">• Offline OLS parameter extraction in C++</text>
+    <text x="80" y="380" fill="#8D99AE" font-size="13">• Target MAE: 0.538°C on test data</text>
+    
+    <text x="80" y="420" fill="#FFFFFF" font-size="15" font-weight="bold">Numerical Specifications</text>
+    <text x="80" y="445" fill="#8D99AE" font-size="13">• Signed Q8.8 inputs &amp; outputs (LSB=1/256)</text>
+    <text x="80" y="465" fill="#8D99AE" font-size="13">• Signed Q2.14 multiplier coefficients</text>
+    <text x="80" y="485" fill="#8D99AE" font-size="13">• Symmetric rounding &amp; floor scaling</text>
+    
+    <rect x="80" y="530" width="325" height="85" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="95" y="555" fill="#48CAE4" font-size="12" font-weight="bold">Deliverable Artifacts:</text>
+    <text x="95" y="575" fill="#8D99AE" font-size="12">• data/hcmc_t2m_2021_2025.csv</text>
+    <text x="95" y="595" fill="#8D99AE" font-size="12">• software/train_models.py, benchmark.py</text>
+  </g>
+  <g id="pillar_rtl" data-pptx-bounds="455 135 365 500">
+    <rect x="455" y="135" width="365" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="455" y="135" width="365" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="475" y="162" fill="#48CAE4" font-size="14" font-weight="bold">PILLAR 2: MICRO-ARCHITECTURE &amp; RTL</text>
+    
+    <text x="475" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Speed Core (temp_predictor_speed)</text>
+    <text x="475" y="235" fill="#8D99AE" font-size="13">• Fully pipelined 6-stage feed-forward</text>
+    <text x="475" y="255" fill="#8D99AE" font-size="13">• Initiation Interval II = 1 clock cycle</text>
+    <text x="475" y="275" fill="#8D99AE" font-size="13">• Throughput: 50 MSamples/sec @ 50 MHz</text>
+    
+    <text x="475" y="315" fill="#FFFFFF" font-size="15" font-weight="bold">Resource Core (temp_predictor_resource)</text>
+    <text x="475" y="340" fill="#8D99AE" font-size="13">• Time-multiplexed 10-state FSM datapath</text>
+    <text x="475" y="360" fill="#8D99AE" font-size="13">• Shares 1 DSP mult &amp; 1 subtractor ALU</text>
+    <text x="475" y="380" fill="#8D99AE" font-size="13">• Backpressure handshake: sample_ready</text>
+    
+    <text x="475" y="420" fill="#FFFFFF" font-size="15" font-weight="bold">Top-Level SoC Integration</text>
+    <text x="475" y="445" fill="#8D99AE" font-size="13">• 115,200 Baud UART RX/TX telemetry</text>
+    <text x="475" y="465" fill="#8D99AE" font-size="13">• Packet parser, formatter, and FIFO</text>
+    <text x="475" y="485" fill="#8D99AE" font-size="13">• Metastability reset_sync synchronizer</text>
+    
+    <rect x="475" y="530" width="325" height="85" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="490" y="555" fill="#48CAE4" font-size="12" font-weight="bold">Deliverable Artifacts:</text>
+    <text x="490" y="575" fill="#8D99AE" font-size="12">• hardware/speed_optimized/ (Verilog)</text>
+    <text x="490" y="595" fill="#8D99AE" font-size="12">• hardware/resource_optimized/ (Verilog)</text>
+  </g>
+  <g id="pillar_dv" data-pptx-bounds="850 135 370 500">
+    <rect x="850" y="135" width="370" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="850" y="135" width="370" height="42" rx="10" fill="#1E2D4A"/>
+    <text x="870" y="162" fill="#48CAE4" font-size="14" font-weight="bold">PILLAR 3: VERIFICATION &amp; FPGA</text>
+    
+    <text x="870" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">SystemVerilog DPI-C Co-Sim</text>
+    <text x="870" y="235" fill="#8D99AE" font-size="13">• Live C++ reference oracle (ols_reference.hpp)</text>
+    <text x="870" y="255" fill="#8D99AE" font-size="13">• Cycle-accurate scoreboard checking</text>
+    <text x="870" y="275" fill="#8D99AE" font-size="13">• Zero-tolerance: 0 LSB mismatch allowed</text>
+    
+    <text x="870" y="315" fill="#FFFFFF" font-size="15" font-weight="bold">7-Phase Corner-Case Suite</text>
+    <text x="870" y="340" fill="#8D99AE" font-size="13">• 24-sample warm-up lockout verification</text>
+    <text x="870" y="360" fill="#8D99AE" font-size="13">• Extreme thermal saturation sweeps (sat16)</text>
+    <text x="870" y="380" fill="#8D99AE" font-size="13">• 4,096-sample bursts &amp; random stalls</text>
+    
+    <text x="870" y="420" fill="#FFFFFF" font-size="15" font-weight="bold">Cyclone II Physical Synthesis</text>
+    <text x="870" y="445" fill="#8D99AE" font-size="13">• Fmax > 125 MHz (2.5x timing margin)</text>
+    <text x="870" y="465" fill="#8D99AE" font-size="13">• Resource usage: &lt;1% Logic Elements</text>
+    <text x="870" y="485" fill="#8D99AE" font-size="13">• Ultra-low power: ~11.8 mW dynamic</text>
+    
+    <rect x="870" y="530" width="330" height="85" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
+    <text x="885" y="555" fill="#48CAE4" font-size="12" font-weight="bold">Deliverable Artifacts:</text>
+    <text x="885" y="575" fill="#8D99AE" font-size="12">• hardware/tb/ols_tb_driver.sv, dpi/</text>
+    <text x="885" y="595" fill="#8D99AE" font-size="12">• 100% test pass rate on 10,000+ vectors</text>
+  </g>
+  <g id="ftr_02" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
+    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="220" y="679" fill="#FFFFFF" font-size="13">Pillar Metrics: 43,800 Dataset Samples | 2 Synthesizable RTL Cores | 100% Bit-Exact DPI-C Coverage</text>
+  </g>
+</svg>
