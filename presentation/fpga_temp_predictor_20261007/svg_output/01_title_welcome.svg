@@ -1,75 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
      data-pptx-page-role="cover" lang="en" font-family="Arial, Segoe UI, sans-serif">
-  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
   <g id="hero_header" data-pptx-bounds="60 40 1160 250">
-    <rect x="60" y="40" width="1160" height="240" rx="12" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="60" y="40" width="8" height="240" rx="4" fill="#48CAE4"/>
-    <rect x="90" y="65" width="460" height="26" rx="4" fill="#48CAE4" fill-opacity="0.15"/>
-    <text x="100" y="83" fill="#48CAE4" font-size="12" font-weight="bold" letter-spacing="1">CE436: DISCRETE-TIME SIGNAL PROCESSING &amp; APPLICATIONS</text>
-    <text x="90" y="140" fill="#FFFFFF" font-size="36" font-weight="bold">FPGA-Based Edge Temperature Predictor</text>
-    <text x="90" y="180" fill="#48CAE4" font-size="20" font-weight="bold">Dual-Architecture RTL Design &amp; Bit-Exact DPI-C Verification</text>
-    <text x="90" y="215" fill="#8D99AE" font-size="15">Fixed-Point Diurnal Residual Modeling on Altera Cyclone II (DE2) | 50 MHz Real-Time Inference</text>
-    <rect x="90" y="235" width="310" height="24" rx="4" fill="#10B981" fill-opacity="0.2"/>
-    <text x="100" y="252" fill="#10B981" font-size="12" font-weight="bold">HARDWARE VERIFIED: 100% BIT-EXACT MATCH</text>
+    <rect x="60" y="40" width="1160" height="250" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="60" y="40" width="10" height="250" rx="4" fill="#1E3A8A"/>
+    
+    <rect x="90" y="65" width="460" height="26" rx="4" fill="#EFF6FF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="100" y="83" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">CE436: DISCRETE-TIME SIGNAL PROCESSING &amp; APPLICATIONS</text>
+    
+    <text x="90" y="140" fill="#0F172A" font-size="34" font-weight="bold">FPGA Edge Temperature Predictor</text>
+    <text x="90" y="178" fill="#1E3A8A" font-size="20" font-weight="bold">Dual-Core RTL Design &amp; Bit-Exact DPI-C Verification</text>
+    <text x="90" y="210" fill="#334155" font-size="14">Altera Cyclone II (DE2) | Signed Q8.8 / Q2.14 | 50 MHz Real-Time Inference</text>
+    
+    <rect x="90" y="235" width="310" height="26" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="100" y="253" fill="#16A34A" font-size="12" font-weight="bold">100% BIT-EXACT MATCH (10,000+ VECTORS)</text>
   </g>
-  <g id="card_platform" data-pptx-bounds="60 310 365 305">
-    <rect x="60" y="310" width="365" height="305" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="60" y="310" width="365" height="40" rx="10" fill="#1E2D4A"/>
-    <text x="80" y="336" fill="#48CAE4" font-size="14" font-weight="bold">TARGET PLATFORM &amp; IO</text>
+  <g id="card_platform" data-pptx-bounds="60 315 365 315">
+    <rect x="60" y="315" width="365" height="315" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="315" width="365" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="342" fill="#1E3A8A" font-size="13" font-weight="bold">TARGET PLATFORM</text>
     
-    <text x="80" y="380" fill="#FFFFFF" font-size="14" font-weight="bold">Target Silicon:</text>
-    <text x="80" y="402" fill="#8D99AE" font-size="13">Altera Cyclone II EP2C35F672C6</text>
+    <text x="80" y="385" fill="#1E3A8A" font-size="12" font-weight="bold">FPGA Device:</text>
+    <text x="95" y="405" fill="#334155" font-size="12">Cyclone II EP2C35F672C6 (90nm)</text>
     
-    <text x="80" y="435" fill="#FFFFFF" font-size="14" font-weight="bold">Development Board:</text>
-    <text x="80" y="457" fill="#8D99AE" font-size="13">Altera DE2 Development Board</text>
+    <text x="80" y="435" fill="#1E3A8A" font-size="12" font-weight="bold">Development Board:</text>
+    <text x="95" y="455" fill="#334155" font-size="12">Terasic DE2 @ 50 MHz Oscillator</text>
     
-    <text x="80" y="490" fill="#FFFFFF" font-size="14" font-weight="bold">Clocking &amp; Serial Telemetry:</text>
-    <text x="80" y="512" fill="#8D99AE" font-size="13">50.000 MHz Oscillator | RS-232 UART</text>
-    <text x="80" y="534" fill="#8D99AE" font-size="13">115,200 Baud (16x Oversampling RX)</text>
+    <text x="80" y="485" fill="#1E3A8A" font-size="12" font-weight="bold">Serial Interface:</text>
+    <text x="95" y="505" fill="#334155" font-size="12">RS-232 UART @ 115,200 Baud</text>
     
-    <rect x="80" y="560" width="325" height="36" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="95" y="583" fill="#48CAE4" font-size="12" font-weight="bold">Resource Budget: 35 Embedded Multipliers</text>
+    <rect x="80" y="545" width="325" height="55" rx="6" fill="#EFF6FF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="570" fill="#1E3A8A" font-size="12" font-weight="bold">DSP Multiplier Budget: 35 Units</text>
+    <text x="95" y="588" fill="#2563EB" font-size="11">Predictor uses &lt;6% chip DSP capacity</text>
   </g>
-  <g id="card_pipeline" data-pptx-bounds="455 310 365 305">
-    <rect x="455" y="310" width="365" height="305" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="455" y="310" width="365" height="40" rx="10" fill="#1E2D4A"/>
-    <text x="475" y="336" fill="#48CAE4" font-size="14" font-weight="bold">ENGINEERING SCOPE</text>
+  <g id="card_scope" data-pptx-bounds="455 315 365 315">
+    <rect x="455" y="315" width="365" height="315" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="455" y="315" width="365" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="475" y="342" fill="#1E3A8A" font-size="13" font-weight="bold">RTL DESIGN SCOPE</text>
     
-    <text x="475" y="380" fill="#FFFFFF" font-size="14" font-weight="bold">Algorithmic Model:</text>
-    <text x="475" y="402" fill="#8D99AE" font-size="13">Diurnal Residual OLS Regression (3 Terms)</text>
+    <text x="475" y="385" fill="#1E3A8A" font-size="12" font-weight="bold">Signal Algorithm:</text>
+    <text x="490" y="405" fill="#334155" font-size="12">3-Tap Diurnal Residual OLS</text>
     
-    <text x="475" y="435" fill="#FFFFFF" font-size="14" font-weight="bold">Dual RTL Micro-Architectures:</text>
-    <text x="475" y="457" fill="#8D99AE" font-size="13">• Speed Core: Pipelined, II=1, 50 MSps</text>
-    <text x="475" y="479" fill="#8D99AE" font-size="13">• Resource Core: 10-State FSM, Shared Mult</text>
+    <text x="475" y="435" fill="#1E3A8A" font-size="12" font-weight="bold">Speed Core:</text>
+    <text x="490" y="455" fill="#334155" font-size="12">6 Stages | II = 1 (50 MSps) | 412 LEs</text>
     
-    <text x="475" y="512" fill="#FFFFFF" font-size="14" font-weight="bold">Verification Infrastructure:</text>
-    <text x="475" y="534" fill="#8D99AE" font-size="13">SystemVerilog Driver + DPI-C C++ Oracle</text>
+    <text x="475" y="485" fill="#1E3A8A" font-size="12" font-weight="bold">Resource Core:</text>
+    <text x="490" y="505" fill="#334155" font-size="12">10 States | 1 Shared Mult | 236 LEs</text>
     
-    <rect x="475" y="560" width="325" height="36" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="490" y="583" fill="#10B981" font-size="12" font-weight="bold">Quantization: Signed Q8.8 &amp; Q2.14 Formats</text>
+    <rect x="475" y="545" width="325" height="55" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="490" y="570" fill="#1E3A8A" font-size="12" font-weight="bold">Signed Fixed-Point: Q8.8 / Q2.14</text>
+    <text x="490" y="588" fill="#334155" font-size="11">LSB = 0.0039°C with sat16 clamp</text>
   </g>
-  <g id="card_status" data-pptx-bounds="850 310 370 305">
-    <rect x="850" y="310" width="370" height="305" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="850" y="310" width="370" height="40" rx="10" fill="#1E2D4A"/>
-    <text x="870" y="336" fill="#48CAE4" font-size="14" font-weight="bold">PROJECT DEFENSE METADATA</text>
+  <g id="card_defense" data-pptx-bounds="850 315 370 315">
+    <rect x="850" y="315" width="370" height="315" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="850" y="315" width="370" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="870" y="342" fill="#1E3A8A" font-size="13" font-weight="bold">DEFENSE METADATA</text>
     
-    <text x="870" y="380" fill="#FFFFFF" font-size="14" font-weight="bold">Student / Presenter:</text>
-    <text x="870" y="402" fill="#8D99AE" font-size="13">Khoa Le &amp; Project Engineering Team</text>
+    <text x="870" y="385" fill="#1E3A8A" font-size="12" font-weight="bold">Student Engineers:</text>
+    <text x="885" y="405" fill="#0F172A" font-size="11.5">Le Dang Khoa (24520816) — Lead / RTL</text>
+    <text x="885" y="425" fill="#0F172A" font-size="11.5">Nguyen Nghia Khoa (24520832) — Model</text>
+    <text x="885" y="445" fill="#0F172A" font-size="11.5">Nguyen Minh Khoa (24520831) — DV / TB</text>
     
-    <text x="870" y="435" fill="#FFFFFF" font-size="14" font-weight="bold">Specialization Track:</text>
-    <text x="870" y="457" fill="#8D99AE" font-size="13">Undergraduate IC Design &amp; Verification (DV)</text>
+    <text x="870" y="475" fill="#1E3A8A" font-size="12" font-weight="bold">Academic Advisor:</text>
+    <text x="885" y="495" fill="#334155" font-size="12">Dr. Tran Xuan Phuoc (CE-UIT)</text>
     
-    <text x="870" y="490" fill="#FFFFFF" font-size="14" font-weight="bold">Academic Context:</text>
-    <text x="870" y="512" fill="#8D99AE" font-size="13">Semester 5 Capstone Defense | CE436</text>
-    
-    <rect x="870" y="555" width="330" height="44" rx="6" fill="#F77F00" fill-opacity="0.15" stroke="#F77F00" stroke-width="1"/>
-    <text x="885" y="575" fill="#F77F00" font-size="11" font-weight="bold">EVALUATION FOCUS:</text>
-    <text x="885" y="591" fill="#FFFFFF" font-size="12">Mathematical Rigor, RTL Sizing &amp; Bit-Exact DV</text>
-  </g>
-  <g id="footer_hero" data-pptx-bounds="60 635 1160 55">
-    <rect x="60" y="635" width="1160" height="50" rx="8" fill="#1E2D4A" stroke="#2A3D66" stroke-width="1"/>
-    <text x="85" y="665" fill="#FFFFFF" font-size="13" font-weight="bold">FACULTY OF COMPUTER ENGINEERING — INTEGRATED CIRCUIT DESIGN LAB</text>
-    <text x="1195" y="665" fill="#8D99AE" font-size="13" text-anchor="end">Slide 1 / 22</text>
+    <rect x="870" y="545" width="330" height="55" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="885" y="570" fill="#16A34A" font-size="12" font-weight="bold">Status: 100% Bit-Exact Match</text>
+    <text x="885" y="588" fill="#334155" font-size="11">0 Mismatches across 10,000+ vectors</text>
   </g>
 </svg>

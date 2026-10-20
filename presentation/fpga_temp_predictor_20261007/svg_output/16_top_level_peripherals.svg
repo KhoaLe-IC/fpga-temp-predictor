@@ -1,119 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
      data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
-  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
   <g id="hdr_16" data-pptx-bounds="60 30 1160 85">
-    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">SYSTEM-ON-CHIP INTEGRATION</text>
-    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Top-Level SoC Wrapper &amp; Peripheral Subsystem on Altera DE2</text>
-    <text x="60" y="108" fill="#8D99AE" font-size="14">RS-232 UART communication, packet framing, clock domain management, and FPGA peripherals</text>
-    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="30" width="1160" height="85" fill="#F8FAFC" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="80" y="52" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">FPGA SYSTEM TOP-LEVEL INTEGRATION</text>
+    <text x="80" y="82" fill="#0F172A" font-size="24" font-weight="bold">Dual Top-Module Architectures: Speed vs Resource Wrappers</text>
+    <text x="80" y="104" fill="#64748B" font-size="13">Complete Verilog top-level integration: Streaming Packet Parser vs Dual-FIFO Controller</text>
   </g>
-  <g id="soc_diagram" data-pptx-bounds="60 135 1160 330">
-    <rect x="60" y="135" width="1160" height="330" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="60" y="135" width="1160" height="42" rx="10" fill="#1E2D4A"/>
-    <text x="80" y="162" fill="#48CAE4" font-size="14" font-weight="bold">TOP-LEVEL SYSTEM-ON-CHIP BLOCK DIAGRAM (top_temp_predictor.v)</text>
+  <g id="top_speed_wrapper" data-pptx-bounds="60 135 1160 238">
+    <rect x="60" y="135" width="1160" height="238" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="135" width="1160" height="32" rx="8" fill="#F1F5F9"/>
+    <text x="75" y="157" fill="#1E3A8A" font-size="12" font-weight="bold">DESIGN A TOP MODULE: de2_temp_predictor_top.v (Streaming Packet Architecture)</text>
     
-    <!-- SoC Interconnect Blocks -->
-    <!-- Block 1: Clock & Reset -->
-    <rect x="80" y="200" width="160" height="95" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="95" y="225" fill="#48CAE4" font-size="12" font-weight="bold">CLOCK &amp; RESET</text>
-    <text x="95" y="248" fill="#FFFFFF" font-size="11">50 MHz Clock Pin</text>
-    <text x="95" y="268" fill="#F77F00" font-size="11">reset_sync.v (2-FF)</text>
+    <!-- Block 1: IO &amp; Reset Sync (x=75, w=110) -->
+    <rect x="75" y="175" width="110" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="85" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">CLOCK &amp; RESET</text>
+    <text x="85" y="215" fill="#334155" font-size="9">• CLOCK_50 (50MHz)</text>
+    <text x="85" y="232" fill="#334155" font-size="9">• KEY0_N (Button)</text>
+    <rect x="82" y="244" width="96" height="32" rx="3" fill="#EFF6FF" stroke="#2563EB" stroke-width="1"/>
+    <text x="130" y="258" fill="#1E3A8A" font-size="9" font-weight="bold" text-anchor="middle">reset_sync.v</text>
+    <text x="130" y="270" fill="#2563EB" font-size="8" text-anchor="middle">rst_n (Sync)</text>
     
-    <!-- Arrow 1 to UART RX -->
-    <line x1="240" y1="248" x2="270" y2="248" stroke="#48CAE4" stroke-width="1.5"/>
-    <polygon points="270,245 276,248 270,251" fill="#48CAE4"/>
+    <!-- Connector 1 -> 2 -->
+    <line x1="185" y1="230" x2="200" y2="230" stroke="#2563EB" stroke-width="1.5"/>
     
-    <!-- Block 2: UART RX -->
-    <rect x="275" y="200" width="160" height="95" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="290" y="225" fill="#48CAE4" font-size="12" font-weight="bold">UART RECEIVER</text>
-    <text x="290" y="248" fill="#FFFFFF" font-size="11">115,200 Baud Rate</text>
-    <text x="290" y="268" fill="#8D99AE" font-size="11">16x Oversampling</text>
-    <text x="290" y="285" fill="#10B981" font-size="10">uart_rx.v</text>
+    <!-- Block 2: UART RX (x=200, w=115) -->
+    <rect x="200" y="175" width="115" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="210" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">UART RECEIVER</text>
+    <text x="210" y="215" fill="#0F172A" font-size="10" font-weight="bold">uart_rx.v</text>
+    <text x="210" y="232" fill="#334155" font-size="9">• 115,200 Baud 8-N-1</text>
+    <text x="210" y="248" fill="#334155" font-size="9">• 16× Oversampling</text>
+    <text x="210" y="272" fill="#2563EB" font-size="9" font-weight="bold">rx_data [7:0]</text>
     
-    <!-- Arrow 2 to Packet Parser -->
-    <line x1="435" y1="248" x2="465" y2="248" stroke="#48CAE4" stroke-width="1.5"/>
-    <polygon points="465,245 471,248 465,251" fill="#48CAE4"/>
+    <!-- Connector 2 -> 3 -->
+    <line x1="315" y1="230" x2="330" y2="230" stroke="#2563EB" stroke-width="1.5"/>
     
-    <!-- Block 3: Parser & FIFO -->
-    <rect x="470" y="200" width="165" height="95" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="485" y="225" fill="#48CAE4" font-size="12" font-weight="bold">PACKET PARSER</text>
-    <text x="485" y="248" fill="#FFFFFF" font-size="11">2-Byte Framing</text>
-    <text x="485" y="268" fill="#F77F00" font-size="11">simple_fifo.v</text>
-    <text x="485" y="285" fill="#10B981" font-size="10">packet_parser.v</text>
+    <!-- Block 3: Packet Parser (x=330, w=145) -->
+    <rect x="330" y="175" width="145" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="340" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">FRAME PARSER</text>
+    <text x="340" y="215" fill="#0F172A" font-size="10" font-weight="bold">packet_parser.v</text>
+    <text x="340" y="232" fill="#334155" font-size="9">• Sync: AA 55 01 02</text>
+    <text x="340" y="248" fill="#334155" font-size="9">• Checksum validator</text>
+    <text x="340" y="272" fill="#2563EB" font-size="9" font-weight="bold">parsed_temp [15:0]</text>
     
-    <!-- Arrow 3 to Predictor Core -->
-    <line x1="635" y1="248" x2="665" y2="248" stroke="#48CAE4" stroke-width="2"/>
-    <polygon points="665,244 673,248 665,252" fill="#48CAE4"/>
+    <!-- Connector 3 -> 4 -->
+    <line x1="475" y1="230" x2="490" y2="230" stroke="#2563EB" stroke-width="2"/>
     
-    <!-- Block 4: Predictor Core (Prominent) -->
-    <rect x="670" y="195" width="190" height="105" rx="8" fill="#1E2D4A" stroke="#48CAE4" stroke-width="2"/>
-    <text x="685" y="222" fill="#48CAE4" font-size="13" font-weight="bold">PREDICTOR CORE</text>
-    <text x="685" y="245" fill="#FFFFFF" font-size="12" font-weight="bold">Speed / Resource RTL</text>
-    <text x="685" y="268" fill="#10B981" font-size="11">• Q8.8 Math Engine</text>
-    <text x="685" y="288" fill="#F77F00" font-size="11">• 35-bit Accumulator</text>
+    <!-- Block 4: Speed Core (Hero Core) (x=490, w=225) -->
+    <rect x="490" y="170" width="225" height="120" rx="6" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="2"/>
+    <text x="502" y="192" fill="#1E3A8A" font-size="11" font-weight="bold">PREDICTOR PIPELINE CORE</text>
+    <text x="502" y="210" fill="#1E3A8A" font-size="12" font-weight="bold">temp_predictor_speed.v</text>
+    <text x="502" y="228" fill="#0F172A" font-size="9">• 25-Sample History Shift Register</text>
+    <text x="502" y="243" fill="#0F172A" font-size="9">• 6 Pipeline Stages (S0 to S5)</text>
+    <text x="502" y="258" fill="#0F172A" font-size="9">• 2 Dedicated 17×16 DSP Multipliers</text>
+    <rect x="500" y="266" width="205" height="18" rx="3" fill="#FFFFFF" stroke="#2563EB" stroke-width="0.8"/>
+    <text x="602" y="279" fill="#2563EB" font-size="9" font-weight="bold" text-anchor="middle">II = 1 | L = 5 Cycles (100 ns) | 142 MHz</text>
     
-    <!-- Arrow 4 to Formatter -->
-    <line x1="860" y1="248" x2="890" y2="248" stroke="#48CAE4" stroke-width="1.5"/>
-    <polygon points="890,245 896,248 890,251" fill="#48CAE4"/>
+    <!-- Connector 4 -> 5 -->
+    <line x1="715" y1="230" x2="730" y2="230" stroke="#2563EB" stroke-width="2"/>
     
-    <!-- Block 5: Packet Formatter -->
-    <rect x="895" y="200" width="150" height="95" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="910" y="225" fill="#48CAE4" font-size="12" font-weight="bold">FORMATTER</text>
-    <text x="910" y="248" fill="#FFFFFF" font-size="11">16-Bit Output</text>
-    <text x="910" y="268" fill="#8D99AE" font-size="11">Encapsulation</text>
-    <text x="910" y="285" fill="#10B981" font-size="10">packet_formatter.v</text>
+    <!-- Block 5: Packet Formatter (x=730, w=145) -->
+    <rect x="730" y="175" width="145" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="740" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">FRAME FORMATTER</text>
+    <text x="740" y="215" fill="#0F172A" font-size="10" font-weight="bold">packet_formatter.v</text>
+    <text x="740" y="232" fill="#334155" font-size="9">• Header: AA 55 81 02</text>
+    <text x="740" y="248" fill="#334155" font-size="9">• Checksum generator</text>
+    <text x="740" y="272" fill="#16A34A" font-size="9" font-weight="bold">tx_data [7:0]</text>
     
-    <!-- Arrow 5 to UART TX -->
-    <line x1="1045" y1="248" x2="1065" y2="248" stroke="#48CAE4" stroke-width="1.5"/>
-    <polygon points="1065,245 1071,248 1065,251" fill="#48CAE4"/>
+    <!-- Connector 5 -> 6 -->
+    <line x1="875" y1="230" x2="890" y2="230" stroke="#2563EB" stroke-width="1.5"/>
     
-    <!-- Block 6: UART TX -->
-    <rect x="1070" y="200" width="130" height="95" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="1085" y="225" fill="#48CAE4" font-size="12" font-weight="bold">UART TX</text>
-    <text x="1085" y="248" fill="#FFFFFF" font-size="11">115,200 Baud</text>
-    <text x="1085" y="268" fill="#8D99AE" font-size="11">Serial Out</text>
-    <text x="1085" y="285" fill="#10B981" font-size="10">uart_tx.v</text>
+    <!-- Block 6: UART TX (x=890, w=115) -->
+    <rect x="890" y="175" width="115" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="900" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">UART TRANSMITTER</text>
+    <text x="900" y="215" fill="#0F172A" font-size="10" font-weight="bold">uart_tx.v</text>
+    <text x="900" y="232" fill="#334155" font-size="9">• 115,200 Baud 8-N-1</text>
+    <text x="900" y="248" fill="#334155" font-size="9">• Serializer / stop bit</text>
+    <text x="900" y="272" fill="#16A34A" font-size="9" font-weight="bold">UART_TXD Pin</text>
     
-    <!-- Bottom detail note -->
-    <rect x="80" y="320" width="1120" height="130" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="100" y="348" fill="#48CAE4" font-size="12" font-weight="bold">COMMUNICATION PROTOCOL SPECIFICATION:</text>
-    <text x="100" y="372" fill="#FFFFFF" font-size="12">• Input Frame Format: [0xAA] [MSB] [LSB] [0x55] (4 bytes total per temperature sample).</text>
-    <text x="100" y="394" fill="#FFFFFF" font-size="12">• Output Frame Format: [0x55] [MSB] [LSB] [0xAA] (4 bytes total per predicted forecast).</text>
-    <text x="100" y="416" fill="#8D99AE" font-size="11">• Synchronous FIFO absorbs incoming byte timing jitter and allows host to stream data continuously at 115,200 baud.</text>
-    <text x="100" y="436" fill="#10B981" font-size="11" font-weight="bold">• DE2 Board switches and 7-segment display drivers map upper/lower nibbles for real-time visual inspection.</text>
+    <!-- Connector 4 -> 7 (Peripherals) -->
+    <path d="M 602,290 L 602,305 L 1020,305 L 1020,230 L 1030,230" fill="none" stroke="#4F46E5" stroke-width="1.2" stroke-dasharray="2 2"/>
+    
+    <!-- Block 7: Board Peripherals (x=1030, w=175) -->
+    <rect x="1030" y="175" width="175" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="1040" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">DE2 BOARD PERIPHERALS</text>
+    <text x="1040" y="215" fill="#4F46E5" font-size="9" font-weight="bold">• Double-Dabble Bin-to-BCD</text>
+    <text x="1040" y="232" fill="#334155" font-size="9">• HEX3..HEX0 7-Seg LED</text>
+    <text x="1040" y="248" fill="#334155" font-size="9">• LEDR status &amp; error flags</text>
+    <rect x="1038" y="258" width="158" height="20" rx="3" fill="#F0FDF4" stroke="#16A34A" stroke-width="0.8"/>
+    <text x="1117" y="272" fill="#16A34A" font-size="9" font-weight="bold" text-anchor="middle">Live: " 28.7°C" on Board</text>
+    
+    <!-- Bottom Spec Strip for Design A -->
+    <rect x="75" y="325" width="1130" height="35" rx="4" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="0.8"/>
+    <text x="90" y="346" fill="#1E3A8A" font-size="10" font-weight="bold">Speed System Contract:</text>
+    <text x="230" y="346" fill="#334155" font-size="10">Streaming parser framing (AA 55) • Zero backpressure bubbles • 50 MSps throughput @ 50 MHz • 412 LEs</text>
   </g>
-  <g id="card_board_hw" data-pptx-bounds="60 485 565 150">
-    <rect x="60" y="485" width="565" height="150" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="60" y="485" width="565" height="36" rx="10" fill="#1E2D4A"/>
-    <text x="80" y="509" fill="#48CAE4" font-size="13" font-weight="bold">ALTERA DE2 PHYSICAL BOARD PERIPHERALS</text>
+  <g id="top_resource_wrapper" data-pptx-bounds="60 388 1160 248">
+    <rect x="60" y="388" width="1160" height="248" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="388" width="1160" height="32" rx="8" fill="#F1F5F9"/>
+    <text x="75" y="410" fill="#1E3A8A" font-size="12" font-weight="bold">DESIGN B TOP MODULE: top_temp_predictor_uart.v (Dual-FIFO Buffered Architecture)</text>
     
-    <text x="80" y="540" fill="#FFFFFF" font-size="13">• Master Clock Pin:</text>
-    <text x="210" y="540" fill="#8D99AE" font-size="13">PIN_N2 (50.0 MHz on-board crystal oscillator)</text>
+    <!-- Block 1: IO &amp; POR (x=75, w=110) -->
+    <rect x="75" y="430" width="110" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="85" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">CLOCK &amp; POR</text>
+    <text x="85" y="470" fill="#334155" font-size="9">• CLOCK_50 (50MHz)</text>
+    <text x="85" y="487" fill="#334155" font-size="9">• UART_RX Pin</text>
+    <rect x="82" y="499" width="96" height="32" rx="3" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="130" y="513" fill="#1E3A8A" font-size="9" font-weight="bold" text-anchor="middle">por_cnt (128 clk)</text>
+    <text x="130" y="525" fill="#64748B" font-size="8" text-anchor="middle">2-FF rx_sync</text>
     
-    <text x="80" y="565" fill="#FFFFFF" font-size="13">• RS-232 Serial Port:</text>
-    <text x="220" y="565" fill="#8D99AE" font-size="13">DB9 Female (MAX232 transceiver to UART RX/TX)</text>
+    <!-- Connector 1 -> 2 -->
+    <line x1="185" y1="485" x2="200" y2="485" stroke="#2563EB" stroke-width="1.5"/>
     
-    <text x="80" y="590" fill="#FFFFFF" font-size="13">• 7-Segment Readout:</text>
-    <text x="235" y="590" fill="#10B981" font-size="13" font-weight="bold">HEX3..HEX0 display T_hat(t+3) in integer/decimal °C</text>
+    <!-- Block 2: UART RX (x=200, w=110) -->
+    <rect x="200" y="430" width="110" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="210" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">UART RECEIVER</text>
+    <text x="210" y="470" fill="#0F172A" font-size="10" font-weight="bold">uart_rx.v</text>
+    <text x="210" y="487" fill="#334155" font-size="9">• 115,200 Baud 8-N-1</text>
+    <text x="210" y="503" fill="#334155" font-size="9">• 16× Oversampling</text>
+    <text x="210" y="527" fill="#2563EB" font-size="9" font-weight="bold">rx_data [7:0]</text>
     
-    <text x="80" y="618" fill="#F77F00" font-size="12">• Pushbutton KEY0 acts as system active-low asynchronous reset.</text>
-  </g>
-  <g id="card_clk_rst" data-pptx-bounds="655 485 565 150">
-    <rect x="655" y="485" width="565" height="150" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="655" y="485" width="565" height="36" rx="10" fill="#1E2D4A"/>
-    <text x="675" y="509" fill="#48CAE4" font-size="13" font-weight="bold">METASTABILITY &amp; RESET HARDENING</text>
+    <!-- Connector 2 -> 3 -->
+    <line x1="310" y1="485" x2="325" y2="485" stroke="#2563EB" stroke-width="1.5"/>
     
-    <text x="675" y="540" fill="#FFFFFF" font-size="13">• Synchronizer Unit (reset_sync.v):</text>
-    <text x="675" y="562" fill="#8D99AE" font-size="12">  2-stage flip-flop synchronizer prevents metastability during</text>
-    <text x="675" y="582" fill="#8D99AE" font-size="12">  asynchronous button release on DE2 board.</text>
+    <!-- Block 3: RX FIFO (x=325, w=120) -->
+    <rect x="325" y="430" width="120" height="110" rx="5" fill="#FFFBEB" stroke="#D97706" stroke-width="1.2"/>
+    <text x="335" y="450" fill="#D97706" font-size="10" font-weight="bold">RX FIFO (16×8)</text>
+    <text x="335" y="470" fill="#0F172A" font-size="10" font-weight="bold">simple_fifo.v</text>
+    <text x="335" y="487" fill="#334155" font-size="9">• 16-Byte Circular RAM</text>
+    <text x="335" y="503" fill="#334155" font-size="9">• Decouples host jitter</text>
+    <text x="335" y="527" fill="#D97706" font-size="9" font-weight="bold">dout, empty, full</text>
     
-    <text x="675" y="612" fill="#10B981" font-size="12" font-weight="bold">• Clean Deassertion: Guarantees synchronous release across all internal registers.</text>
+    <!-- Connector 3 -> 4 -->
+    <line x1="445" y1="485" x2="460" y2="485" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 4: UART Controller FSM (x=460, w=160) -->
+    <rect x="460" y="430" width="160" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="470" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">UART CONTROLLER</text>
+    <text x="470" y="470" fill="#0F172A" font-size="10" font-weight="bold">temp_uart_controller.v</text>
+    <text x="470" y="487" fill="#334155" font-size="9">• 2-Byte Delimiter Parser</text>
+    <text x="470" y="503" fill="#334155" font-size="9">• Handshake Arbiter</text>
+    <text x="470" y="527" fill="#2563EB" font-size="9" font-weight="bold">sample_valid / ready</text>
+    
+    <!-- Connector 4 <-> 5 -->
+    <line x1="620" y1="480" x2="635" y2="480" stroke="#16A34A" stroke-width="1.8"/>
+    <line x1="635" y1="490" x2="620" y2="490" stroke="#2563EB" stroke-width="1.8"/>
+    
+    <!-- Block 5: Resource Core (Hero Core) (x=635, w=235) -->
+    <rect x="635" y="425" width="235" height="120" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="2"/>
+    <text x="647" y="447" fill="#16A34A" font-size="11" font-weight="bold">TIME-MULTIPLEXED CORE</text>
+    <text x="647" y="465" fill="#1E3A8A" font-size="12" font-weight="bold">temp_predictor_resource.v</text>
+    <text x="647" y="483" fill="#0F172A" font-size="9">• temp_history_buffer.v (25 taps)</text>
+    <text x="647" y="498" fill="#0F172A" font-size="9">• ols_shared_datapath.v (1 Shared DSP)</text>
+    <text x="647" y="513" fill="#0F172A" font-size="9">• 10-State Sequential FSM Controller</text>
+    <rect x="645" y="521" width="215" height="18" rx="3" fill="#FFFFFF" stroke="#16A34A" stroke-width="0.8"/>
+    <text x="752" y="534" fill="#16A34A" font-size="9" font-weight="bold" text-anchor="middle">II = 10 | L = 9 Cycles (180 ns) | -42.7% LEs</text>
+    
+    <!-- Connector 4 -> 6 (TX path via controller) -->
+    <path d="M 540,430 L 540,418 L 885,418 L 885,485 L 895,485" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 6: TX FIFO (x=895, w=120) -->
+    <rect x="895" y="430" width="120" height="110" rx="5" fill="#FFFBEB" stroke="#D97706" stroke-width="1.2"/>
+    <text x="905" y="450" fill="#D97706" font-size="10" font-weight="bold">TX FIFO (16×8)</text>
+    <text x="905" y="470" fill="#0F172A" font-size="10" font-weight="bold">simple_fifo.v</text>
+    <text x="905" y="487" fill="#334155" font-size="9">• 16-Byte Circular RAM</text>
+    <text x="905" y="503" fill="#334155" font-size="9">• Queues Output Bytes</text>
+    <text x="905" y="527" fill="#D97706" font-size="9" font-weight="bold">din, wr_en, count</text>
+    
+    <!-- Connector 6 -> 7 -->
+    <line x1="1015" y1="485" x2="1030" y2="485" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 7: UART TX (x=1030, w=175) -->
+    <rect x="1030" y="430" width="175" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="1040" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">UART TRANSMITTER</text>
+    <text x="1040" y="470" fill="#0F172A" font-size="10" font-weight="bold">uart_tx.v</text>
+    <text x="1040" y="487" fill="#334155" font-size="9">• 115,200 Baud 8-N-1 Serializer</text>
+    <text x="1040" y="503" fill="#334155" font-size="9">• Automatic FIFO pop on idle</text>
+    <rect x="1038" y="513" width="158" height="20" rx="3" fill="#F0FDF4" stroke="#16A34A" stroke-width="0.8"/>
+    <text x="1117" y="527" fill="#16A34A" font-size="9" font-weight="bold" text-anchor="middle">Pin: UART_TX Output</text>
+    
+    <!-- Bottom Spec Strip for Design B -->
+    <rect x="75" y="585" width="1130" height="42" rx="4" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="0.8"/>
+    <text x="90" y="605" fill="#1E3A8A" font-size="10" font-weight="bold">Resource System Contract:</text>
+    <text x="245" y="605" fill="#334155" font-size="10">Dual 16-byte FIFO buffering • Autonomous UART controller FSM • 1 shared multiplier (-50% DSP) • 236 LEs (-42.7%)</text>
+    <text x="90" y="620" fill="#16A34A" font-size="9" font-weight="bold">• Power-On-Reset counter (128 cycles) eliminates external reset pushbutton dependency.</text>
   </g>
   <g id="ftr_16" data-pptx-bounds="60 655 1160 40">
-    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
-    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
-    <text x="220" y="679" fill="#FFFFFF" font-size="13">SoC Wrapper: 115,200 Baud UART + Packet Framing + 50 MHz Clock Sync + DE2 7-Segment Display Driver</text>
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="72" y="663" width="140" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="142" y="678" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="230" y="679" fill="#0F172A" font-size="13" font-weight="500">Dual top modules reflect distinct trade-offs: streaming packet-framed pipeline vs FIFO-decoupled FSM controller.</text>
   </g>
 </svg>

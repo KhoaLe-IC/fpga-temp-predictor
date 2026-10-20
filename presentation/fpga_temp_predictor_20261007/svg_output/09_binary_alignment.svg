@@ -1,71 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
      data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
-  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
   <g id="hdr_09" data-pptx-bounds="60 30 1160 85">
-    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">DATAPATH SIZING &amp; ALIGNMENT</text>
-    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">Binary Point Alignment &amp; 35-Bit Overflow-Free Proof</text>
-    <text x="60" y="108" fill="#8D99AE" font-size="14">Radix point normalization across products, base shifts, and mathematical headroom verification</text>
-    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="30" width="1160" height="85" fill="#F8FAFC" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="80" y="52" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">DATAPATH WORDLENGTH EVOLUTION</text>
+    <text x="80" y="82" fill="#0F172A" font-size="24" font-weight="bold">Binary Radix Alignment &amp; Arithmetic Bit Growth</text>
+    <text x="80" y="104" fill="#64748B" font-size="13">Tracking wordlength expansion through subtraction, multiplication, accumulation, and saturation</text>
   </g>
-  <g id="card_radix_alignment" data-pptx-bounds="60 135 565 500">
-    <rect x="60" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="60" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
-    <text x="80" y="162" fill="#48CAE4" font-size="14" font-weight="bold">RADIX POINT ALIGNMENT ACROSS COMPUTATION</text>
+  <g id="growth_s0" data-pptx-bounds="60 135 570 148">
+    <rect x="60" y="135" width="570" height="148" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="135" width="570" height="38" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="160" fill="#1E3A8A" font-size="13" font-weight="bold">Step 1: Input Capture</text>
     
-    <text x="80" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">1. Subtractor Differences: D1 &amp; D2</text>
-    <text x="80" y="235" fill="#8D99AE" font-size="13">• T(t) is Q8.8 (16 bits) | T(t-24) is Q8.8 (16 bits)</text>
-    <text x="80" y="255" fill="#48CAE4" font-size="13" font-weight="bold">• Difference: Signed 17-bit Q9.8 (1 sign bit added to prevent wrap)</text>
+    <rect x="470" y="143" width="145" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="542" y="158" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Signed Q8.8 (16 Bits)</text>
     
-    <text x="80" y="295" fill="#FFFFFF" font-size="15" font-weight="bold">2. DSP Multiplication: P1 &amp; P2</text>
-    <text x="80" y="320" fill="#8D99AE" font-size="13">• Coeff A/B is Signed 16-bit Q2.14 (scale 2^14 = 16,384)</text>
-    <text x="80" y="340" fill="#8D99AE" font-size="13">• Product: Q2.14 × Q9.8 = </text>
-    <text x="270" y="340" fill="#F77F00" font-size="14" font-weight="bold">Signed 33-bit Q11.22 (scale 2^22 = 4,194,304)</text>
+    <rect x="80" y="185" width="530" height="34" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="207" fill="#0F172A" font-size="12" font-weight="bold">T(t), T(t-24), T(t-3), T(t-21)</text>
     
-    <text x="80" y="380" fill="#FFFFFF" font-size="15" font-weight="bold">3. Anchor &amp; Bias Left-Shift: Radix Alignment</text>
-    <text x="80" y="405" fill="#8D99AE" font-size="13">• Anchor T(t-21) and Offset C are natively in Q8.8 (scale 2^8).</text>
-    <text x="80" y="425" fill="#8D99AE" font-size="13">• To add with Products (scale 2^22), they must be shifted left by:</text>
-    <text x="80" y="445" fill="#48CAE4" font-size="14" font-weight="bold">  22 - 8 = 14 bits!</text>
-    
-    <rect x="80" y="470" width="525" height="145" rx="8" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="100" y="495" fill="#48CAE4" font-size="13" font-weight="bold">HARDWARE RADIX EQUALIZATION IN VERILOG:</text>
-    <text x="100" y="522" fill="#FFFFFF" font-size="12">wire signed [34:0] base_aligned = (T21_extended + C_extended) &lt;&lt; 14;</text>
-    <text x="100" y="545" fill="#8D99AE" font-size="12">• Left-shift by 14 scales 2^8 → 2^22 seamlessly at zero gate cost.</text>
-    <text x="100" y="568" fill="#8D99AE" font-size="12">• Now Products and Base share the identical Q22 fractional radix!</text>
-    <text x="100" y="595" fill="#10B981" font-size="12" font-weight="bold">→ All terms ready for bit-exact 35-bit accumulation.</text>
+    <text x="80" y="245" fill="#334155" font-size="11">Raw 16-bit signed telemetry samples latched into input stage.</text>
   </g>
-  <g id="card_overflow_proof" data-pptx-bounds="655 135 565 500">
-    <rect x="655" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="655" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
-    <text x="675" y="162" fill="#48CAE4" font-size="14" font-weight="bold">MATHEMATICAL PROOF: 35-BIT HEADROOM</text>
+  <g id="growth_s1" data-pptx-bounds="655 135 570 148">
+    <rect x="655" y="135" width="570" height="148" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="655" y="135" width="570" height="38" rx="8" fill="#F1F5F9"/>
+    <text x="675" y="160" fill="#2563EB" font-size="13" font-weight="bold">Step 2: Subtraction</text>
     
-    <text x="675" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Accumulator Format: Signed 35-bit Q13.22</text>
-    <text x="675" y="235" fill="#8D99AE" font-size="13">• Sign: [34] | Integer: [33:22] (12 bits) | Fraction: [21:0] (22 bits)</text>
+    <rect x="1065" y="143" width="145" height="22" rx="4" fill="#2563EB"/>
+    <text x="1137" y="158" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Signed Q9.8 (17 Bits)</text>
     
-    <rect x="675" y="255" width="525" height="150" rx="8" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="695" y="280" fill="#F77F00" font-size="13" font-weight="bold">WORST-CASE THEORETICAL MAGNITUDE BOUND:</text>
-    <text x="695" y="305" fill="#FFFFFF" font-size="12">• Max |Diff| = 2^16 - 1 = 65,535 (extreme -128°C to +127.99°C swing)</text>
-    <text x="695" y="325" fill="#FFFFFF" font-size="12">• Max |Coeff| = 2^15 = 32,768</text>
-    <text x="695" y="345" fill="#FFFFFF" font-size="12">• Max |Base| = 32,768 &lt;&lt; 14 = 5.368 × 10^8</text>
-    <text x="695" y="370" fill="#48CAE4" font-size="13" font-weight="bold">Max Sum S_max = 2 × (32,768 × 65,535) + 2 × (5.368 × 10^8)</text>
-    <text x="695" y="392" fill="#10B981" font-size="14" font-weight="bold">S_max = 5.369 × 10^9</text>
+    <rect x="675" y="185" width="530" height="34" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="207" fill="#0F172A" font-size="12" font-weight="bold">D1 = T(t)-T(t-24),  D2 = T(t)-T(t-3)</text>
     
-    <rect x="675" y="420" width="525" height="195" rx="8" fill="#10B981" fill-opacity="0.1" stroke="#10B981" stroke-width="1"/>
-    <text x="695" y="445" fill="#10B981" font-size="14" font-weight="bold">HEADROOM &amp; OVERFLOW CONCLUSION:</text>
-    <text x="695" y="475" fill="#FFFFFF" font-size="13">• Capacity of Signed 35-bit int: </text>
-    <text x="910" y="475" fill="#48CAE4" font-size="14" font-weight="bold">2^34 - 1 ≈ 1.718 × 10^10</text>
+    <text x="675" y="245" fill="#334155" font-size="11">+1 sign bit headroom prevents subtractor wrap on large swings.</text>
+  </g>
+  <g id="growth_s2" data-pptx-bounds="60 300 570 148">
+    <rect x="60" y="300" width="570" height="148" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="300" width="570" height="38" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="325" fill="#4F46E5" font-size="13" font-weight="bold">Step 3: Multiplication</text>
     
-    <text x="695" y="505" fill="#FFFFFF" font-size="13">• Headroom Factor: </text>
-    <text x="830" y="505" fill="#10B981" font-size="16" font-weight="bold">1.718×10^10 / 5.369×10^9 = 3.19×</text>
+    <rect x="470" y="308" width="145" height="22" rx="4" fill="#4F46E5"/>
+    <text x="542" y="323" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Signed Q11.22 (33 Bits)</text>
     
-    <text x="695" y="535" fill="#8D99AE" font-size="12">• The accumulator has over 3.19x headroom beyond the absolute</text>
-    <text x="695" y="555" fill="#8D99AE" font-size="12">  worst-case theoretical input possible in the 16-bit domain.</text>
-    <text x="695" y="585" fill="#10B981" font-size="13" font-weight="bold">→ 100% Mathematically Proven: Intermediate wrap-around is impossible!</text>
+    <rect x="80" y="350" width="530" height="34" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="372" fill="#0F172A" font-size="12" font-weight="bold">P1 = a · D1,  P2 = b · D2</text>
+    
+    <text x="80" y="410" fill="#334155" font-size="11">16b coeff × 17b diff generates 33-bit signed product terms.</text>
+  </g>
+  <g id="growth_s3" data-pptx-bounds="655 300 570 148">
+    <rect x="655" y="300" width="570" height="148" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="655" y="300" width="570" height="38" rx="8" fill="#F1F5F9"/>
+    <text x="675" y="325" fill="#D97706" font-size="13" font-weight="bold">Step 4: Adder Tree &amp; Base</text>
+    
+    <rect x="1065" y="308" width="145" height="22" rx="4" fill="#D97706"/>
+    <text x="1137" y="323" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Signed Q13.22 (35 Bits)</text>
+    
+    <rect x="675" y="350" width="530" height="34" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="372" fill="#0F172A" font-size="12" font-weight="bold">P = P1 + P2;  base = (T21 + c) &lt;&lt; 14</text>
+    
+    <text x="675" y="410" fill="#334155" font-size="11">Aligns diurnal anchor to radix 22; expands to 35-bit bus.</text>
+  </g>
+  <g id="growth_s4" data-pptx-bounds="60 465 570 148">
+    <rect x="60" y="465" width="570" height="148" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="465" width="570" height="38" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="490" fill="#1E3A8A" font-size="13" font-weight="bold">Step 5: Full Accumulation</text>
+    
+    <rect x="470" y="473" width="145" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="542" y="488" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Signed Q13.8 (35 Bits)</text>
+    
+    <rect x="80" y="515" width="530" height="34" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="537" fill="#0F172A" font-size="12" font-weight="bold">S = P + base;  S_sh = S &gt;&gt;&gt; 14</text>
+    
+    <text x="80" y="575" fill="#334155" font-size="11">Summation followed by arithmetic right shift 14 (floor scaling).</text>
+  </g>
+  <g id="growth_s5" data-pptx-bounds="655 465 570 148">
+    <rect x="655" y="465" width="570" height="148" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="655" y="465" width="570" height="38" rx="8" fill="#F1F5F9"/>
+    <text x="675" y="490" fill="#16A34A" font-size="13" font-weight="bold">Step 6: Sat16 Saturation</text>
+    
+    <rect x="1065" y="473" width="145" height="22" rx="4" fill="#16A34A"/>
+    <text x="1137" y="488" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Signed Q8.8 (16 Bits)</text>
+    
+    <rect x="675" y="515" width="530" height="34" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="537" fill="#0F172A" font-size="12" font-weight="bold">out = sat16(S_sh, -32768, +32767)</text>
+    
+    <text x="675" y="575" fill="#334155" font-size="11">Clamps to [-128°C, +127.996°C]; prevents sign wrap.</text>
   </g>
   <g id="ftr_09" data-pptx-bounds="60 655 1160 40">
-    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
-    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
-    <text x="220" y="679" fill="#FFFFFF" font-size="13">Accumulator Sizing: 35-bit Q13.22 provides 3.19x safety headroom over maximum possible theoretical sum</text>
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="72" y="663" width="140" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="142" y="678" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="230" y="679" fill="#0F172A" font-size="13" font-weight="500">Explicit bit-growth tracking guarantees zero unhandled arithmetic overflow before final saturation clamping.</text>
   </g>
 </svg>

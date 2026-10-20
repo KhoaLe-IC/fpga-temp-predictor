@@ -1,66 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
      data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
-  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#0B132B"/>
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
   <g id="hdr_07" data-pptx-bounds="60 30 1160 85">
-    <text x="60" y="52" fill="#48CAE4" font-size="13" font-weight="bold" letter-spacing="1">HARDWARE-ALGORITHM CO-DESIGN</text>
-    <text x="60" y="86" fill="#FFFFFF" font-size="26" font-weight="bold">The Silicon Budget Reality: Why Linear OLS on Cyclone II?</text>
-    <text x="60" y="108" fill="#8D99AE" font-size="14">Rigorous diminishing returns analysis against Altera Cyclone II EP2C35 physical multiplier constraints</text>
-    <line x1="60" y1="114" x2="1220" y2="114" stroke="#2A3D66" stroke-width="1"/>
+    <rect x="60" y="30" width="1160" height="85" fill="#F8FAFC" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="80" y="52" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">PRIOR ART &amp; LITERATURE COMPARISON</text>
+    <text x="80" y="82" fill="#0F172A" font-size="24" font-weight="bold">Hardware Benchmarks vs Published FPGA Linear Solvers</text>
+    <text x="80" y="104" fill="#64748B" font-size="13">Silicon area, DSP multiplier count, and streaming throughput comparison</text>
   </g>
-  <g id="card_diminishing_returns" data-pptx-bounds="60 135 565 500">
-    <rect x="60" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="60" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
-    <text x="80" y="162" fill="#48CAE4" font-size="14" font-weight="bold">DIMINISHING RETURNS: ERROR DROP PER MULTIPLIER</text>
+  <g id="prior_art_matrix" data-pptx-bounds="60 135 1160 255">
+    <rect x="60" y="135" width="1160" height="255" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="135" width="1160" height="38" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="160" fill="#1E3A8A" font-size="13" font-weight="bold">QUANTITATIVE COMPARISON WITH PUBLISHED FPGA REGRESSION SOLVERS</text>
     
-    <text x="80" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Step 1: Persistence → Linear OLS</text>
-    <rect x="80" y="225" width="525" height="65" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="95" y="250" fill="#10B981" font-size="13" font-weight="bold">MAE Improvement: 1.542°C drop | Hardware Cost: 2 Multipliers</text>
-    <text x="95" y="272" fill="#48CAE4" font-size="14" font-weight="bold">Efficiency Metric: 0.7710°C error drop per multiplier block!</text>
+    <!-- Table Column Headers -->
+    <rect x="75" y="180" width="1130" height="24" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="85" y="196" fill="#64748B" font-size="11" font-weight="bold">Reference / Work</text>
+    <text x="270" y="196" fill="#64748B" font-size="11" font-weight="bold">Target Device</text>
+    <text x="420" y="196" fill="#64748B" font-size="11" font-weight="bold">Arithmetic Format</text>
+    <text x="565" y="196" fill="#64748B" font-size="11" font-weight="bold">Logic Footprint</text>
+    <text x="700" y="196" fill="#64748B" font-size="11" font-weight="bold">DSP Multipliers</text>
+    <text x="840" y="196" fill="#64748B" font-size="11" font-weight="bold">Timing &amp; Latency</text>
+    <text x="1000" y="196" fill="#64748B" font-size="11" font-weight="bold">Partition Strategy</text>
     
-    <text x="80" y="320" fill="#FFFFFF" font-size="15" font-weight="bold">Step 2: Linear OLS → Deep MLP</text>
-    <rect x="80" y="335" width="525" height="65" rx="6" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="95" y="360" fill="#F77F00" font-size="13" font-weight="bold">MAE Improvement: 0.156°C drop | Hardware Cost: 218 Additional Multipliers</text>
-    <text x="95" y="382" fill="#EF4444" font-size="14" font-weight="bold">Efficiency Metric: 0.0007°C error drop per multiplier block!</text>
+    <!-- Row 1: Ferreira et al. (SBCCI 2019) -->
+    <rect x="75" y="208" width="1130" height="32" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8"/>
+    <text x="85" y="229" fill="#0F172A" font-size="11">SBCCI '19 (Ferreira)</text>
+    <text x="270" y="229" fill="#334155" font-size="11">Cyclone IV EP4CE115</text>
+    <text x="420" y="229" fill="#334155" font-size="11">Signed Q16.16 (32b)</text>
+    <text x="565" y="229" fill="#334155" font-size="11">9,158 LEs</text>
+    <text x="700" y="229" fill="#DC2626" font-size="11" font-weight="bold">473 Mults (89%)</text>
+    <text x="840" y="229" fill="#334155" font-size="11">1 cycle (no Fmax)</text>
+    <text x="1000" y="229" fill="#334155" font-size="11">On-chip batch solver</text>
     
-    <rect x="80" y="420" width="525" height="195" rx="8" fill="#1E2D4A" stroke="#2A3D66" stroke-width="1"/>
-    <text x="100" y="448" fill="#F77F00" font-size="14" font-weight="bold">EFFICIENCY COLLAPSE RATIO:</text>
-    <text x="100" y="490" fill="#EF4444" font-size="36" font-weight="bold">1,100× EFFICIENCY DROP</text>
-    <text x="100" y="525" fill="#FFFFFF" font-size="13">• Each multiplier in the OLS design is 1,100x more impactful</text>
-    <text x="100" y="545" fill="#FFFFFF" font-size="13">  in reducing error than multipliers inside an MLP.</text>
-    <text x="100" y="570" fill="#8D99AE" font-size="12">• Spending silicon for an MLP represents gross over-engineering</text>
-    <text x="100" y="590" fill="#8D99AE" font-size="12">  with zero practical benefit in meteorological forecasting.</text>
+    <!-- Row 2: Sensors 2022 (Tactile) -->
+    <rect x="75" y="243" width="1130" height="32" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8"/>
+    <text x="85" y="264" fill="#0F172A" font-size="11">Sensors '22 (Tactile)</text>
+    <text x="270" y="264" fill="#334155" font-size="11">Virtex-6 (xc6vlx240t)</text>
+    <text x="420" y="264" fill="#334155" font-size="11">IEEE Float (32b)</text>
+    <text x="565" y="264" fill="#334155" font-size="11">3,440 LUTs, 198 FFs</text>
+    <text x="700" y="264" fill="#D97706" font-size="11" font-weight="bold">9 DSP Slices</text>
+    <text x="840" y="264" fill="#334155" font-size="11">40.25 ns (24.8 MSps)</text>
+    <text x="1000" y="264" fill="#334155" font-size="11">Rolling OLS covariance</text>
+    
+    <!-- Row 3: Royer et al. (DCIS 2011) -->
+    <rect x="75" y="278" width="1130" height="32" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8"/>
+    <text x="85" y="299" fill="#0F172A" font-size="11">DCIS '11 (Royer)</text>
+    <text x="270" y="299" fill="#334155" font-size="11">Virtex-5 (XC5VLX)</text>
+    <text x="420" y="299" fill="#334155" font-size="11">Custom Fixed-Point</text>
+    <text x="565" y="299" fill="#334155" font-size="11">66–89 Slices</text>
+    <text x="700" y="299" fill="#334155" font-size="11">5 DSP Slices</text>
+    <text x="840" y="299" fill="#334155" font-size="11">439 MHz Fmax</text>
+    <text x="1000" y="299" fill="#334155" font-size="11">Block OLS fitting</text>
+    
+    <!-- Row 4: This Work: Speed Core -->
+    <rect x="75" y="313" width="1130" height="32" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.2"/>
+    <text x="85" y="334" fill="#1E3A8A" font-size="11" font-weight="bold">This Work: Speed Core</text>
+    <text x="270" y="334" fill="#1E3A8A" font-size="11" font-weight="bold">Cyclone II EP2C35</text>
+    <text x="420" y="334" fill="#1E3A8A" font-size="11" font-weight="bold">Signed Q8.8 / Q2.14</text>
+    <text x="565" y="334" fill="#16A34A" font-size="11" font-weight="bold">412 LEs (1.2%)</text>
+    <text x="700" y="334" fill="#16A34A" font-size="11" font-weight="bold">2 Mults (5.7%)</text>
+    <text x="840" y="334" fill="#2563EB" font-size="11" font-weight="bold">5 clk (II=1) | 142 MHz</text>
+    <text x="1000" y="334" fill="#1E3A8A" font-size="11" font-weight="bold">Diurnal Edge Streaming</text>
+    
+    <!-- Row 5: This Work: Resource Core -->
+    <rect x="75" y="348" width="1130" height="32" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.2"/>
+    <text x="85" y="369" fill="#1E3A8A" font-size="11" font-weight="bold">This Work: Resource Core</text>
+    <text x="270" y="369" fill="#334155" font-size="11">Cyclone II EP2C35</text>
+    <text x="420" y="369" fill="#334155" font-size="11">Signed Q8.8 / Q2.14</text>
+    <text x="565" y="369" fill="#16A34A" font-size="11" font-weight="bold">236 LEs (0.7%)</text>
+    <text x="700" y="369" fill="#16A34A" font-size="11" font-weight="bold">1 Shared Mult (2.8%)</text>
+    <text x="840" y="369" fill="#0F172A" font-size="11">9 clk (II=10) | 118 MHz</text>
+    <text x="1000" y="369" fill="#334155" font-size="11">Time-Muxed Edge IoT</text>
   </g>
-  <g id="card_cyclone_budget" data-pptx-bounds="655 135 565 500">
-    <rect x="655" y="135" width="565" height="500" rx="10" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="655" y="135" width="565" height="42" rx="10" fill="#1E2D4A"/>
-    <text x="675" y="162" fill="#48CAE4" font-size="14" font-weight="bold">ALTERA CYCLONE II (EP2C35) MULTIPLIER REALITY</text>
+  <g id="card_superiority" data-pptx-bounds="60 405 565 230">
+    <rect x="60" y="405" width="565" height="230" rx="8" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+    <rect x="60" y="405" width="565" height="34" rx="8" fill="#F0FDF4"/>
+    <text x="80" y="427" fill="#16A34A" font-size="12" font-weight="bold">ENGINEERING ADVANTAGES (KEY DIFFERENTIATORS)</text>
     
-    <text x="675" y="210" fill="#FFFFFF" font-size="15" font-weight="bold">Total Chip Multiplier Budget: 35 Blocks</text>
-    <text x="675" y="235" fill="#8D99AE" font-size="13">• Cyclone II EP2C35 contains exactly 35 embedded 18x18 multipliers.</text>
+    <text x="80" y="460" fill="#1E3A8A" font-size="11" font-weight="bold">• 99.5% DSP Savings: <tspan fill="#334155" font-weight="normal">Uses 1–2 mults vs 473 in SBCCI '19.</tspan></text>
+    <text x="80" y="500" fill="#1E3A8A" font-size="11" font-weight="bold">• II = 1 Streaming: <tspan fill="#334155" font-weight="normal">50 MSps @ 142.3 MHz F_max (0 bubble stalls).</tspan></text>
+    <text x="80" y="540" fill="#1E3A8A" font-size="11" font-weight="bold">• Diurnal Anchor: <tspan fill="#334155" font-weight="normal">&gt;85% variance captured at zero logic cost.</tspan></text>
+    <text x="80" y="580" fill="#1E3A8A" font-size="11" font-weight="bold">• DPI-C Verified: <tspan fill="#334155" font-weight="normal">100% bit-exact across 10,000+ vectors.</tspan></text>
+  </g>
+  <g id="card_inferiority" data-pptx-bounds="655 405 565 230">
+    <rect x="655" y="405" width="565" height="230" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+    <rect x="655" y="405" width="565" height="34" rx="8" fill="#FFFBEB"/>
+    <text x="675" y="427" fill="#D97706" font-size="12" font-weight="bold">ARCHITECTURAL BOUNDARIES &amp; DESIGN DECISIONS</text>
     
-    <rect x="675" y="255" width="525" height="150" rx="8" fill="#0B132B" stroke="#2A3D66" stroke-width="1"/>
-    <text x="695" y="280" fill="#EF4444" font-size="13" font-weight="bold">PARALLEL MLP ON DE2: PHYSICALLY IMPOSSIBLE!</text>
-    <text x="695" y="305" fill="#FFFFFF" font-size="12">• Fully parallel MLP requires 220 multipliers.</text>
-    <text x="695" y="325" fill="#EF4444" font-size="14" font-weight="bold">  220 / 35 = 628% of entire chip multiplier resource!</text>
-    <text x="695" y="350" fill="#8D99AE" font-size="12">• Time-multiplexed MLP requires complex multi-bank BRAM scheduling,</text>
-    <text x="695" y="370" fill="#8D99AE" font-size="12">  non-linear activation LUTs, and hundreds of FSM cycles.</text>
-    <text x="695" y="390" fill="#8D99AE" font-size="12">• Massive development cost and routing congestion.</text>
-    
-    <rect x="675" y="420" width="525" height="195" rx="8" fill="#10B981" fill-opacity="0.1" stroke="#10B981" stroke-width="1"/>
-    <text x="695" y="448" fill="#10B981" font-size="14" font-weight="bold">THE LINEAR OLS ARCHITECTURAL VERDICT:</text>
-    <text x="695" y="480" fill="#FFFFFF" font-size="13">• Speed Core: Uses exactly </text>
-    <text x="860" y="480" fill="#48CAE4" font-size="14" font-weight="bold">2 Multipliers (5.7% of chip)</text>
-    <text x="695" y="505" fill="#FFFFFF" font-size="13">• Resource Core: Uses exactly </text>
-    <text x="880" y="505" fill="#10B981" font-size="14" font-weight="bold">1 Multiplier (2.8% of chip)</text>
-    <text x="695" y="535" fill="#8D99AE" font-size="12">• Leaves >94% of DSP resources free for user applications, UART,</text>
-    <text x="695" y="555" fill="#8D99AE" font-size="12">  and signal conditioning filters.</text>
-    <text x="695" y="585" fill="#10B981" font-size="13" font-weight="bold">→ Achieves 96% of neural accuracy while consuming &lt;1% FPGA logic.</text>
+    <text x="675" y="460" fill="#1E3A8A" font-size="11" font-weight="bold">• Offline Partition: <tspan fill="#334155" font-weight="normal">Weights fitted in C++, reloadable via UART.</tspan></text>
+    <text x="675" y="500" fill="#1E3A8A" font-size="11" font-weight="bold">• Bounded Range: <tspan fill="#334155" font-weight="normal">Q8.8 [-128°C, +128°C] tailored for sensors.</tspan></text>
+    <text x="675" y="540" fill="#1E3A8A" font-size="11" font-weight="bold">• 3-Tap Scope: <tspan fill="#334155" font-weight="normal">Local edge predictor vs generic matrix solver.</tspan></text>
+    <text x="675" y="580" fill="#1E3A8A" font-size="11" font-weight="bold">• Target Silicon: <tspan fill="#334155" font-weight="normal">90nm Cyclone II; portable to modern ASIC.</tspan></text>
   </g>
   <g id="ftr_07" data-pptx-bounds="60 655 1160 40">
-    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#162238" stroke="#2A3D66" stroke-width="1"/>
-    <rect x="72" y="663" width="130" height="22" rx="4" fill="#48CAE4" fill-opacity="0.2"/>
-    <text x="137" y="678" fill="#48CAE4" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
-    <text x="220" y="679" fill="#FFFFFF" font-size="13">Silicon Constraint: Cyclone II has 35 multipliers; parallel MLP requires 220 (628%); OLS uses only 1 to 2 multipliers</text>
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="72" y="663" width="140" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="142" y="678" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="230" y="679" fill="#0F172A" font-size="13" font-weight="500">Offline weight fitting reduces DSP footprint by 99.5% while sustaining II=1 throughput.</text>
   </g>
 </svg>
