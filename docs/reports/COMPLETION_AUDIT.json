@@ -1,0 +1,206 @@
+{
+  "checked_at_utc": "2026-10-24T05:25:41.701501+00:00",
+  "status": "INCOMPLETE",
+  "checks": [
+    {
+      "requirement": "Temperature coefficients: hardware/speed_optimized/coeffs.txt",
+      "status": "PASS",
+      "evidence": "hardware/speed_optimized/coeffs.txt"
+    },
+    {
+      "requirement": "Temperature coefficients: hardware/resource_optimized/coefficients.txt",
+      "status": "PASS",
+      "evidence": "hardware/resource_optimized/coefficients.txt"
+    },
+    {
+      "requirement": "Temperature coefficients: hardware/quartus/de2_temperature/coeffs.txt",
+      "status": "PASS",
+      "evidence": "hardware/quartus/de2_temperature/coeffs.txt"
+    },
+    {
+      "requirement": "temperature speed fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "hardware/quartus/speed/output_files/predictor.sta.rpt"
+    },
+    {
+      "requirement": "temperature shared fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "hardware/quartus/resource/output_files/predictor.sta.rpt"
+    },
+    {
+      "requirement": "temperature board fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "hardware/quartus/de2_temperature/output_files/temperature.sta.rpt"
+    },
+    {
+      "requirement": "weather parallel fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/quartus/speed/output_files/weather.sta.rpt"
+    },
+    {
+      "requirement": "weather shared fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/quartus/resource/output_files/weather.sta.rpt"
+    },
+    {
+      "requirement": "weather parallel board fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/quartus/de2_speed/output_files/weather_board.sta.rpt"
+    },
+    {
+      "requirement": "weather shared board fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/quartus/de2_resource/output_files/weather_board.sta.rpt"
+    },
+    {
+      "requirement": "Temperature DPI-C coefficient matrix",
+      "status": "PASS",
+      "evidence": "hardware/tb/regression_current.log"
+    },
+    {
+      "requirement": "Temperature full-year historical DPI-C replay",
+      "status": "PASS",
+      "evidence": "docs/reports/temperature_historical_dpi.txt"
+    },
+    {
+      "requirement": "Temperature speed strict-reader final netlist",
+      "status": "PASS",
+      "evidence": "docs/reports/temperature_speed_functional_final.txt"
+    },
+    {
+      "requirement": "Temperature speed functional netlist",
+      "status": "PASS",
+      "evidence": "hardware/quartus/speed/netlist_sim.log"
+    },
+    {
+      "requirement": "Weather speed DPI-C",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/speed_dpi.log"
+    },
+    {
+      "requirement": "Weather speed UART",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/speed_uart.log"
+    },
+    {
+      "requirement": "Weather speed final functional netlist",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/speed_final_netlist.log"
+    },
+    {
+      "requirement": "speed netlist snapshot identity",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/speed_final_netlist_manifest.json"
+    },
+    {
+      "requirement": "Temperature resource strict-reader final netlist",
+      "status": "PASS",
+      "evidence": "docs/reports/temperature_resource_functional_final.txt"
+    },
+    {
+      "requirement": "Temperature resource functional netlist",
+      "status": "PASS",
+      "evidence": "hardware/quartus/resource/netlist_sim.log"
+    },
+    {
+      "requirement": "Weather resource DPI-C",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/resource_dpi.log"
+    },
+    {
+      "requirement": "Weather resource UART",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/resource_uart.log"
+    },
+    {
+      "requirement": "Weather resource final functional netlist",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/resource_final_netlist.log"
+    },
+    {
+      "requirement": "resource netlist snapshot identity",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/resource_final_netlist_manifest.json"
+    },
+    {
+      "requirement": "Temperature full UART",
+      "status": "PASS",
+      "evidence": "hardware/quartus/de2_temperature/uart_sim.log"
+    },
+    {
+      "requirement": "Wind direction exhaustive conversion",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/direction_exhaustive.log"
+    },
+    {
+      "requirement": "Temperature saved-model training audit",
+      "status": "PASS",
+      "evidence": "docs/reports/temperature_evaluation.log"
+    },
+    {
+      "requirement": "Weather C++ / NumPy reference cross-check",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/reference_crosscheck.log"
+    },
+    {
+      "requirement": "temperature_speed accepted SDF timing simulation",
+      "status": "PASS",
+      "evidence": "docs/reports/temperature_speed_modelsim_timing.json"
+    },
+    {
+      "requirement": "temperature_resource accepted SDF timing simulation",
+      "status": "PASS",
+      "evidence": "docs/reports/temperature_resource_modelsim_timing.json"
+    },
+    {
+      "requirement": "weather_speed accepted SDF timing simulation",
+      "status": "PASS",
+      "evidence": "docs/reports/weather_speed_modelsim_timing.json"
+    },
+    {
+      "requirement": "weather_resource accepted SDF timing simulation",
+      "status": "PASS",
+      "evidence": "docs/reports/weather_resource_modelsim_timing.json"
+    },
+    {
+      "requirement": "temperature physical board replay",
+      "status": "PENDING",
+      "evidence": "docs/reports/board_temperature.csv; user confirmed board unavailable on this computer"
+    },
+    {
+      "requirement": "weather parallel physical board replay",
+      "status": "PENDING",
+      "evidence": "versions/weather_v2/reports/physical_parallel.csv; user confirmed board unavailable on this computer"
+    },
+    {
+      "requirement": "weather shared physical board replay",
+      "status": "PENDING",
+      "evidence": "versions/weather_v2/reports/physical_shared.csv; user confirmed board unavailable on this computer"
+    },
+    {
+      "requirement": "Deliverable docs/reports/IMPLEMENTATION_REPORT.md",
+      "status": "PASS",
+      "evidence": "docs/reports/IMPLEMENTATION_REPORT.md"
+    },
+    {
+      "requirement": "Deliverable docs/reports/HARDWARE_HANDOFF.md",
+      "status": "PASS",
+      "evidence": "docs/reports/HARDWARE_HANDOFF.md"
+    },
+    {
+      "requirement": "Deliverable versions/weather_v2/models/model.json",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/models/model.json"
+    },
+    {
+      "requirement": "Deliverable versions/weather_v2/reports/metrics.csv",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/metrics.csv"
+    },
+    {
+      "requirement": "Deliverable versions/weather_v2/reports/validation_candidates.csv",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/reports/validation_candidates.csv"
+    }
+  ]
+}

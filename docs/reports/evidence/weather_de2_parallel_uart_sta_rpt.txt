@@ -1,0 +1,963 @@
+TimeQuest Timing Analyzer report for weather_board
+Sat Oct 24 10:25:42 2026
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'CLOCK_50'
+ 13. Slow Model Hold: 'CLOCK_50'
+ 14. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 15. Slow Model Datasheet Report
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'CLOCK_50'
+ 22. Fast Model Hold: 'CLOCK_50'
+ 23. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 24. Fast Model Datasheet Report
+ 25. Multicorner Timing Analysis Summary
+ 26. Setup Transfers
+ 27. Hold Transfers
+ 28. Report TCCS
+ 29. Report RSKM
+ 30. Unconstrained Paths
+ 31. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; weather_board                                                     ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; clock.sdc     ; OK     ; Sat Oct 24 10:25:40 2026 ;
++---------------+--------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 81.84 MHz ; 81.84 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Slow Model Setup Summary         ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 7.781 ; 0.000         ;
++----------+-------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+-------+---------------------+
+; Clock    ; Slack ; End Point TNS       ;
++----------+-------+---------------------+
+; CLOCK_50 ; 8.077 ; 0.000               ;
++----------+-------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                                                            ;
++-------+-----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                 ; To Node                                                                                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.781 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 12.258     ;
+; 7.874 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 12.165     ;
+; 7.996 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 12.022     ;
+; 8.089 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 11.929     ;
+; 8.115 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 11.912     ;
+; 8.128 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 11.907     ;
+; 8.174 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.856     ;
+; 8.208 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 11.819     ;
+; 8.216 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 11.819     ;
+; 8.237 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.016     ; 11.783     ;
+; 8.241 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.793     ;
+; 8.243 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.780     ;
+; 8.250 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 11.777     ;
+; 8.286 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.730     ;
+; 8.321 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.016     ; 11.699     ;
+; 8.328 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.702     ;
+; 8.330 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.016     ; 11.690     ;
+; 8.343 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 11.703     ;
+; 8.343 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.022     ; 11.671     ;
+; 8.366 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.668     ;
+; 8.367 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.004      ; 11.673     ;
+; 8.375 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 11.652     ;
+; 8.376 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 11.657     ;
+; 8.414 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.016     ; 11.606     ;
+; 8.427 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.022     ; 11.587     ;
+; 8.435 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[23]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.599     ;
+; 8.447 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 11.602     ;
+; 8.462 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.561     ;
+; 8.463 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[17]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 11.579     ;
+; 8.472 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[17]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 11.563     ;
+; 8.489 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.542     ;
+; 8.506 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[26]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.525     ;
+; 8.507 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 11.528     ;
+; 8.516 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 11.526     ;
+; 8.523 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.014      ; 11.527     ;
+; 8.527 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.008     ; 11.501     ;
+; 8.528 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.495     ;
+; 8.550 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.473     ;
+; 8.576 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[28]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 11.459     ;
+; 8.578 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[0] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[4]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.053      ; 11.428     ;
+; 8.582 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.449     ;
+; 8.584 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.432     ;
+; 8.592 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.451     ;
+; 8.599 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[26]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.432     ;
+; 8.601 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 11.448     ;
+; 8.607 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 11.428     ;
+; 8.610 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[22]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.001      ; 11.427     ;
+; 8.621 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.402     ;
+; 8.624 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[9]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.410     ;
+; 8.629 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.401     ;
+; 8.630 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.411     ;
+; 8.633 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[9]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 11.394     ;
+; 8.634 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[29]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 11.387     ;
+; 8.643 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.400     ;
+; 8.650 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[31]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.373     ;
+; 8.654 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 11.392     ;
+; 8.661 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[18]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.373     ;
+; 8.661 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[4]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 11.378     ;
+; 8.662 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.016      ; 11.390     ;
+; 8.663 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[10]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.371     ;
+; 8.668 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.348     ;
+; 8.668 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.348     ;
+; 8.672 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[10]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 11.355     ;
+; 8.673 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[24]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.357     ;
+; 8.677 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.357     ;
+; 8.677 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.014      ; 11.373     ;
+; 8.694 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[29]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.347     ;
+; 8.698 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.012     ; 11.326     ;
+; 8.698 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.325     ;
+; 8.702 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.011      ; 11.345     ;
+; 8.707 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 11.310     ;
+; 8.708 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[23]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.017      ; 11.345     ;
+; 8.710 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[14]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 11.326     ;
+; 8.712 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 11.324     ;
+; 8.714 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[24]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.317     ;
+; 8.715 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[1] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[4]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.053      ; 11.291     ;
+; 8.719 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[14]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 11.310     ;
+; 8.722 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[21]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.001      ; 11.315     ;
+; 8.727 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[29]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 11.294     ;
+; 8.731 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.009      ; 11.314     ;
+; 8.740 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.301     ;
+; 8.741 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[13]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 11.295     ;
+; 8.743 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[31]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 11.280     ;
+; 8.750 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[13]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 11.279     ;
+; 8.752 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[27]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.279     ;
+; 8.752 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.264     ;
+; 8.755 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.286     ;
+; 8.756 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.011      ; 11.291     ;
+; 8.768 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[29]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.262     ;
+; 8.770 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[0] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|operand[10] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.036      ; 11.219     ;
+; 8.770 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[26]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.260     ;
+; 8.779 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 11.267     ;
+; 8.780 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.018      ; 11.274     ;
+; 8.780 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.016      ; 11.272     ;
+; 8.783 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[24]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.258     ;
+; 8.783 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.247     ;
+; 8.784 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[23]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.018      ; 11.270     ;
+; 8.791 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[26]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.250     ;
+; 8.796 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 11.225     ;
+; 8.797 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                         ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.246     ;
++-------+-----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                                                                           ;
++-------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                          ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; uart_rx:receiver|bit_cnt[0]                                                                                        ; uart_rx:receiver|bit_cnt[0]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|bit_cnt[1]                                                                                        ; uart_rx:receiver|bit_cnt[1]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|bit_cnt[3]                                                                                        ; uart_rx:receiver|bit_cnt[3]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|bit_cnt[2]                                                                                        ; uart_rx:receiver|bit_cnt[2]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|busy                                                                                              ; uart_rx:receiver|busy                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[1]                                                                                      ; uart_rx:receiver|shift_reg[1]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[6]                                                                                      ; uart_rx:receiver|shift_reg[6]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[2]                                                                                      ; uart_rx:receiver|shift_reg[2]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[0]                                                                                      ; uart_rx:receiver|shift_reg[0]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[7]                                                                                      ; uart_rx:receiver|shift_reg[7]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[3]                                                                                      ; uart_rx:receiver|shift_reg[3]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[5]                                                                                      ; uart_rx:receiver|shift_reg[5]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[4]                                                                                      ; uart_rx:receiver|shift_reg[4]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.100                                                                                                    ; parse_state.100                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.101                                                                                                    ; parse_state.101                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.001                                                                                                    ; parse_state.001                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.010                                                                                                    ; parse_state.010                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[4]                                                                                                        ; rx_check[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[5]                                                                                                        ; rx_check[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[1]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[1]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[0]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[0]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[2]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[2]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|state.0000       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|state.0000       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[0]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[0]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[1]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[1]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[2]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[2]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|state.0000       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|state.0000       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[0]                                                                                                        ; rx_check[0]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[1]                                                                                                        ; rx_check[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[2]                                                                                                        ; rx_check[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[3]                                                                                                        ; rx_check[3]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; encoding_error                                                                                                     ; encoding_error                                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[7]                                                                                                        ; rx_check[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[6]                                                                                                        ; rx_check[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[1]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[1]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[2]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[2]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[0]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[0]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|busy                               ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|busy                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[4]                            ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[4]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; busy                                                                                                               ; busy                                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; tx_valid                                                                                                           ; tx_valid                                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[0]                                                                                     ; uart_tx:transmitter|bit_cnt[0]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[1]                                                                                     ; uart_tx:transmitter|bit_cnt[1]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[2]                                                                                     ; uart_tx:transmitter|bit_cnt[2]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[3]                                                                                     ; uart_tx:transmitter|bit_cnt[3]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|busy                                                                                           ; uart_tx:transmitter|busy                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|forecast_out[17] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|forecast_out[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|product[33]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|product[33]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|forecast_out[17] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|forecast_out[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|defined                            ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|defined                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                              ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|angle_defined                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|angle_defined                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.513 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][1]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][1]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.779      ;
+; 0.513 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][14]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][14]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.779      ;
+; 0.513 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[20][15]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[21][15]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.779      ;
+; 0.515 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][7]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][7]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.781      ;
+; 0.515 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[5][9]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[6][9]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.781      ;
+; 0.515 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][17]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][17]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.781      ;
+; 0.515 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[14][5]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[15][5]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.781      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][5]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][5]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][6]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][6]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][12]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][12]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[20][6]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[21][6]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][7]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][7]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][9]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][9]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][8]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][8]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][11]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][11]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][12]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][12]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][16]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][16]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[8][6]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[9][6]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[14][11]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[15][11]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[12][2]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[13][2]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[20][16]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[21][16]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[10][11]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[11][11]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
+; 0.517 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][16]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][16]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[0][5]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[1][5]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[10][7]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[11][7]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[14][14]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[15][14]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[14][15]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[15][15]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|forecast_out[5]  ; weather_system_speed:parallel_system.predictor|wind_speed_out[5]                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][4]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][4]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[20][14]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[21][14]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][0]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][0]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[10][1]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[11][1]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[10][10]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[11][10]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[5][14]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[6][14]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[2][15]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[3][15]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[18][5]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[19][5]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[4][8]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[5][8]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][10]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][10]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[10][10]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[11][10]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[14][4]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[15][4]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[10][7]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[11][7]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.518 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[4][11]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[5][11]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.784      ;
+; 0.519 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[21][0]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[22][0]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.785      ;
+; 0.519 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][6]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][6]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.785      ;
+; 0.519 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][10]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][10]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.785      ;
+; 0.519 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[0][12]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[1][12]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.785      ;
+; 0.519 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][12]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][12]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.785      ;
+; 0.519 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][13]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][13]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.785      ;
++-------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                                       ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------------------------------------------------------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                        ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------------------------------------------------------------------------------------------+
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[0]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[0]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[10] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[10] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[11] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[11] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[12] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[12] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[13] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[13] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[14] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[14] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[15] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[15] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[16] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[16] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[17] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[17] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[1]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[1]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[2]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[2]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[3]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[3]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[4]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[4]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[5]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[5]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[6]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[6]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[7]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[7]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[8]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[8]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[9]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[9]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[0]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[0]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[10] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[10] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[11] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[11] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[12] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[12] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[13] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[13] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[14] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[14] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[15] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[15] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[16] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[16] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[17] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[17] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[1]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[1]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[2]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[2]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[3]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[3]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[4]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[4]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[5]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[5]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[6]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[6]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[7]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[7]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[8]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[8]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[9]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[9]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[0]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[0]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[10] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[10] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[11] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[11] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[12] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[12] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[13] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[13] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[14] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[14] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[15] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[15] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[16] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[16] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[17] ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[17] ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[1]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[1]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[2]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[2]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[3]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[3]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[4]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[4]  ;
+; 8.077 ; 10.000       ; 1.923          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[5]  ;
+; 8.077 ; 10.000       ; 1.923          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[5]  ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------------------------------------------------------------------------------------------+
+
+
+-------------------------------
+; Slow Model Datasheet Report ;
+-------------------------------
+Nothing to report.
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; 14.411 ; 0.000         ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+-------+---------------------+
+; Clock    ; Slack ; End Point TNS       ;
++----------+-------+---------------------+
+; CLOCK_50 ; 7.981 ; 0.000               ;
++----------+-------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                                                            ;
++--------+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                 ; To Node                                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 14.411 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 5.624      ;
+; 14.459 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 5.576      ;
+; 14.497 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.518      ;
+; 14.527 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.503      ;
+; 14.545 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.470      ;
+; 14.575 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.442      ;
+; 14.589 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.434      ;
+; 14.610 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 5.425      ;
+; 14.611 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.014     ; 5.407      ;
+; 14.613 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.022     ; 5.397      ;
+; 14.614 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.415      ;
+; 14.617 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.400      ;
+; 14.623 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.394      ;
+; 14.637 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.386      ;
+; 14.637 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 5.394      ;
+; 14.639 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.391      ;
+; 14.641 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 5.371      ;
+; 14.641 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.384      ;
+; 14.665 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.352      ;
+; 14.680 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 5.351      ;
+; 14.682 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.343      ;
+; 14.684 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.341      ;
+; 14.691 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 5.321      ;
+; 14.696 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.329      ;
+; 14.705 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.014     ; 5.313      ;
+; 14.725 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.022     ; 5.285      ;
+; 14.733 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 5.279      ;
+; 14.740 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.298      ;
+; 14.742 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.011      ; 5.301      ;
+; 14.744 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[17]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.004      ; 5.292      ;
+; 14.748 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[17]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.282      ;
+; 14.753 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.014     ; 5.265      ;
+; 14.760 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[26]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.269      ;
+; 14.764 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.012     ; 5.256      ;
+; 14.769 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.004      ; 5.267      ;
+; 14.775 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.254      ;
+; 14.780 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.012     ; 5.240      ;
+; 14.784 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 5.230      ;
+; 14.789 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.240      ;
+; 14.789 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[23]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.004     ; 5.239      ;
+; 14.800 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.223      ;
+; 14.801 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[31]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.012     ; 5.219      ;
+; 14.803 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 5.209      ;
+; 14.805 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.008      ; 5.235      ;
+; 14.808 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[26]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.221      ;
+; 14.809 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[29]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 5.210      ;
+; 14.810 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.220      ;
+; 14.811 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 5.234      ;
+; 14.812 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.012     ; 5.208      ;
+; 14.814 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 5.228      ;
+; 14.817 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.014     ; 5.201      ;
+; 14.817 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[10]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 5.214      ;
+; 14.820 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[9]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 5.211      ;
+; 14.821 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[10]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.204      ;
+; 14.823 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.206      ;
+; 14.824 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[9]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.201      ;
+; 14.824 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.201      ;
+; 14.825 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[4]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 5.210      ;
+; 14.825 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 5.220      ;
+; 14.827 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[28]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.202      ;
+; 14.838 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.187      ;
+; 14.839 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.014      ; 5.207      ;
+; 14.840 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.011      ; 5.203      ;
+; 14.841 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.197      ;
+; 14.845 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 5.167      ;
+; 14.849 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 5.183      ;
+; 14.849 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[31]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.012     ; 5.171      ;
+; 14.854 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[22]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.011      ; 5.189      ;
+; 14.855 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[24]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.174      ;
+; 14.857 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[29]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 5.162      ;
+; 14.866 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[6]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[27]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.163      ;
+; 14.866 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[11]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 5.176      ;
+; 14.874 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[13]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 5.158      ;
+; 14.876 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[26]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.008     ; 5.148      ;
+; 14.876 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.015      ; 5.171      ;
+; 14.877 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[14]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 5.155      ;
+; 14.878 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[13]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 5.148      ;
+; 14.880 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[0] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[4] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.055      ; 5.150      ;
+; 14.880 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.135      ;
+; 14.881 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[14]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 5.145      ;
+; 14.884 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.154      ;
+; 14.888 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[34]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 5.144      ;
+; 14.889 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 5.123      ;
+; 14.890 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[28]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[34]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 5.136      ;
+; 14.890 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[33]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.015      ; 5.157      ;
+; 14.891 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[22]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 5.140      ;
+; 14.891 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.008     ; 5.133      ;
+; 14.892 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[24]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 5.145      ;
+; 14.903 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[24]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.126      ;
+; 14.908 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[28]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.014      ; 5.138      ;
+; 14.909 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[21]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 5.122      ;
+; 14.909 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[12]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[30]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 5.133      ;
+; 14.910 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[24]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.115      ;
+; 14.910 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[30]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[25]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 5.132      ;
+; 14.910 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[29]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[32]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 5.127      ;
+; 14.913 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[25]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 5.113      ;
+; 14.913 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[23]                     ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[35]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.004      ; 5.123      ;
+; 14.914 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[1]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[29]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.007     ; 5.111      ;
+; 14.914 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|y[5]                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[27]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.115      ;
+; 14.917 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[0]                   ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[31]                        ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.098      ;
++--------+-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                                                                           ;
++-------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                          ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; uart_rx:receiver|bit_cnt[0]                                                                                        ; uart_rx:receiver|bit_cnt[0]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|bit_cnt[1]                                                                                        ; uart_rx:receiver|bit_cnt[1]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|bit_cnt[3]                                                                                        ; uart_rx:receiver|bit_cnt[3]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|bit_cnt[2]                                                                                        ; uart_rx:receiver|bit_cnt[2]                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|busy                                                                                              ; uart_rx:receiver|busy                                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[1]                                                                                      ; uart_rx:receiver|shift_reg[1]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[6]                                                                                      ; uart_rx:receiver|shift_reg[6]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[2]                                                                                      ; uart_rx:receiver|shift_reg[2]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[0]                                                                                      ; uart_rx:receiver|shift_reg[0]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[7]                                                                                      ; uart_rx:receiver|shift_reg[7]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[3]                                                                                      ; uart_rx:receiver|shift_reg[3]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[5]                                                                                      ; uart_rx:receiver|shift_reg[5]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[4]                                                                                      ; uart_rx:receiver|shift_reg[4]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.100                                                                                                    ; parse_state.100                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.101                                                                                                    ; parse_state.101                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.001                                                                                                    ; parse_state.001                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.010                                                                                                    ; parse_state.010                                                                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[4]                                                                                                        ; rx_check[4]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[5]                                                                                                        ; rx_check[5]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[1]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[1]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[0]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[0]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[2]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|term[2]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|state.0000       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|state.0000       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[0]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[0]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[1]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[1]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[2]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|term[2]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|state.0000       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|state.0000       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[0]                                                                                                        ; rx_check[0]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[1]                                                                                                        ; rx_check[1]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[2]                                                                                                        ; rx_check[2]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[3]                                                                                                        ; rx_check[3]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; encoding_error                                                                                                     ; encoding_error                                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[7]                                                                                                        ; rx_check[7]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[6]                                                                                                        ; rx_check[6]                                                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[1]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[1]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[2]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[2]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[0]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|term[0]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|busy                               ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|busy                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[4]                            ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|step[4]                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; busy                                                                                                               ; busy                                                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; tx_valid                                                                                                           ; tx_valid                                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[0]                                                                                     ; uart_tx:transmitter|bit_cnt[0]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[1]                                                                                     ; uart_tx:transmitter|bit_cnt[1]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[2]                                                                                     ; uart_tx:transmitter|bit_cnt[2]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[3]                                                                                     ; uart_tx:transmitter|bit_cnt[3]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|busy                                                                                           ; uart_tx:transmitter|busy                                                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|forecast_out[17] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|forecast_out[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|product[33]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|product[33]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|forecast_out[17] ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|forecast_out[17] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|defined                            ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|defined                            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                              ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|x[33]                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|angle_defined                      ; weather_system_speed:parallel_system.predictor|wind_direction_cordic:angle_unit|angle_defined                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.236 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][7]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][7]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.388      ;
+; 0.236 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[5][9]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[6][9]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.388      ;
+; 0.236 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][1]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][1]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.388      ;
+; 0.236 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][14]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][14]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.388      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][5]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][5]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][6]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][6]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][12]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][12]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[20][6]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[21][6]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][7]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][7]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][9]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][9]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][11]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][11]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][16]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][16]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][17]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][17]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[14][5]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[15][5]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[12][2]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[13][2]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[20][15]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[21][15]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|forecast_out[5]  ; weather_system_speed:parallel_system.predictor|wind_speed_out[5]                                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.389      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][16]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][16]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[4][1]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[5][1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[0][5]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[1][5]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[4][8]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[5][8]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][8]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][8]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[14][12]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[15][12]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|acc[47]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|acc[47]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[8][6]       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[9][6]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[14][11]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|hist[15][11]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|acc[47]          ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|acc[47]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[20][16]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c5|hist[21][16]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[4][11]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[5][11]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[10][11]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c4|hist[11][11]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[21][0]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[22][0]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][4]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][4]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][6]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[11][6]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][10]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][10]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[0][12]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[1][12]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[14][13]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[15][13]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[16][14]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[17][14]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[20][14]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[21][14]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[9][16]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|hist[10][16]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[14][0]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[15][0]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[10][1]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[11][1]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[20][1]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[21][1]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[20][4]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[21][4]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[10][5]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[11][5]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[10][10]     ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[11][10]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[5][14]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[6][14]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[2][15]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c3|hist[3][15]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[21][0]      ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|hist[22][0]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
++-------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                                       ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------------------------------------------------------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                                        ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------------------------------------------------------------------------------------------+
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[0]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[0]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[10] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[10] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[11] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[11] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[12] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[12] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[13] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[13] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[14] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[14] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[15] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[15] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[16] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[16] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[17] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[17] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[1]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[1]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[2]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[2]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[3]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[3]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[4]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[4]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[5]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[5]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[6]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[6]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[7]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[7]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[8]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[8]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[9]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c0|operand[9]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[0]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[0]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[10] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[10] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[11] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[11] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[12] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[12] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[13] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[13] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[14] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[14] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[15] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[15] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[16] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[16] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[17] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[17] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[1]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[1]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[2]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[2]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[3]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[3]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[4]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[4]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[5]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[5]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[6]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[6]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[7]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[7]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[8]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[8]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[9]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c1|operand[9]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[0]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[0]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[10] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[10] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[11] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[11] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[12] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[12] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[13] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[13] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[14] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[14] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[15] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[15] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[16] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[16] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[17] ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[17] ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[1]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[1]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[2]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[2]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[3]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[3]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[4]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[4]  ;
+; 7.981 ; 10.000       ; 2.019          ; High Pulse Width ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[5]  ;
+; 7.981 ; 10.000       ; 2.019          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; weather_system_speed:parallel_system.predictor|weather_predictor_speed:core|weather_ar_channel:c2|operand[5]  ;
++-------+--------------+----------------+------------------+----------+------------+---------------------------------------------------------------------------------------------------------------+
+
+
+-------------------------------
+; Fast Model Datasheet Report ;
+-------------------------------
+Nothing to report.
+
+
++-----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                         ;
++------------------+-------+-------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 7.781 ; 0.215 ; N/A      ; N/A     ; 7.981               ;
+;  CLOCK_50        ; 7.781 ; 0.215 ; N/A      ; N/A     ; 7.981               ;
+; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLOCK_50        ; 0.000 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+-------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 262452   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 262452   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 0     ; 0    ;
+; Unconstrained Output Port Paths ; 0     ; 0    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 24 10:25:38 2026
+Info: Command: quartus_sta weather_board -c weather_board
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (332104): Reading SDC File: 'clock.sdc'
+Warning (332153): Family doesn't support jitter analysis.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 7.781
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     7.781         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 8.077
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.077         0.000 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 14.411
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    14.411         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 7.981
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     7.981         0.000 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332101): Design is fully constrained for setup requirements
+Info (332101): Design is fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 354 megabytes
+    Info: Processing ended: Sat Oct 24 10:25:42 2026
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+

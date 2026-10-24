@@ -147,3 +147,10 @@ docs/report/*.log
 !.gitkeep
 !/**/.gitkeep
 docs/Project_software_ver2.zip
+
+# Local compiled gate-level simulation executable
+hardware/quartus/*/netlist_sim
+hardware/quartus/build_uart_sim
+versions/weather_v2/data/
+hardware/quartus/*/timing_sim
+hardware/quartus/*/build_xsim/

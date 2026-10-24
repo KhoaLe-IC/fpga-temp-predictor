@@ -6,7 +6,7 @@
 
 ## 1. Scope and model
 
-Ordinary least squares (OLS) fitting runs **offline in C++**. The FPGA does not solve the least-squares problem or update coefficients. It performs fixed-coefficient inference on a stream of consecutive hourly temperature samples:
+Ordinary least squares (OLS) fitting runs **offline in Python/NumPy** in the current implementation. C++ provides the bit-exact inference reference used through DPI-C. The FPGA does not solve the least-squares problem or update coefficients. It performs fixed-coefficient inference on a stream of consecutive hourly temperature samples:
 
 $$
 \widehat T(t+3)=T(t-21)+a\,[T(t)-T(t-24)]+b\,[T(t)-T(t-3)]+c.

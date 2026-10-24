@@ -1,0 +1,21 @@
+PASS: C++ DPI bridge status, reset, and independent contexts
+Trained model coefficients: A_Q=12214 B_Q=150 C_Q=0
+REAL DUT VERIFICATION
+TEST speed A=12214 B=150 C=0 latency=5
+C++ replay: 8781 samples checked
+PASS: accepted=13619 checked=13510 reset_aborted=1 stalls=0 resets=5
+Arithmetic bins: negative_inputs=2518 sat_hi=570 sat_lo=601 negative_fraction=2380
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 323us; walltime 0.184 s; speed 1.751 ms/s
+- Verilator: cpu 0.146 s on 1 threads; allocated 5 MB
+TEST resource A=12214 B=150 C=0 latency=9
+C++ replay: 8781 samples checked
+PASS: accepted=13619 checked=13510 reset_aborted=1 stalls=119177 resets=5
+Arithmetic bins: negative_inputs=2512 sat_hi=573 sat_lo=598 negative_fraction=2377
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 3ms; walltime 0.437 s; speed 6.192 ms/s
+- Verilator: cpu 0.435 s on 1 threads; allocated 5 MB
+EQUIVALENCE PASS: 8757 forecasts matched by accepted-sample index
+All requested DUT simulations passed.

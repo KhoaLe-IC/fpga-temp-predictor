@@ -1,0 +1,17 @@
+{
+  "model": {
+    "a": 0.7454870438526146,
+    "b": 0.009149444986888534,
+    "c": 0.0011295816555433053,
+    "horizon_hours": 3,
+    "time_standard": "UTC",
+    "train_target_end_exclusive": "2024-01-01T00:00:00Z"
+  },
+  "quantized_coefficients": [
+    12214,
+    150,
+    0
+  ],
+  "data_sha256": "d6ae04f3a6fd1bef2d4d18c1ec115a86c4aca25b92b3caa4116729a93a6c266e",
+  "test_policy": "Saved model evaluated unchanged; no fitting in this script."
+}

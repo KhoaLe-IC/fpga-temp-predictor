@@ -1,0 +1,6 @@
+{
+  "netlist_sha256": "bb6a78c09416435d9d682efc47aa9c120a890b93ff469fcff9aeb1a4c10f17cc",
+  "vectors_sha256": "47bf00b0e34976f60ae6a9bdc77c3386cdcfb27e1541af6759a995ec40192ede",
+  "testbench_sha256": "5911a480c55efa77b01953fb7e96b9214b84ecd6e531dad74638c7a42cfa2037",
+  "clock_period_ns": 20
+}

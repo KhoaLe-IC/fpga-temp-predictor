@@ -6,7 +6,7 @@
 
 ## 1. Scope and model
 
-OLS training runs **offline in C++** and produces three fixed coefficients `a`, `b`, and `c`. This FPGA design performs inference only:
+OLS training runs **offline in Python/NumPy** in the current implementation; C++ provides the bit-exact inference reference used through DPI-C. Training produces three fixed coefficients `a`, `b`, and `c`. This FPGA design performs inference only:
 
 $$
 \widehat T(t+3)=T(t-21)+a\,[T(t)-T(t-24)]+b\,[T(t)-T(t-3)]+c.

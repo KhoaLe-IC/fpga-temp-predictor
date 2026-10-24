@@ -1,0 +1,89 @@
+PASS: C++ DPI bridge status, reset, and independent contexts
+Trained model coefficients: A_Q=12214 B_Q=150 C_Q=0
+REAL DUT VERIFICATION
+TEST speed A=12214 B=150 C=0 latency=5
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=0 resets=5
+Arithmetic bins: negative_inputs=4572 sat_hi=1101 sat_lo=1149 negative_fraction=4417
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 229us; walltime 0.068 s; speed 3.389 ms/s
+- Verilator: cpu 0.061 s on 1 threads; allocated 5 MB
+TEST speed A=0 B=0 C=0 latency=5
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=0 resets=5
+Arithmetic bins: negative_inputs=4572 sat_hi=0 sat_lo=0 negative_fraction=0
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 229us; walltime 0.052 s; speed 4.427 ms/s
+- Verilator: cpu 0.051 s on 1 threads; allocated 5 MB
+TEST speed A=-32768 B=32767 C=-32768 latency=5
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=0 resets=5
+Arithmetic bins: negative_inputs=4572 sat_hi=1199 sat_lo=4494 negative_fraction=6122
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 229us; walltime 0.063 s; speed 3.647 ms/s
+- Verilator: cpu 0.063 s on 1 threads; allocated 5 MB
+TEST speed A=32767 B=-32768 C=32767 latency=5
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=0 resets=5
+Arithmetic bins: negative_inputs=4572 sat_hi=4385 sat_lo=1252 negative_fraction=2598
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 229us; walltime 0.054 s; speed 4.217 ms/s
+- Verilator: cpu 0.054 s on 1 threads; allocated 5 MB
+TEST speed A=1 B=-1 C=-1 latency=5
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=0 resets=5
+Arithmetic bins: negative_inputs=4572 sat_hi=6 sat_lo=72 negative_fraction=4425
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 229us; walltime 0.051 s; speed 4.530 ms/s
+- Verilator: cpu 0.050 s on 1 threads; allocated 5 MB
+TEST resource A=12214 B=150 C=0 latency=9
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=77012 resets=5
+Arithmetic bins: negative_inputs=4566 sat_hi=1104 sat_lo=1146 negative_fraction=4414
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 2ms; walltime 0.366 s; speed 4.835 ms/s
+- Verilator: cpu 0.349 s on 1 threads; allocated 5 MB
+TEST resource A=0 B=0 C=0 latency=9
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=77012 resets=5
+Arithmetic bins: negative_inputs=4566 sat_hi=0 sat_lo=0 negative_fraction=0
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 2ms; walltime 0.159 s; speed 11.119 ms/s
+- Verilator: cpu 0.159 s on 1 threads; allocated 5 MB
+TEST resource A=-32768 B=32767 C=-32768 latency=9
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=77012 resets=5
+Arithmetic bins: negative_inputs=4566 sat_hi=1199 sat_lo=4489 negative_fraction=6122
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 2ms; walltime 0.162 s; speed 10.966 ms/s
+- Verilator: cpu 0.161 s on 1 threads; allocated 5 MB
+TEST resource A=32767 B=-32768 C=32767 latency=9
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=77012 resets=5
+Arithmetic bins: negative_inputs=4566 sat_hi=4381 sat_lo=1249 negative_fraction=2601
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 2ms; walltime 0.176 s; speed 10.038 ms/s
+- Verilator: cpu 0.176 s on 1 threads; allocated 5 MB
+TEST resource A=1 B=-1 C=-1 latency=9
+C++ replay: 4096 samples checked
+PASS: accepted=8934 checked=8825 reset_aborted=1 stalls=77012 resets=5
+Arithmetic bins: negative_inputs=4566 sat_hi=6 sat_lo=72 negative_fraction=4420
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/ols_tb_driver.sv:293: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 2ms; walltime 0.157 s; speed 11.301 ms/s
+- Verilator: cpu 0.156 s on 1 threads; allocated 5 MB
+EQUIVALENCE PASS: 4072 forecasts matched by accepted-sample index
+EQUIVALENCE PASS: 4072 forecasts matched by accepted-sample index
+EQUIVALENCE PASS: 4072 forecasts matched by accepted-sample index
+EQUIVALENCE PASS: 4072 forecasts matched by accepted-sample index
+EQUIVALENCE PASS: 4072 forecasts matched by accepted-sample index
+All requested DUT simulations passed.

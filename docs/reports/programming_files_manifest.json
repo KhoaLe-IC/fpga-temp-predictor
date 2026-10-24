@@ -1,0 +1,26 @@
+[
+  {
+    "path": "hardware/quartus/de2_temperature/output_files/temperature.sof",
+    "sha256": "82a20112de59118388c1f147ad75e48f9dbb9ea36e6ffb559d5e88360440931d",
+    "bytes": 841435,
+    "target": "EP2C35F672C6",
+    "clock_hz": 50000000,
+    "physical_tested": false
+  },
+  {
+    "path": "versions/weather_v2/quartus/de2_speed/output_files/weather_board.sof",
+    "sha256": "a39e3cb9ed3470f70ec7564abf8154e77c38f80387fd12feb66a8f614bdac6f2",
+    "bytes": 841439,
+    "target": "EP2C35F672C6",
+    "clock_hz": 50000000,
+    "physical_tested": false
+  },
+  {
+    "path": "versions/weather_v2/quartus/de2_resource/output_files/weather_board.sof",
+    "sha256": "c0e9abdba913b2a22ccc25c92596199844de4a8549cef099cee892cb823f713c",
+    "bytes": 841439,
+    "target": "EP2C35F672C6",
+    "clock_hz": 50000000,
+    "physical_tested": false
+  }
+]

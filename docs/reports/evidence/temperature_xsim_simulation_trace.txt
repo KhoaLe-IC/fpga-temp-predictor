@@ -1,0 +1,47 @@
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/temperature_functional_trace/xsim_script.tcl
+# xsim {temperature_functional_trace} -testplusarg VECTORS=../../../tb/build/speed_0.txt -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+TRACE row=0 raw=-32768 flag=0 expected=0
+TRACE row=1 raw=32767 flag=0 expected=0
+TRACE row=2 raw=9691 flag=0 expected=0
+TRACE row=3 raw=19292 flag=0 expected=0
+TRACE row=4 raw=-31522 flag=0 expected=0
+TRACE row=5 raw=-7510 flag=0 expected=0
+TRACE row=6 raw=-5617 flag=0 expected=0
+TRACE row=7 raw=-3376 flag=0 expected=0
+TRACE row=8 raw=-22992 flag=0 expected=0
+TRACE row=9 raw=-32305 flag=0 expected=0
+TRACE row=10 raw=8317 flag=0 expected=0
+TRACE row=11 raw=26452 flag=0 expected=0
+TRACE row=12 raw=17260 flag=0 expected=0
+TRACE row=13 raw=13312 flag=0 expected=0
+TRACE row=14 raw=-19962 flag=0 expected=0
+TRACE row=15 raw=28378 flag=0 expected=0
+TRACE row=16 raw=19343 flag=0 expected=0
+TRACE row=17 raw=-7556 flag=0 expected=0
+TRACE row=18 raw=-26274 flag=0 expected=0
+TRACE row=19 raw=21685 flag=0 expected=0
+TRACE row=20 raw=29448 flag=0 expected=0
+TRACE row=21 raw=30390 flag=0 expected=0
+TRACE row=22 raw=32598 flag=0 expected=0
+TRACE row=23 raw=-3827 flag=0 expected=0
+TRACE row=24 raw=-13158 flag=1 expected=32767
+TRACE row=25 raw=30186 flag=1 expected=-32768
+TRACE row=26 raw=-32768 flag=7807 expected=1
+TRACE row=27 raw=25738 flag=-21524 expected=1
+TRACE row=28 raw=-9354 flag=1 expected=3703
+TRACE row=29 raw=-26673 flag=1 expected=23660
+Fatal: Mismatch index=2 got=-32768 expected=1
+Time: 1278 ns  Iteration: 0  Process: /tb_netlist/Always12_1734  Scope: tb_netlist  File: /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/tb_timing.sv Line: 16
+$finish called at time : 1278 ns
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 24 10:36:11 2026...

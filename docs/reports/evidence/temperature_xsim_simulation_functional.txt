@@ -1,0 +1,17 @@
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/temperature_functional_xsim/xsim_script.tcl
+# xsim {temperature_functional_xsim} -testplusarg VECTORS=../../../tb/build/speed_0.txt -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Fatal: Mismatch index=2 got=-32768 expected=1
+Time: 1278 ns  Iteration: 0  Process: /tb_netlist/Always12_1734  Scope: tb_netlist  File: /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/tb_timing.sv Line: 16
+$finish called at time : 1278 ns
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 24 10:31:57 2026...

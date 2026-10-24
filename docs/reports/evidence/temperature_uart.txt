@@ -1,0 +1,50 @@
+RX packet = aa 55 81 02 7f ff 03
+Expected forecast = 7fff, received = 7fff
+PASS: forecast matches.
+RX packet = aa 55 81 02 80 00 03
+Expected forecast = 8000, received = 8000
+PASS: forecast matches.
+RX packet = aa 55 81 02 80 00 03
+Expected forecast = 8000, received = 8000
+PASS: forecast matches.
+RX packet = aa 55 81 02 80 00 03
+Expected forecast = 8000, received = 8000
+PASS: forecast matches.
+RX packet = aa 55 81 02 64 8a 6d
+Expected forecast = 648a, received = 648a
+PASS: forecast matches.
+RX packet = aa 55 81 02 80 00 03
+Expected forecast = 8000, received = 8000
+PASS: forecast matches.
+RX packet = aa 55 81 02 80 00 03
+Expected forecast = 8000, received = 8000
+PASS: forecast matches.
+RX packet = aa 55 81 02 0e 77 fa
+Expected forecast = 0e77, received = 0e77
+PASS: forecast matches.
+RX packet = aa 55 81 02 5c 6c b3
+Expected forecast = 5c6c, received = 5c6c
+PASS: forecast matches.
+RX packet = aa 55 81 02 7f ff 03
+Expected forecast = 7fff, received = 7fff
+PASS: forecast matches.
+RX packet = aa 55 81 02 68 83 68
+Expected forecast = 6883, received = 6883
+PASS: forecast matches.
+RX packet = aa 55 81 02 b9 67 5d
+Expected forecast = b967, received = b967
+PASS: forecast matches.
+RX packet = aa 55 81 02 13 69 f9
+Expected forecast = 1369, received = 1369
+PASS: forecast matches.
+RX packet = aa 55 81 02 d5 b7 e1
+Expected forecast = d5b7, received = d5b7
+PASS: forecast matches.
+RX packet = aa 55 81 02 ed b4 da
+Expected forecast = edb4, received = edb4
+PASS: forecast matches.
+RX packet = aa 55 81 02 9d 3b 25
+Expected forecast = 9d3b, received = 9d3b
+PASS: forecast matches.
+PASS UART at 50 MHz / 115200 baud: 40 inputs, 16 forecasts
+../tb_de2_temperature_50mhz.sv:168: $finish called at 34694840000 (1ps)

@@ -1,0 +1,11 @@
+{
+  "source_sha256": "47bf00b0e34976f60ae6a9bdc77c3386cdcfb27e1541af6759a995ec40192ede",
+  "hex_sha256": "fbaa17efa21ac055907d1349589a93167b86eee247c147c4978c837014203c25",
+  "rows": 4096,
+  "packing": "sample16 valid1 expected16; signed values encoded two-complement",
+  "coefficient_header": [
+    12214,
+    150,
+    0
+  ]
+}
