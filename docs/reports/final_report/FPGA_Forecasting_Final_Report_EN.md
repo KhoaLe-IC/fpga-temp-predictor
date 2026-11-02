@@ -1,38 +1,54 @@
-# Fixed point temperature and weather forecasting on Cyclone II FPGA
+# FPGA implementation of a weather forecasting accelerator
 
+Parallel inference and verification on Cyclone II  
 CE436 Discrete Time Signal Processing and Applications  
-Technical implementation and verification report  
-Prepared on 2 November 2026  
-Physical FPGA verification performed on 28 October 2026
+2 November 2026
 
 ## Abstract
 
-This project implements three-hour-ahead forecasting from hourly environmental observations on the DE2 development board with a Cyclone II EP2C35F672C6 FPGA. The first version uses a three-parameter seasonal ordinary least squares model for temperature. The second version extends the system to temperature, surface pressure, relative humidity, wind speed, and wind direction using seven-lag autoregressive models. Each version has a speed-oriented architecture and an architecture that shares a multiplier.
+A fixed-point weather forecasting accelerator was implemented on the DE2 board using a Cyclone II EP2C35F672C6 FPGA. The project began with a three-parameter temperature predictor fitted by ordinary least squares and was extended to forecast temperature, surface pressure, relative humidity, wind speed, and wind direction three hours ahead. The current design uses six parallel arithmetic channels with seven historical lags per channel. Wind direction is predicted through cosine and sine components and reconstructed by an iterative CORDIC unit. Models are trained offline and deployed as fixed coefficients. On 8,757 test examples from 2025, the weather model achieved mean absolute errors of 0.507906 °C for temperature, 0.034600 kPa for pressure, 2.614292 percentage points for humidity, and 0.566878 m/s for wind speed. Direction error was 18.084598° on the defined non-calm subset using ideal angle decoding of quantized components. The complete RTL has a documented latency of 40 cycles at 50 MHz and accepts eligible frames at intervals of 23 cycles. Predictor-core timing simulation checked 264 forecasts, and physical JTAG replay checked 104 forecasts from 128 inputs. Saved SignalTap data records a valid physical prediction transaction. The report presents the temperature prototype as the development starting point and evaluates the current parallel weather implementation.
 
-Training and model selection run offline. The FPGA stores fixed coefficients and performs inference using integer arithmetic. Independent C++ reference models check the RTL through SystemVerilog DPI-C testbenches. Verification also includes functional netlist replay, SDF timing simulation, and physical replay through a USB-Blaster JTAG interface.
+## 1 Introduction
 
-All four designs passed physical replay with 128 accepted input samples and 104 checked forecasts per design. SignalTap captured a prediction transaction from each instrumented design. The saved captures contain 512 samples at a 50 MHz acquisition clock, and decoded prediction values match the reference vectors. The shared architectures reduce multiplier usage, although total logic usage depends on the implementation. In the temperature JTAG builds, sharing reduces the multiplier count from four to two 9-bit elements while increasing logic usage from 1,130 to 1,541 LEs.
+The objective is to implement a short-horizon environmental predictor in fixed-point hardware and verify the complete path from recorded observations to FPGA results. Inputs are hourly samples supplied in chronological order. The output estimates conditions three hours after the latest observation. That forecast horizon belongs to the data model; the circuit returns a result after a finite number of 50 MHz clock cycles.
 
-## 1 Project scope
+The initial temperature-only predictor established the coefficient-training flow, history buffer, integer arithmetic rules, and reference-based verification. The current system extends that work to additional weather variables, a larger lag model, and wind-direction conversion. Figure 1 shows the boundary between offline training, the host interface, and deployed inference.
 
-The system predicts environmental conditions three hours after the latest hourly observation. Its inputs are recorded samples supplied by a host computer. The forecast horizon belongs to the data model; hardware processing takes a small number of clock cycles and does not wait three hours to produce a result.
+![Offline model development and deployed weather inference](figures/system_overview.png)
 
-The implementation contains four designs:
+Figure 1. Offline coefficient fitting and the deployed inference path. The computer supplies recorded weather frames through a JTAG mailbox and reads completed forecasts from the FPGA.
 
-| Version | Architecture | Forecast outputs |
+The implementation evaluated here is the speed-oriented weather design. Six arithmetic lanes operate in parallel, one per scalar or direction component. The following sections explain the development from the temperature prototype, define the selected model and hardware, and report forecast quality and implementation checks. Resource figures include the JTAG board interface and exclude SignalTap instrumentation unless stated otherwise.
+
+## 2 Development from the temperature prototype
+
+The original predictor used the previous day's temperature at the target hour as an anchor. Two learned corrections represented the daily difference and the latest three-hour change, with a fitted bias. Its equation was T̂(t + 3) = T(t − 21) + a[T(t) − T(t − 24)] + b[T(t) − T(t − 3)] + c. Training ran offline; the pipelined FPGA core applied the quantized coefficients to accepted input samples.
+
+The prototype made the numerical and verification problems small enough to inspect directly. A forecast depended on four temperature positions within a 25-sample history. Signed 16-bit Q8 samples, Q14 coefficients, floor scaling, and saturation defined the arithmetic contract. The speed pipeline produced a result five cycles after acceptance and could accept a new sample each cycle after warm-up.
+
+The extension changed the prediction model as well as the number of outputs. Candidate models were evaluated using a chronological validation period. The selected weather models use seven lags for each channel, and temperature and humidity use ridge regularization. Wind direction required an angular representation and a separate reconstruction stage. Table 1 summarizes the changes in scope.
+
+Table 1. Development from the temperature prototype to the current weather design
+
+| Aspect | Temperature prototype | Current weather design |
 | --- | --- | --- |
-| Temperature | Pipelined speed design | Temperature |
-| Temperature | Shared multiplier design | Temperature |
-| Weather | Parallel arithmetic lanes | Temperature, pressure, humidity, wind speed, wind direction |
-| Weather | Shared multiplier across channels | The same weather outputs |
+| Forecast quantities | Temperature | Temperature, pressure, humidity, wind speed, direction |
+| Arithmetic channels | One | Six, including direction cosine and sine |
+| Model | Three-parameter seasonal OLS | Seven-lag univariate autoregression per channel |
+| Lag positions | 0, 3, 21, 24 | 0, 1, 3, 6, 12, 21, 24 |
+| Sample format | Signed 16-bit Q8 | Signed 18-bit Q8 |
+| Product and accumulator | 33-bit products, 35-bit sum | 36-bit products, 48-bit sum |
+| Full latency at 50 MHz | 5 cycles, 100 ns | 40 cycles, 0.80 µs |
+| Eligible-frame initiation interval | 1 cycle | 23 cycles |
+| Temperature test MAE | 0.538017 °C | 0.507906 °C |
 
-The weather arithmetic operates on six channels because direction is represented by cosine and sine. A CORDIC unit converts the predicted direction components into an angle. The current scope does not include precipitation probability, live sensor acquisition, or coefficient training on the FPGA.
+The hourly input cadence, three-hour target horizon, and 25-frame history requirement were retained. The numerical rules and reference-checking approach were extended to the wider datapath and additional channels. The weather design is therefore a model and system extension of the prototype. It is not obtained by sending humidity or pressure through the unchanged three-parameter temperature equation.
 
-The report uses three implementation boundaries. Core measurements describe the prediction logic. JTAG board measurements include the mailbox and vendor debug transport needed to send samples and read results. SignalTap builds add acquisition hardware for waveform capture. These boundaries have different resource totals and must remain separate in comparisons.
+The original fixed-point temperature MAE was 0.538017 °C over 8,757 test forecasts [1]. The current temperature-channel MAE is 0.507906 °C [2]. That comparison describes the change in the evaluated model. Parallel hardware scheduling does not itself improve prediction accuracy.
 
-## 2 Data preparation and evaluation
+## 3 Forecast model and evaluation
 
-### 2.1 Dataset and chronological split
+### 3.1 Weather observations and time split
 
 The weather dataset contains NASA POWER hourly T2M, PS, RH2M, WS10M, and WD10M values for Ho Chi Minh City at latitude 10.8231° N and longitude 106.6297° E, covering 2021 through 2025 in UTC. Pressure is expressed in kPa, humidity in percent, wind speed in m/s, and direction in degrees. NASA POWER provides gridded environmental data, so the reported errors should be interpreted for this dataset and location.
 
@@ -40,11 +56,23 @@ The evaluation separates training, validation, and test periods by time. Trainin
 
 Model candidates are compared on validation error. The selected coefficients are then frozen before test evaluation. This separation prevents the test period from influencing coefficient fitting or model selection. The saved temperature model has the same three hour horizon and a training target cutoff of 1 January 2024.
 
-### 2.2 Baselines and error metrics
+### 3.2 Selected autoregressions
+
+The weather model selection evaluates persistence, the previous day baseline, the seasonal three-parameter model, and seven-lag autoregressions with several ridge penalties. The selected models are univariate autoregressions using lags 0, 1, 3, 6, 12, 21, and 24. Each channel follows Equation (1).
+
+$$
+\widehat x(t+3)=\beta_x+\sum_{k=0}^{6}w_{x,k}x(t-\ell_k),\qquad \ell=[0,1,3,6,12,21,24].
+$$
+
+Temperature and humidity select ridge penalty 1. Pressure, wind speed, and the direction component pair select penalty 0. These selections are the best candidates within the evaluated set according to validation error. The exact floating-point and integer coefficients are retained in the weather model record [2].
+
+The host converts direction angles into cosine and sine before transmitting the inputs. The FPGA predicts these components and reconstructs the output angle using CORDIC. Angles are wrapped to the range from 0° inclusive to 360° exclusive. A zero predicted vector has an undefined direction flag.
+
+### 3.3 Error measures
 
 Persistence predicts that the future value will equal the latest observation. The diurnal baseline uses the previous day's observation at the target hour. For a forecast at time t + 3, the previous day target hour is t − 21. These baselines test whether the fitted model improves on simple temporal assumptions.
 
-For N predictions, mean absolute error and root mean square error are:
+For N predictions, Equations (2) and (3) define mean absolute error and root mean square error.
 
 $$
 \mathrm{MAE}=\frac{1}{N}\sum_{i=1}^{N}|\widehat y_i-y_i|.
@@ -58,74 +86,43 @@ Both metrics retain the unit of the target variable. Wind direction uses circula
 
 Forecast error, fixed point approximation error, and hardware agreement answer different questions. Forecast error compares a prediction with a future observation. Approximation error compares fixed point inference with floating point inference. Hardware agreement compares RTL or FPGA output with the fixed point reference for the same inputs.
 
-## 3 Temperature forecasting model
+## 4 Parallel weather hardware
 
-### 3.1 Seasonal ordinary least squares model
+### 4.1 Arithmetic and scheduling
 
-The temperature predictor uses two differences from past observations and a bias:
+The top-level weather_system_speed module contains the parallel prediction core and wind_direction_cordic. The core accepts six simultaneous signed 18-bit Q8 inputs: temperature, pressure, humidity, wind speed, direction cosine, and direction sine. Coefficients are static signed 18-bit Q14 constants, biases are signed 32-bit Q8 values, full products have 36 bits, and accumulators have 48 bits.
 
-$$
-\widehat T(t+3)=T(t-21)+a[T(t)-T(t-24)]+b[T(t)-T(t-3)]+c.
-$$
+Each arithmetic lane reuses its multiplier across that channel's seven terms. Parallel operation therefore applies across channels. The design does not compute all 42 products in a single cycle. The lane shifts its 25-entry history only when sample_valid and sample_ready are both high at an accepting rising edge. The first 24 accepted frames fill history; frame 25 is the first eligible forecast input.
 
-The term T(t − 21) supplies the previous day's value at the forecast hour. The first difference measures change from the same hour on the previous day. The second difference measures change during the latest three hours. Ordinary least squares fits a, b, and c by minimizing squared residuals against the training targets.
+Products and the aligned bias are added before scale reduction. The final arithmetic shift floors negative fractional values. Humidity is limited to 0 through 100%, wind speed to nonnegative values, and direction components to −1 through 1; remaining overflow saturates to the signed 18-bit range. The direction angle uses unsigned 18-bit degrees with eight fractional bits. A zero predicted component pair emits an undefined-direction flag.
 
-The stored coefficients are:
+The scalar core outputs are captured while the direction unit reconstructs the angle. They remain aligned with the final forecast_valid event. Full-system latency, measured from input acceptance to the visible complete output under the RTL post-edge convention, is 40 cycles, or 0.80 µs. The sustained accepted-frame interval after warm-up is 23 cycles. There is no output backpressure; the consumer must capture each valid result. Active-low synchronous reset cancels pending work and requires a fresh history window.
 
-| Parameter | Floating point value | Hardware integer | Fractional bits |
-| --- | --- | --- | --- |
-| a | 0.7454870438526146 | 12214 | 14 |
-| b | 0.009149444986888534 | 150 | 14 |
-| c | 0.0011295816555433053 | 0 | 8 |
+### 4.2 Host interface
 
-The quantized bias is zero because the fitted value is smaller than one half of a Q8 step. It remains a model parameter even though its deployed integer value is zero. Both temperature architectures use the same coefficient values and numerical rules.
+Quartus In-System Sources and Probes provides a 128-bit source word and 256-bit probe word through the board's USB-Blaster connection. A mailbox stages one input frame, commits it with a request toggle, and acknowledges completion. Source values are synchronized to CLOCK_50, and the mailbox waits additional settling clocks before capturing the held payload. The host holds payload and request until acknowledgement and then checks a stable probe word.
 
-### 3.2 Fixed point arithmetic
+The mailbox preserves the last completed forecast for slow host readback. It exposes accepted-frame and forecast counters, direction validity, and a design signature. Warm-up inputs are acknowledged without a forecast. After warm-up, the reply follows capture of the complete prediction. JTAG reset clears history eligibility, counters, and the retained result.
 
-Temperature inputs and outputs use signed 16-bit integers with eight fractional bits. A stored integer q represents q / 256 °C. The differences require 17 bits, products require 33 bits, and the final accumulator uses 35 bits. Coefficients a and b have 14 fractional bits, so the final scaling uses an arithmetic right shift. Negative fractional values round toward negative infinity. Overflow at the output saturates to the signed 16-bit range.
+The replay script selects weather_speed and verifies the design identity before transmitting vectors. Results appear in the host output, saved CSV, or the In-System Sources and Probes Editor. The implementation has no LED, seven-segment, or LCD forecast display. Its physical demonstration uses recorded inputs. UART wrappers exist in the repository, but their physical operation has not been verified [7].
 
-History advances only when a sample is accepted. The first 24 accepted samples establish the required history, and accepted sample 25 produces the first forecast. A reset cancels pending results and requires a fresh history window. Although the equation reads only selected lags for one prediction, consecutive requests require a history mechanism that supplies the correct delayed observations each time.
+## 5 Verification procedure
 
-### 3.3 Temperature architectures
+SystemVerilog tests instantiate the production weather RTL and compare accepted-frame predictions with a C++ fixed-point reference through DPI-C. The scoreboard checks result values, validity, transaction order, and the expected schedule. Directed and random traffic exercise invalid gaps, input backpressure, signed extremes, range limits, and reset during processing. The weather speed regression accepted 1,200 frames, checked 1,124 forecasts, and accounted for four pending results canceled by reset [3]. History warm-up is repeated after each reset.
 
-The speed design pipelines history access, arithmetic, and output generation. It has five cycles of latency under the RTL scoreboard's observation convention and an initiation interval of one cycle. The shared design schedules the products through one full multiplier. Its latency is nine cycles and its initiation interval is ten cycles. At 50 MHz, the corresponding latencies are 100 ns and 180 ns.
+Functional netlist replay checks mapped logic using vendor simulation atoms. TimeQuest evaluates fitted timing under the declared constraints. ModelSim-Altera Starter Edition 10.1d runs the predictor-core timing netlist with maximum SDF delays at a 20 ns period. The accepted weather speed run supplied 288 inputs and checked 264 forecasts, with completed delay annotation and no reported timing violations [4]. This timing simulation covers the predictor core; a full SDF simulation of the proprietary JTAG transport is outside the claim.
 
-An initiation interval describes how often the core can accept a new input during sustained processing. The host JTAG interface sends transactions much more slowly, so its replay rate does not measure the core's maximum throughput.
+The mailbox integration tests exercise 128 inputs and 104 forecasts, duplicate-request protection, reset cancellation, and a fresh 25-frame warm-up. Separate host tests mock the JTAG API and corrupt replies to verify mismatch detection. Their results establish checker behavior and are kept separate from physical evidence.
 
-### 3.4 Temperature test accuracy
+CORDIC verification checks angle conversion independently from forecast quality. Exhaustive conversion testing covered 263,169 integer component pairs, with maximum circular conversion error 0.005635°. Physical comparison permits five raw Q8 degree counts, equivalent to 0.01953125°, with the correct direction-defined flag.
 
-The following results use 8,757 test forecasts in 2025. They come from software evaluation of the saved model and baselines.
+## 6 Results
 
-| Model | MAE in °C | RMSE in °C |
-| --- | --- | --- |
-| Floating point OLS | 0.537973 | 0.785961 |
-| Fixed point OLS | 0.538017 | 0.785955 |
-| Persistence | 2.080369 | 2.732720 |
-| Previous day target hour | 0.832280 | 1.187346 |
+### 6.1 Forecast accuracy
 
-The mean absolute difference between fixed point and floating point predictions is 0.003161 °C, with a maximum absolute difference of 0.009092 °C. No validation or test prediction saturated the signed 16-bit output. These results show that quantization changes this model's predictions only slightly on the evaluated data. They do not establish accuracy at other sites or under untested weather conditions.
+Table 2 reports the weather evaluation using the selected coefficients [2]. Scalar targets use 8,757 examples; direction uses the non-calm subset described below.
 
-## 4 Weather forecasting extension
-
-### 4.1 Selected models
-
-The weather version evaluates persistence, the previous day baseline, the seasonal three-parameter model, and seven-lag autoregressions with several ridge penalties. The selected models are univariate autoregressions using lags 0, 1, 3, 6, 12, 21, and 24. Each channel follows:
-
-$$
-\widehat x(t+3)=\beta_x+\sum_{k=0}^{6}w_{x,k}x(t-\ell_k),\qquad \ell=[0,1,3,6,12,21,24].
-$$
-
-Temperature and humidity select ridge penalty 1. Pressure, wind speed, and the direction component pair select penalty 0. These selections are the best candidates within the evaluated set according to validation error. The exact floating point and integer coefficients are retained in the weather model file.
-
-The host converts direction angles into cosine and sine before transmitting the inputs. The FPGA predicts these components and reconstructs the output angle using CORDIC. Angles are wrapped to the range from 0° inclusive to 360° exclusive. A zero predicted vector has an undefined direction flag.
-
-### 4.2 Numerical representation and scheduling
-
-Weather inputs and channel outputs use signed 18-bit Q8 values. Coefficients use signed 18-bit Q14, biases use signed 32-bit Q8, products use 36 bits, and accumulators use 48 bits. The output angle uses unsigned 18-bit degrees with eight fractional bits. Humidity is clipped to the physical range from 0 to 100%, wind speed to nonnegative values, and direction components to the range from −1 to 1.
-
-The parallel implementation has six arithmetic lanes. The shared implementation schedules all channels through one multiplier. Both use a 25-frame history and the same selected models. Including direction conversion, full-system latency is 40 cycles for the parallel design and 156 cycles for the shared design. Their accepted-frame initiation intervals are 23 and 139 cycles. At 50 MHz, full-system latency is 0.80 µs and 3.12 µs, respectively.
-
-### 4.3 Weather test accuracy
+Table 2. Weather model accuracy and baseline mean absolute errors on the test period
 
 | Target and unit | Fixed point MAE | Fixed point RMSE | Persistence MAE | Previous day MAE |
 | --- | --- | --- | --- | --- |
@@ -137,146 +134,128 @@ The parallel implementation has six arithmetic lanes. The shared implementation 
 
 Direction results use 8,593 non-calm test targets and floating point atan2 applied to the quantized predicted components. They therefore describe the selected fixed point component model with ideal angle decoding. CORDIC approximation is checked separately. Exhaustive conversion testing covered 263,169 integer cosine and sine pairs, with a maximum circular conversion error of 0.005635°. The physical replay permits an angle difference of five Q8 degree units, equivalent to 0.01953125°.
 
-The weather temperature model has a lower test MAE than the original three-parameter model on this evaluation. It also uses more lag coefficients and different hardware. The two versions should be compared as different model and implementation choices.
+The temperature result is consistent with the model progression in Table 1. All metrics remain specific to the retained location and chronological test period.
 
-## 5 Verification method
+### 6.2 FPGA implementation
 
-### 5.1 Independent reference models and RTL tests
+The board project targets EP2C35F672C6 with CLOCK_50 constrained to 20 ns. Application pins are CLOCK_50 = N2 and KEY0_N = G26. JTAG uses dedicated device infrastructure. Table 3 records the uninstrumented weather speed JTAG fit, including the prediction system and mailbox [3].
 
-SystemVerilog drivers generate inputs, apply valid and ready handshaking, and compare outputs with C++ reference calculations through DPI-C. The reference models implement the deployed fixed point rules, including signed arithmetic, scaling, and overflow handling. Scoreboards associate results with accepted samples and check the required output schedule.
+Table 3. Implementation results for the weather speed JTAG design
 
-The temperature regression covers five coefficient configurations for both architectures. Each paired replay compares 4,072 outputs by accepted-sample index. A full-year historical replay supplies 8,781 hourly observations including history and checks 8,757 forecasts. Weather DPI-C tests accept 1,200 frames per architecture and check 1,124 forecasts, with four pending results canceled by reset. Test cases include signed extremes, input gaps, backpressure, and reset during processing.
-
-### 5.2 Mapped logic and timing checks
-
-Functional netlist simulation checks the mapped logic using vendor atoms. TimeQuest analyzes fitted setup and hold timing under the declared constraints. ModelSim-Altera Starter Edition 10.1d runs the original Quartus timing netlists with maximum SDF delays at a 20 ns clock. These methods cover different failure mechanisms, so their results are recorded separately.
-
-| Predictor core | SDF timing replay inputs | Checked forecasts | Result |
-| --- | --- | --- | --- |
-| Temperature speed | 4096 | 4072 | PASS |
-| Temperature shared | 4096 | 4072 | PASS |
-| Weather parallel | 288 | 264 | PASS |
-| Weather shared | 288 | 264 | PASS |
-
-Accepted timing runs completed SDF back-annotation, passed their scoreboards, and reported no timing violations. The stored timing manifests identify the netlist, SDF file, vectors, testbench, and transcript using hashes. These runs cover predictor cores. A full SDF replay of the JTAG board interface is not claimed.
-
-### 5.3 JTAG interface verification
-
-A mailbox connects the forecasting core to Quartus In-System Sources and Probes. The source word has 128 bits and the probe word has 256 bits. The host stages input data, toggles a request bit, and waits for an acknowledgement. The mailbox accepts one transaction at a time, preserves the latest forecast for readback, and exposes accepted-input and forecast counters.
-
-The vendor IP synchronizes source outputs to CLOCK_50. The mailbox adds settling cycles before sampling the held payload. Its RTL tests replay 128 inputs and 104 forecasts for every design, then exercise reset cancellation and a fresh 25-input history. Separate host tests use mocked JTAG APIs and deliberately corrupt outputs to check that the host detects mismatches. Mocked tests are kept separate from physical evidence.
-
-## 6 FPGA implementation results
-
-All four JTAG board projects target EP2C35F672C6 with CLOCK_50 constrained to 20 ns. CLOCK_50 uses pin N2 and KEY0_N uses pin G26. The JTAG path uses dedicated device infrastructure. The following fitted results include the predictor, mailbox, and JTAG IP, but exclude SignalTap acquisition hardware.
-
-| Design | LEs | Registers | Memory bits | 9-bit multiplier elements |
-| --- | --- | --- | --- | --- |
-| Temperature speed | 1130 | 1016 | 336 | 4 |
-| Temperature shared | 1541 | 1352 | 0 | 2 |
-| Weather parallel | 6253 | 4571 | 0 | 12 |
-| Weather shared | 5598 | 4192 | 0 | 2 |
-
-| Design | Fmax in MHz | Setup slack in ns | Hold slack in ns | Operating clock |
-| --- | --- | --- | --- | --- |
-| Temperature speed | 190.48 | 14.750 | 0.215 | 50 MHz |
-| Temperature shared | 139.37 | 12.825 | 0.215 | 50 MHz |
-| Weather parallel | 79.74 | 7.459 | 0.215 | 50 MHz |
-| Weather shared | 79.23 | 7.378 | 0.215 | 50 MHz |
-
-All four fits completed successfully with nonnegative setup and hold slack. Fmax is a static timing estimate from the fitted design. Physical functional tests operated at 50 MHz; they did not sweep the board clock to measure the maximum operating frequency.
-
-Two 9-bit multiplier elements correspond to one full 18 × 18 multiplier resource on this target. Temperature sharing reduces this resource from two full multipliers to one, but its control and history implementation increase the LE and register totals. Weather sharing reduces the multiplier element count from 12 to 2, and the JTAG wrapper fit also uses fewer LEs and registers. These outcomes support reporting each resource separately instead of assigning a single area label to the shared designs.
-
-SignalTap instrumentation adds acquisition memory, trigger logic, and routing load. Its builds are used for waveform evidence. The table above retains the uninstrumented JTAG results used to compare the architectures.
-
-## 7 Physical verification on DE2
-
-### 7.1 Programming and checked replay
-
-The USB-Blaster chain identified an EP2C35 device with JTAG ID 0x020B40DD. Each JTAG programming file was loaded separately, and the host checker verified the design identity before sending samples. A JTAG reset clears counters and history, so replay does not depend on a manual reset-button sequence.
-
-| Design | Accepted inputs | Checked forecasts | Physical JTAG replay |
-| --- | --- | --- | --- |
-| Temperature speed | 128 | 104 | PASS |
-| Temperature shared | 128 | 104 | PASS |
-| Weather parallel | 128 | 104 | PASS |
-| Weather shared | 128 | 104 | PASS |
-
-The first 24 accepted inputs fill history. Every subsequent input in this replay produces one forecast, giving 128 − 24 = 104 checked forecasts. Temperature and six weather component outputs agree bit for bit with the fixed point reference. Weather angle output is checked using the stated tolerance and the direction-defined flag.
-
-Temperature replay vectors include directed synthetic values and arithmetic corner cases. The physical replay establishes correct hardware inference for those inputs. The historical software evaluation in Sections 3 and 4 establishes forecast accuracy against future observations. The instrumented SignalTap builds also passed a separate 128-input and 104-forecast physical replay for every architecture.
-
-### 7.2 SignalTap capture checks
-
-Each capture uses CLOCK_50 at 50 MHz, a depth of 512 samples, and a rising forecast-valid trigger at capture index 256. The saved native STP files contain actual acquisition data. A decoder checks that the input matches the first forecast-producing reference transaction, that a valid output occurs, and that its prediction matches the reference value.
-
-| Design | Input acceptance index | Forecast-valid index | Sample separation | RTL post-edge latency |
-| --- | --- | --- | --- | --- |
-| Temperature speed | 250 | 256 | 6 | 5 cycles |
-| Temperature shared | 246 | 256 | 10 | 9 cycles |
-| Weather parallel | 215 | 256 | 41 | 40 cycles |
-| Weather shared | 99 | 256 | 157 | 156 cycles |
-
-The raw capture samples signal values at the acquisition edge. RTL scoreboards observe registered results after the edge updates. The capture separation is one sample greater than the documented post-edge latency under these observation conventions. Both the raw indices and the RTL latency definition are retained so the waveform is not presented as a different latency measurement.
-
-For the captured temperature transaction, the valid result is hexadecimal 7FFF, which is the signed 16-bit positive saturation limit. This directed case checks arithmetic behavior. It is not a typical ambient temperature forecast. Output bus changes during cycles with forecast_valid equal to zero do not represent additional valid predictions.
-
-### 7.3 Saved waveform figures
-
-The following plots decode the control signals directly from the saved physical SignalTap CSVs. They preserve the acquisition sample indices. Native Quartus screenshots with the complete input and output buses are linked in Appendix A.
-
-![Temperature speed SignalTap waveform](figures/temperature_speed.png)
-
-Figure 1. Temperature speed capture with sample-valid, ready, and forecast-valid signals. Time-axis labels are samples relative to the trigger; one sample represents 20 ns.
-
-![Temperature shared SignalTap waveform](figures/temperature_resource.png)
-
-Figure 2. Temperature shared capture. The longer input-to-valid interval is visible in the same trigger-centered view.
-
-![Weather parallel SignalTap waveform](figures/weather_speed.png)
-
-Figure 3. Weather parallel control capture. The full prediction, including direction angle, becomes valid at the trigger.
-
-![Weather shared SignalTap waveform](figures/weather_resource.png)
-
-Figure 4. Weather shared capture over a wider sample range. The shared arithmetic schedule extends the interval before the full forecast becomes valid.
-
-## 8 Reproduction and evidence files
-
-The repository retains source code, trained coefficients, simulation scripts, native acquisition files, physical CSV results, and screenshots. The evidence archive created on 28 October 2026 contains 122 verified files and is approximately 5.4 MB. It preserves the physical session independently of the board's volatile configuration. Some status files inside that historical archive describe earlier stages of the same session; the programming logs, checked replay results, and decoded captures provide the final hardware evidence.
-
-The four board projects are:
-
-| Design | Project path from the repository root |
+| Quantity | Result |
 | --- | --- |
-| Temperature speed | hardware/quartus/de2_temperature_jtag/temperature.qpf |
-| Temperature shared | hardware/quartus/de2_temperature_resource_jtag/temperature_resource.qpf |
-| Weather parallel | versions/weather_v2/quartus/de2_jtag_speed/weather_jtag.qpf |
-| Weather shared | versions/weather_v2/quartus/de2_jtag_resource/weather_jtag.qpf |
+| Logic elements | 6253 |
+| Registers | 4571 |
+| Mapped memory bits | 0 |
+| 9-bit multiplier elements | 12 |
+| Estimated Fmax | 79.74 MHz |
+| Setup slack at 50 MHz | 7.459 ns |
+| Hold slack | 0.215 ns |
+| Physical test clock | 50 MHz |
+| Documented full latency | 40 cycles, 0.80 µs |
+| Sustained eligible-frame interval | 23 cycles |
 
-For a live demonstration, power the original DE2, connect USB-Blaster, select the correct SOF file, and run the matching host replay variant. Power cycling clears the FPGA's SRAM configuration, so the SOF must be loaded again. Saved STP captures and screenshots remain available offline.
+Twelve 9-bit multiplier elements correspond to six full 18 by 18 multiplier resources on this target. Zero mapped memory bits does not imply an absence of stored history; storage can map to registers and logic. Fmax is a fitted static timing estimate. Physical testing used 50 MHz and did not sweep the board clock to establish a measured frequency limit. SignalTap adds acquisition circuitry, so its instrumented fit is kept outside Table 3.
 
-The deployment uses JTAG for sample transfer and readback. The current design has no forecast display on LEDs, seven-segment displays, or LCD. The repository also contains UART wrappers and serial-path simulations, but physical UART operation has not been verified.
+### 6.3 Physical replay and waveform evidence
 
-## 9 Conclusions and limitations
+Physical verification was performed on 28 October 2026. USB-Blaster identified an EP2C35 device with JTAG ID 0x020B40DD. The weather speed SOF was programmed, the host checked the variant identity, and the replay script reset the design through JTAG before sending vectors.
 
-The project produced four working implementations of fixed point forecasting on Cyclone II. Independent reference checking, mapped-logic tests, SDF timing simulation, and physical JTAG replay provide evidence at successive stages of implementation. SignalTap captures show real input and prediction transactions for both versions and both architectures.
+The uninstrumented design accepted 128 input frames and returned 104 checked forecasts [5]. The difference is the 24-frame history fill. All six scalar and component outputs agreed bit for bit with the fixed-point reference, and direction angle and validity passed the specified tolerance check. The instrumented weather speed build passed a separate replay with the same counts. These tests verify the programmed implementation for the supplied transactions; historical forecast quality is evaluated separately in Table 2.
 
-The three parameter temperature model achieves a test MAE of 0.538017 °C in fixed point. The weather extension reduces temperature MAE to 0.507906 °C on its evaluated test set and adds forecasts for pressure, humidity, wind speed, and direction. The shared designs reduce dedicated multiplier usage at the cost of a longer processing schedule. Total logic savings depend on the version and implementation boundary.
+SignalTap captured 512 samples at the 50 MHz acquisition clock. The accepted input occurs at capture index 215, and forecast_valid occurs at trigger index 256 [6]. Their raw separation is 41 sampled intervals. The RTL scoreboard observes updated registers after the accepting edge, while SignalTap samples at its acquisition edge; the documented post-edge RTL latency is 40 cycles under that convention.
 
-The present evidence covers recorded data and fixed coefficients. It does not measure electrical power, live sensor behavior, maximum board frequency, or operational forecasting at other locations. Precipitation probability is outside the implemented outputs. Further work can evaluate other sites and periods, investigate power consumption, and improve the shared design's history and control logic while preserving the existing numerical contract.
+Figure 2 shows the control signals decoded from the actual weather speed capture. The complete prediction becomes valid at the trigger. Output bus transitions when forecast_valid is low are not additional predictions. The native capture and original Quartus screenshot are retained in [6] and [7].
 
-## Appendix A Evidence sources
+![Weather speed physical SignalTap control waveform](figures/weather_speed.png)
 
-The following repository files support the numerical results and hardware claims in this report. Paths are relative to this Markdown report unless stated otherwise.
+Figure 2. Physical acquisition from the weather speed design. The input-valid and ready handshake precedes the full forecast-valid event by 41 recorded sample intervals, under the acquisition convention described in the text.
 
-1. [Implementation report and core verification results](../IMPLEMENTATION_REPORT.md).
-2. [Temperature floating point model](../../../software/models_cpp/model.json), [test metrics](../temperature_metrics.csv), and [fixed point numerical errors](../temperature_numerical_error.csv).
-3. [Weather selected model](../../../versions/weather_v2/models/model.json) and [validation and test metrics](../../../versions/weather_v2/reports/metrics.csv).
-4. [JTAG implementation results](../JTAG_IMPLEMENTATION_REPORT.md) and [interface protocol](../../../hardware/jtag/README.md).
-5. [Temperature speed physical replay](../physical_jtag_temperature.csv), [temperature shared replay](../physical_jtag_temperature_resource.csv), [weather parallel replay](../physical_jtag_weather_speed.csv), and [weather shared replay](../physical_jtag_weather_resource.csv).
-6. [Decoded SignalTap checks](../defense_session/SIGNALTAP_CAPTURE_CHECK.json) and [native captures and decoded CSV files](../defense_session/signaltap/).
-7. [Temperature speed SDF manifest](../temperature_speed_modelsim_timing.json), [temperature shared SDF manifest](../temperature_resource_modelsim_timing.json), [weather parallel SDF manifest](../weather_speed_modelsim_timing.json), and [weather shared SDF manifest](../weather_resource_modelsim_timing.json).
-8. [Native temperature speed screenshot](../defense_session/screenshots/temperature_speed_signaltap_detail.png), [temperature shared screenshot](../defense_session/screenshots/temperature_resource_signaltap_detail.png), [weather parallel screenshot](../defense_session/screenshots/weather_speed_signaltap_detail.png), and [weather shared screenshot](../defense_session/screenshots/weather_resource_signaltap_detail.png).
-9. [Physical-session evidence archive](../defense_evidence_2026-10-28.tar.gz) and [saved evidence checksums](../defense_session/SAVED_EVIDENCE_SHA256.json).
+## 7 Discussion
+
+The extension adds both output coverage and implementation work. Temperature, pressure, humidity, and wind speed use separate lag models; direction adds two component predictions and angle reconstruction. The selected models are univariate, so each channel uses its own past values. Additional weather channels do not supply cross-variable predictors to the current temperature model.
+
+The chronological test results show a lower temperature MAE than the original three-parameter prototype and lower errors than the listed simple baselines for the reported weather targets. The comparison is specific to the evaluated candidates and test period. Direction error uses ideal atan2 decoding of quantized components; the separate CORDIC checks characterize the hardware conversion approximation.
+
+At 50 MHz, computation finishes long before another hourly observation is required. The parallel implementation demonstrates a complete, verifiable hardware inference path; it does not establish a need for such throughput in hourly forecasting. JTAG replay is slower than the arithmetic core and is not a measurement of sustained core throughput.
+
+The evidence covers fixed coefficients and recorded inputs at one location. It does not establish live sensor operation, electrical power consumption, a measured maximum physical clock frequency, or accuracy at other sites. Precipitation probability is outside the implemented targets. These limits leave the main result intact: the selected weather predictor has been mapped to fixed-point hardware and checked through simulation, timing analysis, and physical replay.
+
+## 8 Conclusion
+
+The project progressed from a three-parameter temperature predictor to a six-channel parallel weather forecasting accelerator. The current implementation retains hourly inputs, a three-hour target horizon, and accepted-sample history control, while introducing seven-lag models, wider arithmetic, and CORDIC direction reconstruction.
+
+The weather speed design achieved the forecast errors in Table 2, a documented 40-cycle latency at 50 MHz, and a successful physical replay of 128 frames and 104 forecasts. The fitted JTAG build used 6,253 logic elements and 12 nine-bit multiplier elements, with positive setup and hold margins at the test clock. The retained source files and native SignalTap data support reproduction and review of this implementation.
+
+## References
+
+The numbered records identify the data models, numerical evaluation, and implementation evidence cited in this report.
+
+[1] [Original temperature model](../../../software/models_cpp/model.json), [temperature metrics](../temperature_metrics.csv), and [temperature numerical error](../temperature_numerical_error.csv).
+
+[2] [Weather model and deployed coefficients](../../../versions/weather_v2/models/model.json), [validation candidates](../../../versions/weather_v2/reports/validation_candidates.csv), and [test metrics](../../../versions/weather_v2/reports/metrics.csv).
+
+[3] [Implementation and verification report](../IMPLEMENTATION_REPORT.md) and [JTAG fitted implementation report](../JTAG_IMPLEMENTATION_REPORT.md).
+
+[4] [Weather speed timing simulation manifest](../weather_speed_modelsim_timing.json).
+
+[5] [Weather speed physical JTAG replay](../physical_jtag_weather_speed.csv).
+
+[6] [SignalTap capture check](../defense_session/SIGNALTAP_CAPTURE_CHECK.json), [weather speed native capture](../defense_session/signaltap/weather_speed.stp), and [decoded samples](../defense_session/signaltap/weather_speed_decoded.csv).
+
+[7] [Native weather speed SignalTap screenshot](../defense_session/screenshots/weather_speed_signaltap_detail.png) and [JTAG protocol](../../../hardware/jtag/README.md).
+
+[8] [Saved physical-session archive](../defense_evidence_2026-10-28.tar.gz) and [evidence checksums](../defense_session/SAVED_EVIDENCE_SHA256.json).
+
+## Appendix A Deployed coefficients
+
+The following table gives the deployed signed integer coefficients from [2]. Weight order is lag 0, 1, 3, 6, 12, 21, and 24. Divide each weight by 16384 to recover its quantized real coefficient, and divide each bias by 256. These are channel-specific constants; the prototype coefficients a, b, and c are not used by the current weather datapath.
+
+Table A1. Deployed weather coefficient integers
+
+| Channel | Seven Q14 weights in lag order | Q8 bias |
+| --- | --- | --- |
+| Temperature | 20035, -9335, 1621, -205, 15, 13908, -10382 | 310 |
+| Pressure | 29672, -20298, 5187, 668, -513, 11566, -10423 | 823 |
+| Humidity | 17332, -6498, 903, -342, 251, 13962, -9701 | 602 |
+| Wind speed | 23040, -13956, 1683, 189, 184, 8822, -5682 | 89 |
+| Direction cosine | 19607, -8905, -237, -30, 1146, 5945, -2664 | -5 |
+| Direction sine | 19059, -8110, -140, 1183, 1368, 4266, -2003 | 0 |
+
+## Appendix B Reproduction
+
+Open versions/weather_v2/quartus/de2_jtag_speed/weather_jtag.qpf for the board deployment. Its programming file is output_files/weather_jtag.sof in the same project directory. Core-only projects use a different measurement boundary and should not be assumed to carry the board pin map.
+
+For a live demonstration, power the original DE2, connect USB-Blaster, program the weather speed SOF, and select weather_speed in scripts/replay_jtag.tcl. The script resets the design, checks its identity, and compares returned frames against the golden vectors. The request must remain stable until its acknowledgement. Manual writes from the Sources and Probes Editor should be performed outside the automated replay session.
+
+Power cycling clears the SRAM configuration, so the SOF must be programmed again for a later demonstration. Saved STP acquisitions, decoded CSVs, and screenshots remain available offline. The evidence archive [8] contains the earlier physical session, including other historical variants. The weather_speed records cited here identify the implementation evaluated in this report.
+
+## Appendix C Native implementation screenshots
+
+#### Quartus compilation and fitted resources
+
+![Native Quartus weather speed compilation summary](../defense_session/screenshots/weather_speed_flow_summary.png)
+
+Figure C1. Native Quartus compilation report for the weather speed JTAG build. The enlarged view shows the successful flow, Cyclone II EP2C35F672C6 target, weather speed source files, 6,253 logic elements, 4,571 registers, and 12 nine-bit multiplier elements. The screenshot records the uninstrumented build and supports the implementation resource figures.
+
+The image is a detail view of the saved application screenshot. The original remains at docs/reports/defense_session/screenshots/weather_speed_flow_summary.png. Its compilation timestamp is 27 October 2026; physical verification followed on 28 October. These are separate stages of the implementation.
+
+#### Quartus timing analysis
+
+![Native Quartus weather speed timing summary](../defense_session/screenshots/weather_speed_timing_summary.png)
+
+Figure C2. Native TimeQuest multicorner timing summary. CLOCK_50 has positive setup slack of 7.459 ns and hold slack of 0.215 ns, with zero reported total negative slack for those checks. The image is an enlarged detail of the saved application screenshot.
+
+![Native Quartus weather speed Fmax summary](../defense_session/screenshots/weather_speed_fmax.png)
+
+Figure C3. Native slow-model Fmax summary for the same weather speed JTAG build. The estimated Fmax is 79.74 MHz for CLOCK_50. Physical replay used 50 MHz; this timing estimate is not a measured maximum board frequency. Both original screenshots remain in docs/reports/defense_session/screenshots.
+
+#### Physical SignalTap waveform
+
+![Native physical weather speed SignalTap waveform](../defense_session/screenshots/weather_speed_signaltap_detail.png)
+
+Figure C4. Saved native SignalTap waveform from the instrumented weather speed design, acquired during the physical FPGA session. The screenshot shows the input valid and ready signals, the final forecast_valid event at the trigger, and the input and output buses. This is an application capture, rather than the redrawn control plot used earlier in the report.
+
+The complete physical capture is retained as docs/reports/defense_session/signaltap/weather_speed.stp. At the forecast-valid event, the temperature bus reads hexadecimal 01A72, which is raw 6770, or 26.4453125 °C in Q8. The angle bus reads hexadecimal 00570, or 5.4375° in unsigned Q8 degrees. These decoded values explain how to read the screenshot; their agreement with the reference is checked by the saved replay and capture checks.
+
+The input acceptance and final forecast-valid event are separated by 41 recorded acquisition intervals. The documented RTL latency is 40 cycles under its post-edge observation convention. The native waveform preserves the acquisition convention and must be read together with that explanation. SignalTap instrumentation changes the fitted design, so the resource and Fmax screenshots above describe the separate uninstrumented build.
