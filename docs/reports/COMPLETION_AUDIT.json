@@ -1,6 +1,6 @@
 {
-  "checked_at_utc": "2026-10-24T05:25:41.701501+00:00",
-  "status": "INCOMPLETE",
+  "checked_at_utc": "2026-10-28T07:20:20.274300+00:00",
+  "status": "COMPLETE",
   "checks": [
     {
       "requirement": "Temperature coefficients: hardware/speed_optimized/coeffs.txt",
@@ -51,6 +51,26 @@
       "requirement": "weather shared board fit/timing at 50 MHz",
       "status": "PASS",
       "evidence": "versions/weather_v2/quartus/de2_resource/output_files/weather_board.sta.rpt"
+    },
+    {
+      "requirement": "temperature JTAG board fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "hardware/quartus/de2_temperature_jtag/output_files/temperature.sta.rpt"
+    },
+    {
+      "requirement": "temperature resource JTAG board fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "hardware/quartus/de2_temperature_resource_jtag/output_files/temperature_resource.sta.rpt"
+    },
+    {
+      "requirement": "weather parallel JTAG board fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/quartus/de2_jtag_speed/output_files/weather_jtag.sta.rpt"
+    },
+    {
+      "requirement": "weather shared JTAG board fit/timing at 50 MHz",
+      "status": "PASS",
+      "evidence": "versions/weather_v2/quartus/de2_jtag_resource/output_files/weather_jtag.sta.rpt"
     },
     {
       "requirement": "Temperature DPI-C coefficient matrix",
@@ -163,19 +183,64 @@
       "evidence": "docs/reports/weather_resource_modelsim_timing.json"
     },
     {
+      "requirement": "temperature JTAG RTL integration",
+      "status": "PASS",
+      "evidence": "docs/reports/jtag_temperature_rtl.log"
+    },
+    {
+      "requirement": "temperature_resource JTAG RTL integration",
+      "status": "PASS",
+      "evidence": "docs/reports/jtag_temperature_resource_rtl.log"
+    },
+    {
+      "requirement": "weather_speed JTAG RTL integration",
+      "status": "PASS",
+      "evidence": "docs/reports/jtag_weather_speed_rtl.log"
+    },
+    {
+      "requirement": "weather_resource JTAG RTL integration",
+      "status": "PASS",
+      "evidence": "docs/reports/jtag_weather_resource_rtl.log"
+    },
+    {
+      "requirement": "temperature JTAG artifact identity",
+      "status": "PASS",
+      "evidence": "docs/reports/JTAG_ARTIFACT_MANIFEST.json"
+    },
+    {
+      "requirement": "temperature_resource JTAG artifact identity",
+      "status": "PASS",
+      "evidence": "docs/reports/JTAG_ARTIFACT_MANIFEST.json"
+    },
+    {
+      "requirement": "weather_speed JTAG artifact identity",
+      "status": "PASS",
+      "evidence": "docs/reports/JTAG_ARTIFACT_MANIFEST.json"
+    },
+    {
+      "requirement": "weather_resource JTAG artifact identity",
+      "status": "PASS",
+      "evidence": "docs/reports/JTAG_ARTIFACT_MANIFEST.json"
+    },
+    {
       "requirement": "temperature physical board replay",
-      "status": "PENDING",
-      "evidence": "docs/reports/board_temperature.csv; user confirmed board unavailable on this computer"
+      "status": "PASS",
+      "evidence": "docs/reports/physical_jtag_temperature.csv (JTAG transport; UART physical operation not established)"
+    },
+    {
+      "requirement": "temperature resource physical board replay",
+      "status": "PASS",
+      "evidence": "docs/reports/physical_jtag_temperature_resource.csv (JTAG transport; UART physical operation not established)"
     },
     {
       "requirement": "weather parallel physical board replay",
-      "status": "PENDING",
-      "evidence": "versions/weather_v2/reports/physical_parallel.csv; user confirmed board unavailable on this computer"
+      "status": "PASS",
+      "evidence": "docs/reports/physical_jtag_weather_speed.csv (JTAG transport; UART physical operation not established)"
     },
     {
       "requirement": "weather shared physical board replay",
-      "status": "PENDING",
-      "evidence": "versions/weather_v2/reports/physical_shared.csv; user confirmed board unavailable on this computer"
+      "status": "PASS",
+      "evidence": "docs/reports/physical_jtag_weather_resource.csv (JTAG transport; UART physical operation not established)"
     },
     {
       "requirement": "Deliverable docs/reports/IMPLEMENTATION_REPORT.md",

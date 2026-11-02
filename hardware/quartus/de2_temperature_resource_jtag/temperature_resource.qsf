@@ -1,0 +1,22 @@
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY de2_temperature_resource_jtag
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name SDC_FILE clock.sdc
+set_global_assignment -name VERILOG_FILE ../../jtag/jtag_mailbox.v
+set_global_assignment -name VERILOG_FILE ../../jtag/jtag_issp.v
+set_global_assignment -name VERILOG_FILE ../../jtag/de2_temperature_resource_jtag.v
+set_global_assignment -name VERILOG_FILE ../../speed_optimized/reset_sync.v
+set_global_assignment -name VERILOG_FILE ../../resource_optimized/temp_predictor_resource.v
+set_location_assignment PIN_N2 -to CLOCK_50
+set_location_assignment PIN_G26 -to KEY0_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY0_N
+
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name VERILOG_FILE ../../resource_optimized/temp_history_buffer.v
+set_global_assignment -name VERILOG_FILE ../../resource_optimized/ols_shared_datapath.v
+
+set_global_assignment -name SIGNALTAP_FILE /tmp/defense_template.stp

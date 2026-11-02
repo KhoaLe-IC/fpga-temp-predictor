@@ -9,9 +9,15 @@ Two separate versions are provided:
 | Temperature | Three-parameter seasonal OLS; pipelined and multiplier-shared architectures | `hardware/speed_optimized`, `hardware/resource_optimized` |
 | Weather | Selected seven-tap autoregressions for temperature, surface pressure, relative humidity, wind speed, and circular wind direction; parallel and shared architectures | [`versions/weather_v2`](versions/weather_v2/README.md) |
 
-The projects compile for the target device and have self-checking C++ DPI-C verification, functional netlist replay, and UART simulation flows. **Physical-board operation remains unverified:** the board is unavailable on this computer. All four core SDF timing simulations passed at 50 MHz. Results and earlier simulator probes are documented in the implementation report.
+The projects compile for the target device and have self-checking C++ DPI-C verification, functional netlist replay, and UART simulation flows. **Physical JTAG verification passed on 28 October 2026 for all four designs:** temperature speed/resource and weather parallel/shared, each with 128 inputs and 104 checked forecasts. Physical UART operation remains untested. All four core SDF timing simulations passed at 50 MHz. Results and earlier simulator probes are documented in the implementation report.
 
 See the [implementation report](docs/reports/IMPLEMENTATION_REPORT.md) for current measured results and limitations, and [completion audit](docs/reports/COMPLETION_AUDIT.json) for outstanding checks. Do not infer physical deployment from a synthesis or simulation pass.
+
+## USB-Blaster-only deployment
+
+Separate **JTAG In-System Sources and Probes** board projects are now available for temperature speed, temperature resource, parallel weather, and shared weather. They use USB-Blaster for both programming and sample/result transfer; no RS-232 adapter is needed. Open the projects listed in the [JTAG interface guide](hardware/jtag/README.md), then inspect persistent forecasts in Quartus **Tools → In-System Sources and Probes Editor**, node `FCST`.
+
+All four JTAG wrappers passed RTL integration replay, 50 MHz fitted static timing, actual USB-Blaster programming, and checked physical replay. See the [JTAG implementation report](docs/reports/JTAG_IMPLEMENTATION_REPORT.md) for measured resources and coverage limits.
 
 ## Temperature model
 

@@ -10,10 +10,10 @@ def logcheck(name,path,marker):
 model=json.loads((R/'software/models_cpp/model.json').read_text());coeff=[int(math.copysign(math.floor(abs(model[k])*scale+.5),model[k])) for k,scale in [('a',16384),('b',16384),('c',256)]]
 for path in ['hardware/speed_optimized/coeffs.txt','hardware/resource_optimized/coefficients.txt','hardware/quartus/de2_temperature/coeffs.txt']:
  actual=[int(x,16) for x in (R/path).read_text().split()];expected=[x&65535 for x in coeff];record('Temperature coefficients: '+path,'PASS' if actual==expected else 'FAIL',path)
-for title,path,project in [('temperature speed','hardware/quartus/speed','predictor'),('temperature shared','hardware/quartus/resource','predictor'),('temperature board','hardware/quartus/de2_temperature','temperature'),('weather parallel','versions/weather_v2/quartus/speed','weather'),('weather shared','versions/weather_v2/quartus/resource','weather'),('weather parallel board','versions/weather_v2/quartus/de2_speed','weather_board'),('weather shared board','versions/weather_v2/quartus/de2_resource','weather_board')]:
+for title,path,project in [('temperature speed','hardware/quartus/speed','predictor'),('temperature shared','hardware/quartus/resource','predictor'),('temperature board','hardware/quartus/de2_temperature','temperature'),('weather parallel','versions/weather_v2/quartus/speed','weather'),('weather shared','versions/weather_v2/quartus/resource','weather'),('weather parallel board','versions/weather_v2/quartus/de2_speed','weather_board'),('weather shared board','versions/weather_v2/quartus/de2_resource','weather_board'),('temperature JTAG board','hardware/quartus/de2_temperature_jtag','temperature'),('temperature resource JTAG board','hardware/quartus/de2_temperature_resource_jtag','temperature_resource'),('weather parallel JTAG board','versions/weather_v2/quartus/de2_jtag_speed','weather_jtag'),('weather shared JTAG board','versions/weather_v2/quartus/de2_jtag_resource','weather_jtag')]:
  p=R/path;fit=p/f'output_files/{project}.fit.summary';sta=p/f'output_files/{project}.sta.rpt'
  if not fit.exists() or not sta.exists():record(title+' fit/timing','PENDING',path);continue
- s=sta.read_text();slack=re.search(r'Worst-case Slack ; ([\d.\-]+) ; ([\d.\-]+)',s)
+ s=sta.read_text();slack=re.search(r'Worst-case Slack\s*;\s*([\d.\-]+)\s*;\s*([\d.\-]+)',s)
  unconstrained=re.findall(r'Unconstrained (?:Input|Output) Port Paths\s*; (\d+)',s)
  clean=len(unconstrained)==2 and all(int(v)==0 for v in unconstrained)
  passed='Successful' in fit.read_text() and 'EP2C35F672C6' in fit.read_text() and slack and min(map(float,slack.groups()))>=0 and clean and '50.0 MHz' in s
@@ -44,11 +44,29 @@ for target in ['temperature_speed','temperature_resource','weather_speed','weath
   same=same and 'SDF Backannotation Successfully Completed' in text and ('PASS weather netlist 50 MHz: inputs=288 forecasts=264' if target.startswith('weather') else 'PASS netlist at 50 MHz: inputs=4096 forecasts=4072') in text and not re.search(r'(?i)(timing violation|\*\* fatal|\*\* error)',text)
   status='PASS' if same else 'FAIL'
  record(target+' accepted SDF timing simulation',status,str(p.relative_to(R)))
-for name,path in [('temperature','docs/reports/board_temperature.csv'),('weather parallel','versions/weather_v2/reports/physical_parallel.csv'),('weather shared','versions/weather_v2/reports/physical_shared.csv')]:
+for variant in ['temperature','temperature_resource','weather_speed','weather_resource']:
+ logcheck(variant+' JTAG RTL integration','docs/reports/jtag_'+variant+'_rtl.log','inputs=128 forecasts=104 reset_replay=25')
+manifest=R/'docs/reports/JTAG_ARTIFACT_MANIFEST.json'
+if manifest.exists():
+ for item in json.loads(manifest.read_text())['projects']:
+  same=hashlib.sha256((R/item['sof']).read_bytes()).hexdigest()==item['sof_sha256']
+  if item.get('physical_verified'):
+   p=R/item['physical_csv'];same=same and p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==item['physical_csv_sha256']
+  for file,digest in item['files'].items():same=same and (R/file).is_file() and hashlib.sha256((R/file).read_bytes()).hexdigest()==digest
+  record(item['variant']+' JTAG artifact identity','PASS' if same else 'FAIL',str(manifest.relative_to(R)))
+else:record('JTAG artifact identity','PENDING',str(manifest.relative_to(R)))
+for name,path in [('temperature','docs/reports/board_temperature.csv'),('temperature resource','docs/reports/board_temperature_resource.csv'),('weather parallel','versions/weather_v2/reports/physical_parallel.csv'),('weather shared','versions/weather_v2/reports/physical_shared.csv')]:
  p=R/path;status='PENDING'
  if p.exists():
   rows=list(csv.DictReader(p.open()));scored=[r for r in rows if r.get('match') not in ['warmup','']];status='PASS' if len(scored)>=104 and all(r['match']=='True' for r in scored) else 'FAIL'
- record(name+' physical board replay',status,path+'; user confirmed board unavailable on this computer')
+ variant={'temperature':'temperature','temperature resource':'temperature_resource','weather parallel':'weather_speed','weather shared':'weather_resource'}[name]
+ jtag_path='docs/reports/physical_jtag_'+variant+'.csv';jp=R/jtag_path
+ if jp.exists():
+  jrows=list(csv.DictReader(jp.open()));scored=[r for r in jrows if r.get('match')=='True']
+  jpass=len(jrows)==128 and len(scored)==104 and all(r.get('match') in ['warmup','True'] for r in jrows) and jrows[-1].get('forecast_count')=='104'
+  if jpass:status='PASS';path=jtag_path+' (JTAG transport; UART physical operation not established)'
+  elif status!='PASS':status='FAIL';path=jtag_path
+ record(name+' physical board replay',status,path)
 for path in ['docs/reports/IMPLEMENTATION_REPORT.md','docs/reports/HARDWARE_HANDOFF.md','versions/weather_v2/models/model.json','versions/weather_v2/reports/metrics.csv','versions/weather_v2/reports/validation_candidates.csv']:
  record('Deliverable '+path,'PASS' if (R/path).is_file() else 'PENDING',path)
 result={'checked_at_utc':datetime.now(timezone.utc).isoformat(),'status':'COMPLETE' if all(c['status']=='PASS' for c in checks) else 'INCOMPLETE','checks':checks}

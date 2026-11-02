@@ -2,7 +2,7 @@
 
 Report date: 24 October 2026 (Asia/Ho_Chi_Minh).
 
-All four core SDF timing simulations have passed at 50 MHz. The seven Quartus projects meet the declared static timing constraints. The overall project remains incomplete because no physical-board replay has been performed. This report summarizes the evidence; it does not replace the full [implementation report](IMPLEMENTATION_REPORT.md).
+All four core SDF timing simulations have passed at 50 MHz. The seven Quartus projects meet the declared static timing constraints. All four JTAG variants subsequently passed physical replay on 28 October 2026 (128 inputs / 104 checked forecasts each). The original tables below describe the earlier verification snapshot; current hardware evidence is in [JTAG_IMPLEMENTATION_REPORT.md](JTAG_IMPLEMENTATION_REPORT.md). This report summarizes the evidence; it does not replace the full [implementation report](IMPLEMENTATION_REPORT.md).
 
 ## Verification layers
 
@@ -84,6 +84,6 @@ The collected transcripts are:
 
 The earlier Icarus/XSim timing attempts were not accepted. The initial ModelSim shared-weather mismatch was caused by premature testbench observation, corrected using fitted clock-to-output timing. The final weather runs use the same 20 ns clock, enabled timing checks, and original SDF max delays. A separate ModelSim lock-file failure led to a standalone parallel retry and serialized future runner execution.
 
-## Remaining physical acceptance
+## Earlier UART acceptance checklist (UART remains untested)
 
 For each board wrapper: confirm the original-DE2 revision/pins, program its recorded `.sof`, reset KEY0, replay 128 observations, and retain a CSV containing 104 matching forecasts without timeouts or packet errors. Use the commands in [HARDWARE_HANDOFF.md](HARDWARE_HANDOFF.md). Software-generated values or UART simulation logs cannot substitute for captured board responses.

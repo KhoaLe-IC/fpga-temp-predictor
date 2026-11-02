@@ -41,10 +41,10 @@ s='''# Cyclone II Forecasting Implementation Report
 **Target:** EP2C35F672C6, confirmed from the supplied device image.  
 **Clock:** 50 MHz (20 ns).  
 **Tools:** Quartus II 13.0 SP1 Web Edition; Verilator 5.052 for DPI-C RTL tests; Icarus for functional vendor-atom netlist simulations.  
-**Report date:** 24 October 2026 (Asia/Ho_Chi_Minh).  
-**Status:** Local implementation and simulation are verified for both versions. All four cores passed SDF timing simulation at 50 MHz, and all seven projects met static timing. Physical-board operation remains unverified: `jtagconfig` reported no JTAG hardware, and the user confirmed that the board is not available on this computer.
+**Report date:** 28 October 2026 (Asia/Ho_Chi_Minh).  
+**Status:** Local implementation and simulation are verified for both versions. All four cores passed SDF timing simulation at 50 MHz, and all seven projects met static timing. All four JTAG board designs passed actual DE2 programming and replay on 28 October 2026 (128 accepted samples / 104 checked forecasts each). Physical UART operation remains untested. See JTAG_IMPLEMENTATION_REPORT.md and defense_session/ for current hardware evidence.
 
-The deliverables include two temperature cores, a pinned temperature UART board project, six-channel weather forecasting in two architectures, two weather UART board projects, trained models, independent reference models, verification utilities, and implementation evidence. The board projects have compiled programming files, but deployment is not claimed.
+The deliverables include two temperature cores, a pinned temperature UART board project, six-channel weather forecasting in two architectures, two weather UART board projects, trained models, independent reference models, verification utilities, and implementation evidence. The four JTAG board projects have been physically programmed and checked; the UART board projects retain simulation-only interface evidence.
 
 ## 1. Delivered scope and version separation
 
@@ -155,8 +155,8 @@ See [ModelSim setup](MODELSIM_SETUP.md), the four timing result manifests, and t
 
 ## 6. Remaining acceptance items
 
-- Program the connected physical DE2 board and run the checked UART replay. No JTAG hardware was available during inspection.
-- Confirm the physical board revision matches the original-DE2 pin map before programming.
+- Physical JTAG replay is complete for all four designs; physical UART replay still requires an RS-232 adapter.
+- Retain the original-DE2 EP2C35F672C6 pin map for reproduction.
 
 ## 7. Reproduction and evidence
 

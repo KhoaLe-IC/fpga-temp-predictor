@@ -1,6 +1,8 @@
 # Physical DE2 verification handoff
 
-The local builds and simulation checks do not establish physical-board operation. A powered original DE2 with Cyclone II EP2C35F672C6, its USB-Blaster connection, and an RS-232 adapter for the onboard DB9 connector are needed. The supplied image confirms the FPGA device; check the board revision against the original-DE2 pin map before programming.
+**USB-Blaster-only option (28 October 2026):** Use the separate [JTAG board projects and replay guide](../../hardware/jtag/README.md). They do not require the RS-232 adapter described in the UART instructions below. Program a JTAG `.sof`, then run `quartus_stp -t scripts/replay_jtag.tcl temperature`, `weather_speed`, or `weather_resource`. All four physical JTAG replays passed (128 inputs / 104 checked forecasts each). See [JTAG results](JTAG_IMPLEMENTATION_REPORT.md).
+
+Physical JTAG operation is verified. The UART instructions below describe an additional transport that has not been physically checked. A powered original DE2 with Cyclone II EP2C35F672C6, its USB-Blaster connection, and an RS-232 adapter for the onboard DB9 connector are needed. The supplied image confirms the FPGA device; check the board revision against the original-DE2 pin map before programming.
 
 ## 1. Confirm connections
 

@@ -115,11 +115,11 @@ The verification is layered so a forecasting problem is not confused with an ari
 5. Check the complete UART serialization and framing path at the actual clock and baud settings.
 6. Compile for the actual FPGA and inspect resources, setup/hold timing, and unconstrained paths.
 7. Replay the functional mapped netlist and the SDF-annotated fitted timing netlist.
-8. Program and check the physical board when it becomes available.
+8. Reproduce physical JTAG replay with the four programming files; see the defense-session evidence.
 
 Paired architectures are compared by accepted-sample index because their clock latencies differ. Reset-aborted transactions are tracked rather than treated as missing predictions. The strict temperature file reader rejects malformed rows and coefficient-header mismatches; a successful run must consume the intended replay, not silently skip difficult records.
 
-The completion audit verifies accepted SDF artifacts against their recorded hashes and checks both successful annotation and the full scoreboard marker. It deliberately remains INCOMPLETE while physical replay logs are missing. The evidence snapshot preserves Quartus reports and simulation transcripts; it is not a formal proof of all possible input sequences.
+The completion audit verifies accepted SDF artifacts against their recorded hashes and checks both successful annotation and the full scoreboard marker. It checks the four physical JTAG replays in addition to the original simulation evidence. The evidence snapshot preserves Quartus reports and simulation transcripts; it is not a formal proof of all possible input sequences.
 
 The SDF weather replays use 288 frames and 264 forecasts, including historical values and signed extremes. They do not replay the complete 2025 weather test set in gate-level simulation. The temperature full-year check is an RTL/DPI-C replay; the temperature gate-level timing check uses the separate 4,096-input replay. Those coverage scopes must not be interchanged in a presentation.
 
@@ -178,12 +178,16 @@ source scripts/modelsim_env.sh
 .venv/bin/python scripts/audit_delivery.py
 ```
 
-The timing runner serializes sessions and rejects timing violations or a missing scoreboard PASS. Simulator exit status alone is insufficient. The detailed [hardware handoff](HARDWARE_HANDOFF.md) gives programming and serial replay commands; those require hardware access and have not been executed successfully on a physical board here.
+The timing runner serializes sessions and rejects timing violations or a missing scoreboard PASS. Simulator exit status alone is insufficient. The detailed [hardware handoff](HARDWARE_HANDOFF.md) gives programming and serial replay commands; those require hardware access and remain untested for the UART transport. All four JTAG variants have passed on the physical board.
 
 ## 15. Conclusions supported by the evidence
 
 Both versions are implemented for EP2C35F672C6, fit on that device, meet the declared 50 MHz static timing constraints, and pass their functional and SDF timing replays. The trained models improve on the evaluated simple baselines on the specified held-out dataset. Fixed-point effects are measured separately, and the two architecture families expose a quantified multiplier/logic/throughput tradeoff.
 
-The available evidence does not yet establish that a physical DE2 has been programmed and operated successfully. It also does not establish optimal forecasting over all possible models, accuracy at other locations or seasons, power consumption, live sensor integration, or measured physical-board maximum frequency. Those claims would require additional evidence.
+Physical DE2 operation is established by the four checked JTAG replays. The evidence does not establish optimal forecasting over all possible models, accuracy at other locations or seasons, power consumption, live sensor integration, or measured physical-board maximum frequency. Those claims would require additional evidence.
 
 The next acceptance step is concrete: confirm the board revision, program each pinned board wrapper, reset it, replay 128 observations, capture 104 matching replies per wrapper, and retain the resulting CSV logs. The supplied host tools and programming-file manifest are prepared for that step.
+
+## 16. USB-Blaster interface extension — 27 October 2026
+
+Four additional board projects now provide a request/acknowledgement mailbox through Quartus In-System Sources and Probes. Samples and forecasts can use USB-Blaster alone, without the RS-232 hardware required by the original UART projects. The original model/core results above remain unchanged. See the separate [JTAG implementation report](JTAG_IMPLEMENTATION_REPORT.md) for the new fit/timing measurements, integration tests, field map, and physical verification results. The four new wrappers are additional to the seven original projects reported above.

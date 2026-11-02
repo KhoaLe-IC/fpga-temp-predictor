@@ -1,0 +1,134 @@
+Info: *******************************************************************
+Info: Running Quartus II 32-bit SignalTap II
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Wed Oct 28 14:53:13 2026
+Info: Command: quartus_stp -t /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/scripts/replay_jtag.tcl temperature_resource
+Info: Quartus(args): temperature_resource
+Hardware: USB-Blaster [1-1]
+Device: @1: EP2C35 (0x020B40DD)
+Variant: temperature_resource
+Node: {0 128 256 FCST}
+sample=24 forecast=127.996094 match=True
+sample=25 forecast=-128.000000 match=True
+sample=26 forecast=-128.000000 match=True
+sample=27 forecast=-128.000000 match=True
+sample=28 forecast=100.539062 match=True
+sample=29 forecast=-128.000000 match=True
+sample=30 forecast=-128.000000 match=True
+sample=31 forecast=14.464844 match=True
+sample=32 forecast=92.421875 match=True
+sample=33 forecast=127.996094 match=True
+sample=34 forecast=104.511719 match=True
+sample=35 forecast=-70.597656 match=True
+sample=36 forecast=19.410156 match=True
+sample=37 forecast=-42.285156 match=True
+sample=38 forecast=-18.296875 match=True
+sample=39 forecast=-98.769531 match=True
+sample=40 forecast=37.960938 match=True
+sample=41 forecast=127.996094 match=True
+sample=42 forecast=127.996094 match=True
+sample=43 forecast=-25.351562 match=True
+sample=44 forecast=-128.000000 match=True
+sample=45 forecast=-95.097656 match=True
+sample=46 forecast=59.640625 match=True
+sample=47 forecast=-74.957031 match=True
+sample=48 forecast=6.367188 match=True
+sample=49 forecast=-12.902344 match=True
+sample=50 forecast=11.960938 match=True
+sample=51 forecast=88.574219 match=True
+sample=52 forecast=-103.800781 match=True
+sample=53 forecast=-26.500000 match=True
+sample=54 forecast=121.078125 match=True
+sample=55 forecast=89.000000 match=True
+sample=56 forecast=127.996094 match=True
+sample=57 forecast=-79.097656 match=True
+sample=58 forecast=-128.000000 match=True
+sample=59 forecast=-128.000000 match=True
+sample=60 forecast=59.121094 match=True
+sample=61 forecast=127.996094 match=True
+sample=62 forecast=127.996094 match=True
+sample=63 forecast=-67.871094 match=True
+sample=64 forecast=-128.000000 match=True
+sample=65 forecast=-128.000000 match=True
+sample=66 forecast=80.714844 match=True
+sample=67 forecast=44.808594 match=True
+sample=68 forecast=48.062500 match=True
+sample=69 forecast=115.136719 match=True
+sample=70 forecast=-44.144531 match=True
+sample=71 forecast=58.449219 match=True
+sample=72 forecast=-72.046875 match=True
+sample=73 forecast=-128.000000 match=True
+sample=74 forecast=-71.660156 match=True
+sample=75 forecast=14.171875 match=True
+sample=76 forecast=-88.316406 match=True
+sample=77 forecast=-32.710938 match=True
+sample=78 forecast=-63.875000 match=True
+sample=79 forecast=-71.187500 match=True
+sample=80 forecast=5.613281 match=True
+sample=81 forecast=-82.730469 match=True
+sample=82 forecast=95.382812 match=True
+sample=83 forecast=76.503906 match=True
+sample=84 forecast=127.996094 match=True
+sample=85 forecast=-102.636719 match=True
+sample=86 forecast=66.503906 match=True
+sample=87 forecast=58.531250 match=True
+sample=88 forecast=-112.296875 match=True
+sample=89 forecast=-47.199219 match=True
+sample=90 forecast=-44.953125 match=True
+sample=91 forecast=-97.765625 match=True
+sample=92 forecast=102.894531 match=True
+sample=93 forecast=-39.390625 match=True
+sample=94 forecast=94.800781 match=True
+sample=95 forecast=-128.000000 match=True
+sample=96 forecast=18.218750 match=True
+sample=97 forecast=-128.000000 match=True
+sample=98 forecast=127.996094 match=True
+sample=99 forecast=-128.000000 match=True
+sample=100 forecast=-107.695312 match=True
+sample=101 forecast=-12.660156 match=True
+sample=102 forecast=127.996094 match=True
+sample=103 forecast=115.355469 match=True
+sample=104 forecast=26.535156 match=True
+sample=105 forecast=76.671875 match=True
+sample=106 forecast=-124.984375 match=True
+sample=107 forecast=25.976562 match=True
+sample=108 forecast=24.851562 match=True
+sample=109 forecast=94.261719 match=True
+sample=110 forecast=-53.242188 match=True
+sample=111 forecast=-128.000000 match=True
+sample=112 forecast=-128.000000 match=True
+sample=113 forecast=55.414062 match=True
+sample=114 forecast=127.996094 match=True
+sample=115 forecast=127.996094 match=True
+sample=116 forecast=-114.695312 match=True
+sample=117 forecast=-128.000000 match=True
+sample=118 forecast=-128.000000 match=True
+sample=119 forecast=127.996094 match=True
+sample=120 forecast=64.644531 match=True
+sample=121 forecast=-24.437500 match=True
+sample=122 forecast=-91.917969 match=True
+sample=123 forecast=87.296875 match=True
+sample=124 forecast=55.742188 match=True
+sample=125 forecast=54.429688 match=True
+sample=126 forecast=42.960938 match=True
+sample=127 forecast=0.824219 match=True
+PASS PHYSICAL JTAG temperature_resource: inputs=128 forecasts=104; CSV=/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/docs/reports/defense_session/temperature_resource_signaltap_replay.csv
+Info (23030): Evaluation of Tcl script /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/scripts/replay_jtag.tcl was successful
+Info: Quartus II 32-bit SignalTap II was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 144 megabytes
+    Info: Processing ended: Wed Oct 28 14:53:14 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
