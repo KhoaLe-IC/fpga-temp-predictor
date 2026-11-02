@@ -157,6 +157,12 @@ Table 3. Implementation results for the weather speed JTAG design
 
 Twelve 9-bit multiplier elements correspond to six full 18 by 18 multiplier resources on this target. Zero mapped memory bits does not imply an absence of stored history; storage can map to registers and logic. Fmax is a fitted static timing estimate. Physical testing used 50 MHz and did not sweep the board clock to establish a measured frequency limit. SignalTap adds acquisition circuitry, so its instrumented fit is kept outside Table 3.
 
+Figure 2 places the native Quartus compilation record beside the implementation figures in Table 3. The project title, target device, successful flow status, and resource counts are visible in the application itself. The timing and Fmax application views are reproduced at larger size in Appendix C.
+
+![Native Quartus compilation record for the weather speed implementation](../defense_session/screenshots/weather_speed_flow_summary.png)
+
+Figure 2. Detail of the original Quartus Flow Summary for weather_jtag. The completed fit reports EP2C35F672C6, 6,253 logic elements, 4,571 registers, and 12 nine-bit multiplier elements. This is the uninstrumented implementation; the full saved screenshot is retained with the project evidence.
+
 ### 6.3 Physical replay and waveform evidence
 
 Physical verification was performed on 28 October 2026. USB-Blaster identified an EP2C35 device with JTAG ID 0x020B40DD. The weather speed SOF was programmed, the host checked the variant identity, and the replay script reset the design through JTAG before sending vectors.
@@ -165,11 +171,11 @@ The uninstrumented design accepted 128 input frames and returned 104 checked for
 
 SignalTap captured 512 samples at the 50 MHz acquisition clock. The accepted input occurs at capture index 215, and forecast_valid occurs at trigger index 256 [6]. Their raw separation is 41 sampled intervals. The RTL scoreboard observes updated registers after the accepting edge, while SignalTap samples at its acquisition edge; the documented post-edge RTL latency is 40 cycles under that convention.
 
-Figure 2 shows the control signals decoded from the actual weather speed capture. The complete prediction becomes valid at the trigger. Output bus transitions when forecast_valid is low are not additional predictions. The native capture and original Quartus screenshot are retained in [6] and [7].
+Figure 3 reproduces the native SignalTap application capture from the physical session. The complete prediction becomes valid at the trigger. Output bus transitions when forecast_valid is low are not additional predictions. The original acquisition and decoded samples are retained in [6]; Appendix C provides a larger application view and explains the displayed bus values.
 
-![Weather speed physical SignalTap control waveform](figures/weather_speed.png)
+![Native SignalTap application showing the physical weather speed capture](../defense_session/screenshots/weather_speed_signaltap_detail.png)
 
-Figure 2. Physical acquisition from the weather speed design. The input-valid and ready handshake precedes the full forecast-valid event by 41 recorded sample intervals, under the acquisition convention described in the text.
+Figure 3. Original SignalTap waveform from the instrumented weather speed FPGA. The signal names, valid and ready handshake, forecast-valid trigger, and hexadecimal bus values are recorded by the application. At completion, temperature_out_q8 is 01A72, equivalent to 26.4453125 °C, and direction_angle_out_q8 is 00570, equivalent to 5.4375°. The larger view is Figure C4.
 
 ## 7 Discussion
 
@@ -254,7 +260,7 @@ Figure C3. Native slow-model Fmax summary for the same weather speed JTAG build.
 
 ![Native physical weather speed SignalTap waveform](../defense_session/screenshots/weather_speed_signaltap_detail.png)
 
-Figure C4. Saved native SignalTap waveform from the instrumented weather speed design, acquired during the physical FPGA session. The screenshot shows the input valid and ready signals, the final forecast_valid event at the trigger, and the input and output buses. This is an application capture, rather than the redrawn control plot used earlier in the report.
+Figure C4. Saved native SignalTap waveform from the instrumented weather speed design, acquired during the physical FPGA session. The screenshot shows the input valid and ready signals, the final forecast_valid event at the trigger, and the input and output buses. The original signal names and bus values remain visible in the application capture.
 
 The complete physical capture is retained as docs/reports/defense_session/signaltap/weather_speed.stp. At the forecast-valid event, the temperature bus reads hexadecimal 01A72, which is raw 6770, or 26.4453125 °C in Q8. The angle bus reads hexadecimal 00570, or 5.4375° in unsigned Q8 degrees. These decoded values explain how to read the screenshot; their agreement with the reference is checked by the saved replay and capture checks.
 

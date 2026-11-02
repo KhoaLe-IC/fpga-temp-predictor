@@ -171,13 +171,17 @@ def build(stem,page_map=None):
    # Display a detail viewport while retaining the original screenshot pixels in DOCX.
    crops={'weather_speed_flow_summary.png':(0,0,1600,650),'weather_speed_timing_summary.png':(0,0,1550,385),'weather_speed_fmax.png':(0,0,1180,280)}
    name=Path(m[2]).name
-   if evidence and name in crops:
+   # In the main text, enlarge the report pane rather than shrink an entire desktop.
+   # OOXML cropping retains the complete, unmodified screenshot in the package.
+   if not evidence and name=='weather_speed_flow_summary.png':
+    crops[name]=(420,105,1130,465)
+   if name in crops:
     from PIL import Image
     iw,ih=Image.open((md.parent/m[2]).resolve()).size;x,y,cw,ch=crops[name]
     src=OxmlElement('a:srcRect')
     for key,value in [('l',x/iw),('t',y/ih),('r',(iw-x-cw)/iw),('b',(ih-y-ch)/ih)]:src.set(key,str(round(value*100000)))
     fill=picture._inline.xpath('.//pic:blipFill')[0];fill.insert(1,src)
-    picture.height=Inches(9.72*ch/cw)
+    picture.height=Inches((9.72 if evidence else 6.3)*ch/cw)
    p.runs[0]._r.xpath('.//wp:docPr')[0].set('descr',m[1]);i+=1;continue
   match=re.match(r'^(#{2,4}) (.+)',l)
   if match:

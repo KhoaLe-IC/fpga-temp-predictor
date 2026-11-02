@@ -345,11 +345,23 @@ The uninstrumented weather speed board build uses 6,253 logic elements, 4,571 re
 
 The design is constrained and physically tested at 50 MHz. Static timing estimates Fmax as 79.74 MHz and reports setup slack 7.459 ns and hold slack 0.215 ns. These estimates describe the fitted design under its constraints. They are not a measured board-frequency sweep.
 
+Figure 2 shows the actual Quartus result behind these resource figures. Read the device row first, then the total logic elements, registers, and embedded multiplier rows. The complete application views for compilation, timing slack, and Fmax are reproduced in Appendix D.
+
+![Native Quartus compilation record for the weather speed implementation](../defense_session/screenshots/weather_speed_flow_summary.png)
+
+Figure 2. Native Quartus Flow Summary for the weather speed JTAG build. The application records a successful compilation for EP2C35F672C6, using 6,253 logic elements, 4,571 registers, and 12 nine-bit multiplier elements. This build excludes SignalTap acquisition circuitry.
+
 SignalTap adds an embedded acquisition circuit. The weather speed capture contains 512 samples at 20 ns spacing. The accepting input is recorded at index 215, and the rising forecast-valid trigger is at 256, a raw separation of 41 samples. The RTL latency is defined by observing registers after their update, giving 40 cycles. Preserve the raw capture indices and explain the observation convention when presenting the waveform.
 
 Read valid and ready together to locate acceptance. Then locate forecast_valid and decode the six values, angle, and direction-defined flag at that event. A changing output bus while valid is low does not indicate a new completed forecast. The mailbox's retained result-valid bit is persistent and has a different purpose from the core's one-cycle event.
 
-The native screenshot and STP file are the original physical records. The clean control plot in Figure 2 of the implementation report is decoded from their saved CSV. The forecast accuracy table comes from historical software evaluation, and the board replay compares the same integer implementation against reference vectors.
+Figure 3 is the saved SignalTap application view from the physical FPGA session. At the forecast-valid event, temperature_out_q8 reads 01A72 in hexadecimal. Convert it to decimal 6770 and divide by 256 to obtain 26.4453125 °C. The angle output 00570 is decimal 1392, giving 5.4375°. Appendix D contains a larger view of the same screenshot.
+
+![Native SignalTap application showing the physical weather speed capture](../defense_session/screenshots/weather_speed_signaltap_detail.png)
+
+Figure 3. Native physical SignalTap capture with the original signal names and bus values. Locate sample_valid together with sample_ready, then follow the acquisition axis to forecast_valid at the trigger. Decode the output buses at that event.
+
+The native screenshot and STP file are the original physical records. The forecast accuracy table comes from historical software evaluation, and the board replay compares the same integer implementation against reference vectors. These records answer different questions: the screenshot shows an acquired transaction, while the replay CSV and checks document agreement across all checked forecasts.
 
 ## Appendix A Source files and reproduction
 
