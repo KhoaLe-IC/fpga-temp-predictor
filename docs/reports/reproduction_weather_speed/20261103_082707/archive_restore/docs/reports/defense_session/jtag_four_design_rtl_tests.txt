@@ -1,0 +1,4 @@
+temperature JTAG RTL PASS
+temperature_resource JTAG RTL PASS
+weather_speed JTAG RTL PASS
+weather_resource JTAG RTL PASS

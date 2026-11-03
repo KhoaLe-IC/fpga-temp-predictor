@@ -1,0 +1,963 @@
+TimeQuest Timing Analyzer report for weather_board
+Sat Oct 24 10:25:52 2026
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'CLOCK_50'
+ 13. Slow Model Hold: 'CLOCK_50'
+ 14. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 15. Slow Model Datasheet Report
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'CLOCK_50'
+ 22. Fast Model Hold: 'CLOCK_50'
+ 23. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 24. Fast Model Datasheet Report
+ 25. Multicorner Timing Analysis Summary
+ 26. Setup Transfers
+ 27. Hold Transfers
+ 28. Report TCCS
+ 29. Report RSKM
+ 30. Unconstrained Paths
+ 31. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; weather_board                                                     ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; clock.sdc     ; OK     ; Sat Oct 24 10:25:49 2026 ;
++---------------+--------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 77.44 MHz ; 77.44 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Slow Model Setup Summary         ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 7.086 ; 0.000         ;
++----------+-------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+-------+---------------------+
+; Clock    ; Slack ; End Point TNS       ;
++----------+-------+---------------------+
+; CLOCK_50 ; 9.000 ; 0.000               ;
++----------+-------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                           ;
++-------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                  ; To Node                                                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.086 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 12.955     ;
+; 7.131 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.010     ; 12.895     ;
+; 7.741 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 12.300     ;
+; 7.782 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.010     ; 12.244     ;
+; 7.792 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 12.226     ;
+; 7.837 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.033     ; 12.166     ;
+; 7.847 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 12.169     ;
+; 7.998 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 12.033     ;
+; 8.011 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 12.020     ;
+; 8.013 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[13]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 12.020     ;
+; 8.030 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[28]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 12.019     ;
+; 8.043 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.973     ;
+; 8.166 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[27]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 11.867     ;
+; 8.169 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.874     ;
+; 8.176 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.030     ; 11.830     ;
+; 8.211 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[27]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 11.807     ;
+; 8.238 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[29]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 11.823     ;
+; 8.244 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[15]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 11.789     ;
+; 8.301 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 11.720     ;
+; 8.315 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.728     ;
+; 8.318 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 11.718     ;
+; 8.328 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[16]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.734     ;
+; 8.341 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[26]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 11.692     ;
+; 8.348 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.695     ;
+; 8.352 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[26]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 11.697     ;
+; 8.382 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.037     ; 11.617     ;
+; 8.386 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[26]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 11.632     ;
+; 8.407 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[21]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 11.654     ;
+; 8.417 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.645     ;
+; 8.420 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 11.641     ;
+; 8.447 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 11.571     ;
+; 8.448 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 11.588     ;
+; 8.453 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.590     ;
+; 8.483 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[34]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 11.563     ;
+; 8.488 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.033     ; 11.515     ;
+; 8.492 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 11.525     ;
+; 8.493 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.569     ;
+; 8.495 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 11.522     ;
+; 8.496 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[11] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.547     ;
+; 8.519 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[33]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.011     ; 11.506     ;
+; 8.523 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.520     ;
+; 8.525 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[13] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.518     ;
+; 8.525 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[18]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.012     ; 11.499     ;
+; 8.533 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[25]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.498     ;
+; 8.542 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[19]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.520     ;
+; 8.544 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[23]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 11.517     ;
+; 8.548 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.482     ;
+; 8.562 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[14]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.500     ;
+; 8.564 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[11]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 11.470     ;
+; 8.574 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.035     ; 11.427     ;
+; 8.592 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.470     ;
+; 8.600 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.037     ; 11.399     ;
+; 8.611 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.405     ;
+; 8.614 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[22]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 11.447     ;
+; 8.616 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.400     ;
+; 8.625 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[12] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.437     ;
+; 8.630 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[27]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 11.419     ;
+; 8.632 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.411     ;
+; 8.639 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.423     ;
+; 8.642 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[11] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.401     ;
+; 8.646 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[33]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.004      ; 11.394     ;
+; 8.648 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[2]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.414     ;
+; 8.651 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[10] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.392     ;
+; 8.653 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.378     ;
+; 8.666 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 11.365     ;
+; 8.668 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[12]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 11.365     ;
+; 8.670 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[17]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.392     ;
+; 8.671 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 11.346     ;
+; 8.673 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[28]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.368     ;
+; 8.693 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 11.324     ;
+; 8.694 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.322     ;
+; 8.696 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[5]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.037     ; 11.303     ;
+; 8.697 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[24]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 11.336     ;
+; 8.700 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[13] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.343     ;
+; 8.701 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.361     ;
+; 8.707 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[8]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.037     ; 11.292     ;
+; 8.707 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.309     ;
+; 8.715 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[24]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 11.334     ;
+; 8.718 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[5]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.312     ;
+; 8.718 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[28]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.010     ; 11.308     ;
+; 8.719 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[13]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.026     ; 11.291     ;
+; 8.726 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.290     ;
+; 8.727 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[8]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.335     ;
+; 8.731 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[3]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.004     ; 11.301     ;
+; 8.733 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[4]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 11.308     ;
+; 8.736 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[28]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.010     ; 11.290     ;
+; 8.740 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 11.296     ;
+; 8.740 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.035     ; 11.261     ;
+; 8.742 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[24]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 11.276     ;
+; 8.746 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[28]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 11.293     ;
+; 8.746 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[4]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.006     ; 11.284     ;
+; 8.756 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 11.262     ;
+; 8.758 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[25]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 11.275     ;
+; 8.760 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[33]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 11.256     ;
+; 8.764 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 11.253     ;
+; 8.766 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.035     ; 11.235     ;
+; 8.777 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.026      ; 11.285     ;
+; 8.780 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[11] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.007      ; 11.263     ;
+; 8.788 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[18]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.017      ; 11.265     ;
+; 8.788 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[2]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.000      ; 11.248     ;
++-------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                               ;
++-------+----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                    ; To Node                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; uart_rx:receiver|bit_cnt[0]                                                                  ; uart_rx:receiver|bit_cnt[0]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|bit_cnt[1]                                                                  ; uart_rx:receiver|bit_cnt[1]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|bit_cnt[2]                                                                  ; uart_rx:receiver|bit_cnt[2]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|bit_cnt[3]                                                                  ; uart_rx:receiver|bit_cnt[3]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|busy                                                                        ; uart_rx:receiver|busy                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.100                                                                              ; parse_state.100                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[1]                                                                ; uart_rx:receiver|shift_reg[1]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[0]                                                                ; uart_rx:receiver|shift_reg[0]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[2]                                                                ; uart_rx:receiver|shift_reg[2]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[6]                                                                ; uart_rx:receiver|shift_reg[6]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[4]                                                                ; uart_rx:receiver|shift_reg[4]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[5]                                                                ; uart_rx:receiver|shift_reg[5]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[7]                                                                ; uart_rx:receiver|shift_reg[7]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_rx:receiver|shift_reg[3]                                                                ; uart_rx:receiver|shift_reg[3]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.001                                                                              ; parse_state.001                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.010                                                                              ; parse_state.010                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; parse_state.101                                                                              ; parse_state.101                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; encoding_error                                                                               ; encoding_error                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state.0000   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state.0000   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[1]                                                                                  ; rx_check[1]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[0]                                                                                  ; rx_check[0]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[5]                                                                                  ; rx_check[5]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[4]                                                                                  ; rx_check[4]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[7]                                                                                  ; rx_check[7]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[6]                                                                                  ; rx_check[6]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[3]                                                                                  ; rx_check[3]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; rx_check[2]                                                                                  ; rx_check[2]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2]   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]      ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]      ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]      ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0]   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1]   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|busy        ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|busy        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[4]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[4]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; busy                                                                                         ; busy                                                                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; tx_valid                                                                                     ; tx_valid                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[0]                                                               ; uart_tx:transmitter|bit_cnt[0]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[1]                                                               ; uart_tx:transmitter|bit_cnt[1]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[2]                                                               ; uart_tx:transmitter|bit_cnt[2]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|bit_cnt[3]                                                               ; uart_tx:transmitter|bit_cnt[3]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; uart_tx:transmitter|busy                                                                     ; uart_tx:transmitter|busy                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[125][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[125][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[126][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[126][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[127][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[127][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[128][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[128][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[129][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[129][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[130][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[130][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[131][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[131][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[132][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[132][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[133][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[133][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[134][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[134][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[135][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[135][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[136][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[136][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[137][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[137][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[138][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[138][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[139][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[139][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[140][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[140][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[141][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[141][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[142][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[142][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[143][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[143][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[144][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[144][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[145][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[145][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[146][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[146][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[147][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[147][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[148][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[148][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[149][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[149][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[100][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[100][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[101][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[101][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[102][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[102][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[103][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[103][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[50][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[50][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[51][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[51][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[52][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[52][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[53][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[53][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[54][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[54][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[55][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[55][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[56][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[56][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[57][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[57][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[58][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[58][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[59][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[59][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[60][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[60][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[61][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[61][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[62][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[62][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[63][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[63][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[64][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[64][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[65][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[65][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[66][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[66][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[67][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[67][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[68][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[68][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[69][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[69][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[70][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[70][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[71][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[71][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[75][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[75][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[76][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[76][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[77][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[77][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[78][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[78][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[79][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[79][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[80][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[80][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[81][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[81][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
++-------+----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                          ;
++-------+--------------+----------------+------------------+----------+------------+------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target           ;
++-------+--------------+----------------+------------------+----------+------------+------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; busy             ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; busy             ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[0]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[0]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[1]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[1]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[2]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[2]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[3]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[3]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[4]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[4]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; encoding_error   ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; encoding_error   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[0]   ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[0]   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[100] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[100] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[101] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[101] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[102] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[102] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[103] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[103] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[104] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[104] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[105] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[105] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[106] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[106] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[107] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[107] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[108] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[108] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[109] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[109] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[10]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[10]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[110] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[110] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[111] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[111] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[112] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[112] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[113] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[113] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[114] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[114] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[115] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[115] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[116] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[116] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[117] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[117] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[118] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[118] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[119] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[119] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[11]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[11]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[120] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[120] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[121] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[121] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[122] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[122] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[123] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[123] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[124] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[124] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[125] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[125] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[126] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[126] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[127] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[127] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[128] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[128] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[129] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[129] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[12]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[12]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[130] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[130] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[131] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[131] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[132] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[132] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[133] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[133] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[134] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[134] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[135] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[135] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[136] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[136] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[137] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[137] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[13]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[13]  ;
++-------+--------------+----------------+------------------+----------+------------+------------------+
+
+
+-------------------------------
+; Slow Model Datasheet Report ;
+-------------------------------
+Nothing to report.
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; 14.080 ; 0.000         ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+-------+---------------------+
+; Clock    ; Slack ; End Point TNS       ;
++----------+-------+---------------------+
+; CLOCK_50 ; 9.000 ; 0.000               ;
++----------+-------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                                                                                                            ;
++--------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                  ; To Node                                                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 14.080 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.958      ;
+; 14.121 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.902      ;
+; 14.387 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.651      ;
+; 14.393 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.016     ; 5.623      ;
+; 14.399 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 5.614      ;
+; 14.434 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.031     ; 5.567      ;
+; 14.437 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.586      ;
+; 14.444 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.004     ; 5.584      ;
+; 14.458 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.004     ; 5.570      ;
+; 14.485 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 5.528      ;
+; 14.576 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.028     ; 5.428      ;
+; 14.590 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[27]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.440      ;
+; 14.599 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[28]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 5.446      ;
+; 14.605 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[13]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.425      ;
+; 14.619 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 5.400      ;
+; 14.631 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[27]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.384      ;
+; 14.669 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.369      ;
+; 14.675 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[26]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.355      ;
+; 14.687 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[29]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.023      ; 5.368      ;
+; 14.700 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.016     ; 5.316      ;
+; 14.716 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[26]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.299      ;
+; 14.722 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[26]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 5.323      ;
+; 14.723 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[33]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.010     ; 5.299      ;
+; 14.732 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[15]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.298      ;
+; 14.737 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.301      ;
+; 14.739 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.299      ;
+; 14.739 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.034     ; 5.259      ;
+; 14.750 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.031     ; 5.251      ;
+; 14.751 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.004     ; 5.277      ;
+; 14.756 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[16]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 5.301      ;
+; 14.765 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.004     ; 5.263      ;
+; 14.766 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.023      ; 5.289      ;
+; 14.770 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.245      ;
+; 14.770 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[18]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.010     ; 5.252      ;
+; 14.773 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.022      ; 5.281      ;
+; 14.780 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.237      ;
+; 14.783 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 5.217      ;
+; 14.787 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[33]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.005      ; 5.250      ;
+; 14.788 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[25]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.004     ; 5.240      ;
+; 14.795 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.001      ; 5.238      ;
+; 14.795 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.243      ;
+; 14.798 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[23]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.023      ; 5.257      ;
+; 14.801 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 5.212      ;
+; 14.801 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.216      ;
+; 14.806 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[21]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.023      ; 5.249      ;
+; 14.815 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.019     ; 5.198      ;
+; 14.816 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.020     ; 5.196      ;
+; 14.816 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.222      ;
+; 14.818 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.197      ;
+; 14.819 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 5.208      ;
+; 14.820 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[28]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.218      ;
+; 14.822 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[22]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.023      ; 5.233      ;
+; 14.828 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[4]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.210      ;
+; 14.833 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[27]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 5.212      ;
+; 14.838 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[24]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.192      ;
+; 14.840 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[34]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.010      ; 5.202      ;
+; 14.843 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[12]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.187      ;
+; 14.846 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[6]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.034     ; 5.152      ;
+; 14.847 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[14]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 5.210      ;
+; 14.850 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[30]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.188      ;
+; 14.850 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.167      ;
+; 14.850 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.022      ; 5.204      ;
+; 14.850 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.001      ; 5.183      ;
+; 14.852 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[11]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.001     ; 5.179      ;
+; 14.852 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[24]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.013      ; 5.193      ;
+; 14.854 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[11] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.184      ;
+; 14.858 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[0]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.022      ; 5.196      ;
+; 14.861 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[28]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.162      ;
+; 14.865 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[7]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.173      ;
+; 14.867 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[25]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.163      ;
+; 14.867 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[35]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.018     ; 5.147      ;
+; 14.871 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[8]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.034     ; 5.127      ;
+; 14.872 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[15] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.166      ;
+; 14.872 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[5]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.034     ; 5.126      ;
+; 14.877 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[28]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[34]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 5.158      ;
+; 14.877 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[19]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 5.180      ;
+; 14.879 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[0]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 5.121      ;
+; 14.879 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[24]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.136      ;
+; 14.881 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[10] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.157      ;
+; 14.884 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.001      ; 5.149      ;
+; 14.885 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[2]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.022      ; 5.169      ;
+; 14.885 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[6]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.015     ; 5.132      ;
+; 14.891 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[30]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.132      ;
+; 14.896 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[5]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 5.131      ;
+; 14.897 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[27]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.002     ; 5.133      ;
+; 14.897 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.032     ; 5.103      ;
+; 14.899 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[1]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.022      ; 5.155      ;
+; 14.900 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[14]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|angle[31]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 5.135      ;
+; 14.905 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[4]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 5.122      ;
+; 14.908 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[13] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.130      ;
+; 14.908 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[14]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|angle[26]  ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.003      ; 5.127      ;
+; 14.908 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[1]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[25]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.017     ; 5.107      ;
+; 14.911 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[12] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.022      ; 5.143      ;
+; 14.912 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[28]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.009     ; 5.111      ;
+; 14.913 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[17]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.025      ; 5.144      ;
+; 14.913 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[3]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.003     ; 5.116      ;
+; 14.918 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[13]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[31]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.024     ; 5.090      ;
+; 14.922 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]    ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[11] ; CLOCK_50     ; CLOCK_50    ; 20.000       ; 0.006      ; 5.116      ;
+; 14.924 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|y[9]      ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[32]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.005     ; 5.103      ;
+; 14.926 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[3]   ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[29]      ; CLOCK_50     ; CLOCK_50    ; 20.000       ; -0.013     ; 5.093      ;
++--------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                               ;
++-------+----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                    ; To Node                                                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; uart_rx:receiver|bit_cnt[0]                                                                  ; uart_rx:receiver|bit_cnt[0]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|bit_cnt[1]                                                                  ; uart_rx:receiver|bit_cnt[1]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|bit_cnt[2]                                                                  ; uart_rx:receiver|bit_cnt[2]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|bit_cnt[3]                                                                  ; uart_rx:receiver|bit_cnt[3]                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|busy                                                                        ; uart_rx:receiver|busy                                                                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.100                                                                              ; parse_state.100                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[1]                                                                ; uart_rx:receiver|shift_reg[1]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[0]                                                                ; uart_rx:receiver|shift_reg[0]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[2]                                                                ; uart_rx:receiver|shift_reg[2]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[6]                                                                ; uart_rx:receiver|shift_reg[6]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[4]                                                                ; uart_rx:receiver|shift_reg[4]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[5]                                                                ; uart_rx:receiver|shift_reg[5]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[7]                                                                ; uart_rx:receiver|shift_reg[7]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_rx:receiver|shift_reg[3]                                                                ; uart_rx:receiver|shift_reg[3]                                                                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.001                                                                              ; parse_state.001                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.010                                                                              ; parse_state.010                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; parse_state.101                                                                              ; parse_state.101                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; encoding_error                                                                               ; encoding_error                                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state.0000   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state.0000   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[1]                                                                                  ; rx_check[1]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[0]                                                                                  ; rx_check[0]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[5]                                                                                  ; rx_check[5]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[4]                                                                                  ; rx_check[4]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[7]                                                                                  ; rx_check[7]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[6]                                                                                  ; rx_check[6]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[3]                                                                                  ; rx_check[3]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rx_check[2]                                                                                  ; rx_check[2]                                                                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2]   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]      ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]      ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[0]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]      ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[1]      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0]   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1]   ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|busy        ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|busy        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[4]     ; weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[4]     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; busy                                                                                         ; busy                                                                                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; tx_valid                                                                                     ; tx_valid                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[0]                                                               ; uart_tx:transmitter|bit_cnt[0]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[1]                                                               ; uart_tx:transmitter|bit_cnt[1]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[2]                                                               ; uart_tx:transmitter|bit_cnt[2]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|bit_cnt[3]                                                               ; uart_tx:transmitter|bit_cnt[3]                                                               ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; uart_tx:transmitter|busy                                                                     ; uart_tx:transmitter|busy                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[125][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[125][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[126][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[126][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[127][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[127][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[128][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[128][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[129][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[129][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[130][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[130][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[131][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[131][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[132][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[132][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[133][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[133][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[134][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[134][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[135][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[135][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[136][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[136][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[137][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[137][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[138][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[138][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[139][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[139][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[140][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[140][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[141][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[141][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[142][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[142][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[143][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[143][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[144][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[144][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[145][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[145][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[146][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[146][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[147][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[147][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[148][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[148][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[149][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[149][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[100][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[100][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[101][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[101][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[102][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[102][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[103][0] ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[103][0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[50][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[50][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[51][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[51][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[52][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[52][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[53][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[53][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[54][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[54][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[55][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[55][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[56][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[56][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[57][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[57][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[58][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[58][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[59][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[59][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[60][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[60][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[61][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[61][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[62][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[62][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[63][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[63][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[64][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[64][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[65][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[65][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[66][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[66][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[67][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[67][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[68][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[68][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[69][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[69][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[70][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[70][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[71][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[71][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[75][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[75][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[76][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[76][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[77][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[77][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[78][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[78][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[79][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[79][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[80][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[80][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[81][0]  ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|hist[81][0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
++-------+----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                          ;
++-------+--------------+----------------+------------------+----------+------------+------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target           ;
++-------+--------------+----------------+------------------+----------+------------+------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; busy             ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; busy             ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[0]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[0]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[1]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[1]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[2]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[2]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[3]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[3]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; byte_count[4]    ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; byte_count[4]    ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; encoding_error   ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; encoding_error   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[0]   ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[0]   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[100] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[100] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[101] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[101] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[102] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[102] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[103] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[103] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[104] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[104] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[105] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[105] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[106] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[106] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[107] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[107] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[108] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[108] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[109] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[109] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[10]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[10]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[110] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[110] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[111] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[111] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[112] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[112] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[113] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[113] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[114] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[114] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[115] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[115] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[116] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[116] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[117] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[117] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[118] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[118] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[119] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[119] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[11]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[11]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[120] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[120] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[121] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[121] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[122] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[122] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[123] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[123] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[124] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[124] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[125] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[125] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[126] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[126] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[127] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[127] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[128] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[128] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[129] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[129] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[12]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[12]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[130] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[130] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[131] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[131] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[132] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[132] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[133] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[133] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[134] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[134] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[135] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[135] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[136] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[136] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[137] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[137] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; input_frame[13]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; input_frame[13]  ;
++-------+--------------+----------------+------------------+----------+------------+------------------+
+
+
+-------------------------------
+; Fast Model Datasheet Report ;
+-------------------------------
+Nothing to report.
+
+
++-----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                         ;
++------------------+-------+-------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 7.086 ; 0.215 ; N/A      ; N/A     ; 9.000               ;
+;  CLOCK_50        ; 7.086 ; 0.215 ; N/A      ; N/A     ; 9.000               ;
+; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLOCK_50        ; 0.000 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+-------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 277448   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 277448   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 0     ; 0    ;
+; Unconstrained Output Port Paths ; 0     ; 0    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 24 10:25:48 2026
+Info: Command: quartus_sta weather_board -c weather_board
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (332104): Reading SDC File: 'clock.sdc'
+Warning (332153): Family doesn't support jitter analysis.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 7.086
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     7.086         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.000         0.000 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 14.080
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    14.080         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.000         0.000 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332101): Design is fully constrained for setup requirements
+Info (332101): Design is fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 356 megabytes
+    Info: Processing ended: Sat Oct 24 10:25:52 2026
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+

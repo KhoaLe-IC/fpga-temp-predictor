@@ -1,0 +1,2 @@
+PASS netlist at 50 MHz: inputs=4096 forecasts=4072
+../tb_netlist.sv:36: $finish called at 164540000 (1ps)

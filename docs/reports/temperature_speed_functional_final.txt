@@ -1,0 +1,2 @@
+PASS netlist at 50 MHz: inputs=4096 forecasts=4072
+/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/tb_netlist.sv:44: $finish called at 164540000 (1ps)

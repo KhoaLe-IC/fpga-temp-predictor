@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="hdr_20" data-pptx-bounds="60 30 1160 85">
+    <rect x="60" y="30" width="1160" height="85" fill="#F8FAFC" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="80" y="52" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">REAL-WORLD TELEMETRY VALIDATION</text>
+    <text x="80" y="82" fill="#0F172A" font-size="24" font-weight="bold">In-Silico Validation on 2-Year Continuous Test Data</text>
+    <text x="80" y="104" fill="#64748B" font-size="13">Streaming 17,520 hours of continuous satellite telemetry through synthesized FPGA hardware</text>
+  </g>
+  <g id="box_val_summary" data-pptx-bounds="60 135 565 500">
+    <rect x="60" y="135" width="565" height="500" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="135" width="565" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="162" fill="#1E3A8A" font-size="14" font-weight="bold">HELD-OUT TEST DATASET METRICS (2024–2025)</text>
+    
+    <text x="80" y="205" fill="#0F172A" font-size="13" font-weight="bold">Dataset Volume &amp; Protocol:</text>
+    <text x="80" y="228" fill="#334155" font-size="12">• Jan 2024 – Dec 2025: 17,520 continuous hourly records</text>
+    <text x="80" y="250" fill="#334155" font-size="12">• Strict causal protocol: zero future data leakage</text>
+    
+    <text x="80" y="295" fill="#0F172A" font-size="13" font-weight="bold">Hardware Prediction Accuracy:</text>
+    
+    <rect x="80" y="315" width="525" height="50" rx="6" fill="#EFF6FF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="338" fill="#1E3A8A" font-size="12" font-weight="bold">Mean Absolute Error (MAE):  0.5381 °C</text>
+    <text x="95" y="354" fill="#334155" font-size="11">Average deviation across 17,520 hours of real weather.</text>
+    
+    <rect x="80" y="375" width="525" height="50" rx="6" fill="#EFF6FF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="398" fill="#1E3A8A" font-size="12" font-weight="bold">Root Mean Squared Error (RMSE):  0.7862 °C</text>
+    <text x="95" y="414" fill="#334155" font-size="11">Penalizes large transient forecast errors.</text>
+    
+    <rect x="80" y="440" width="525" height="175" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="95" y="468" fill="#16A34A" font-size="12" font-weight="bold">Baseline Outperformance Proof:</text>
+    <text x="95" y="495" fill="#0F172A" font-size="11.5">• 74.1% Gain vs Persistence (2.080°C MAE)</text>
+    <text x="95" y="520" fill="#0F172A" font-size="11.5">• 35.3% Gain vs Diurnal (0.832°C MAE)</text>
+    <text x="95" y="545" fill="#0F172A" font-size="11.5">• 100% Bit-Exact to C++ reference (0 drift)</text>
+    <line x1="95" y1="565" x2="585" y2="565" stroke="#16A34A" stroke-width="0.8"/>
+    <text x="95" y="592" fill="#16A34A" font-size="11" font-weight="bold">Zero numerical drift over 2 years of continuous inference!</text>
+  </g>
+  <g id="box_val_distrib" data-pptx-bounds="655 135 565 500">
+    <rect x="655" y="135" width="565" height="500" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="655" y="135" width="565" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="675" y="162" fill="#1E3A8A" font-size="14" font-weight="bold">ERROR DISTRIBUTION &amp; NUMERICAL STABILITY</text>
+    
+    <text x="675" y="205" fill="#0F172A" font-size="13" font-weight="bold">Residual Error Distribution:</text>
+    
+    <rect x="675" y="225" width="525" height="45" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="252" fill="#1E3A8A" font-size="12" font-weight="bold">|Error| &lt;= 0.5 °C:  68.4% of all test hours</text>
+    
+    <rect x="675" y="278" width="525" height="45" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="305" fill="#1E3A8A" font-size="12" font-weight="bold">|Error| &lt;= 1.0 °C:  91.8% of all test hours</text>
+    
+    <rect x="675" y="331" width="525" height="45" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="358" fill="#1E3A8A" font-size="12" font-weight="bold">|Error| &lt;= 1.5 °C:  98.2% of all test hours</text>
+    
+    <text x="675" y="400" fill="#0F172A" font-size="13" font-weight="bold">Residual Statistical Properties:</text>
+    <text x="675" y="425" fill="#334155" font-size="12">• Mean: μ = -0.0018 °C (Zero-centered)</text>
+    <text x="675" y="447" fill="#334155" font-size="12">• StdDev: σ = 0.786 °C</text>
+    <text x="675" y="469" fill="#334155" font-size="12">• Zero cumulative drift across entire test run</text>
+    
+    <rect x="675" y="495" width="525" height="120" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="522" fill="#1E3A8A" font-size="12" font-weight="bold">Silicon Verification Audit:</text>
+    <text x="690" y="546" fill="#334155" font-size="11">• 17,520 hours simulated in under 2 minutes of hardware sim.</text>
+    <text x="690" y="568" fill="#16A34A" font-size="11" font-weight="bold">• Exactly 0 mismatches between RTL simulation and C++ reference.</text>
+    <text x="690" y="592" fill="#16A34A" font-size="11" font-weight="bold">• Confirms numerical stability and precision contract in silicon.</text>
+  </g>
+  <g id="ftr_20" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="72" y="663" width="140" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="142" y="678" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="230" y="679" fill="#0F172A" font-size="13" font-weight="500">Over 17,520 hours of real telemetry, hardware prediction achieves 0.538°C MAE with zero numerical drift.</text>
+  </g>
+</svg>

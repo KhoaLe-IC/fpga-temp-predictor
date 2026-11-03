@@ -1,0 +1,39 @@
+{
+  "architecture": [
+    12,
+    16,
+    1
+  ],
+  "features": [
+    "x1",
+    "x2",
+    "x3",
+    "x4",
+    "x5",
+    "x6",
+    "current",
+    "anchor",
+    "delta6",
+    "delta12",
+    "sin_hour",
+    "cos_hour"
+  ],
+  "formula": "T(t-21) + bias + sum(w_j * exp(-gamma * squared_distance(z, center_j)))",
+  "horizon_hours": 3,
+  "time_standard": "UTC",
+  "numeric_type": "float64",
+  "gamma": 0.01,
+  "alpha": 0.01,
+  "ridge6_alpha": 100.0,
+  "random_state": 42,
+  "train_target_end_exclusive": "2024-01-01 00:00:00+00:00",
+  "validation_target_end_exclusive": "2025-01-01 00:00:00+00:00",
+  "test_origin_start": "2025-01-01 00:00:00+00:00",
+  "counts": {
+    "train": 26253,
+    "validation": 8781,
+    "test": 8757
+  },
+  "model_parameters": 210,
+  "normalization_values": 24
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "clock_period_ns": 20,
+  "observation_delay_ns": 9,
+  "sdf_sha256": "35c0814d5d957fd3dcc9a813e42bd89daf5e6860cd00e6e4a7534e397d57a7b0",
+  "netlist_sha256": "5cfff7b1d108f324d3016465e81e1bf87c4834b382a14c93b3d3cf5b8ffd467b",
+  "transcript": "versions/weather_v2/quartus/speed/build/modelsim_timing/simulation.log",
+  "transcript_sha256": "08264a7d704e0e3d11a584bf6d4e4244ca4f794aa41226df9361a34479221c45",
+  "netlist": "versions/weather_v2/quartus/speed/build/modelsim_timing/weather.vo",
+  "sdf": "versions/weather_v2/quartus/speed/build/modelsim_timing/weather_v.sdo",
+  "vectors": "versions/weather_v2/build/vectors/vectors.txt",
+  "vectors_sha256": "46baf3834f72898032ccbee604f67b64b289c76f5cff8632ab63355b0ee12c44",
+  "testbench": "versions/weather_v2/quartus/speed/build/modelsim_timing/tb_timing.sv",
+  "testbench_sha256": "7481adef3b2fa55dd24c23018704627a46d503c74335c786e337dad8c66eda41"
+}

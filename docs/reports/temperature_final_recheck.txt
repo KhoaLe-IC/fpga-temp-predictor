@@ -1,0 +1,2 @@
+speed functional final PASS
+resource functional final PASS

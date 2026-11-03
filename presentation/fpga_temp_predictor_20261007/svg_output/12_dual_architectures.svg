@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="hdr_12" data-pptx-bounds="60 30 1160 85">
+    <rect x="60" y="30" width="1160" height="85" fill="#F8FAFC" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="80" y="52" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">RTL MICRO-ARCHITECTURE COMPARISON</text>
+    <text x="80" y="82" fill="#0F172A" font-size="24" font-weight="bold">Dual Implementations: Speed Core vs Resource Core</text>
+    <text x="80" y="104" fill="#64748B" font-size="13">Pipelined streaming parallelism vs time-multiplexed hardware reuse</text>
+  </g>
+  <g id="arch_speed_card" data-pptx-bounds="60 135 565 500">
+    <rect x="60" y="135" width="565" height="500" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="135" width="565" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="162" fill="#1E3A8A" font-size="14" font-weight="bold">CORE A: SPEED-OPTIMIZED STREAMING PIPELINE</text>
+    
+    <text x="80" y="205" fill="#0F172A" font-size="13" font-weight="bold">Datapath Micro-Architecture:</text>
+    <text x="80" y="228" fill="#334155" font-size="12">• 6 Register Stages (S0 capture to S5 saturation)</text>
+    <text x="80" y="250" fill="#334155" font-size="12">• Dual Multipliers: 2 parallel 17×16 signed DSP units</text>
+    <text x="80" y="272" fill="#334155" font-size="12">• History Buffer: 25-stage shift register with wire taps</text>
+    
+    <text x="80" y="310" fill="#0F172A" font-size="13" font-weight="bold">Throughput &amp; Timing Metrics:</text>
+    <text x="80" y="333" fill="#334155" font-size="12">• Throughput: II = 1 (1 sample/clock, 0 bubbles)</text>
+    <text x="80" y="355" fill="#334155" font-size="12">• Latency: 5 clock cycles (100 ns @ 50 MHz)</text>
+    <text x="80" y="377" fill="#334155" font-size="12">• Max Frequency: 142.3 MHz F_max (2.8x slack)</text>
+    
+    <rect x="80" y="410" width="525" height="200" rx="6" fill="#EFF6FF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="438" fill="#1E3A8A" font-size="13" font-weight="bold">Cyclone II Profile (EP2C35):</text>
+    <text x="95" y="465" fill="#0F172A" font-size="12">• Logic Elements: 412 LEs (1.2% total capacity)</text>
+    <text x="95" y="490" fill="#0F172A" font-size="12">• Multipliers: 2 DSP units (4 9-bit blocks)</text>
+    <text x="95" y="515" fill="#0F172A" font-size="12">• Throughput: 50.0 MSamples/sec @ 50 MHz</text>
+    <line x1="95" y1="535" x2="585" y2="535" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="95" y="562" fill="#1E3A8A" font-size="12" font-weight="bold">Target Domain: High-Rate Streaming</text>
+    <text x="95" y="585" fill="#2563EB" font-size="12">Multi-channel streams, radar, and lidar edge nodes.</text>
+  </g>
+  <g id="arch_res_card" data-pptx-bounds="655 135 565 500">
+    <rect x="655" y="135" width="565" height="500" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="655" y="135" width="565" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="675" y="162" fill="#1E3A8A" font-size="14" font-weight="bold">CORE B: RESOURCE-OPTIMIZED TIME-MUXED FSM</text>
+    
+    <text x="675" y="205" fill="#0F172A" font-size="13" font-weight="bold">Sequential Micro-Architecture:</text>
+    <text x="675" y="228" fill="#334155" font-size="12">• 10-State Sequential FSM controller</text>
+    <text x="675" y="250" fill="#334155" font-size="12">• Single Multiplier: 1 17×16 DSP time-multiplexed</text>
+    <text x="675" y="272" fill="#334155" font-size="12">• Reused ALU: Serial differences and sums</text>
+    
+    <text x="675" y="310" fill="#0F172A" font-size="13" font-weight="bold">Throughput &amp; Timing Metrics:</text>
+    <text x="675" y="333" fill="#334155" font-size="12">• Throughput: II = 10 clock cycles per sample</text>
+    <text x="675" y="355" fill="#334155" font-size="12">• Latency: 9 clock cycles (180 ns @ 50 MHz)</text>
+    <text x="675" y="377" fill="#334155" font-size="12">• Max Frequency: 118.5 MHz F_max (2.4x slack)</text>
+    
+    <rect x="675" y="410" width="525" height="200" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="690" y="438" fill="#1E3A8A" font-size="13" font-weight="bold">Cyclone II Profile (EP2C35):</text>
+    <text x="690" y="465" fill="#16A34A" font-size="12" font-weight="bold">• Logic Elements: 236 LEs (-42.7% area reduction!)</text>
+    <text x="690" y="490" fill="#16A34A" font-size="12" font-weight="bold">• Multipliers: 1 DSP unit (-50% silicon footprint)</text>
+    <text x="690" y="515" fill="#0F172A" font-size="12">• Throughput: 5.0 MSamples/sec @ 50 MHz</text>
+    <line x1="690" y1="535" x2="1180" y2="535" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="690" y="562" fill="#1E3A8A" font-size="12" font-weight="bold">Target Domain: Low-Power Edge IoT</text>
+    <text x="690" y="585" fill="#16A34A" font-size="12">Battery-powered weather pods and remote sensor nodes.</text>
+  </g>
+  <g id="ftr_12" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="72" y="663" width="140" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="142" y="678" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="230" y="679" fill="#0F172A" font-size="13" font-weight="500">Dual architectures expose Pareto trade-offs: Speed maximizes throughput (II=1), Resource cuts area by 42.7%.</text>
+  </g>
+</svg>

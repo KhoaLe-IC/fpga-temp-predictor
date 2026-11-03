@@ -1,0 +1,14 @@
+{
+  "input_start": "2024-12-31 00:00:00+00:00",
+  "input_end": "2025-12-31 20:00:00+00:00",
+  "accepted_inputs": 8781,
+  "forecasts": 8757,
+  "first_forecast_input_time": "2025-01-01 00:00 UTC",
+  "last_forecast_target_time": "2025-12-31 23:00 UTC",
+  "coefficients": [
+    12214,
+    150,
+    0
+  ],
+  "vector_sha256": "ac75f2fc01f665390d55b7b62214a080aa13c5e5db6728ee57def10fa9fc98f5"
+}

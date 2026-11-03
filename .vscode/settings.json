@@ -1,0 +1,16 @@
+{
+  "files.associations": {
+    "*.v": "verilog",
+    "*.sv": "systemverilog",
+    "*.vh": "verilog",
+    "*.svh": "systemverilog",
+    "*.xdc": "tcl",
+    "*.qsf": "tcl",
+    "*.sdc": "tcl"
+  },
+  "verilog.linting.linter": "iverilog",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/software/include"
+  ]
+}

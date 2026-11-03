@@ -1,0 +1,2 @@
+PASS weather netlist 50 MHz: inputs=288 forecasts=264
+/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/tb/tb_weather_netlist.sv:45: $finish called at 738240000 (1ps)

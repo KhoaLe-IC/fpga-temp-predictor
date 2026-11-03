@@ -1,0 +1,5 @@
+PASS weather UART 50 MHz / 115200 baud: architecture=1 frames=32 checked=8 bad-checksum rejected
+- /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/tb/tb_weather_uart.sv:49: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.052 2026-09-05
+- Verilator: $finish at 85ms; walltime 6.786 s; speed 12.561 ms/s
+- Verilator: cpu 6.721 s on 1 threads; allocated 4 MB

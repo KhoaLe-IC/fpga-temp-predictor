@@ -1,0 +1,180 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/khoale/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab tb_netlist --sdfmax /tb_netlist/dut=../simulation/modelsim/predictor_v.sdo --snapshot temperature_timing --timescale 1ns/1ps 
+Multi-threading is on. Using 10 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3129] assignment to input 'rst_n' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:2228]
+WARNING: [VRFC 10-3129] assignment to input 'sample_valid' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:2282]
+WARNING: [VRFC 10-3129] assignment to input 'clk' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:2624]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:2673]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:2756]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:3074]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:3299]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:3421]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:3560]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:3665]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:3804]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:3926]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:4065]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:4221]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:4343]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:4499]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:4621]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:4760]
+WARNING: [VRFC 10-3129] assignment to input 'temp_in' [/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/predictor_timing.vo:4899]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "../simulation/modelsim/predictor_v.sdo", for root module "/tb_netlist/dut".
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.datain_a_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.addr_a_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.we_a_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.wpgen_a in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.rpgen_a in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.addr_b_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.rewe_b_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.rpgen_b in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/s1_t21_rtl_0|auto_generated|altsyncram4|ram_block5a0.dataout_b_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/rst_n~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/sample_valid~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/clk~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/clk~clkctrl.extena0_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[2]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[0]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[1]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[3]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[4]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[5]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[6]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[7]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[8]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[9]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[10]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[11]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[12]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[13]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[14]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/temp_in[15]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.datain_a_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.addr_a_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.we_a_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.wpgen_a in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.rpgen_a in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.addr_b_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.rewe_b_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.rpgen_b in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/hist_rtl_0|auto_generated|altsyncram2|ram_block3a0.dataout_b_register in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/Mult0|auto_generated|mac_mult1.dataa_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/Mult0|auto_generated|mac_mult1.mac_multiply in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/Mult1|auto_generated|mac_mult1.dataa_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/Mult1|auto_generated|mac_mult1.mac_multiply in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/sample_ready~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_valid~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_valid~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[0]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[0]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[1]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[1]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[2]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[2]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[3]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[3]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[4]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[4]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[5]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[5]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[6]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[6]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[7]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[7]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[8]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[8]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[9]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[9]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[10]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[10]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[11]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[11]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[12]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[12]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[13]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[13]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[14]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[14]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[15]~I.output_reg in the HDL hierarchy, annotation will be skipped.
+WARNING: [XSIM 43-3477] Unable to find hierarchical path /tb_netlist/dut/forecast_out[15]~I.asynch_inst in the HDL hierarchy, annotation will be skipped.
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "../simulation/modelsim/predictor_v.sdo", for root module "/tb_netlist/dut".
+Time Resolution for simulation is 1ps
+Compiling module work.cycloneii_lcell_ff
+Compiling module work.cycloneii_ram_register(width=1)
+Compiling module work.cycloneii_ram_register(width=2)
+Compiling module work.cycloneii_ram_register(width=16)
+Compiling module work.cycloneii_ram_register(preset=1'...
+Compiling module work.cycloneii_ram_register(width=1,p...
+Compiling module work.cycloneii_ram_pulse_generator
+Compiling module work.cycloneii_ram_block(operation_mo...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_mac_out(dataa_width=36...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_mux21
+Compiling module work.CYCLONEII_PRIM_DFFE
+Compiling module work.cycloneii_dffe
+Compiling module work.cycloneii_asynch_io
+Compiling module work.cycloneii_io(operation_mode="inp...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_mux41
+Compiling module work.cycloneii_ena_reg
+Compiling module work.cycloneii_clkctrl(clock_type="gl...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_ram_register(width=4)
+Compiling module work.cycloneii_ram_block(operation_mo...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_mac_data_reg
+Compiling module work.cycloneii_mac_sign_reg
+Compiling module work.cycloneii_mac_mult_internal(data...
+Compiling module work.cycloneii_mac_mult(dataa_width=1...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_lcell_comb(lut_mask=16...
+Compiling module work.cycloneii_asynch_io(operation_mo...
+Compiling module work.cycloneii_io(operation_mode="out...
+Compiling module work.cycloneii_io(operation_mode="out...
+Compiling module work.temp_predictor_speed
+Compiling module work.tb_netlist
+Built simulation snapshot temperature_timing

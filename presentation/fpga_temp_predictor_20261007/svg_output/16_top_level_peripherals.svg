@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="hdr_16" data-pptx-bounds="60 30 1160 85">
+    <rect x="60" y="30" width="1160" height="85" fill="#F8FAFC" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="80" y="52" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">FPGA SYSTEM TOP-LEVEL INTEGRATION</text>
+    <text x="80" y="82" fill="#0F172A" font-size="24" font-weight="bold">Dual Top-Module Architectures: Speed vs Resource Wrappers</text>
+    <text x="80" y="104" fill="#64748B" font-size="13">Complete Verilog top-level integration: Streaming Packet Parser vs Dual-FIFO Controller</text>
+  </g>
+  <g id="top_speed_wrapper" data-pptx-bounds="60 135 1160 238">
+    <rect x="60" y="135" width="1160" height="238" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="135" width="1160" height="32" rx="8" fill="#F1F5F9"/>
+    <text x="75" y="157" fill="#1E3A8A" font-size="12" font-weight="bold">DESIGN A TOP MODULE: de2_temp_predictor_top.v (Streaming Packet Architecture)</text>
+    
+    <!-- Block 1: IO &amp; Reset Sync (x=75, w=110) -->
+    <rect x="75" y="175" width="110" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="85" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">CLOCK &amp; RESET</text>
+    <text x="85" y="215" fill="#334155" font-size="9">• CLOCK_50 (50MHz)</text>
+    <text x="85" y="232" fill="#334155" font-size="9">• KEY0_N (Button)</text>
+    <rect x="82" y="244" width="96" height="32" rx="3" fill="#EFF6FF" stroke="#2563EB" stroke-width="1"/>
+    <text x="130" y="258" fill="#1E3A8A" font-size="9" font-weight="bold" text-anchor="middle">reset_sync.v</text>
+    <text x="130" y="270" fill="#2563EB" font-size="8" text-anchor="middle">rst_n (Sync)</text>
+    
+    <!-- Connector 1 -> 2 -->
+    <line x1="185" y1="230" x2="200" y2="230" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 2: UART RX (x=200, w=115) -->
+    <rect x="200" y="175" width="115" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="210" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">UART RECEIVER</text>
+    <text x="210" y="215" fill="#0F172A" font-size="10" font-weight="bold">uart_rx.v</text>
+    <text x="210" y="232" fill="#334155" font-size="9">• 115,200 Baud 8-N-1</text>
+    <text x="210" y="248" fill="#334155" font-size="9">• 16× Oversampling</text>
+    <text x="210" y="272" fill="#2563EB" font-size="9" font-weight="bold">rx_data [7:0]</text>
+    
+    <!-- Connector 2 -> 3 -->
+    <line x1="315" y1="230" x2="330" y2="230" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 3: Packet Parser (x=330, w=145) -->
+    <rect x="330" y="175" width="145" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="340" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">FRAME PARSER</text>
+    <text x="340" y="215" fill="#0F172A" font-size="10" font-weight="bold">packet_parser.v</text>
+    <text x="340" y="232" fill="#334155" font-size="9">• Sync: AA 55 01 02</text>
+    <text x="340" y="248" fill="#334155" font-size="9">• Checksum validator</text>
+    <text x="340" y="272" fill="#2563EB" font-size="9" font-weight="bold">parsed_temp [15:0]</text>
+    
+    <!-- Connector 3 -> 4 -->
+    <line x1="475" y1="230" x2="490" y2="230" stroke="#2563EB" stroke-width="2"/>
+    
+    <!-- Block 4: Speed Core (Hero Core) (x=490, w=225) -->
+    <rect x="490" y="170" width="225" height="120" rx="6" fill="#EFF6FF" stroke="#1E3A8A" stroke-width="2"/>
+    <text x="502" y="192" fill="#1E3A8A" font-size="11" font-weight="bold">PREDICTOR PIPELINE CORE</text>
+    <text x="502" y="210" fill="#1E3A8A" font-size="12" font-weight="bold">temp_predictor_speed.v</text>
+    <text x="502" y="228" fill="#0F172A" font-size="9">• 25-Sample History Shift Register</text>
+    <text x="502" y="243" fill="#0F172A" font-size="9">• 6 Pipeline Stages (S0 to S5)</text>
+    <text x="502" y="258" fill="#0F172A" font-size="9">• 2 Dedicated 17×16 DSP Multipliers</text>
+    <rect x="500" y="266" width="205" height="18" rx="3" fill="#FFFFFF" stroke="#2563EB" stroke-width="0.8"/>
+    <text x="602" y="279" fill="#2563EB" font-size="9" font-weight="bold" text-anchor="middle">II = 1 | L = 5 Cycles (100 ns) | 142 MHz</text>
+    
+    <!-- Connector 4 -> 5 -->
+    <line x1="715" y1="230" x2="730" y2="230" stroke="#2563EB" stroke-width="2"/>
+    
+    <!-- Block 5: Packet Formatter (x=730, w=145) -->
+    <rect x="730" y="175" width="145" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="740" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">FRAME FORMATTER</text>
+    <text x="740" y="215" fill="#0F172A" font-size="10" font-weight="bold">packet_formatter.v</text>
+    <text x="740" y="232" fill="#334155" font-size="9">• Header: AA 55 81 02</text>
+    <text x="740" y="248" fill="#334155" font-size="9">• Checksum generator</text>
+    <text x="740" y="272" fill="#16A34A" font-size="9" font-weight="bold">tx_data [7:0]</text>
+    
+    <!-- Connector 5 -> 6 -->
+    <line x1="875" y1="230" x2="890" y2="230" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 6: UART TX (x=890, w=115) -->
+    <rect x="890" y="175" width="115" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="900" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">UART TRANSMITTER</text>
+    <text x="900" y="215" fill="#0F172A" font-size="10" font-weight="bold">uart_tx.v</text>
+    <text x="900" y="232" fill="#334155" font-size="9">• 115,200 Baud 8-N-1</text>
+    <text x="900" y="248" fill="#334155" font-size="9">• Serializer / stop bit</text>
+    <text x="900" y="272" fill="#16A34A" font-size="9" font-weight="bold">UART_TXD Pin</text>
+    
+    <!-- Connector 4 -> 7 (Peripherals) -->
+    <path d="M 602,290 L 602,305 L 1020,305 L 1020,230 L 1030,230" fill="none" stroke="#4F46E5" stroke-width="1.2" stroke-dasharray="2 2"/>
+    
+    <!-- Block 7: Board Peripherals (x=1030, w=175) -->
+    <rect x="1030" y="175" width="175" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="1040" y="195" fill="#1E3A8A" font-size="10" font-weight="bold">DE2 BOARD PERIPHERALS</text>
+    <text x="1040" y="215" fill="#4F46E5" font-size="9" font-weight="bold">• Double-Dabble Bin-to-BCD</text>
+    <text x="1040" y="232" fill="#334155" font-size="9">• HEX3..HEX0 7-Seg LED</text>
+    <text x="1040" y="248" fill="#334155" font-size="9">• LEDR status &amp; error flags</text>
+    <rect x="1038" y="258" width="158" height="20" rx="3" fill="#F0FDF4" stroke="#16A34A" stroke-width="0.8"/>
+    <text x="1117" y="272" fill="#16A34A" font-size="9" font-weight="bold" text-anchor="middle">Live: " 28.7°C" on Board</text>
+    
+    <!-- Bottom Spec Strip for Design A -->
+    <rect x="75" y="325" width="1130" height="35" rx="4" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="0.8"/>
+    <text x="90" y="346" fill="#1E3A8A" font-size="10" font-weight="bold">Speed System Contract:</text>
+    <text x="230" y="346" fill="#334155" font-size="10">Streaming parser framing (AA 55) • Zero backpressure bubbles • 50 MSps throughput @ 50 MHz • 412 LEs</text>
+  </g>
+  <g id="top_resource_wrapper" data-pptx-bounds="60 388 1160 248">
+    <rect x="60" y="388" width="1160" height="248" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="388" width="1160" height="32" rx="8" fill="#F1F5F9"/>
+    <text x="75" y="410" fill="#1E3A8A" font-size="12" font-weight="bold">DESIGN B TOP MODULE: top_temp_predictor_uart.v (Dual-FIFO Buffered Architecture)</text>
+    
+    <!-- Block 1: IO &amp; POR (x=75, w=110) -->
+    <rect x="75" y="430" width="110" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="85" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">CLOCK &amp; POR</text>
+    <text x="85" y="470" fill="#334155" font-size="9">• CLOCK_50 (50MHz)</text>
+    <text x="85" y="487" fill="#334155" font-size="9">• UART_RX Pin</text>
+    <rect x="82" y="499" width="96" height="32" rx="3" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="130" y="513" fill="#1E3A8A" font-size="9" font-weight="bold" text-anchor="middle">por_cnt (128 clk)</text>
+    <text x="130" y="525" fill="#64748B" font-size="8" text-anchor="middle">2-FF rx_sync</text>
+    
+    <!-- Connector 1 -> 2 -->
+    <line x1="185" y1="485" x2="200" y2="485" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 2: UART RX (x=200, w=110) -->
+    <rect x="200" y="430" width="110" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="210" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">UART RECEIVER</text>
+    <text x="210" y="470" fill="#0F172A" font-size="10" font-weight="bold">uart_rx.v</text>
+    <text x="210" y="487" fill="#334155" font-size="9">• 115,200 Baud 8-N-1</text>
+    <text x="210" y="503" fill="#334155" font-size="9">• 16× Oversampling</text>
+    <text x="210" y="527" fill="#2563EB" font-size="9" font-weight="bold">rx_data [7:0]</text>
+    
+    <!-- Connector 2 -> 3 -->
+    <line x1="310" y1="485" x2="325" y2="485" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 3: RX FIFO (x=325, w=120) -->
+    <rect x="325" y="430" width="120" height="110" rx="5" fill="#FFFBEB" stroke="#D97706" stroke-width="1.2"/>
+    <text x="335" y="450" fill="#D97706" font-size="10" font-weight="bold">RX FIFO (16×8)</text>
+    <text x="335" y="470" fill="#0F172A" font-size="10" font-weight="bold">simple_fifo.v</text>
+    <text x="335" y="487" fill="#334155" font-size="9">• 16-Byte Circular RAM</text>
+    <text x="335" y="503" fill="#334155" font-size="9">• Decouples host jitter</text>
+    <text x="335" y="527" fill="#D97706" font-size="9" font-weight="bold">dout, empty, full</text>
+    
+    <!-- Connector 3 -> 4 -->
+    <line x1="445" y1="485" x2="460" y2="485" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 4: UART Controller FSM (x=460, w=160) -->
+    <rect x="460" y="430" width="160" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="470" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">UART CONTROLLER</text>
+    <text x="470" y="470" fill="#0F172A" font-size="10" font-weight="bold">temp_uart_controller.v</text>
+    <text x="470" y="487" fill="#334155" font-size="9">• 2-Byte Delimiter Parser</text>
+    <text x="470" y="503" fill="#334155" font-size="9">• Handshake Arbiter</text>
+    <text x="470" y="527" fill="#2563EB" font-size="9" font-weight="bold">sample_valid / ready</text>
+    
+    <!-- Connector 4 <-> 5 -->
+    <line x1="620" y1="480" x2="635" y2="480" stroke="#16A34A" stroke-width="1.8"/>
+    <line x1="635" y1="490" x2="620" y2="490" stroke="#2563EB" stroke-width="1.8"/>
+    
+    <!-- Block 5: Resource Core (Hero Core) (x=635, w=235) -->
+    <rect x="635" y="425" width="235" height="120" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="2"/>
+    <text x="647" y="447" fill="#16A34A" font-size="11" font-weight="bold">TIME-MULTIPLEXED CORE</text>
+    <text x="647" y="465" fill="#1E3A8A" font-size="12" font-weight="bold">temp_predictor_resource.v</text>
+    <text x="647" y="483" fill="#0F172A" font-size="9">• temp_history_buffer.v (25 taps)</text>
+    <text x="647" y="498" fill="#0F172A" font-size="9">• ols_shared_datapath.v (1 Shared DSP)</text>
+    <text x="647" y="513" fill="#0F172A" font-size="9">• 10-State Sequential FSM Controller</text>
+    <rect x="645" y="521" width="215" height="18" rx="3" fill="#FFFFFF" stroke="#16A34A" stroke-width="0.8"/>
+    <text x="752" y="534" fill="#16A34A" font-size="9" font-weight="bold" text-anchor="middle">II = 10 | L = 9 Cycles (180 ns) | -42.7% LEs</text>
+    
+    <!-- Connector 4 -> 6 (TX path via controller) -->
+    <path d="M 540,430 L 540,418 L 885,418 L 885,485 L 895,485" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 6: TX FIFO (x=895, w=120) -->
+    <rect x="895" y="430" width="120" height="110" rx="5" fill="#FFFBEB" stroke="#D97706" stroke-width="1.2"/>
+    <text x="905" y="450" fill="#D97706" font-size="10" font-weight="bold">TX FIFO (16×8)</text>
+    <text x="905" y="470" fill="#0F172A" font-size="10" font-weight="bold">simple_fifo.v</text>
+    <text x="905" y="487" fill="#334155" font-size="9">• 16-Byte Circular RAM</text>
+    <text x="905" y="503" fill="#334155" font-size="9">• Queues Output Bytes</text>
+    <text x="905" y="527" fill="#D97706" font-size="9" font-weight="bold">din, wr_en, count</text>
+    
+    <!-- Connector 6 -> 7 -->
+    <line x1="1015" y1="485" x2="1030" y2="485" stroke="#2563EB" stroke-width="1.5"/>
+    
+    <!-- Block 7: UART TX (x=1030, w=175) -->
+    <rect x="1030" y="430" width="175" height="110" rx="5" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+    <text x="1040" y="450" fill="#1E3A8A" font-size="10" font-weight="bold">UART TRANSMITTER</text>
+    <text x="1040" y="470" fill="#0F172A" font-size="10" font-weight="bold">uart_tx.v</text>
+    <text x="1040" y="487" fill="#334155" font-size="9">• 115,200 Baud 8-N-1 Serializer</text>
+    <text x="1040" y="503" fill="#334155" font-size="9">• Automatic FIFO pop on idle</text>
+    <rect x="1038" y="513" width="158" height="20" rx="3" fill="#F0FDF4" stroke="#16A34A" stroke-width="0.8"/>
+    <text x="1117" y="527" fill="#16A34A" font-size="9" font-weight="bold" text-anchor="middle">Pin: UART_TX Output</text>
+    
+    <!-- Bottom Spec Strip for Design B -->
+    <rect x="75" y="585" width="1130" height="42" rx="4" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="0.8"/>
+    <text x="90" y="605" fill="#1E3A8A" font-size="10" font-weight="bold">Resource System Contract:</text>
+    <text x="245" y="605" fill="#334155" font-size="10">Dual 16-byte FIFO buffering • Autonomous UART controller FSM • 1 shared multiplier (-50% DSP) • 236 LEs (-42.7%)</text>
+    <text x="90" y="620" fill="#16A34A" font-size="9" font-weight="bold">• Power-On-Reset counter (128 cycles) eliminates external reset pushbutton dependency.</text>
+  </g>
+  <g id="ftr_16" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="72" y="663" width="140" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="142" y="678" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="230" y="679" fill="#0F172A" font-size="13" font-weight="500">Dual top modules reflect distinct trade-offs: streaming packet-framed pipeline vs FIFO-decoupled FSM controller.</text>
+  </g>
+</svg>

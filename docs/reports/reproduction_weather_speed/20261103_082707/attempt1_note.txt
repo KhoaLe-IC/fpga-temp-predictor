@@ -1,0 +1,1 @@
+Capture stdout buffered until exit. PRE not visible in time, so no replay launched. No DONE: not accepted despite process exit 0 and CAPTURE SAVED. Retained STP separately. Retrying with PTY.

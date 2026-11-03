@@ -1,0 +1,7 @@
+
+[General 26.1_pro]
+AUTO_REFRESH_TOKEN = on
+
+[Programmer 13.0]
+PGMDQ_INTERNAL_SETTING = 0
+PGMW_SFL_USE_CRC_CHECK = on

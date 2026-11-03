@@ -1,0 +1,1 @@
+User explicitly agreed to enable TalkBack in conversation. Enabled with documented set_user_option -name TALKBACK_ENABLED on.

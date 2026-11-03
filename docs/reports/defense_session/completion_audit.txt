@@ -1,0 +1,4 @@
+INCOMPLETE
+PENDING temperature physical board replay
+PENDING weather parallel physical board replay
+PENDING weather shared physical board replay

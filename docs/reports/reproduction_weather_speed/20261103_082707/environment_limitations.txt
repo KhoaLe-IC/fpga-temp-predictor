@@ -1,0 +1,1 @@
+Native GUI control unavailable; no GUI screenshot or GUI opening claimed. Quartus CLI reopened STP successfully and acquisition validator passed afterward. Quartus requires execution outside sandbox.

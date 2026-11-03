@@ -1,0 +1,5 @@
+PASS CSV: 128 inputs, 24 warm-up rows, 104 matching forecasts
+First forecast: 26.445312 100.531250 69.644531 3.285156 0.902344 0.085938 5.437500
+Last forecast:  25.949219 100.386719 80.175781 1.609375 0.773438 -0.257812 341.562500
+CSV: /home/zeus/Study/Subject_in_Uni/Subject_in_Uni/Digital_Signal_Processing/fpga-temp-predictor-main/docs/reports/reproduction_weather_speed/20261103_082707/ordinary_replay.csv
+PASS ANGLE DOMAIN AND CIRCULAR TOLERANCE: 104 forecasts, tolerance 5 Q8

@@ -1,0 +1,12 @@
+--- versions/weather_v2/quartus/de2_jtag_speed/weather_jtag.qsf.before
++++ versions/weather_v2/quartus/de2_jtag_speed/weather_jtag.qsf
+@@ -14,7 +14,8 @@
+ set_global_assignment -name VERILOG_FILE ../../rtl/wind_direction_cordic.v
+ set_global_assignment -name VERILOG_FILE ../../rtl/weather_ar_channel.v
+ set_location_assignment PIN_N2 -to CLOCK_50
+-set_location_assignment PIN_G26 -to KEY0_N
++# KEY1 fallback authorized by user: logical KEY0_N now uses physical KEY[1] (N23).
++set_location_assignment PIN_N23 -to KEY0_N
+ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY0_N
+ set_parameter -name SHARED 0

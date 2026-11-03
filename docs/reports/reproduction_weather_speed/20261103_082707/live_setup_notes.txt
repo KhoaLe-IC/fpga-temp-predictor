@@ -1,0 +1,1 @@
+Original STP preserved. Live copy SOF path changed to absolute zeus path; removed old logs: 0

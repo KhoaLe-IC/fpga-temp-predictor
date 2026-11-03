@@ -1,0 +1,50 @@
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/file_probe/xsim_script.tcl
+# xsim {file_probe} -testplusarg VECTORS=../../../tb/build/speed_0.txt -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+FILE row=0 chars=12 status=3 raw=12214 flag=150 expected=0
+FILE row=1 chars=11 status=3 raw=-32768 flag=0 expected=0
+FILE row=2 chars=10 status=3 raw=32767 flag=0 expected=0
+FILE row=3 chars=9 status=3 raw=9691 flag=0 expected=0
+FILE row=4 chars=10 status=3 raw=19292 flag=0 expected=0
+FILE row=5 chars=11 status=3 raw=-31522 flag=0 expected=0
+FILE row=6 chars=10 status=3 raw=-7510 flag=0 expected=0
+FILE row=7 chars=10 status=3 raw=-5617 flag=0 expected=0
+FILE row=8 chars=10 status=3 raw=-3376 flag=0 expected=0
+FILE row=9 chars=11 status=3 raw=-22992 flag=0 expected=0
+FILE row=10 chars=11 status=3 raw=-32305 flag=0 expected=0
+FILE row=11 chars=9 status=3 raw=8317 flag=0 expected=0
+FILE row=12 chars=10 status=3 raw=26452 flag=0 expected=0
+FILE row=13 chars=10 status=3 raw=17260 flag=0 expected=0
+FILE row=14 chars=10 status=3 raw=13312 flag=0 expected=0
+FILE row=15 chars=11 status=3 raw=-19962 flag=0 expected=0
+FILE row=16 chars=10 status=3 raw=28378 flag=0 expected=0
+FILE row=17 chars=10 status=3 raw=19343 flag=0 expected=0
+FILE row=18 chars=10 status=3 raw=-7556 flag=0 expected=0
+FILE row=19 chars=11 status=3 raw=-26274 flag=0 expected=0
+FILE row=20 chars=10 status=3 raw=21685 flag=0 expected=0
+FILE row=21 chars=10 status=3 raw=29448 flag=0 expected=0
+FILE row=22 chars=10 status=3 raw=30390 flag=0 expected=0
+FILE row=23 chars=10 status=3 raw=32598 flag=0 expected=0
+FILE row=24 chars=10 status=3 raw=-3827 flag=0 expected=0
+FILE row=25 chars=15 status=3 raw=-13158 flag=1 expected=32767
+FILE row=26 chars=15 status=3 raw=30186 flag=1 expected=-32768
+FILE row=27 chars=16 status=2 raw=-26275 flag=1 expected=-32768
+FILE row=28 chars=16 status=2 raw=-29293 flag=1 expected=-32768
+FILE row=29 chars=13 status=3 raw=7807 flag=1 expected=25738
+FILE row=30 chars=16 status=2 raw=-21524 flag=1 expected=25738
+FILE row=31 chars=16 status=2 raw=-12734 flag=1 expected=25738
+FILE row=32 chars=13 status=3 raw=-9354 flag=1 expected=3703
+FILE row=33 chars=15 status=3 raw=-26673 flag=1 expected=23660
+FILE row=34 chars=14 status=3 raw=14657 flag=1 expected=32767
+$finish called at time : 35 ns : File "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/speed/build_xsim/tb_file_probe.sv" Line 10
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 24 10:38:49 2026...

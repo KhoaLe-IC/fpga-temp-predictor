@@ -1,0 +1,34 @@
+{
+  "captured_at_utc": "2026-10-28T06:39:19.441737+00:00",
+  "status": "FPGA_CHAIN_NOT_ACCESSIBLE",
+  "usb_blaster_detected": true,
+  "fpga_identified": false,
+  "programming_completed": false,
+  "physical_replay_completed": false,
+  "quartus_gui_screenshots_captured": false,
+  "commands": {
+    "usb_devices": {
+      "command": [
+        "lsusb"
+      ],
+      "returncode": 0,
+      "sha256": "39a1090c4f4f12b482c6d51a7075f1bcf7372d989b2027855892193f593c3563"
+    },
+    "jtag_detection": {
+      "command": [
+        "jtagconfig",
+        "--debug"
+      ],
+      "returncode": 0,
+      "sha256": "d2acf837bc379f6e32c6e49f75246986223bb8540ebede90dd5c85bf19352029"
+    },
+    "completion_audit": {
+      "command": [
+        "python3",
+        "scripts/audit_delivery.py"
+      ],
+      "returncode": 0,
+      "sha256": "f42d915a6c65ceaf0003a2360d643fed9f134192d2321a14c88596e16d381cb8"
+    }
+  }
+}

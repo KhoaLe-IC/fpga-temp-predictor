@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "clock_period_ns": 20,
+  "sdf_sha256": "9f7c3af0bb2087857bb5058251b18d8a87d2d1e623c60df2d3c1df42ee039a9d",
+  "netlist_sha256": "8f4a825cd6dd42f128c8df02792cf821fdaaeab163f0ab17902236cf84c71a62",
+  "transcript": "hardware/quartus/resource/build/modelsim_timing/simulation.log",
+  "netlist": "hardware/quartus/resource/build/modelsim_timing/predictor.vo",
+  "sdf": "hardware/quartus/resource/build/modelsim_timing/predictor_v.sdo",
+  "testbench": "hardware/quartus/resource/build/modelsim_timing/tb_timing.sv",
+  "testbench_sha256": "4c94788a5a780760ca4faa3f6f0ad83aa51cfe0abdabd7ad89b5b1532f85648a",
+  "vectors": "hardware/tb/build/resource_0.txt",
+  "vectors_sha256": "47bf00b0e34976f60ae6a9bdc77c3386cdcfb27e1541af6759a995ec40192ede",
+  "transcript_sha256": "3405b3ea7ea625e5ba9a311ad341725d921b3c57c2d34c6b7290af7753d2bb9c",
+  "observation_delay_ns": 8
+}

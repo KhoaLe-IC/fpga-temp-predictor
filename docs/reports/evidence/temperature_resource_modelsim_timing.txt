@@ -1,0 +1,36 @@
+Reading /home/khoale/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+
+# 10.1d
+
+# vsim +VECTORS=/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/tb/build/resource_0.txt -L cycloneii_ver -L altera_ver -do {onerror {quit -code 1}; run -all; quit -f} -c -sdfmax /tb_netlist/dut=/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/resource/build/modelsim_timing/predictor_v.sdo -t 1ps work.tb_netlist 
+# Loading sv_std.std
+# Loading work.tb_netlist
+# Loading work.temp_predictor_resource
+# Loading cycloneii_ver.cycloneii_lcell_ff
+# Loading cycloneii_ver.cycloneii_lcell_comb
+# Loading cycloneii_ver.cycloneii_mac_out
+# Loading cycloneii_ver.cycloneii_io
+# Loading cycloneii_ver.cycloneii_mux21
+# Loading cycloneii_ver.cycloneii_dffe
+# Loading cycloneii_ver.cycloneii_asynch_io
+# Loading cycloneii_ver.cycloneii_clkctrl
+# Loading cycloneii_ver.cycloneii_mux41
+# Loading cycloneii_ver.cycloneii_ena_reg
+# Loading cycloneii_ver.cycloneii_mac_mult
+# Loading cycloneii_ver.cycloneii_mac_data_reg
+# Loading cycloneii_ver.cycloneii_mac_sign_reg
+# Loading cycloneii_ver.cycloneii_mac_mult_internal
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# Loading instances from /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/resource/build/modelsim_timing/predictor_v.sdo
+# Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
+# ** Warning: (vsim-8607) /home/khoale/altera/13.0sp1/modelsim_ase/linuxaloem/../altera/verilog/src/cycloneii_atoms.v(6778): Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: (vsim-8607) /home/khoale/altera/13.0sp1/modelsim_ase/linuxaloem/../altera/verilog/src/cycloneii_atoms.v(6779): Non-positive replication multiplier inside concat. Replication will be ignored.
+# Loading timing data from /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/resource/build/modelsim_timing/predictor_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_netlist File: /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/resource/build/modelsim_timing/tb_timing.sv
+# onerror {quit -code 1} 
+#  Warning: onerror command for use within macro
+#  run -all 
+# PASS netlist at 50 MHz: inputs=4096 forecasts=4072
+# ** Note: $finish    : /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/resource/build/modelsim_timing/tb_timing.sv(44)
+#    Time: 815900 ns  Iteration: 1  Instance: /tb_netlist

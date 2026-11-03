@@ -1,0 +1,6 @@
+{
+  "netlist_sha256": "417a1d034be72766755c5e485f47e9273ccd7d4d789d8c2d4315e26b8fb30695",
+  "source_netlist": "quartus/resource/simulation/modelsim/weather.vo",
+  "clock_period_ns": 20,
+  "vectors_sha256": "46baf3834f72898032ccbee604f67b64b289c76f5cff8632ab63355b0ee12c44"
+}

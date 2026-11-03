@@ -1,0 +1,1491 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/presentation/fpga_temp_predictor_20261007",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "a5e5c54f1de2cda3ec68707ea787733bc50a17002d18035c9b2be6a66c4bd58c",
+    "file_count": 22,
+    "files": [
+      {
+        "file": "01_title_welcome.svg",
+        "sha256": "fe72274ed8a94cdf36f12dcced5dd30e9c1cb17848f93fa0579a108597da8a6e"
+      },
+      {
+        "file": "02_team_overview.svg",
+        "sha256": "51701a34e7520b39f3eb28613e09872d6b408949b620077c92131066fb0c1c61"
+      },
+      {
+        "file": "03_agenda.svg",
+        "sha256": "17a949971faa9763b8a1e1e79ed8da26e4648032860ad3f9325fa93aa0764756"
+      },
+      {
+        "file": "04_problem_formulation.svg",
+        "sha256": "efa8269cdcf35f1125e96848594cd15b088e5810221625ca3ea656210e155aea"
+      },
+      {
+        "file": "05_math_formulation.svg",
+        "sha256": "e66e98e5719857657e181ec3c230e7f37f95e9371f476a3cf63683fdc63f1c45"
+      },
+      {
+        "file": "06_ml_benchmarks.svg",
+        "sha256": "b2688ae922a4b28c8db5faf2f739d31cb4593b5962ab6e898ce5a0a012ab0a89"
+      },
+      {
+        "file": "07_hardware_tradeoff.svg",
+        "sha256": "137c3d89e36da329c764040f689ecdc35c07c2d3bb95f1d5a6850338b37de8b4"
+      },
+      {
+        "file": "08_fixed_point_contract.svg",
+        "sha256": "84abc3b5cc46b93ddeda5ee01559af6b9853c0c313a532cac0bb95f99a02851c"
+      },
+      {
+        "file": "09_binary_alignment.svg",
+        "sha256": "7e511abf42329c91aab9be23349ccefa33d6b16576dc79efba85fa1ab697194f"
+      },
+      {
+        "file": "10_floor_scaling.svg",
+        "sha256": "d9d016519b895572c4d1ab53903dbb0cc9c0a21ef037a020eced7600f910afc5"
+      },
+      {
+        "file": "11_saturation_arithmetic.svg",
+        "sha256": "22173ca26b70f691db4e86b798c174818ac191ddf008421e7cebe76b00a6320e"
+      },
+      {
+        "file": "12_dual_architectures.svg",
+        "sha256": "3d25db73306bcb6192b54fdd8f6b61ac690283607597435e4f8231b2bf156e56"
+      },
+      {
+        "file": "13_speed_microarchitecture.svg",
+        "sha256": "ed0dda903d083ffd6e78332c19bebae6749f0eca53c2a88a3ca72e1226616b75"
+      },
+      {
+        "file": "14_resource_datapath.svg",
+        "sha256": "743f0b79ec5aa9ee101c0142ed0ad8be88a5456a131ef4be76cf0cfd7e3d596a"
+      },
+      {
+        "file": "15_resource_fsm.svg",
+        "sha256": "a8b7cac1adc7dc7817bc162631f92c12170da5e191f33f307c0fbfa4b2923ec0"
+      },
+      {
+        "file": "16_top_level_peripherals.svg",
+        "sha256": "01848f7ea095b9a52b1a13b7cc8ec19be2a627c2e74e5a326f5f07de2743712e"
+      },
+      {
+        "file": "17_verification_architecture.svg",
+        "sha256": "0d4a2dce9b545954db2c8b8c0d6a6640d7de9a5faca26d9a052ce14ccd80d8d5"
+      },
+      {
+        "file": "18_corner_cases.svg",
+        "sha256": "252a1378bddb991225438bbea69bf657e462a04a93372c598846a07a96d25dd4"
+      },
+      {
+        "file": "19_synthesis_results.svg",
+        "sha256": "39c2b71408f76237ccc9a520986e6192d7d9c06e7fea4eaf742d28281a7c0429"
+      },
+      {
+        "file": "20_real_world_validation.svg",
+        "sha256": "1019421146e875f3d37ee70ad8663c85efe76201eba84a8b3d6e0eb04ee19fcb"
+      },
+      {
+        "file": "21_conclusion_roadmap.svg",
+        "sha256": "83434c26fed932b749c59aa9b2ed2c88e3501b88eda793bf3be5b1219a630e3e"
+      },
+      {
+        "file": "22_qa_defense.svg",
+        "sha256": "6ff336df527c99d7a21ddd5e6fecf4adda7cbe20bc409bd0c848da03ea6fdf1f"
+      }
+    ]
+  },
+  "summary": {
+    "total": 22,
+    "passed": 18,
+    "warnings": 4,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 4,
+      "issues": [
+        {
+          "file": "01_title_welcome.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_defense\"> x=885.0, y=405.0..445.0, 3 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "06_ml_benchmarks.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"pareto_callout\"> x=875.0, y=475.0..495.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "08_fixed_point_contract.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"bitfield_visual\"> x=95.0, y=572.0..594.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "22_qa_defense.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_advisor\"> x=80.0, y=462.0..482.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        }
+      ]
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 22,
+    "totals": {
+      "text_elements": 880,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 483,
+      "preset_shapes": 0,
+      "page_frame_elements": 22,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 8,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 1,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": null,
+    "geometry_elements": {
+      "circle": 18,
+      "ellipse": 0,
+      "line": 66,
+      "path": 6,
+      "polygon": 8,
+      "polyline": 0,
+      "rect": 385
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01_title_welcome.svg",
+      "path": "svg_output/01_title_welcome.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_defense\"> x=885.0, y=405.0..445.0, 3 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 32,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 32,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "fe72274ed8a94cdf36f12dcced5dd30e9c1cb17848f93fa0579a108597da8a6e"
+    },
+    {
+      "file": "02_team_overview.svg",
+      "path": "svg_output/02_team_overview.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 41,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 22,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 41,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "51701a34e7520b39f3eb28613e09872d6b408949b620077c92131066fb0c1c61"
+    },
+    {
+      "file": "03_agenda.svg",
+      "path": "svg_output/03_agenda.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 23,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 22,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 23,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "17a949971faa9763b8a1e1e79ed8da26e4648032860ad3f9325fa93aa0764756"
+    },
+    {
+      "file": "04_problem_formulation.svg",
+      "path": "svg_output/04_problem_formulation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 40,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 5,
+              "ellipse": 0,
+              "line": 6,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 1
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 40,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "efa8269cdcf35f1125e96848594cd15b088e5810221625ca3ea656210e155aea"
+    },
+    {
+      "file": "05_math_formulation.svg",
+      "path": "svg_output/05_math_formulation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 44,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 21,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 44,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "e66e98e5719857657e181ec3c230e7f37f95e9371f476a3cf63683fdc63f1c45"
+    },
+    {
+      "file": "06_ml_benchmarks.svg",
+      "path": "svg_output/06_ml_benchmarks.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"pareto_callout\"> x=875.0, y=475.0..495.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 61,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 20,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 61,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "b2688ae922a4b28c8db5faf2f739d31cb4593b5962ab6e898ce5a0a012ab0a89"
+    },
+    {
+      "file": "07_hardware_tradeoff.svg",
+      "path": "svg_output/07_hardware_tradeoff.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 58,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 8,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 16,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 58,
+        "tspan_elements": 8
+      },
+      "passed": true,
+      "source_sha256": "137c3d89e36da329c764040f689ecdc35c07c2d3bb95f1d5a6850338b37de8b4"
+    },
+    {
+      "file": "08_fixed_point_contract.svg",
+      "path": "svg_output/08_fixed_point_contract.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"bitfield_visual\"> x=95.0, y=572.0..594.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 46,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 20,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 3,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 46,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "84abc3b5cc46b93ddeda5ee01559af6b9853c0c313a532cac0bb95f99a02851c"
+    },
+    {
+      "file": "09_binary_alignment.svg",
+      "path": "svg_output/09_binary_alignment.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 29,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 28,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 29,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "7e511abf42329c91aab9be23349ccefa33d6b16576dc79efba85fa1ab697194f"
+    },
+    {
+      "file": "10_floor_scaling.svg",
+      "path": "svg_output/10_floor_scaling.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 32,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 15,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 32,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "d9d016519b895572c4d1ab53903dbb0cc9c0a21ef037a020eced7600f910afc5"
+    },
+    {
+      "file": "11_saturation_arithmetic.svg",
+      "path": "svg_output/11_saturation_arithmetic.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 41,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 15,
+              "circle": 3,
+              "ellipse": 0,
+              "line": 9,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 41,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "22173ca26b70f691db4e86b798c174818ac191ddf008421e7cebe76b00a6320e"
+    },
+    {
+      "file": "12_dual_architectures.svg",
+      "path": "svg_output/12_dual_architectures.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 35,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 10,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 2,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 35,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "3d25db73306bcb6192b54fdd8f6b61ac690283607597435e4f8231b2bf156e56"
+    },
+    {
+      "file": "13_speed_microarchitecture.svg",
+      "path": "svg_output/13_speed_microarchitecture.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 47,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 25,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 5,
+              "polyline": 0,
+              "polygon": 6,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 47,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "ed0dda903d083ffd6e78332c19bebae6749f0eca53c2a88a3ca72e1226616b75"
+    },
+    {
+      "file": "14_resource_datapath.svg",
+      "path": "svg_output/14_resource_datapath.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 32,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 9,
+              "polyline": 0,
+              "polygon": 2,
+              "path": 3
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 32,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "743f0b79ec5aa9ee101c0142ed0ad8be88a5456a131ef4be76cf0cfd7e3d596a"
+    },
+    {
+      "file": "15_resource_fsm.svg",
+      "path": "svg_output/15_resource_fsm.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 35,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 10,
+              "ellipse": 0,
+              "line": 10,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 35,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "a8b7cac1adc7dc7817bc162631f92c12170da5e191f33f307c0fbfa4b2923ec0"
+    },
+    {
+      "file": "16_top_level_peripherals.svg",
+      "path": "svg_output/16_top_level_peripherals.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 84,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 30,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 11,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 2
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 84,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "01848f7ea095b9a52b1a13b7cc8ec19be2a627c2e74e5a326f5f07de2743712e"
+    },
+    {
+      "file": "17_verification_architecture.svg",
+      "path": "svg_output/17_verification_architecture.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 34,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 13,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 5,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 34,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "0d4a2dce9b545954db2c8b8c0d6a6640d7de9a5faca26d9a052ce14ccd80d8d5"
+    },
+    {
+      "file": "18_corner_cases.svg",
+      "path": "svg_output/18_corner_cases.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 36,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 20,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 36,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "252a1378bddb991225438bbea69bf657e462a04a93372c598846a07a96d25dd4"
+    },
+    {
+      "file": "19_synthesis_results.svg",
+      "path": "svg_output/19_synthesis_results.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 34,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 13,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 34,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "39c2b71408f76237ccc9a520986e6192d7d9c06e7fea4eaf742d28281a7c0429"
+    },
+    {
+      "file": "20_real_world_validation.svg",
+      "path": "svg_output/20_real_world_validation.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 32,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 15,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 1,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 32,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "1019421146e875f3d37ee70ad8663c85efe76201eba84a8b3d6e0eb04ee19fcb"
+    },
+    {
+      "file": "21_conclusion_roadmap.svg",
+      "path": "svg_output/21_conclusion_roadmap.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 32,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 10,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 32,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "83434c26fed932b749c59aa9b2ed2c88e3501b88eda793bf3be5b1219a630e3e"
+    },
+    {
+      "file": "22_qa_defense.svg",
+      "path": "svg_output/22_qa_defense.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"card_advisor\"> x=80.0, y=462.0..482.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 32,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 14,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial, Segoe UI, sans-serif"
+        ],
+        "text_elements": 32,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "6ff336df527c99d7a21ddd5e6fecf4adda7cbe20bc409bd0c848da03ea6fdf1f"
+    }
+  ]
+}

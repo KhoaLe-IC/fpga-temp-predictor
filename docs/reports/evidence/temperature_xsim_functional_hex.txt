@@ -1,0 +1,18 @@
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/temperature_functional_hex/xsim_script.tcl
+# xsim {temperature_functional_hex} -testplusarg HEX=vectors.hex -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS HEX netlist 50 MHz: inputs=4096 forecasts=4072
+$finish called at time : 164540 ns : File "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/tb_netlist_hex.sv" Line 32
+run: Time (s): cpu = 00:00:00.95 ; elapsed = 00:00:13 . Memory (MB): peak = 1367.332 ; gain = 27.039 ; free physical = 2431 ; free virtual = 30515
+exit
+INFO: xsimkernel Simulation Memory Usage: 116540 KB (Peak: 169212 KB), Simulation CPU Usage: 13170 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct 24 10:45:39 2026...

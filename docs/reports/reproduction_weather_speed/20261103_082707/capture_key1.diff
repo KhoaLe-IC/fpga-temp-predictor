@@ -1,0 +1,17 @@
+--- hardware/quartus/signaltap/weather_speed/capture.qsf.before
++++ hardware/quartus/signaltap/weather_speed/capture.qsf
+@@ -14,7 +14,8 @@
+ set_global_assignment -name VERILOG_FILE ../../../../versions/weather_v2/rtl/wind_direction_cordic.v
+ set_global_assignment -name VERILOG_FILE ../../../../versions/weather_v2/rtl/weather_ar_channel.v
+ set_location_assignment PIN_N2 -to CLOCK_50
+-set_location_assignment PIN_G26 -to KEY0_N
++# KEY1 fallback authorized by user: logical KEY0_N now uses physical KEY[1] (N23).
++set_location_assignment PIN_N23 -to KEY0_N
+ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY0_N
+ set_parameter -name SHARED 0
+@@ -288,4 +289,4 @@
+ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+-set_global_assignment -name SLD_FILE "/home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/quartus/signaltap/weather_speed/capture_auto_stripped.stp"+set_global_assignment -name SLD_FILE capture_auto_stripped.stp

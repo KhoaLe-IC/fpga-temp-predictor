@@ -1,0 +1,12 @@
+{
+  "installer": "/home/khoale/Downloads/ModelSimSetup-13.0.1.232.run",
+  "sha1": "161f55d214e528d6d47b2c5aa872e268b1137e8f",
+  "checksum_matches_vendor": true,
+  "installation": "/home/khoale/altera/13.0sp1/modelsim_ase",
+  "version": "ModelSim-Altera Starter Edition 10.1d",
+  "compatibility_library": "/home/khoale/.local/opt/modelsim-compat32/lib/libncurses.so.5",
+  "compatibility_source": "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz",
+  "environment": "scripts/modelsim_env.sh",
+  "smoke_test": "vsim -c -do quit: exit 0",
+  "launchers": "/home/khoale/.local/bin/{vsim,vlog,vcom,vlib,vmap,vdel,vdir}"
+}

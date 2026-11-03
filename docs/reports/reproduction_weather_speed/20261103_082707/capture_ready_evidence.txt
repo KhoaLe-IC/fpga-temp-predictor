@@ -1,0 +1,24 @@
+[0;32mInfo: *******************************************************************
+[0m[0;32mInfo: Running Quartus II 32-bit SignalTap II
+[0m[0;32m    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+[0m[0;32m    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+[0m[0;32m    Info: Your use of Altera Corporation's design tools, logic functions 
+[0m[0;32m    Info: and other software and tools, and its AMPP partner logic 
+[0m[0;32m    Info: functions, and any output files from any of the foregoing 
+[0m[0;32m    Info: (including device programming or simulation files), and any 
+[0m[0;32m    Info: associated documentation or information are expressly subject 
+[0m[0;32m    Info: to the terms and conditions of the Altera Program License 
+[0m[0;32m    Info: Subscription Agreement, Altera MegaCore Function License 
+[0m[0;32m    Info: Agreement, or other applicable license agreement, including, 
+[0m[0;32m    Info: without limitation, that your use is for the sole purpose of 
+[0m[0;32m    Info: programming logic devices manufactured by Altera and sold by 
+[0m[0;32m    Info: Altera or its authorized distributors.  Please refer to the 
+[0m[0;32m    Info: applicable agreement for further details.
+[0m[0;32m    Info: Processing started: Tue Nov  3 08:46:54 2026
+[0m[0;32mInfo: Command: quartus_stp -t /home/zeus/Study/Subject_in_Uni/Subject_in_Uni/Digital_Signal_Processing/fpga-temp-predictor-main/docs/reports/reproduction_weather_speed/20261103_082707/acquire_weather_speed.tcl /home/zeus/Study/Subject_in_Uni/Subject_in_Uni/Digital_Signal_Processing/fpga-temp-predictor-main/docs/reports/reproduction_weather_speed/20261103_082707/weather_speed_live.stp
+[0m[0;32mInfo: Quartus(args): /home/zeus/Study/Subject_in_Uni/Subject_in_Uni/Digital_Signal_Processing/fpga-temp-predictor-main/docs/reports/reproduction_weather_speed/20261103_082707/weather_speed_live.stp
+[0mCAPTURE ARMED: send the weather_speed replay from the second terminal now
+[0;32mInfo (262001): SignalTap II data acquisition is in IDLE state: 
+[0m[0;32mInfo (262001): SignalTap II data acquisition is in PRE state:  (0 triggers seen)
+
+Observed PRE before starting replay.

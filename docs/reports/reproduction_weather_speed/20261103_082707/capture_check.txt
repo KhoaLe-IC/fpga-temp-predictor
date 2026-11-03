@@ -1,0 +1,6 @@
+PASS CAPTURE: 512 samples; input and forecast match the reference
+Accepted input index: 215
+Forecast-valid index: 256
+Raw sample separation: 41
+Forecast word: 0x5700005800e700d2445a5192201a72
+Decoded CSV: /home/zeus/Study/Subject_in_Uni/Subject_in_Uni/Digital_Signal_Processing/fpga-temp-predictor-main/docs/reports/reproduction_weather_speed/20261103_082707/weather_speed_live_decoded.csv

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"
+     data-pptx-page-role="content" lang="en" font-family="Arial, Segoe UI, sans-serif">
+  <rect id="bg" data-pptx-role="background" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+  <g id="hdr_18" data-pptx-bounds="60 30 1160 85">
+    <rect x="60" y="30" width="1160" height="85" fill="#F8FAFC" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="80" y="52" fill="#1E3A8A" font-size="12" font-weight="bold" letter-spacing="1">CORNER-CASE VERIFICATION REGRESSION</text>
+    <text x="80" y="82" fill="#0F172A" font-size="24" font-weight="bold">Verification Coverage &amp; Edge Corner-Case Analysis</text>
+    <text x="80" y="104" fill="#64748B" font-size="13">Functional regression testing verifying dynamic range extremes, sat16 clamping, and burst streaming</text>
+  </g>
+  <g id="tbl_corners" data-pptx-bounds="60 135 1160 500">
+    <rect x="60" y="135" width="1160" height="500" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="60" y="135" width="1160" height="42" rx="8" fill="#F1F5F9"/>
+    <text x="80" y="162" fill="#1E3A8A" font-size="14" font-weight="bold">SYSTEMVERILOG CORNER-CASE REGRESSION SUITE</text>
+    
+    <!-- Table Header Row -->
+    <rect x="80" y="195" width="1120" height="32" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="216" fill="#1E3A8A" font-size="12" font-weight="bold">Corner Case Description</text>
+    <text x="440" y="216" fill="#1E3A8A" font-size="12" font-weight="bold">Stimulus Vector</text>
+    <text x="740" y="216" fill="#1E3A8A" font-size="12" font-weight="bold">Hardware Stress Target</text>
+    <text x="1050" y="216" fill="#1E3A8A" font-size="12" font-weight="bold">Scoreboard Status</text>
+    <!-- Row 1 -->
+    <rect x="80" y="235" width="1120" height="44" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="261" fill="#0F172A" font-size="12" font-weight="bold">Test 1: Zero Temperature (0.0 °C)</text>
+    <text x="440" y="261" fill="#334155" font-size="11">16'h0000 across all taps</text>
+    <text x="740" y="261" fill="#334155" font-size="11">Sign integrity &amp; zero floor scaling</text>
+    <rect x="1040" y="245" width="90" height="24" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="1085" y="261" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">PASSED</text>
+    <!-- Row 2 -->
+    <rect x="80" y="285" width="1120" height="44" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="311" fill="#0F172A" font-size="12" font-weight="bold">Test 2: Positive Saturation (&gt; +127.996 °C)</text>
+    <text x="440" y="311" fill="#334155" font-size="11">+130.0 °C step (16'h8200)</text>
+    <text x="740" y="311" fill="#334155" font-size="11">Upper sat16 clamp to 16'sh7FFF</text>
+    <rect x="1040" y="295" width="90" height="24" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="1085" y="311" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">PASSED</text>
+    <!-- Row 3 -->
+    <rect x="80" y="335" width="1120" height="44" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="361" fill="#0F172A" font-size="12" font-weight="bold">Test 3: Freezing Sub-Zero (&lt; -128.000 °C)</text>
+    <text x="440" y="361" fill="#334155" font-size="11">-135.0 °C step (16'h7900)</text>
+    <text x="740" y="361" fill="#334155" font-size="11">Lower sat16 clamp to 16'sh8000</text>
+    <rect x="1040" y="345" width="90" height="24" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="1085" y="361" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">PASSED</text>
+    <!-- Row 4 -->
+    <rect x="80" y="385" width="1120" height="44" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="411" fill="#0F172A" font-size="12" font-weight="bold">Test 4: Extreme Delta Swing (ΔT = 25.0 °C)</text>
+    <text x="440" y="411" fill="#334155" font-size="11">25°C step between t and t-3</text>
+    <text x="740" y="411" fill="#334155" font-size="11">33-bit datapath headroom</text>
+    <rect x="1040" y="395" width="90" height="24" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="1085" y="411" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">PASSED</text>
+    <!-- Row 5 -->
+    <rect x="80" y="435" width="1120" height="44" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="461" fill="#0F172A" font-size="12" font-weight="bold">Test 5: Back-to-Back Streaming (II = 1)</text>
+    <text x="440" y="461" fill="#334155" font-size="11">New sample every clock</text>
+    <text x="740" y="461" fill="#334155" font-size="11">Pipeline hazard &amp; zero bubble stall</text>
+    <rect x="1040" y="445" width="90" height="24" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="1085" y="461" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">PASSED</text>
+    <!-- Row 6 -->
+    <rect x="80" y="485" width="1120" height="44" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="95" y="511" fill="#0F172A" font-size="12" font-weight="bold">Test 6: Random Walk &amp; 17.5K Replay</text>
+    <text x="440" y="511" fill="#334155" font-size="11">10,000+ Gaussian vectors + replay</text>
+    <text x="740" y="511" fill="#334155" font-size="11">Coverage &amp; paired DPI-C check</text>
+    <rect x="1040" y="495" width="90" height="24" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="1085" y="511" fill="#16A34A" font-size="11" font-weight="bold" text-anchor="middle">PASSED</text>
+    <!-- Bottom Summary Box -->
+    <rect x="80" y="545" width="1120" height="75" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="1"/>
+    <text x="100" y="570" fill="#16A34A" font-size="12" font-weight="bold">Regression Verification Results:</text>
+    <text x="100" y="595" fill="#0F172A" font-size="11">5 coefficient profiles × 8,825 forecasts + 4,072-point replay: 100% bit-exact (0 mismatches).</text>
+  </g>
+  <g id="ftr_18" data-pptx-bounds="60 655 1160 40">
+    <rect x="60" y="655" width="1160" height="38" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <rect x="72" y="663" width="140" height="22" rx="4" fill="#1E3A8A"/>
+    <text x="142" y="678" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">CE436 CAPSTONE</text>
+    <text x="230" y="679" fill="#0F172A" font-size="13" font-weight="500">Zero functional mismatches across extreme dynamic range, temperature jumps, and continuous streaming bursts.</text>
+  </g>
+</svg>

@@ -1,0 +1,694 @@
+Analysis & Synthesis report for weather_board
+Sat Oct 24 10:24:26 2026
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Default Parameter Settings
+  5. Parallel Compilation
+  6. Analysis & Synthesis Source Files Read
+  7. Analysis & Synthesis Resource Usage Summary
+  8. Analysis & Synthesis Resource Utilization by Entity
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. State Machine - |de2_weather_uart|parse_state
+ 11. State Machine - |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |de2_weather_uart
+ 16. Parameter Settings for User Entity Instance: uart_rx:receiver
+ 17. Parameter Settings for User Entity Instance: uart_tx:transmitter
+ 18. Parameter Settings for Inferred Entity Instance: weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|lpm_add_sub:Add5
+ 19. Parameter Settings for Inferred Entity Instance: weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult1
+ 20. Parameter Settings for Inferred Entity Instance: weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0
+ 21. lpm_mult Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "uart_rx:receiver"
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Oct 24 10:24:25 2026           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; weather_board                                   ;
+; Top-level Entity Name              ; de2_weather_uart                                ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 6,538                                           ;
+;     Total combinational functions  ; 6,413                                           ;
+;     Dedicated logic registers      ; 3,565                                           ;
+; Total registers                    ; 3565                                            ;
+; Total pins                         ; 4                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 2                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; de2_weather_uart   ; weather_board      ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------+
+; Analysis & Synthesis Default Parameter Settings ;
++--------+----------------------------------------+
+; Name   ; Setting                                ;
++--------+----------------------------------------+
+; SHARED ; 1                                      ;
++--------+----------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                            ;
++---------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                  ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                       ; Library ;
++---------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../../rtl/de2_weather_uart.v                      ; yes             ; User Verilog HDL File        ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/de2_weather_uart.v                  ;         ;
+; ../../rtl/weather_system_resource.v               ; yes             ; User Verilog HDL File        ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/weather_system_resource.v           ;         ;
+; ../../rtl/weather_predictor_resource.v            ; yes             ; User Verilog HDL File        ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/weather_predictor_resource.v        ;         ;
+; ../../rtl/wind_direction_cordic.v                 ; yes             ; User Verilog HDL File        ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/wind_direction_cordic.v             ;         ;
+; ../../../../hardware/speed_optimized/reset_sync.v ; yes             ; User Verilog HDL File        ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/speed_optimized/reset_sync.v                       ;         ;
+; ../../../../hardware/speed_optimized/uart_rx.v    ; yes             ; User Verilog HDL File        ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/speed_optimized/uart_rx.v                          ;         ;
+; ../../../../hardware/speed_optimized/uart_tx.v    ; yes             ; User Verilog HDL File        ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/speed_optimized/uart_tx.v                          ;         ;
+; lpm_add_sub.tdf                                   ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                                                        ;         ;
+; addcore.inc                                       ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc                                                                                            ;         ;
+; look_add.inc                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc                                                                                           ;         ;
+; bypassff.inc                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                                                                                           ;         ;
+; altshift.inc                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                                                                                           ;         ;
+; alt_stratix_add_sub.inc                           ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                                                                ;         ;
+; aglobal130.inc                                    ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                                                                         ;         ;
+; db/add_sub_7ri.tdf                                ; yes             ; Auto-Generated Megafunction  ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/quartus/de2_resource/db/add_sub_7ri.tdf ;         ;
+; lpm_mult.tdf                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf                                                                                           ;         ;
+; lpm_add_sub.inc                                   ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                                        ;         ;
+; multcore.inc                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc                                                                                           ;         ;
+; db/mult_m1t.tdf                                   ; yes             ; Auto-Generated Megafunction  ; /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/quartus/de2_resource/db/mult_m1t.tdf    ;         ;
+; multcore.tdf                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/multcore.tdf                                                                                           ;         ;
+; csa_add.inc                                       ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/csa_add.inc                                                                                            ;         ;
+; mpar_add.inc                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/mpar_add.inc                                                                                           ;         ;
+; muleabz.inc                                       ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/muleabz.inc                                                                                            ;         ;
+; mul_lfrg.inc                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/mul_lfrg.inc                                                                                           ;         ;
+; mul_boothc.inc                                    ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/mul_boothc.inc                                                                                         ;         ;
+; alt_ded_mult.inc                                  ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/alt_ded_mult.inc                                                                                       ;         ;
+; alt_ded_mult_y.inc                                ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                                                                     ;         ;
+; dffpipe.inc                                       ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/dffpipe.inc                                                                                            ;         ;
+; mpar_add.tdf                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/mpar_add.tdf                                                                                           ;         ;
+; altshift.tdf                                      ; yes             ; Megafunction                 ; /home/khoale/altera/13.0sp1/quartus/libraries/megafunctions/altshift.tdf                                                                                           ;         ;
++---------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 6,538    ;
+;                                             ;          ;
+; Total combinational functions               ; 6413     ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 2566     ;
+;     -- 3 input functions                    ; 3276     ;
+;     -- <=2 input functions                  ; 571      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 6099     ;
+;     -- arithmetic mode                      ; 314      ;
+;                                             ;          ;
+; Total registers                             ; 3565     ;
+;     -- Dedicated logic registers            ; 3565     ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 4        ;
+; Embedded Multiplier 9-bit elements          ; 2        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 3565     ;
+; Total fan-out                               ; 29454    ;
+; Average fan-out                             ; 2.95     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                              ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                            ; Library Name ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |de2_weather_uart                                    ; 6413 (511)        ; 3565 (309)   ; 0           ; 2            ; 0       ; 1         ; 4    ; 0            ; |de2_weather_uart                                                                                                                              ; work         ;
+;    |reset_sync:reset_unit|                           ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|reset_sync:reset_unit                                                                                                        ; work         ;
+;    |uart_rx:receiver|                                ; 78 (78)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|uart_rx:receiver                                                                                                             ; work         ;
+;    |uart_tx:transmitter|                             ; 54 (54)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|uart_tx:transmitter                                                                                                          ; work         ;
+;    |weather_system_resource:shared_system.predictor| ; 5770 (109)        ; 3183 (108)   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor                                                                              ; work         ;
+;       |weather_predictor_resource:core|              ; 4820 (4816)       ; 2944 (2944)  ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core                                              ; work         ;
+;          |lpm_mult:Mult0|                            ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0                               ; work         ;
+;             |multcore:mult_core|                     ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0|multcore:mult_core            ; work         ;
+;          |lpm_mult:Mult1|                            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult1                               ; work         ;
+;             |mult_m1t:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult1|mult_m1t:auto_generated       ; work         ;
+;       |wind_direction_cordic:angle_unit|             ; 841 (786)         ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit                                             ; work         ;
+;          |lpm_add_sub:Add5|                          ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|lpm_add_sub:Add5                            ; work         ;
+;             |add_sub_7ri:auto_generated|             ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|lpm_add_sub:Add5|add_sub_7ri:auto_generated ; work         ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 1           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de2_weather_uart|parse_state                                                                               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name            ; parse_state.101 ; parse_state.100 ; parse_state.011 ; parse_state.010 ; parse_state.001 ; parse_state.000 ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; parse_state.000 ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ;
+; parse_state.001 ; 0               ; 0               ; 0               ; 0               ; 1               ; 1               ;
+; parse_state.010 ; 0               ; 0               ; 0               ; 1               ; 0               ; 1               ;
+; parse_state.011 ; 0               ; 0               ; 1               ; 0               ; 0               ; 1               ;
+; parse_state.100 ; 0               ; 1               ; 0               ; 0               ; 0               ; 1               ;
+; parse_state.101 ; 1               ; 0               ; 0               ; 0               ; 0               ; 1               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state ;
++------------+------------+------------+------------+------------+------------+-------------------------------------------+
+; Name       ; state.0101 ; state.0100 ; state.0011 ; state.0010 ; state.0001 ; state.0000                                ;
++------------+------------+------------+------------+------------+------------+-------------------------------------------+
+; state.0000 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0                                         ;
+; state.0001 ; 0          ; 0          ; 0          ; 0          ; 1          ; 1                                         ;
+; state.0010 ; 0          ; 0          ; 0          ; 1          ; 0          ; 1                                         ;
+; state.0011 ; 0          ; 0          ; 1          ; 0          ; 0          ; 1                                         ;
+; state.0100 ; 0          ; 1          ; 0          ; 0          ; 0          ; 1                                         ;
+; state.0101 ; 1          ; 0          ; 0          ; 0          ; 0          ; 1                                         ;
++------------+------------+------------+------------+------------+------------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+; Register name                                                                               ; Reason for Removal                                                                                      ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+; saved_payload[6,26]                                                                         ; Merged with saved_payload[7]                                                                            ;
+; saved_payload[2,28,31]                                                                      ; Merged with saved_payload[5]                                                                            ;
+; saved_payload[3]                                                                            ; Merged with saved_payload[4]                                                                            ;
+; saved_payload[27,30]                                                                        ; Merged with saved_payload[1]                                                                            ;
+; saved_payload[51,53,55]                                                                     ; Merged with saved_payload[49]                                                                           ;
+; saved_payload[52,54]                                                                        ; Merged with saved_payload[50]                                                                           ;
+; saved_payload[78]                                                                           ; Merged with saved_payload[73]                                                                           ;
+; saved_payload[76]                                                                           ; Merged with saved_payload[74]                                                                           ;
+; saved_payload[99,101,103]                                                                   ; Merged with saved_payload[97]                                                                           ;
+; saved_payload[102]                                                                          ; Merged with saved_payload[98]                                                                           ;
+; saved_payload[122..127]                                                                     ; Merged with saved_payload[121]                                                                          ;
+; saved_payload[146,147,149..151]                                                             ; Merged with saved_payload[145]                                                                          ;
+; saved_payload[171,173,174]                                                                  ; Merged with saved_payload[169]                                                                          ;
+; saved_payload[175]                                                                          ; Merged with saved_payload[170]                                                                          ;
+; saved_payload[1,4]                                                                          ; Merged with saved_payload[7]                                                                            ;
+; saved_payload[29]                                                                           ; Merged with saved_payload[5]                                                                            ;
+; saved_payload[50]                                                                           ; Merged with saved_payload[49]                                                                           ;
+; saved_payload[79]                                                                           ; Merged with saved_payload[74]                                                                           ;
+; saved_payload[148]                                                                          ; Merged with saved_payload[145]                                                                          ;
+; saved_payload[5]                                                                            ; Merged with saved_payload[7]                                                                            ;
+; saved_payload[75]                                                                           ; Merged with saved_payload[73]                                                                           ;
+; saved_payload[77]                                                                           ; Merged with saved_payload[74]                                                                           ;
+; saved_payload[98,100]                                                                       ; Merged with saved_payload[97]                                                                           ;
+; saved_payload[170,172]                                                                      ; Merged with saved_payload[169]                                                                          ;
+; saved_payload[74]                                                                           ; Merged with saved_payload[73]                                                                           ;
+; saved_payload[7]                                                                            ; Stuck at GND due to stuck port data_in                                                                  ;
+; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|product[34] ; Merged with weather_system_resource:shared_system.predictor|weather_predictor_resource:core|product[33] ;
+; uart_tx:transmitter|shift_reg[9]                                                            ; Stuck at VCC due to stuck port data_in                                                                  ;
+; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|product[33] ; Merged with weather_system_resource:shared_system.predictor|weather_predictor_resource:core|product[35] ;
+; parse_state~8                                                                               ; Lost fanout                                                                                             ;
+; parse_state~9                                                                               ; Lost fanout                                                                                             ;
+; parse_state~10                                                                              ; Lost fanout                                                                                             ;
+; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state~7     ; Lost fanout                                                                                             ;
+; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state~8     ; Lost fanout                                                                                             ;
+; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state~9     ; Lost fanout                                                                                             ;
+; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state~10    ; Lost fanout                                                                                             ;
+; Total Number of Removed Registers = 59                                                      ;                                                                                                         ;
++---------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3565  ;
+; Number of registers using Synchronous Clear  ; 173   ;
+; Number of registers using Synchronous Load   ; 50    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 796   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 35 bits   ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|product[4]            ;
+; 3:1                ; 108 bits  ; 216 LEs       ; 108 LEs              ; 108 LEs                ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_speed_out[15]                                    ;
+; 4:1                ; 138 bits  ; 276 LEs       ; 138 LEs              ; 138 LEs                ; Yes        ; |de2_weather_uart|input_frame[45]                                                                                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |de2_weather_uart|uart_tx:transmitter|shift_reg[9]                                                                      ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |de2_weather_uart|uart_tx:transmitter|shift_reg[6]                                                                      ;
+; 4:1                ; 135 bits  ; 270 LEs       ; 135 LEs              ; 135 LEs                ; Yes        ; |de2_weather_uart|saved_payload[143]                                                                                    ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|direction_sin_out[15] ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|direction_cos_out[2]  ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|wind_speed_out[5]     ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|humidity_out[7]       ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|pressure_out[10]      ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|temperature_out[9]    ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |de2_weather_uart|uart_rx:receiver|baud_cnt[0]                                                                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |de2_weather_uart|uart_rx:receiver|baud_cnt[3]                                                                          ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|angle_out[10]        ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|count[0]              ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |de2_weather_uart|uart_tx:transmitter|baud_cnt[14]                                                                      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|step[2]              ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |de2_weather_uart|uart_tx:transmitter|bit_cnt[3]                                                                        ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |de2_weather_uart|tx_index[3]                                                                                           ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|angle_out[15]        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |de2_weather_uart|uart_rx:receiver|rx_data[7]                                                                           ;
+; 7:1                ; 50 bits   ; 200 LEs       ; 100 LEs              ; 100 LEs                ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[4]                 ;
+; 7:1                ; 17 bits   ; 68 LEs        ; 34 LEs               ; 34 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|angle[23]            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |de2_weather_uart|uart_rx:receiver|bit_cnt[3]                                                                           ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |de2_weather_uart|byte_count[1]                                                                                         ;
+; 8:1                ; 35 bits   ; 175 LEs       ; 105 LEs              ; 70 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|x[26]                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |de2_weather_uart|rx_check[6]                                                                                           ;
+; 8:1                ; 14 bits   ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|acc[0]                ;
+; 8:1                ; 34 bits   ; 170 LEs       ; 68 LEs               ; 102 LEs                ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|acc[34]               ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 3 LEs                ; 15 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|term[2]               ;
+; 11:1               ; 17 bits   ; 119 LEs       ; 102 LEs              ; 17 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|forecast_out[0]       ;
+; 35:1               ; 6 bits    ; 138 LEs       ; 102 LEs              ; 36 LEs                 ; Yes        ; |de2_weather_uart|tx_data[4]                                                                                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|channel[2]            ;
+; 152:1              ; 18 bits   ; 1818 LEs      ; 1800 LEs             ; 18 LEs                 ; Yes        ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|operand[5]            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|state                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|ShiftRight1          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|ShiftRight1          ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|ShiftRight1          ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de2_weather_uart|weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|ShiftRight0          ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |de2_weather_uart|weather_system_resource:shared_system.predictor|weather_predictor_resource:core|limited[24]           ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |de2_weather_uart|parse_state                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |de2_weather_uart ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; SHARED         ; 1     ; Untyped                                                 ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_rx:receiver ;
++----------------+----------+-----------------------------------+
+; Parameter Name ; Value    ; Type                              ;
++----------------+----------+-----------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                    ;
+; BAUD_RATE      ; 115200   ; Signed Integer                    ;
++----------------+----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_tx:transmitter ;
++----------------+----------+--------------------------------------+
+; Parameter Name ; Value    ; Type                                 ;
++----------------+----------+--------------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                       ;
+; BAUD_RATE      ; 115200   ; Signed Integer                       ;
++----------------+----------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|lpm_add_sub:Add5 ;
++------------------------+-------------+-------------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                                                        ;
++------------------------+-------------+-------------------------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 32          ; Untyped                                                                                                     ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                                                                     ;
+; LPM_DIRECTION          ; DEFAULT     ; Untyped                                                                                                     ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                                                                                     ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                                                                     ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                                                                     ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                                                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                                                                                     ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                                                                     ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                                                     ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                                                          ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                                                                     ;
+; USE_WYS                ; OFF         ; Untyped                                                                                                     ;
+; STYLE                  ; FAST        ; Untyped                                                                                                     ;
+; CBXI_PARAMETER         ; add_sub_7ri ; Untyped                                                                                                     ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                                                                ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                                                              ;
++------------------------+-------------+-------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult1 ;
++------------------------------------------------+------------+-----------------------------------------------------------------------------------+
+; Parameter Name                                 ; Value      ; Type                                                                              ;
++------------------------------------------------+------------+-----------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                                                                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                                                                      ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                                                                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                                                                    ;
+; LPM_WIDTHA                                     ; 18         ; Untyped                                                                           ;
+; LPM_WIDTHB                                     ; 16         ; Untyped                                                                           ;
+; LPM_WIDTHP                                     ; 34         ; Untyped                                                                           ;
+; LPM_WIDTHR                                     ; 34         ; Untyped                                                                           ;
+; LPM_WIDTHS                                     ; 1          ; Untyped                                                                           ;
+; LPM_REPRESENTATION                             ; SIGNED     ; Untyped                                                                           ;
+; LPM_PIPELINE                                   ; 0          ; Untyped                                                                           ;
+; LATENCY                                        ; 0          ; Untyped                                                                           ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                                                                           ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                                                                           ;
+; USE_EAB                                        ; OFF        ; Untyped                                                                           ;
+; MAXIMIZE_SPEED                                 ; 6          ; Untyped                                                                           ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                                                                           ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                                                                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K                                                               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                                                                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                                                                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                                                                           ;
+; CBXI_PARAMETER                                 ; mult_m1t   ; Untyped                                                                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                                                                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                                                                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                                                                           ;
++------------------------------------------------+------------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0 ;
++------------------------------------------------+------------+-----------------------------------------------------------------------------------+
+; Parameter Name                                 ; Value      ; Type                                                                              ;
++------------------------------------------------+------------+-----------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                                                                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                                                                      ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                                                                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                                                                    ;
+; LPM_WIDTHA                                     ; 3          ; Untyped                                                                           ;
+; LPM_WIDTHB                                     ; 5          ; Untyped                                                                           ;
+; LPM_WIDTHP                                     ; 8          ; Untyped                                                                           ;
+; LPM_WIDTHR                                     ; 8          ; Untyped                                                                           ;
+; LPM_WIDTHS                                     ; 1          ; Untyped                                                                           ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped                                                                           ;
+; LPM_PIPELINE                                   ; 0          ; Untyped                                                                           ;
+; LATENCY                                        ; 0          ; Untyped                                                                           ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                                                                           ;
+; INPUT_B_IS_CONSTANT                            ; YES        ; Untyped                                                                           ;
+; USE_EAB                                        ; OFF        ; Untyped                                                                           ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped                                                                           ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                                                                           ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                                                                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K                                                               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                                                                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                                                                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                                                                           ;
+; CBXI_PARAMETER                                 ; NOTHING    ; Untyped                                                                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                                                                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                                                                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                                                                           ;
++------------------------------------------------+------------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                                                         ;
++---------------------------------------+------------------------------------------------------------------------------------------------+
+; Name                                  ; Value                                                                                          ;
++---------------------------------------+------------------------------------------------------------------------------------------------+
+; Number of entity instances            ; 2                                                                                              ;
+; Entity Instance                       ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 18                                                                                             ;
+;     -- LPM_WIDTHB                     ; 16                                                                                             ;
+;     -- LPM_WIDTHP                     ; 34                                                                                             ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                                         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                             ;
+;     -- USE_EAB                        ; OFF                                                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                             ;
+; Entity Instance                       ; weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 3                                                                                              ;
+;     -- LPM_WIDTHB                     ; 5                                                                                              ;
+;     -- LPM_WIDTHP                     ; 8                                                                                              ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                                                            ;
+;     -- USE_EAB                        ; OFF                                                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                             ;
++---------------------------------------+------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "uart_rx:receiver" ;
++----------+-------+----------+----------------+
+; Port     ; Type  ; Severity ; Details        ;
++----------+-------+----------+----------------+
+; rx_ready ; Input ; Info     ; Stuck at VCC   ;
++----------+-------+----------+----------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:33     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 24 10:23:46 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off weather_board -c weather_board
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/de2_weather_uart.v
+    Info (12023): Found entity 1: de2_weather_uart
+Info (12021): Found 1 design units, including 1 entities, in source file /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/weather_system_resource.v
+    Info (12023): Found entity 1: weather_system_resource
+Info (12021): Found 1 design units, including 1 entities, in source file /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/weather_predictor_resource.v
+    Info (12023): Found entity 1: weather_predictor_resource
+Info (12021): Found 1 design units, including 1 entities, in source file /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/versions/weather_v2/rtl/wind_direction_cordic.v
+    Info (12023): Found entity 1: wind_direction_cordic
+Info (12021): Found 1 design units, including 1 entities, in source file /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/speed_optimized/reset_sync.v
+    Info (12023): Found entity 1: reset_sync
+Info (12021): Found 1 design units, including 1 entities, in source file /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/speed_optimized/uart_rx.v
+    Info (12023): Found entity 1: uart_rx
+Info (12021): Found 1 design units, including 1 entities, in source file /home/khoale/Documents/University/Semester_5/CE436_Discrete-Time_Signal_Processing/fpga-temp-predictor/hardware/speed_optimized/uart_tx.v
+    Info (12023): Found entity 1: uart_tx
+Info (12127): Elaborating entity "de2_weather_uart" for the top level hierarchy
+Info (12128): Elaborating entity "reset_sync" for hierarchy "reset_sync:reset_unit"
+Info (12128): Elaborating entity "uart_rx" for hierarchy "uart_rx:receiver"
+Warning (10230): Verilog HDL assignment warning at uart_rx.v(53): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at uart_rx.v(60): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "weather_system_resource" for hierarchy "weather_system_resource:shared_system.predictor"
+Info (12128): Elaborating entity "weather_predictor_resource" for hierarchy "weather_system_resource:shared_system.predictor|weather_predictor_resource:core"
+Info (12128): Elaborating entity "wind_direction_cordic" for hierarchy "weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit"
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:transmitter"
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(45): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at uart_tx.v(53): truncated value with size 32 to match size of target (16)
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|Add5"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|Mult1"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|Mult0"
+Info (12130): Elaborated megafunction instantiation "weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|lpm_add_sub:Add5"
+Info (12133): Instantiated megafunction "weather_system_resource:shared_system.predictor|wind_direction_cordic:angle_unit|lpm_add_sub:Add5" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "32"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7ri.tdf
+    Info (12023): Found entity 1: add_sub_7ri
+Info (12130): Elaborated megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult1"
+Info (12133): Instantiated megafunction "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "18"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "34"
+    Info (12134): Parameter "LPM_WIDTHR" = "34"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_m1t.tdf
+    Info (12023): Found entity 1: mult_m1t
+Info (12130): Elaborated megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "3"
+    Info (12134): Parameter "LPM_WIDTHB" = "5"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "weather_system_resource:shared_system.predictor|weather_predictor_resource:core|lpm_mult:Mult0"
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 6565 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 6559 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 363 megabytes
+    Info: Processing ended: Sat Oct 24 10:24:26 2026
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:00:39
+
+

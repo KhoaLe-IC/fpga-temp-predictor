@@ -1,0 +1,1 @@
+USB-Blaster [1-1]: JtagClock = 6M (6 MHz <= 10 MHz)

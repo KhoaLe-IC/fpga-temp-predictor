@@ -1,0 +1,8 @@
+1) USB-Blaster [1-1]
+  020B40DD   EP2C35 (IR=10)
+
+  Captured DR after reset = (020B40DD) [32]
+  Captured IR after reset = (155) [10]
+  Captured Bypass after reset = (0) [1]
+  Captured Bypass chain = (0) [1]
+
