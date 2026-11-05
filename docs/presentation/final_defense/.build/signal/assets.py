@@ -22,7 +22,7 @@ def density(values, W, H, pad=0.08, sub=6):
     return acc, t
 
 
-def to_rgba(acc, rgb, gamma=0.45, gain=2.0):
+def to_rgba(acc, rgb, gamma=0.55, gain=5.0):
     a = acc / np.percentile(acc[acc > 0], 99.5)
     a = np.clip(a * gain, 0, 1) ** gamma
     img = np.zeros(acc.shape + (4,), np.uint8)
@@ -31,23 +31,34 @@ def to_rgba(acc, rgb, gamma=0.45, gain=2.0):
     return img
 
 
-# Cover: all five years, one luminous ribbon
-W, H = 4000, 1100
-acc, _ = density(T, W, H)
-Image.fromarray(to_rgba(acc, (94, 234, 212))).save(f"{OUT}/trace_cover.png")
+# Printed-chart artwork: daily min-max band plus daily mean, drawn from all hourly samples
+from PIL import ImageDraw
+days = T[: len(T) // 24 * 24].reshape(-1, 24)
+dmin, dmax, dmean = days.min(1), days.max(1), days.mean(1)
+dyear = years[: len(days) * 24 : 24]
 
-# Split strip coloured by chronological role
-W, H = 3700, 640
-acc, t = density(T, W, H)
-img = np.zeros((H, W, 4), np.uint8)
-cols = {"train": (203, 213, 225), "val": (94, 234, 212), "test": (251, 191, 36)}
-yr_at_col = np.interp(np.arange(W), np.linspace(0, W - 1, len(T)), years)
-for name, mask in [("train", yr_at_col < 2024), ("val", (yr_at_col >= 2024) & (yr_at_col < 2025)), ("test", yr_at_col >= 2025)]:
-    part = acc * mask[None, :]
-    layer = to_rgba(part, cols[name], gain=2.0)
-    sel = layer[..., 3] > img[..., 3]
-    img[sel] = layer[sel]
-Image.fromarray(img).save(f"{OUT}/trace_split.png")
+
+def band_chart(path, W, H, colour_of_day, pad=0.06, ss=2):
+    W2, H2 = W * ss, H * ss
+    lo, hi = dmin.min(), dmax.max()
+    X = lambda i: i / (len(days) - 1) * (W2 - 1)
+    Y = lambda v: ((1 - pad) - (v - lo) / (hi - lo) * (1 - 2 * pad)) * (H2 - 1)
+    img = Image.new("RGBA", (W2, H2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img, "RGBA")
+    for i in range(len(days) - 1):  # band, one quad per day
+        r, g, b = colour_of_day(i)
+        d.polygon([(X(i), Y(dmax[i])), (X(i + 1), Y(dmax[i + 1])), (X(i + 1), Y(dmin[i + 1])), (X(i), Y(dmin[i]))], fill=(r, g, b, 46))
+    for i in range(len(days) - 1):  # mean line
+        r, g, b = colour_of_day(i)
+        d.line([(X(i), Y(dmean[i])), (X(i + 1), Y(dmean[i + 1]))], fill=(r, g, b, 255), width=3 * ss)
+    img.resize((W, H), Image.LANCZOS).save(path)
+
+
+NAVY = (30, 58, 95)
+band_chart(f"{OUT}/trace_cover.png", 4000, 1100, lambda i: NAVY)
+split_cols = {"train": (100, 116, 139), "val": NAVY, "test": (161, 98, 7)}
+band_chart(f"{OUT}/trace_split.png", 3700, 640,
+           lambda i: split_cols["train"] if dyear[i] < 2024 else split_cols["val"] if dyear[i] < 2025 else split_cols["test"])
 
 # A real forecast window from the 2025 test period (12:00 ICT = 05:00 UTC)
 m = json.load(open(f"{ROOT}/versions/weather_v2/models/model.json"))
